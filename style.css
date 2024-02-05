@@ -1,0 +1,17 @@
+.main-wrapper {
+  display: flex;
+}
+.main-wrapper div {
+  height: 2rem;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  background-color: blue;
+}
+.main-wrapper div + div {
+  margin-left: 0.5rem;
+}
+
+.prajwal-text {
+  font-weight: 700;
+  font-size: 2rem;
+}/*# sourceMappingURL=style.css.map */
