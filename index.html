@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chromafy - Color palette testing Chrome Extension</title>
     <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+      integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <div class="chromafy-wrapper">
       <div id="popup">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div style="background-color: var(--chroma-primary)"></div>
+        <div style="background-color: var(--chroma-secondary)"></div>
+        <div style="background-color: var(--chroma-accent)"></div>
         <button id="applyStyleButton">Apply Style</button>
       </div>
       <script src="./script.js" type="module"></script>

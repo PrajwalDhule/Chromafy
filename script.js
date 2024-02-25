@@ -1,14 +1,16 @@
+// import chroma from "chroma-js";
+
 function adjustHue(val) {
   if (val < 0) val += Math.ceil(-val / 360) * 360;
 
   return val % 360;
 }
 
-function getPalette(colorSchemeId = -1) {
+function setPalette(colorSchemeId = -1) {
   const baseColor = {
-    l: 50,
-    c: 100,
-    h: 0,
+    l: Math.max(10, Math.round(Math.random() * 80)),
+    c: Math.max(10, Math.round(Math.random() * 100)),
+    h: Math.random() * 360,
     mode: "lch",
   };
 
@@ -27,16 +29,18 @@ function getPalette(colorSchemeId = -1) {
     { hueSteps: [0, 30, 60], name: "analogous" },
     { hueSteps: [0, 120, 240], name: "triadic" },
     { hueSteps: [0, 90, 180, 270], name: "tetradic" },
-    { hueSteps: [0, 180], name: "complementary" },
+    { hueSteps: [0, 180, 180], name: "complementary" },
     { hueSteps: [0, 150, 210], name: "splitComplementary" },
   ];
 
   const palettes = {};
 
-  palettes[colors] = targetHueSteps[colorSchemeId][hueSteps].map((step) => ({
-    l: baseColor.l,
-    c: baseColor.c,
-    h: adjustHue(baseColor.h + step),
+  palettes.colors = targetHueSteps[colorSchemeId].hueSteps.map((step) => ({
+    l: Math.max(10, Math.round(Math.random() * 80)),
+    c: Math.max(10, Math.round(Math.random() * 100)),
+    h: adjustHue(
+      baseColor.h + step + (Math.round(Math.random() * 2) - 1) * (step / 10)
+    ),
     mode: "lch",
   }));
 
@@ -48,8 +52,34 @@ function getPalette(colorSchemeId = -1) {
   //     mode: "lch",
   //   }));
   // }
+  document.documentElement.style.setProperty(
+    `--chroma-primary`,
+    getColor(palettes.colors[0])
+  );
+  document.documentElement.style.setProperty(
+    `--chroma-secondary`,
+    getColor(palettes.colors[1])
+  );
+  document.documentElement.style.setProperty(
+    `--chroma-accent`,
+    getColor(palettes.colors[2])
+  );
 
-  return palettes;
+  // return palettes;
+}
+
+function getColor(colorObject) {
+  if (colorObject.mode === "lch") {
+    // Access l, c, and h values
+    const l = colorObject.l;
+    const c = colorObject.c;
+    const h = colorObject.h;
+
+    // Convert lch values to RGB color
+    const rgbColor = chroma.lch(l, c, h).css();
+
+    return rgbColor;
+  }
 }
 
 function generateRandomHex() {
@@ -67,6 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("applyStyleButton")
     .addEventListener("click", function () {
       //   const textValue = localStorage.getItem("text");
+      setPalette(0);
+
       const textValue = generateRandomHex();
 
       // chrome.runtime.sendMessage({ action: "applyCSS", textValue });

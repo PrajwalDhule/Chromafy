@@ -55,10 +55,12 @@ body {
       height: 2rem;
       aspect-ratio: 1;
       border-radius: 0.5rem;
-      background-color: blue;
+      // background-color: blue;
+      // background-color: lch(80, 100, 0);
     }
     div + div {
       margin-left: 0.5rem;
+      // background-color: lch(10, 100, 120);
     }
   }
 }
