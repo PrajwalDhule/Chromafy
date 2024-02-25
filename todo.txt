@@ -1,0 +1,20 @@
+
+FEATURES
+
+- randomly generate palette of 5 colors (text and bg very subtle) possibly based on a selected color scheme
+- can lock color(s)
+- provide and apply shades of the colors as well
+- export the palettes in various formats
+
+
+TASKS
+
+- generate palette of 5 colors (text and bg very subtle) 
+- generate based on color scheme if one is selected
+- handle light and dark mode
+- handle locking of colors and how it will affect palette generation
+- generate shades of the colors with maybe a naming convention like tailwind (red-300, blue-700)
+- convert the colors to various formats (rgb, hsl, etc) and variables (css, tailwind, etc) and export
+- give naming conventions for both foreground and background for each color (fg-chroma-text-200, bg-chroma-bg)
+- apply text color globally (html, input, a) with an option to turn off global application
+- rest of the colors, optionally text as well, should be applied to their corresponding classes (original primary color should be applied as a background-color to .bg-chroma-primary)

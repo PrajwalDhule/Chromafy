@@ -17,5 +17,8 @@ main > :last-child {
 
 .prajwal-text {
   /* color: green; */
-  background-color: var(--background-color);
+  background-color: unset;
+  color: unset;
+  color: var(--background-color) !important;
+  background-color: var(--background-color) !important;
 }

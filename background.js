@@ -5,14 +5,45 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "applyCSS") {
     const textValue = message.textValue;
 
+    // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    //   if (tabs.length > 0) {
+    //     const tabId = tabs[0].id;
+
+    //     chrome.scripting.insertCSS({
+    //       //   css: `:root { --text-color: "${textValue}"; }`,
+    //       css: `.prajwal-text { color: unset; color: ${textValue}; }`,
+    //       target: { tabId: tabId },
+    //     });
+    //   } else {
+    //     console.error("No active tab found.");
+    //   }
+    // });
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs.length > 0) {
         const tabId = tabs[0].id;
 
-        chrome.scripting.insertCSS({
-          //   css: `:root { --text-color: "${textValue}"; }`,
-          css: `.prajwal-text { color: ${textValue}; }`,
+        chrome.scripting.executeScript({
           target: { tabId: tabId },
+          function: function (textValue) {
+            // Get all elements with the class name "john-text"
+            const elements = document.querySelectorAll(".prajwal-text");
+
+            // Iterate over each element
+            elements.forEach((element) => {
+              // Get the existing inline style
+              let inlineStyle = element.getAttribute("style") || "";
+
+              inlineStyle = inlineStyle.replace(
+                /; color:\s*unset;\s*color:\s*#[0-9a-fA-F]{6};?/g,
+                ""
+              );
+              inlineStyle += "; color: unset; color: " + textValue;
+
+              // Set the updated inline style back to the element
+              element.setAttribute("style", inlineStyle);
+            });
+          },
+          args: [textValue],
         });
       } else {
         console.error("No active tab found.");

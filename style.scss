@@ -1,13 +1,65 @@
-.main-wrapper {
-  display: flex;
-  div {
-    height: 2rem;
-    aspect-ratio: 1;
-    border-radius: 0.5rem;
-    background-color: blue;
+body {
+  position: relative;
+  /* position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); */
+  // background-color: white;
+  // width: 300px;
+  // height: 100px;
+  // /* width: 100vw;
+  // height: 100vh; */
+  // border: 1px solid #ccc;
+  // overflow: hidden; /* Prevents scrollbar */
+  // margin: 0; /* Remove default margin */
+  // z-index: 9999;
+  overflow-x: hidden;
+  height: 200vh;
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  .background {
+    height: 75vh;
+    width: 75vw;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin: 2rem;
   }
-  div + div {
-    margin-left: 0.5rem;
+}
+
+.chromafy-wrapper {
+  height: 100vh;
+  width: 100vw;
+  pointer-events: none;
+  position: fixed;
+  #popup {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    // inset: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    // width: 300px;
+    // height: 200px;
+    border: 1px solid #ccc;
+    overflow: auto; /* Enable scrolling if content exceeds height */
+    z-index: 9999;
+    pointer-events: all;
+    div {
+      height: 2rem;
+      aspect-ratio: 1;
+      border-radius: 0.5rem;
+      background-color: blue;
+    }
+    div + div {
+      margin-left: 0.5rem;
+    }
   }
 }
 
