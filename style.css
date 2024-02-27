@@ -12,9 +12,9 @@ body {
   padding: 0;
 }
 body .background {
-  height: 75vh;
+  height: 175vh;
   width: 75vw;
-  background-color: black;
+  background-color: rgb(169, 179, 255);
   display: grid;
   place-items: center;
   color: white;
@@ -32,22 +32,34 @@ body .background {
 .chromafy-wrapper #popup {
   display: flex;
   position: fixed;
-  bottom: 0;
+  bottom: 1vh;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
-  border: 1px solid #ccc;
-  overflow: auto; /* Enable scrolling if content exceeds height */
+  background-color: rgba(220, 208, 208, 0.75);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  overflow: hidden;
   z-index: 9999;
   pointer-events: all;
+  padding: 0.28em;
+  border-radius: 0.5rem;
 }
 .chromafy-wrapper #popup div {
-  height: 2rem;
-  aspect-ratio: 1;
+  height: 2.5rem;
+  aspect-ratio: 1.5;
   border-radius: 0.5rem;
 }
 .chromafy-wrapper #popup div + div {
-  margin-left: 0.5rem;
+  margin-left: 0.28em;
+}
+.chromafy-wrapper #popup button#randomizeButton {
+  margin-left: 0.28em;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  height: 2.5rem;
+  padding-inline: 0.5em;
+  cursor: pointer;
 }
 
 .prajwal-text {

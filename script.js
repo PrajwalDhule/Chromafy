@@ -1,4 +1,11 @@
 // import chroma from "chroma-js";
+if (
+  !window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue("--chroma-primary")
+) {
+  setPalette(0);
+}
 
 function adjustHue(val) {
   if (val < 0) val += Math.ceil(-val / 360) * 360;
@@ -8,10 +15,10 @@ function adjustHue(val) {
 
 function setPalette(colorSchemeId = -1) {
   const baseColor = {
-    l: Math.max(10, Math.round(Math.random() * 80)),
-    c: Math.max(10, Math.round(Math.random() * 100)),
     h: Math.random() * 360,
-    mode: "lch",
+    s: Math.max(10, Math.round(Math.random() * 100)),
+    l: Math.max(10, Math.round(Math.random() * 80)),
+    mode: "hsl",
   };
 
   if (!(colorSchemeId <= 5 || colorSchemeId >= 0))
@@ -36,13 +43,27 @@ function setPalette(colorSchemeId = -1) {
   const palettes = {};
 
   palettes.colors = targetHueSteps[colorSchemeId].hueSteps.map((step) => ({
-    l: Math.max(10, Math.round(Math.random() * 80)),
-    c: Math.max(10, Math.round(Math.random() * 100)),
     h: adjustHue(
       baseColor.h + step + (Math.round(Math.random() * 2) - 1) * (step / 10)
     ),
-    mode: "lch",
+    s: Math.max(10, Math.round(Math.random() * 100)),
+    l: Math.max(10, Math.round(Math.random() * 80)),
+    mode: "hsl",
   }));
+
+  const textColor = {
+    h: adjustHue(palettes.colors[0].h + Math.round(Math.random() * 10) - 5),
+    s: palettes.colors[0].s,
+    l: Math.round(Math.random() * 4) + 1,
+    mode: "hsl",
+  };
+
+  const bgColor = {
+    h: adjustHue(palettes.colors[0].h + Math.round(Math.random() * 10) - 5),
+    s: palettes.colors[0].s,
+    l: 99 - Math.round(Math.random() * 4),
+    mode: "hsl",
+  };
 
   // for (const type of Object.keys(targetHueSteps)) {
   //   palettes[type] = targetHueSteps[type].map((step) => ({
@@ -52,6 +73,14 @@ function setPalette(colorSchemeId = -1) {
   //     mode: "lch",
   //   }));
   // }
+  document.documentElement.style.setProperty(
+    `--chroma-text`,
+    getColor(textColor)
+  );
+  document.documentElement.style.setProperty(
+    `--chroma-background`,
+    getColor(bgColor)
+  );
   document.documentElement.style.setProperty(
     `--chroma-primary`,
     getColor(palettes.colors[0])
@@ -65,6 +94,9 @@ function setPalette(colorSchemeId = -1) {
     getColor(palettes.colors[2])
   );
 
+  console.log(textColor, " ", bgColor);
+  console.log(getColor(textColor), " ", getColor(bgColor));
+
   // return palettes;
 }
 
@@ -76,9 +108,13 @@ function getColor(colorObject) {
     const h = colorObject.h;
 
     // Convert lch values to RGB color
-    const rgbColor = chroma.lch(l, c, h).css();
 
-    return rgbColor;
+    const rgbColor = chroma.lch(l, c, h).css();
+    const hslColor = chroma(rgbColor).hsl();
+
+    return hslColor;
+  } else if (colorObject.mode === "hsl") {
+    return `hsl(${colorObject.h}, ${colorObject.s}%, ${colorObject.l}%)`;
   }
 }
 
@@ -94,30 +130,30 @@ console.log(randomHex);
 
 document.addEventListener("DOMContentLoaded", function () {
   document
-    .getElementById("applyStyleButton")
+    .getElementById("randomizeButton")
     .addEventListener("click", function () {
       //   const textValue = localStorage.getItem("text");
       setPalette(0);
 
-      const textValue = generateRandomHex();
+      // const textValue = generateRandomHex();
 
-      // chrome.runtime.sendMessage({ action: "applyCSS", textValue });
-      const textElements = document.querySelectorAll(".prajwal-text");
+      // // chrome.runtime.sendMessage({ action: "applyCSS", textValue });
+      // const textElements = document.querySelectorAll(".prajwal-text");
 
-      // Iterate over each element
-      textElements.forEach((element) => {
-        // Get the existing inline style
-        let inlineStyle = element.getAttribute("style") || "";
+      // // Iterate over each element
+      // textElements.forEach((element) => {
+      //   // Get the existing inline style
+      //   let inlineStyle = element.getAttribute("style") || "";
 
-        inlineStyle = inlineStyle.replace(
-          /; color:\s*unset;\s*color:\s*#[0-9a-fA-F]{6};?/g,
-          ""
-        );
-        inlineStyle += "; color: unset; color: " + textValue;
+      //   inlineStyle = inlineStyle.replace(
+      //     /; color:\s*unset;\s*color:\s*#[0-9a-fA-F]{6};?/g,
+      //     ""
+      //   );
+      //   inlineStyle += "; color: unset; color: " + textValue;
 
-        // Set the updated inline style back to the element
-        element.setAttribute("style", inlineStyle);
-      });
+      //   // Set the updated inline style back to the element
+      //   element.setAttribute("style", inlineStyle);
+      // });
       // document.body.insertAdjacentHTML("beforeend", injectedHTML);
       // const removeButton = document.getElementById("removeButton");
       // if (removeButton) {

@@ -20,9 +20,9 @@ body {
   margin: 0;
   padding: 0;
   .background {
-    height: 75vh;
+    height: 175vh;
     width: 75vw;
-    background-color: black;
+    background-color: rgb(169, 179, 255);
     display: grid;
     place-items: center;
     color: white;
@@ -40,27 +40,38 @@ body {
   #popup {
     display: flex;
     position: fixed;
-    bottom: 0;
+    bottom: 1vh;
     // inset: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: white;
+    background-color: rgba(220, 208, 208, 0.75);
+    backdrop-filter: blur(50px);
     // width: 300px;
     // height: 200px;
-    border: 1px solid #ccc;
-    overflow: auto; /* Enable scrolling if content exceeds height */
+    overflow: hidden;
     z-index: 9999;
     pointer-events: all;
+    padding: 0.28em;
+    border-radius: 0.5rem;
     div {
-      height: 2rem;
-      aspect-ratio: 1;
+      height: 2.5rem;
+      aspect-ratio: 1.5;
       border-radius: 0.5rem;
       // background-color: blue;
       // background-color: lch(80, 100, 0);
     }
     div + div {
-      margin-left: 0.5rem;
+      margin-left: 0.28em;
       // background-color: lch(10, 100, 120);
+    }
+    button#randomizeButton {
+      margin-left: 0.28em;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: white;
+      height: 2.5rem;
+      padding-inline: 0.5em;
+      cursor: pointer;
     }
   }
 }
