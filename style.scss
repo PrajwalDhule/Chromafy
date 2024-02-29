@@ -1,17 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", "Instrument Sans", sans-serif;
+}
+
 body {
   position: relative;
-  /* position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%); */
+  // position: fixed;
+  // bottom: 0;
+  // left: 50%;
+  // transform: translateX(-50%);
   // background-color: white;
   // width: 300px;
   // height: 100px;
-  // /* width: 100vw;
-  // height: 100vh; */
+  // width: 100vw;
+  // height: 100vh;
   // border: 1px solid #ccc;
-  // overflow: hidden; /* Prevents scrollbar */
-  // margin: 0; /* Remove default margin */
+  // overflow: hidden;
+  // margin: 0;
   // z-index: 9999;
   overflow-x: hidden;
   height: 200vh;
@@ -48,30 +55,99 @@ body {
     backdrop-filter: blur(50px);
     // width: 300px;
     // height: 200px;
-    overflow: hidden;
+    // overflow: hidden;
     z-index: 9999;
     pointer-events: all;
     padding: 0.28em;
     border-radius: 0.5rem;
+    input {
+      height: 0;
+      width: 0;
+      opacity: 0;
+    }
     div {
-      height: 2.5rem;
-      aspect-ratio: 1.5;
+      height: 3rem;
       border-radius: 0.5rem;
+      cursor: pointer;
+      border: 1.5px solid transparent;
       // background-color: blue;
       // background-color: lch(80, 100, 0);
+    }
+    div.color {
+      aspect-ratio: 1.5;
     }
     div + div {
       margin-left: 0.28em;
       // background-color: lch(10, 100, 120);
     }
-    button#randomizeButton {
-      margin-left: 0.28em;
+    div:not(.color) {
+      background-color: white;
+    }
+    .scheme-settings {
+      position: relative;
+      .scheme-list {
+        display: none;
+        position: absolute;
+        left: 50%;
+        bottom: 135%;
+        transform: translate(-50%, 0);
+        height: fit-content;
+        z-index: 9999;
+        padding: 0.5em;
+        font-size: 0.9rem;
+        cursor: auto;
+        p {
+          margin: 0;
+          padding: 0.5em 0 1em 0.25em;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid;
+          place-items: center;
+          gap: 0.5em;
+          li {
+            padding: 0.5em 0.75em;
+            background-color: rgb(250, 250, 250);
+            color: rgb(16, 16, 16);
+            width: 16em;
+            border-radius: 8px;
+            border: 1px solid rgb(224, 224, 224);
+            cursor: pointer;
+            &:hover {
+              background-color: rgb(240, 240, 240);
+            }
+          }
+          li.scheme-option-selected {
+            background-color: rgb(20, 20, 20);
+            color: rgb(250, 250, 250);
+          }
+        }
+      }
+      .scheme-list-open {
+        display: block;
+      }
+    }
+    button.primary-button {
       border: none;
       border-radius: 0.5rem;
-      background-color: white;
-      height: 2.5rem;
-      padding-inline: 0.5em;
+      background-color: transparent;
+      height: 100%;
       cursor: pointer;
+    }
+    button {
+      svg {
+        height: 2em;
+        aspect-ratio: auto;
+        opacity: 0.825;
+        padding-inline: 0.75em;
+        display: grid;
+        place-items: center;
+      }
+    }
+    > *:hover {
+      border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
     }
   }
 }

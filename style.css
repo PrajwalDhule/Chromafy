@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", "Instrument Sans", sans-serif;
+}
+
 body {
   position: relative;
-  /* position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%); */
   overflow-x: hidden;
   height: 200vh;
   width: 100vw;
@@ -38,28 +40,95 @@ body .background {
   background-color: rgba(220, 208, 208, 0.75);
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
-  overflow: hidden;
   z-index: 9999;
   pointer-events: all;
   padding: 0.28em;
   border-radius: 0.5rem;
 }
+.chromafy-wrapper #popup input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
 .chromafy-wrapper #popup div {
-  height: 2.5rem;
-  aspect-ratio: 1.5;
+  height: 3rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+.chromafy-wrapper #popup div.color {
+  aspect-ratio: 1.5;
 }
 .chromafy-wrapper #popup div + div {
   margin-left: 0.28em;
 }
-.chromafy-wrapper #popup button#randomizeButton {
-  margin-left: 0.28em;
+.chromafy-wrapper #popup div:not(.color) {
+  background-color: white;
+}
+.chromafy-wrapper #popup .scheme-settings {
+  position: relative;
+}
+.chromafy-wrapper #popup .scheme-settings .scheme-list {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 135%;
+  transform: translate(-50%, 0);
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 9999;
+  padding: 0.5em;
+  font-size: 0.9rem;
+  cursor: auto;
+}
+.chromafy-wrapper #popup .scheme-settings .scheme-list p {
+  margin: 0;
+  padding: 0.5em 0 1em 0.25em;
+}
+.chromafy-wrapper #popup .scheme-settings .scheme-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  gap: 0.5em;
+}
+.chromafy-wrapper #popup .scheme-settings .scheme-list ul li {
+  padding: 0.5em 0.75em;
+  background-color: rgb(250, 250, 250);
+  color: rgb(16, 16, 16);
+  width: 16em;
+  border-radius: 8px;
+  border: 1px solid rgb(224, 224, 224);
+  cursor: pointer;
+}
+.chromafy-wrapper #popup .scheme-settings .scheme-list ul li:hover {
+  background-color: rgb(240, 240, 240);
+}
+.chromafy-wrapper #popup .scheme-settings .scheme-list ul li.scheme-option-selected {
+  background-color: rgb(20, 20, 20);
+  color: rgb(250, 250, 250);
+}
+.chromafy-wrapper #popup .scheme-settings .scheme-list-open {
+  display: block;
+}
+.chromafy-wrapper #popup button.primary-button {
   border: none;
   border-radius: 0.5rem;
-  background-color: white;
-  height: 2.5rem;
-  padding-inline: 0.5em;
+  background-color: transparent;
+  height: 100%;
   cursor: pointer;
+}
+.chromafy-wrapper #popup button svg {
+  height: 2em;
+  aspect-ratio: auto;
+  opacity: 0.825;
+  padding-inline: 0.75em;
+  display: grid;
+  place-items: center;
+}
+.chromafy-wrapper #popup > *:hover {
+  border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
 }
 
 .prajwal-text {

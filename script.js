@@ -1,4 +1,18 @@
-// import chroma from "chroma-js";
+let globalColorSchemeId = -1,
+  theme = "light";
+
+if (!localStorage.getItem("chromafyThemeState")) {
+  const themeState = "light";
+  localStorage.setItem("chromafyThemeState", themeState);
+} else {
+  theme = localStorage.getItem("chromafyThemeState");
+}
+
+if (!localStorage.getItem("chromafyColorState")) {
+  const colorState = [];
+  localStorage.setItem("chromafyColorState", colorState);
+}
+
 if (
   !window
     .getComputedStyle(document.documentElement)
@@ -21,23 +35,16 @@ function setPalette(colorSchemeId = -1) {
     mode: "hsl",
   };
 
-  if (!(colorSchemeId <= 5 || colorSchemeId >= 0))
-    colorSchemeId = Math.random() * 5;
+  if (!(colorSchemeId <= 5 && colorSchemeId >= 0))
+    colorSchemeId = Math.round(Math.random() * 5);
 
-  // const targetHueSteps = {
-  //   analogous: [0, 30, 60],
-  //   triadic: [0, 120, 240],
-  //   tetradic: [0, 90, 180, 270],
-  //   complementary: [0, 180],
-  //   splitComplementary: [0, 150, 210],
-  // };
   const targetHueSteps = [
     { hueSteps: [0, 0, 0], name: "monochromatic" },
     { hueSteps: [0, 30, 60], name: "analogous" },
-    { hueSteps: [0, 120, 240], name: "triadic" },
-    { hueSteps: [0, 90, 180, 270], name: "tetradic" },
     { hueSteps: [0, 180, 180], name: "complementary" },
     { hueSteps: [0, 150, 210], name: "splitComplementary" },
+    { hueSteps: [0, 120, 240], name: "triadic" },
+    { hueSteps: [0, 90, 180, 270], name: "tetradic" },
   ];
 
   const palettes = {};
@@ -65,14 +72,6 @@ function setPalette(colorSchemeId = -1) {
     mode: "hsl",
   };
 
-  // for (const type of Object.keys(targetHueSteps)) {
-  //   palettes[type] = targetHueSteps[type].map((step) => ({
-  //     l: baseColor.l,
-  //     c: baseColor.c,
-  //     h: adjustHue(baseColor.h + step),
-  //     mode: "lch",
-  //   }));
-  // }
   document.documentElement.style.setProperty(
     `--chroma-text`,
     getColor(textColor)
@@ -93,21 +92,13 @@ function setPalette(colorSchemeId = -1) {
     `--chroma-accent`,
     getColor(palettes.colors[2])
   );
-
-  console.log(textColor, " ", bgColor);
-  console.log(getColor(textColor), " ", getColor(bgColor));
-
-  // return palettes;
 }
 
 function getColor(colorObject) {
   if (colorObject.mode === "lch") {
-    // Access l, c, and h values
     const l = colorObject.l;
     const c = colorObject.c;
     const h = colorObject.h;
-
-    // Convert lch values to RGB color
 
     const rgbColor = chroma.lch(l, c, h).css();
     const hslColor = chroma(rgbColor).hsl();
@@ -125,15 +116,18 @@ function generateRandomHex() {
   return "#" + hexValue;
 }
 
-const randomHex = generateRandomHex();
-console.log(randomHex);
-
 document.addEventListener("DOMContentLoaded", function () {
+  addRandomizeEvent();
+  addToggleSchemeOptionEvent();
+  addSelectSchemeEvent();
+});
+
+function addRandomizeEvent() {
   document
     .getElementById("randomizeButton")
     .addEventListener("click", function () {
       //   const textValue = localStorage.getItem("text");
-      setPalette(0);
+      setPalette(globalColorSchemeId);
 
       // const textValue = generateRandomHex();
 
@@ -160,7 +154,48 @@ document.addEventListener("DOMContentLoaded", function () {
       //   removeButton.addEventListener("click", removeInjectedElement);
       // }
     });
-});
+}
+
+function addToggleSchemeOptionEvent() {
+  document
+    .getElementById("schemeButton")
+    .addEventListener("click", function () {
+      document
+        .getElementById("scheme-list")
+        ?.classList.toggle("scheme-list-open");
+    });
+}
+
+function addSelectSchemeEvent() {
+  let schemeOptions = document.getElementsByClassName("scheme-option");
+  for (let i = 0; i < schemeOptions.length; i++) {
+    let schemeOption = schemeOptions[i];
+    schemeOption.addEventListener("click", function () {
+      globalColorSchemeId = parseInt(
+        schemeOption.getAttribute("data-scheme-id"),
+        10
+      );
+      selectScheme(schemeOptions, schemeOption);
+    });
+  }
+}
+
+function selectScheme(schemeOptions, schemeOption) {
+  for (let i = 0; i < schemeOptions.length; i++) {
+    schemeOptions[i].classList.remove("scheme-option-selected");
+  }
+  schemeOption.classList.add("scheme-option-selected");
+}
+
+function toggleTheme() {
+  theme = theme == "light" ? "dark" : "light";
+  localStorage.setItem("chromafyThemeState", theme);
+  const colorPalette = JSON.parse(
+    localStorage.getItem("chromafyColorState")
+  )[0];
+  // change color palette values by 100 - currentValue
+  // set the values in the html, modify the setPalette function to wrap the html part into a separate function for reusability
+}
 
 // Create HTML element to be injected
 // const injectedHTML = `

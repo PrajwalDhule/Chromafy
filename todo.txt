@@ -3,6 +3,7 @@ FEATURES
 
 - randomly generate palette of 5 colors (text and bg very subtle) possibly based on a selected color scheme
 - apply color to appropriate ui elements
+- generate palettes using prompts
 - can lock color(s)
 - provide and apply shades of the colors as well
 - export the palettes in various formats
@@ -11,13 +12,16 @@ FEATURES
 TASKS
 
 x 2024-02-27 - generate palette of 5 colors (text and bg very subtle) 
-- generate based on color scheme if one is selected
-- handle light and dark mode
+x 2024-02-29 - generate based on color scheme if one is selected
+- handle light and dark mode (just 100 - lightness)
+- fine tune the colors to not go too light on light mode & too dark on dark mode, have a range of lightness for each color
 - handle locking of colors and how it will affect palette generation
+- relation between primary secondary and accent colors and how generation of one is based on the other
 - apply text color globally (html, input, a) with an option to turn off global application
 - rest of the colors, optionally text as well, should be applied to their corresponding classes (original primary color should be applied as a background-color to .bg-chroma-primary)
 - first apply the colors in terms of variables to all the required elements, and then for every palette generation, keep changing the variable values
-- fine tune the colors to not go too light on light mode & too dark on dark mode, basically contrast
+- PROMPT BASED GENERATION
+- undo redo pallette generation
 - CONTRAST
 - generate shades of the colors with maybe a naming convention like tailwind (red-300, blue-700)
 - convert the colors to various formats (rgb, hsl, etc) and variables (css, tailwind, etc) and export
