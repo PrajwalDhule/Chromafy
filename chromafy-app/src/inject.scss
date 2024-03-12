@@ -1,0 +1,64 @@
+.fg-chroma-text {
+  color: var(--chroma-text) !important;
+}
+.fg-chroma-background {
+  color: var(--chroma-background) !important;
+}
+.fg-chroma-primary {
+  color: var(--chroma-primary) !important;
+}
+.fg-chroma-secondary {
+  color: var(--chroma-secondary) !important;
+}
+.fg-chroma-accent {
+  color: var(--chroma-accent) !important;
+}
+
+.bg-chroma-text {
+  background-color: var(--chroma-text) !important;
+}
+.bg-chroma-background {
+  background-color: var(--chroma-background) !important;
+}
+.bg-chroma-primary {
+  background-color: var(--chroma-primary) !important;
+}
+.bg-chroma-secondary {
+  background-color: var(--chroma-secondary) !important;
+}
+.bg-chroma-accent {
+  background-color: var(--chroma-accent) !important;
+}
+
+@for $i from 1 through 19 {
+  .fg-chroma-text-#{$i*5} {
+    color: var(--chroma-text-$i * 5) !important;
+  }
+  .fg-chroma-background-#{$i*5} {
+    color: var(--chroma-background-$i * 5) !important;
+  }
+  .fg-chroma-primary-#{$i*5} {
+    color: var(--chroma-primary-$i * 5) !important;
+  }
+  .fg-chroma-secondary-#{$i*5} {
+    color: var(--chroma-secondary-$i * 5) !important;
+  }
+  .fg-chroma-accent-#{$i*5} {
+    color: var(--chroma-accent-$i * 5) !important;
+  }
+  .bg-chroma-text-#{$i*5} {
+    background-color: var(--chroma-text-$i * 5) !important;
+  }
+  .bg-chroma-background-#{$i*5} {
+    background-color: var(--chroma-background-$i * 5) !important;
+  }
+  .bg-chroma-primary-#{$i*5} {
+    background-color: var(--chroma-primary-$i * 5) !important;
+  }
+  .bg-chroma-secondary-#{$i*5} {
+    background-color: var(--chroma-secondary-$i * 5) !important;
+  }
+  .bg-chroma-accent-#{$i*5} {
+    background-color: var(--chroma-accent-$i * 5) !important;
+  }
+}

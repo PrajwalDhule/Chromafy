@@ -5,24 +5,17 @@
 }
 
 body {
+  overflow-x: hidden;
+}
+
+#chromafy-root {
   position: relative;
   overflow-x: hidden;
-  height: 200vh;
+  height: 100vh;
   width: 100vw;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-body .background {
-  height: 175vh;
-  width: 75vw;
-  background-color: rgb(169, 179, 255);
-  display: grid;
-  place-items: center;
-  color: white;
-  border-radius: 2rem;
-  cursor: pointer;
-  margin: 2rem;
 }
 
 .chromafy-wrapper {
@@ -37,12 +30,12 @@ body .background {
   bottom: 1vh;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(220, 208, 208, 0.75);
+  background-color: hsla(0, 0%, 75%, 0.6);
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
-  z-index: 9999;
+  z-index: 9999 !important;
   pointer-events: all;
-  padding: 0.28em;
+  padding: 0.32em;
   border-radius: 0.5rem;
 }
 .chromafy-wrapper #popup input {
@@ -55,14 +48,31 @@ body .background {
   border-radius: 0.5rem;
   cursor: pointer;
   border: 1.5px solid transparent;
+  box-sizing: border-box;
 }
-.chromafy-wrapper #popup div.color {
-  aspect-ratio: 1.5;
+.chromafy-wrapper #popup div.color-box {
+  width: 4.5rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transition: width 250ms ease-in-out;
+}
+.chromafy-wrapper #popup div.color-box p {
+  opacity: 0;
+  transition: opacity 150ms 100ms ease-in-out;
+  margin: 0;
+  padding: 0 0.5em;
+}
+.chromafy-wrapper #popup div.color-box:hover {
+  width: 8rem;
+}
+.chromafy-wrapper #popup div.color-box:hover p {
+  opacity: 1;
 }
 .chromafy-wrapper #popup div + div {
   margin-left: 0.28em;
 }
-.chromafy-wrapper #popup div:not(.color) {
+.chromafy-wrapper #popup div:not(.color-box) {
   background-color: white;
 }
 .chromafy-wrapper #popup .scheme-settings {
@@ -123,15 +133,19 @@ body .background {
   height: 2em;
   aspect-ratio: auto;
   opacity: 0.825;
-  padding-inline: 0.75em;
+  width: 3.5em;
   display: grid;
   place-items: center;
+}
+.chromafy-wrapper #popup button #darkThemeIcon {
+  display: none;
 }
 .chromafy-wrapper #popup > *:hover {
   border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
 }
 
 .prajwal-text {
+  color: blue !important;
   font-weight: 700;
   font-size: 2rem;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=index.css.map */
