@@ -22,21 +22,24 @@ x 2024-03-11 - rest of the colors, optionally text as well, should be applied to
 x 2024-03-12 - fine tune the colors to not go too light on light mode & too dark on dark mode, have a range of lightness for each color (different for both themes, and not just a range like 100 - l)
 x 2024-03-12 - inject a css file with !important
 x 2024-03-12 - hover animations to reveal title (text, primary, etc)
+x 2024-03-21 - undo redo pallette generation (store a colorState (useState), also be careful that changing palette variable after redo or undoing can push those colors into the colorState acc to the current logic which we don't want)
 
+- seperate functions into event handlers and helper funcs and abstract them into seperate files
+- apply proper names to functions ("handle" as prefix)
 - add error handling (refer chatgpt chats)
 - color picker
-- undo redo pallette generation (store a colorState (useState), also be careful that changing palette variable after redo or undoing can push those colors into the colorState acc to the current logic which we don't want)
-- CONTRAST
 - PROMPT BASED GENERATION
 - convert the colors to various formats (rgb, hsl, etc) and variables (css, tailwind, etc) and export
-- documentation
-- website
+- refer to realtimecolors "how does it work" section for a guide on which classes to give to which components (helpful for documentation)
+- documentation 
+- website (have a section showcasing multiple components)
 
 
 LOW PRIORITY/OPTIONAL:
 - handle locking of colors and how it will affect palette generation
 - relation between primary secondary and accent colors and how generation of one is based on the other
 - apply text color globally (html, input, a) with an option to turn off global application
+- CONTRAST
 
 
 EXTRA FEATURES/IDEAS

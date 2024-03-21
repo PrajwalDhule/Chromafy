@@ -7,6 +7,7 @@
 
 body {
   overflow-x: hidden;
+  margin: 0;
 }
 
 #chromafy-root {
@@ -37,6 +38,10 @@ body {
   width: 100vw;
   pointer-events: none;
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0;
+  padding: 0;
+  // backdrop-filter: blur(50px);
   #popup {
     display: flex;
     position: fixed;
@@ -155,14 +160,15 @@ body {
       background-color: transparent;
       height: 100%;
       cursor: pointer;
+      padding: 0 1.25em;
     }
     button {
       svg {
         height: 2em;
-        aspect-ratio: auto;
+        width: 2em;
+        // aspect-ratio: 1;
         opacity: 0.825;
         // padding-inline: 0.75em;
-        width: 3.5em;
         display: grid;
         place-items: center;
       }
@@ -181,4 +187,32 @@ body {
   // background-color: var(--background-color);
   font-weight: 700;
   font-size: 2rem;
+}
+
+.export-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 50rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  ul {
+    list-style: none;
+    margin: 0.5em 0 1em 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    gap: 1rem;
+  }
+  .code-container {
+    text-align: left;
+  }
+  .color-settings {
+    display: flex;
+    justify-content: space-between;
+  }
 }

@@ -14,23 +14,24 @@
   align-items: flex-start;
   color: white;
   border-radius: 2rem;
-  cursor: pointer;
   // margin: 2rem;
   padding-left: 7.5vw;
   h1 {
-    width: 40vw;
+    width: 50vw;
     padding-left: 0;
     margin-left: 0;
     text-align: left;
+    font-size: 3rem;
   }
   div {
     button + button {
-      margin-left: 1em;
+      margin-left: 2em;
     }
     button {
       border: none;
       border-radius: 0.5rem;
       padding: 0 1em;
+      cursor: pointer;
     }
   }
 }

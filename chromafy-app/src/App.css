@@ -13,22 +13,23 @@
   align-items: flex-start;
   color: white;
   border-radius: 2rem;
-  cursor: pointer;
   padding-left: 7.5vw;
 }
 .background h1 {
-  width: 40vw;
+  width: 50vw;
   padding-left: 0;
   margin-left: 0;
   text-align: left;
+  font-size: 3rem;
 }
 .background div button + button {
-  margin-left: 1em;
+  margin-left: 2em;
 }
 .background div button {
   border: none;
   border-radius: 0.5rem;
   padding: 0 1em;
+  cursor: pointer;
 }
 
 .logo {
