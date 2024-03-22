@@ -158,26 +158,90 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -55%);
   z-index: 9999;
-  width: 50rem;
+  width: 60rem;
   background-color: rgb(255, 255, 255);
   border-radius: 0.75rem;
-  padding: 1rem;
 }
 .export-popup ul {
   list-style: none;
-  margin: 0.5em 0 1em 0;
+  margin: 0;
   padding: 0;
 }
 .export-popup .container {
   display: flex;
+  align-items: center;
   gap: 1rem;
+  margin: 1em 0;
+  padding: 0 1.25em;
 }
-.export-popup .code-container {
+.export-popup .container h4 {
+  font-weight: 400;
+  padding: 0.25em 1em 0.25em 0;
+  border-right: 0.5px solid gray;
+}
+.export-popup .code-container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1em 1.25em;
+  gap: 1em;
+}
+.export-popup .code-container-wrapper > div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.export-popup .code-container-wrapper > div .btn-wrapper {
+  display: flex;
+  gap: 1em;
+}
+.export-popup .code-container-wrapper > div .btn-wrapper button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.36em 0.75em;
+  color: rgb(26, 26, 26);
+  background-color: rgb(250, 250, 250);
+  border: none;
+  border-radius: 0.5em;
+  border: 0.5px solid hsla(0, 0%, 50%, 0.35);
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+.export-popup .code-container-wrapper > div .btn-wrapper button:hover {
+  background-color: rgb(245, 245, 245);
+}
+.export-popup .code-container-wrapper > div .code-block {
+  padding: 0.25em 1em;
+  height: 40vh;
+  overflow-y: auto;
+  width: 100%;
   text-align: left;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 0.5em;
+  border: 0.5px solid hsla(0, 0%, 50%, 0.25);
+}
+.export-popup .code-container-wrapper > div .code-block pre {
+  white-space: pre-wrap;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
 }
 .export-popup .color-settings {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.export-popup .option {
+  border-radius: 0.5em;
+  padding: 0.36em 1em;
+  cursor: pointer;
+}
+.export-popup .selected {
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 25, 25);
 }/*# sourceMappingURL=index.css.map */

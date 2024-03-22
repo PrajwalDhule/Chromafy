@@ -134,7 +134,7 @@ const Popup = () => {
     ];
 
     const primaryColor = {
-      h: Math.random() * 360,
+      h: Math.round(Math.random() * 360),
       s: Math.round(Math.random() * 90) + 10,
       l:
         theme == "light"
@@ -714,7 +714,7 @@ const Popup = () => {
           </div>
         </div>
       </div>
-      <ExportPopup />
+      <ExportPopup palette={palettes && palettes[paletteIndex]} />
       <div class="bg-chroma-background background">
         <h1 className="fg-chroma-text">
           Test <span className="fg-chroma-accent">Colors</span> on your own
