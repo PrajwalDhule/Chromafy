@@ -743,7 +743,9 @@ const Popup = () => {
         </div>
       </div>
       <ExportPopup palette={palettes && palettes[paletteIndex]} />
-      <ColorPicker />
+      <ColorPicker
+        color={palettes && palettes[paletteIndex] && palettes[paletteIndex][2]}
+      />
       <div class="bg-chroma-background background">
         <h1 className="fg-chroma-text">
           Test <span className="fg-chroma-accent">Colors</span> on your own

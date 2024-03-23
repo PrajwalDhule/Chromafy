@@ -296,9 +296,46 @@ body {
   left: 50%;
   transform: translate(-50%, -55%);
   z-index: 9999;
-  width: 25rem;
-  height: 25rem;
+  width: 16rem;
   background-color: white;
+  padding: 1em;
+  border-radius: 1em;
+}
+.color-picker .saturation-lightness-picker {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+.color-picker .saturation-lightness-picker .layer {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5em;
+}
+.color-picker .saturation-lightness-picker .layer-white {
+  z-index: 1;
+  background: linear-gradient(to right, #fff, transparent);
+}
+.color-picker .saturation-lightness-picker .layer-black {
+  z-index: 2;
+  background: linear-gradient(to top, #000, transparent);
+}
+.color-picker .saturation-lightness-picker .layer-hue {
+  z-index: 0;
+}
+.color-picker .saturation-lightness-picker #color-picker-pointer {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+  outline: 0.36rem solid white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px black;
 }
 .color-picker .hue-slider {
   position: relative;
@@ -312,12 +349,23 @@ body {
 .color-picker .hue-slider input[type=range] {
   position: absolute;
   inset: 0;
-  background-color: transparent;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  width: 100%;
+  background-color: transparent;
 }
 .color-picker .hue-slider input[type=range]::-webkit-slider-thumb {
+  outline: 0.36rem solid white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px black;
+}
+.color-picker .hue-slider input[type=range]::-moz-range-thumb {
+  outline: 0.36rem solid white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px black;
+}
+.color-picker .hue-slider input[type=range]::-ms-thumb {
   outline: 0.36rem solid white;
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;

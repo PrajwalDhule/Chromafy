@@ -1,0 +1,4490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head
+    ><meta charset="UTF-8" /><meta
+      name="description"
+      content="Visualize your colors and fonts on a real website." /><meta
+      name="viewport"
+      content="width=device-width" /><link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png" /><meta
+      name="generator"
+      content="Astro v3.5.5" /><title>Realtime Colors</title
+    ><meta
+      name="keywords"
+      content="colorpicker, color palettes, color theory, UI design, UX design, brand styleguide" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" /><meta
+      http-equiv="Cache-control"
+      content="max-age=31536000" /><meta
+      http-equiv="Content-Type"
+      content="text/html; charset=UTF-8" /><meta
+      property="og:title"
+      content="Realtime Colors" /><meta
+      property="og:description"
+      content="Visualize your color palettes on a real website." /><meta
+      property="og:image"
+      content="/preview.png" /><meta
+      property="og:url"
+      content="https://realtimecolors.com" /><meta
+      property="og:type"
+      content="website" /><meta
+      property="og:site_name"
+      content="Realtime Colors" /><meta
+      property="og:image:width"
+      content="800" /><meta property="og:image:height" content="418" /><meta
+      name="twitter:card"
+      content="summary_large_image" /><link
+      rel="stylesheet"
+      href="/styles.css" /><link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" /><link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin /><link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=McLaren&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet" /><link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/favicon.png" /><script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7300FPX4EJ"
+    ></script
+    ><!-- <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script> --><style>
+      .footer[data-astro-cid-sz7xmlte] {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+        border-radius: 10px;
+        background-color: var(--text5);
+        color: var(--text);
+        padding: 3em 5em;
+        width: 100%;
+        margin-bottom: 10em;
+      }
+      .footer-cols[data-astro-cid-sz7xmlte] {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 3em;
+        width: 100%;
+      }
+      .footer-col[data-astro-cid-sz7xmlte] {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 30%;
+      }
+      .footer-col[data-astro-cid-sz7xmlte]
+        > .menu-item[data-astro-cid-sz7xmlte] {
+        padding: 0;
+      }
+      @media screen and (max-width: 1000px) {
+        .footer-cols[data-astro-cid-sz7xmlte] {
+          flex-direction: column;
+        }
+        .footer-col[data-astro-cid-sz7xmlte] {
+          width: 100%;
+        }
+        .footer[data-astro-cid-sz7xmlte] {
+          padding: 3em;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/_astro/index.99689014.css" />
+    <link rel="stylesheet" href="/_astro/blog-post.3213395d.css" /><script
+      type="module"
+      src="/_astro/hoisted.ca36766a.js"
+    ></script
+  ></head>
+  <body>
+    <div class="navbar" data-astro-cid-5blmo7yk>
+      <div class="logo" data-astro-cid-5blmo7yk>
+        <img
+          src="/favicon.png"
+          alt="logoface"
+          class="logoface"
+          data-astro-cid-5blmo7yk
+        />
+        <a href="/" data-astro-cid-5blmo7yk>
+          <p class="sitename" data-astro-cid-5blmo7yk>Realtime Colors</p>
+        </a>
+      </div>
+      <div class="ham-menu" data-astro-cid-5blmo7yk>
+        <button id="hamburger" data-astro-cid-5blmo7yk>
+          <span data-astro-cid-5blmo7yk></span>
+          <span data-astro-cid-5blmo7yk></span>
+        </button>
+      </div>
+      <div class="menu hide" data-astro-cid-5blmo7yk>
+        <a
+          href="https://www.figma.com/community/plugin/1234060894101724457/Realtime-Colors"
+          target="_blank"
+          class="menu-item menu-item-mobile exclude"
+          data-astro-cid-5blmo7yk
+          >Figma Plugin
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            data-astro-cid-5blmo7yk
+          >
+            <rect
+              x="0.318182"
+              y="0.318182"
+              width="13.3636"
+              height="13.3636"
+              rx="2.10647"
+              stroke="var(--text)"
+              stroke-width="0.636364"
+              data-astro-cid-5blmo7yk
+            ></rect>
+            <path
+              d="M4.33594 9.7564L9.75615 4.33618M9.75615 4.33618L5.41998 4.33618M9.75615 4.33618V8.94337"
+              stroke="var(--text)"
+              stroke-width="0.813033"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-astro-cid-5blmo7yk
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=Juxtopposed.realtime-themes"
+          target="_blank"
+          class="menu-item menu-item-mobile exclude"
+          data-astro-cid-5blmo7yk
+          >VS Code Theme Editor
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            data-astro-cid-5blmo7yk
+          >
+            <rect
+              x="0.318182"
+              y="0.318182"
+              width="13.3636"
+              height="13.3636"
+              rx="2.10647"
+              stroke="var(--text)"
+              stroke-width="0.636364"
+              data-astro-cid-5blmo7yk
+            ></rect>
+            <path
+              d="M4.33594 9.7564L9.75615 4.33618M9.75615 4.33618L5.41998 4.33618M9.75615 4.33618V8.94337"
+              stroke="var(--text)"
+              stroke-width="0.813033"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-astro-cid-5blmo7yk
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="/docs/about-realtime-colors"
+          target="_blank"
+          class="menu-item menu-item-mobile"
+          data-astro-cid-5blmo7yk
+          >Docs</a
+        >
+        <div class="dropdown" data-astro-cid-5blmo7yk>
+          <button class="dropbutton" data-astro-cid-5blmo7yk>
+            Templates
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="7"
+              viewBox="0 0 12 7"
+              fill="none"
+              data-astro-cid-5blmo7yk
+            >
+              <path
+                d="M11 1L6 6L1 1"
+                stroke="var(--static2)"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-astro-cid-5blmo7yk
+              ></path>
+            </svg>
+          </button>
+          <div class="dropdown-content" data-astro-cid-5blmo7yk>
+            <a
+              href="/dashboard"
+              target="_blank"
+              class="menu-item-mobile"
+              data-astro-cid-5blmo7yk
+              >Dashboard</a
+            >
+            <a
+              href="/blog-post"
+              target="_blank"
+              class="menu-item-mobile"
+              data-astro-cid-5blmo7yk
+              >Blog Post</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <main data-astro-cid-j7pv25f6>
+      <div class="hero" data-astro-cid-j7pv25f6>
+        <div class="hero-text" data-astro-cid-j7pv25f6>
+          <a href="./docs/releases" class="latest" data-astro-cid-j7pv25f6
+            >🎉 VS Code Theme Editor Released →</a
+          >
+          <h1 data-astro-cid-j7pv25f6
+            >Visualize Your <br data-astro-cid-j7pv25f6 /><span
+              class="color-effect"
+              data-astro-cid-j7pv25f6
+              >Colors</span
+            >
+            & <span class="font-effect" data-astro-cid-j7pv25f6>Fonts</span>
+            <br data-astro-cid-j7pv25f6 />On a Real Site
+          </h1>
+          <p data-astro-cid-j7pv25f6
+            >Choosing colors or typography for your website?<br
+              data-astro-cid-j7pv25f6
+            />Use the Toolbar below to realize your choices.</p
+          >
+          <div class="hero-cta" data-astro-cid-j7pv25f6>
+            <a
+              href="#toolbar"
+              class="primary-button primary-text-contrast highlight-toolbar"
+              data-astro-cid-j7pv25f6
+              >Get Started</a
+            >
+            <a href="#how" class="secondary-button" data-astro-cid-j7pv25f6
+              >How does it work?</a
+            >
+          </div>
+          <div class="hero-scroll" data-astro-cid-j7pv25f6>
+            <svg
+              width="23"
+              height="33"
+              viewBox="0 0 23 33"
+              fill="none"
+              style="height: 70%"
+              data-astro-cid-j7pv25f6
+            >
+              <rect
+                x="0.767442"
+                y="0.767442"
+                width="20.7209"
+                height="31.4651"
+                rx="10.3605"
+                stroke="var(--text)"
+                stroke-width="1.53488"
+                data-astro-cid-j7pv25f6
+              ></rect>
+              <rect
+                x="9"
+                y="8"
+                width="4"
+                height="8"
+                rx="2"
+                fill="var(--text)"
+                data-astro-cid-j7pv25f6
+              ></rect>
+            </svg>
+            <small data-astro-cid-j7pv25f6>Scroll to see more sections</small>
+          </div>
+        </div>
+        <div class="hero-img" data-astro-cid-j7pv25f6>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="652"
+            height="644"
+            viewBox="0 0 652 644"
+            fill="none"
+            class="mondrian"
+            data-astro-cid-j7pv25f6
+          >
+            <rect
+              opacity="0.05"
+              x="1"
+              width="163"
+              height="60"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="424"
+              width="193"
+              height="60"
+              rx="10"
+              fill="var(--secondary)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="424"
+              y="68"
+              width="193"
+              height="175"
+              rx="10"
+              fill="var(--secondary)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              opacity="0.2"
+              x="424"
+              y="401"
+              width="193"
+              height="79"
+              rx="10"
+              fill="var(--primary)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="255"
+              y="626"
+              width="362"
+              height="18"
+              rx="9"
+              fill="var(--bg)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="80"
+              y="579"
+              width="166"
+              height="65"
+              rx="10"
+              fill="var(--bg)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="255"
+              y="579"
+              width="160"
+              height="40"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              opacity="0.05"
+              x="255"
+              y="490"
+              width="160"
+              height="80"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              opacity="0.05"
+              x="255"
+              y="400"
+              width="160"
+              height="80"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="80"
+              y="68"
+              width="335"
+              height="324"
+              rx="10"
+              fill="var(--primary)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="80"
+              y="401"
+              width="166"
+              height="169"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="424"
+              y="490"
+              width="193"
+              height="129"
+              rx="10"
+              fill="var(--accent)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              opacity="0.05"
+              x="626"
+              y="490"
+              width="26"
+              height="154"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="424"
+              y="252"
+              width="91"
+              height="140"
+              rx="10"
+              fill="var(--bg)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="524"
+              y="252"
+              width="93"
+              height="140"
+              rx="10"
+              fill="var(--bg)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              opacity="0.05"
+              x="626"
+              width="26"
+              height="480"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="173"
+              width="242"
+              height="60"
+              rx="10"
+              fill="var(--bg)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="1"
+              y="68"
+              width="70"
+              height="157"
+              rx="10"
+              fill="var(--bg)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              opacity="0.05"
+              x="1"
+              y="234"
+              width="70"
+              height="259"
+              rx="10"
+              fill="var(--text)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+            <rect
+              x="1"
+              y="502"
+              width="70"
+              height="142"
+              rx="10"
+              fill="var(--secondary)"
+              data-astro-cid-j7pv25f6
+            ></rect>
+          </svg>
+        </div>
+      </div>
+      <div class="section column" id="why" data-astro-cid-j7pv25f6>
+        <h2 data-astro-cid-j7pv25f6>Why Realtime Colors?</h2>
+        <div class="section-cards" data-astro-cid-j7pv25f6>
+          <div class="section-card" data-astro-cid-j7pv25f6>
+            <svg
+              width="117"
+              height="117"
+              viewBox="0 0 117 117"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="section-card-img"
+              data-astro-cid-j7pv25f6
+            >
+              <circle
+                cx="58.5"
+                cy="58.5"
+                r="58.5"
+                fill="var(--bg)"
+                data-astro-cid-j7pv25f6
+              ></circle>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M87.8217 7.86778C88.7499 8.40648 89.0469 9.59549 88.5152 10.5277L58.9095 62.429C58.4148 63.2962 57.3564 63.6658 56.4294 63.295L4.14483 42.3812C3.18375 41.9968 2.67153 40.9403 2.99938 39.9584C10.7533 16.7379 32.672 0 58.5 0C69.185 0 79.2009 2.86463 87.8217 7.86778Z"
+                fill="var(--accent)"
+                fill-opacity="0.6"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M81.5 22.5L57.1395 64.8489L32 53.5"
+                stroke="var(--text)"
+                stroke-width="8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-astro-cid-j7pv25f6
+              ></path>
+            </svg>
+            <h4 class="highlight" data-astro-cid-j7pv25f6>Saves time</h4>
+            <p data-astro-cid-j7pv25f6
+              >No need to spend hours implementing different variations of
+              colors. Decide right away!</p
+            >
+          </div>
+          <div class="section-card" data-astro-cid-j7pv25f6>
+            <svg
+              width="112"
+              height="114"
+              viewBox="0 0 112 114"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="section-card-img"
+              data-astro-cid-j7pv25f6
+            >
+              <rect
+                width="58"
+                height="58"
+                rx="5"
+                fill="var(--bg)"
+                data-astro-cid-j7pv25f6
+              ></rect>
+              <rect
+                x="69"
+                y="25"
+                width="33"
+                height="33"
+                rx="5"
+                fill="var(--accent)"
+                fill-opacity="0.6"
+                data-astro-cid-j7pv25f6
+              ></rect>
+              <rect
+                x="69"
+                y="71"
+                width="43"
+                height="43"
+                rx="5"
+                fill="var(--text)"
+                fill-opacity="0.1"
+                data-astro-cid-j7pv25f6
+              ></rect>
+              <rect
+                x="20"
+                y="70"
+                width="38"
+                height="39"
+                rx="5"
+                fill="var(--text)"
+                data-astro-cid-j7pv25f6
+              ></rect>
+            </svg>
+            <h4 class="highlight" data-astro-cid-j7pv25f6>It’s Realistic</h4>
+            <p data-astro-cid-j7pv25f6
+              >Color Palettes make it hard to pick. This tool distributes the
+              colors on a real website.</p
+            >
+          </div>
+          <div class="section-card" data-astro-cid-j7pv25f6>
+            <svg
+              width="178"
+              height="89"
+              viewBox="0 0 178 89"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="section-card-img"
+              data-astro-cid-j7pv25f6
+            >
+              <rect
+                y="26"
+                width="154"
+                height="63"
+                rx="5"
+                fill="var(--accent)"
+                fill-opacity="0.6"
+                data-astro-cid-j7pv25f6
+              ></rect>
+              <path
+                d="M142 16L142 4"
+                stroke="var(--text)"
+                stroke-width="8"
+                stroke-linecap="round"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M163 34H174"
+                stroke="var(--text)"
+                stroke-width="8"
+                stroke-linecap="round"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M158 19L168 9"
+                stroke="var(--text)"
+                stroke-width="8"
+                stroke-linecap="round"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M62 57L73.5 68L94.5 47"
+                stroke="var(--text)"
+                stroke-width="8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-astro-cid-j7pv25f6
+              ></path>
+            </svg>
+            <h4 class="highlight" data-astro-cid-j7pv25f6>It’s simple</h4>
+            <p data-astro-cid-j7pv25f6
+              >Push a few buttons, and there you have it! Your very own branding
+              colors, ready to export.</p
+            >
+          </div>
+        </div>
+      </div>
+      <div class="part6 bento" id="bento" data-astro-cid-j7pv25f6>
+        <ul class="bento-wrapper" data-astro-cid-j7pv25f6>
+          <li
+            class="first-row-col1 primary-color-box primary-text-contrast"
+            data-astro-cid-j7pv25f6
+          >
+            <h2 data-astro-cid-j7pv25f6>300K+ Users</h2
+            ><span
+              class="bento-sub"
+              style="font-size: var(--p); font-weight: normal"
+              data-astro-cid-j7pv25f6
+              >and counting...</span
+            >
+          </li>
+          <li
+            class="first-row-col2 secondary-color-box secondary-text-contrast"
+            data-astro-cid-j7pv25f6
+          >
+            <h3 data-astro-cid-j7pv25f6>100% Free!</h3
+            ><span
+              class="bento-sub"
+              style="font-size: var(--p); font-weight: normal"
+              data-astro-cid-j7pv25f6
+              >Forever.</span
+            >
+          </li>
+          <li class="second-row-col1 text-color-box" data-astro-cid-j7pv25f6>
+            <span style="font-weight: bold; z-index: 5" data-astro-cid-j7pv25f6>
+              <h4 data-astro-cid-j7pv25f6>19K+ Plugin Users</h4>
+            </span>
+            <a
+              style="font-size: var(--p); font-weight: normal"
+              href="https://www.figma.com/community/plugin/1234060894101724457/Realtime-Colors"
+              target="_blank"
+              class="link reversed bento-link exclude"
+              data-astro-cid-j7pv25f6
+              >Check it out on Figma</a
+            >
+            <svg
+              width="335"
+              height="472"
+              viewBox="0 0 335 472"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="figma-icon"
+              data-astro-cid-j7pv25f6
+            >
+              <path
+                d="M15 236C15 264.427 29.205 289.546 50.8988 304.667C29.205 319.787 15 344.906 15 373.333C15 419.536 52.5239 457 98.7363 457C144.949 457 182.473 419.536 182.473 373.333V304.667V300.156C197.019 312.334 215.764 319.667 236.209 319.667C282.421 319.667 319.945 282.203 319.945 236C319.945 207.573 305.74 182.454 284.046 167.333C305.74 152.213 319.945 127.094 319.945 98.6667C319.945 52.4641 282.421 15 236.209 15H167.473H98.7363C52.5239 15 15 52.4641 15 98.6667C15 127.094 29.205 152.213 50.8988 167.333C29.205 182.454 15 207.573 15 236Z"
+                fill="var(--bg)"
+                stroke="var(--bg)"
+                stroke-width="30"
+                stroke-linejoin="round"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M98.7363 442C136.679 442 167.473 411.237 167.473 373.333V304.667H98.7363C60.7938 304.667 30 335.429 30 373.333C30 411.237 60.7938 442 98.7363 442Z"
+                fill="#0ACF83"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M30 236C30 198.096 60.7938 167.333 98.7363 167.333H167.473V304.667H98.7363C60.7938 304.667 30 273.904 30 236Z"
+                fill="#A259FF"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M30 98.6667C30 60.7627 60.7938 30 98.7363 30H167.473V167.333H98.7363C60.7938 167.333 30 136.571 30 98.6667Z"
+                fill="#F24E1E"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M167.473 30H236.209C274.151 30 304.945 60.7627 304.945 98.6667C304.945 136.571 274.151 167.333 236.209 167.333H167.473V30Z"
+                fill="#FF7262"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M304.945 236C304.945 273.904 274.151 304.667 236.209 304.667C198.266 304.667 167.473 273.904 167.473 236C167.473 198.096 198.266 167.333 236.209 167.333C274.151 167.333 304.945 198.096 304.945 236Z"
+                fill="#1ABCFE"
+                data-astro-cid-j7pv25f6
+              ></path>
+            </svg>
+          </li>
+          <li class="second-row-col2 accent-color-box" data-astro-cid-j7pv25f6>
+            <span style="font-weight: bold" data-astro-cid-j7pv25f6>
+              <h4 data-astro-cid-j7pv25f6>200+ ProductHunt Upvotes</h4>
+            </span>
+            <a
+              style="font-size: var(--p); font-weight: normal"
+              href="https://www.producthunt.com/products/real-time-colors"
+              target="_blank"
+              class="link bento-link exclude"
+              data-astro-cid-j7pv25f6
+              >Leave a review</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="info-box" id="how" data-astro-cid-j7pv25f6>
+        <div class="info-box-left" data-astro-cid-j7pv25f6>
+          <h3 style="margin: 0" data-astro-cid-j7pv25f6>How Does it Work?</h3>
+          <h5 data-astro-cid-j7pv25f6
+            >Get your personalized color palette in 4 steps.</h5
+          >
+        </div>
+        <div class="info-box-right" data-astro-cid-j7pv25f6>
+          <p class="one step" data-astro-cid-j7pv25f6
+            >Start with two neutral colors for the text and the background.</p
+          >
+          <p class="two step" data-astro-cid-j7pv25f6
+            >Choose your primary and secondary colors. Primary is for main CTAs
+            and sections, and Secondary is for less important buttons and info
+            cards.</p
+          >
+          <p class="three step" data-astro-cid-j7pv25f6
+            >Accent color is an additional color. It appears in images,
+            highlights, hyperlinks, boxes, cards, etc.</p
+          >
+          <p class="four step" data-astro-cid-j7pv25f6
+            >Happy with the results? Press on “Export” and choose among
+            different options to export in various formats, like .zip, .png,
+            CSS, SCSS, QR Code, and more.</p
+          >
+        </div>
+      </div>
+      <div class="pricing" id="sub" data-astro-cid-j7pv25f6>
+        <div class="part-heading center" data-astro-cid-j7pv25f6>
+          <h2 data-astro-cid-j7pv25f6>Plans & Pricing</h2>
+          <h5 data-astro-cid-j7pv25f6
+            >The tool is 100% free! This is just a generic section.</h5
+          >
+        </div>
+        <div class="pricing-cards" data-astro-cid-j7pv25f6>
+          <div class="pricing-card" data-astro-cid-j7pv25f6>
+            <div class="pricing-card-text" data-astro-cid-j7pv25f6>
+              <div
+                class="promo"
+                style="visibility: hidden"
+                data-astro-cid-j7pv25f6
+              >
+                <p class="promo-text" data-astro-cid-j7pv25f6>None</p>
+              </div>
+              <h4 data-astro-cid-j7pv25f6>Basic</h4>
+              <p data-astro-cid-j7pv25f6>Free</p>
+              <div class="pricing-list" data-astro-cid-j7pv25f6>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Choose any color</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Export all you want</p
+                  >
+                </div>
+              </div>
+            </div>
+            <a
+              href="#toolbar"
+              class="secondary-button highlight-toolbar"
+              data-astro-cid-j7pv25f6
+              >Get Started</a
+            >
+          </div>
+          <div class="pricing-card best" data-astro-cid-j7pv25f6>
+            <div class="pricing-card-text" data-astro-cid-j7pv25f6>
+              <div class="promo" data-astro-cid-j7pv25f6>
+                <svg
+                  width="27"
+                  height="28"
+                  viewBox="0 0 27 28"
+                  fill="none"
+                  data-astro-cid-j7pv25f6
+                >
+                  <path
+                    d="M13.5412 0.494507L14.6922 8.99311L19.4165 1.83551L16.7661 9.99186L24.1282 5.59291L18.2013 11.7915L26.7429 11.0225L18.7135 14.0357L26.7429 17.0489L18.2013 16.2799L24.1282 22.4785L16.7661 18.0796L19.4165 26.2359L14.6922 19.0783L13.5412 27.5769L12.3903 19.0783L7.6659 26.2359L10.3163 18.0796L2.95427 22.4785L8.88114 16.2799L0.339506 17.0489L8.36893 14.0357L0.339506 11.0225L8.88114 11.7915L2.95427 5.59291L10.3163 9.99186L7.6659 1.83551L12.3903 8.99311L13.5412 0.494507Z"
+                    fill="var(--primary)"
+                    data-astro-cid-j7pv25f6
+                  ></path>
+                </svg>
+                <p class="promo-text" data-astro-cid-j7pv25f6>Most Popular</p>
+              </div>
+              <h4 data-astro-cid-j7pv25f6>Pro</h4>
+              <p data-astro-cid-j7pv25f6>$0.00 / month</p>
+              <div class="pricing-list" data-astro-cid-j7pv25f6>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Choose any color</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Export all you want</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Get a big thank you for checking this site out</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Get access to dashboard</p
+                  >
+                </div>
+              </div>
+            </div>
+            <a
+              href="/dashboard"
+              target="_blank"
+              class="primary-button primary-text-contrast"
+              data-astro-cid-j7pv25f6
+              >Go to Dashboard</a
+            >
+          </div>
+          <div class="pricing-card" data-astro-cid-j7pv25f6>
+            <div class="pricing-card-text" data-astro-cid-j7pv25f6>
+              <div
+                class="promo"
+                style="visibility: hidden"
+                data-astro-cid-j7pv25f6
+              >
+                <p class="promo-text" data-astro-cid-j7pv25f6>None</p>
+              </div>
+              <h4 data-astro-cid-j7pv25f6>Enterprise</h4>
+              <p data-astro-cid-j7pv25f6>$0.00 / month</p>
+              <div class="pricing-list" data-astro-cid-j7pv25f6>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Choose any color</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Export all you want</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Get a big thank you for checking this site out</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Get access to dashboard</p
+                  >
+                </div>
+                <div class="list" data-astro-cid-j7pv25f6>
+                  <svg
+                    width="29"
+                    height="22"
+                    viewBox="0 0 29 22"
+                    fill="none"
+                    class="check-icon"
+                    data-astro-cid-j7pv25f6
+                  >
+                    <path
+                      d="M3 9.72308L11.1385 17.8615L26 3"
+                      stroke="var(--accent)"
+                      stroke-width="5.66154"
+                      data-astro-cid-j7pv25f6
+                    ></path>
+                  </svg>
+                  <p class="list-item" data-astro-cid-j7pv25f6
+                    >Super duper exclusive members-only content.</p
+                  >
+                </div>
+              </div>
+            </div>
+            <a
+              href="/blog-post"
+              target="_blank"
+              class="secondary-button"
+              data-astro-cid-j7pv25f6
+              >Learn more</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="section column" id="testimonials" data-astro-cid-j7pv25f6>
+        <div class="part-heading center" data-astro-cid-j7pv25f6>
+          <h2 data-astro-cid-j7pv25f6>Testimonials</h2>
+          <h5 data-astro-cid-j7pv25f6
+            >What (imaginary) people are saying about this site.</h5
+          >
+        </div>
+        <div class="section-cards" data-astro-cid-j7pv25f6>
+          <div class="section-card" data-astro-cid-j7pv25f6>
+            <div class="reviewer" data-astro-cid-j7pv25f6>
+              <div class="reviewer-img r-one" data-astro-cid-j7pv25f6></div>
+              <div class="reviewer-name" data-astro-cid-j7pv25f6
+                >Cool User<br data-astro-cid-j7pv25f6 /><span
+                  style="opacity: 0.5"
+                  data-astro-cid-j7pv25f6
+                  >Product Designer</span
+                >
+              </div>
+            </div>
+            <svg
+              width="159"
+              height="26"
+              viewBox="0 0 159 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="rating"
+              data-astro-cid-j7pv25f6
+            >
+              <path
+                d="M145.336 21.7742L151.933 25.7642C153.141 26.4955 154.62 25.4145 154.302 24.0474L152.553 16.5443L158.387 11.4892C159.452 10.5672 158.88 8.81858 157.481 8.7073L149.803 8.05555L146.798 0.965712C146.258 -0.321904 144.414 -0.321904 143.873 0.965712L140.869 8.03965L133.191 8.69141C131.792 8.80268 131.22 10.5513 132.285 11.4733L138.119 16.5284L136.37 24.0315C136.052 25.3986 137.531 26.4796 138.739 25.7483L145.336 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M13.6026 21.7742L20.1996 25.7642C21.4077 26.4955 22.8861 25.4145 22.5682 24.0474L20.8196 16.5443L26.6536 11.4892C27.7186 10.5672 27.1464 8.81858 25.7475 8.7073L18.0695 8.05555L15.065 0.965712C14.5246 -0.321904 12.6806 -0.321904 12.1401 0.965712L9.13564 8.03965L1.45764 8.69141C0.0587495 8.80268 -0.513524 10.5513 0.55154 11.4733L6.38555 16.5284L4.63694 24.0315C4.31901 25.3986 5.79738 26.4796 7.00551 25.7483L13.6026 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M46.5357 21.7742L53.1327 25.7642C54.3408 26.4955 55.8192 25.4145 55.5013 24.0474L53.7527 16.5443L59.5867 11.4892C60.6517 10.5672 60.0795 8.81858 58.6806 8.7073L51.0026 8.05555L47.9981 0.965712C47.4577 -0.321904 45.6137 -0.321904 45.0732 0.965712L42.0687 8.03965L34.3907 8.69141C32.9919 8.80268 32.4196 10.5513 33.4846 11.4733L39.3187 16.5284L37.57 24.0315C37.2521 25.3986 38.7305 26.4796 39.9386 25.7483L46.5357 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M79.4693 21.7742L86.0663 25.7642C87.2744 26.4955 88.7528 25.4145 88.4349 24.0474L86.6863 16.5443L92.5203 11.4892C93.5853 10.5672 93.0131 8.81858 91.6142 8.7073L83.9362 8.05555L80.9317 0.965712C80.3913 -0.321904 78.5473 -0.321904 78.0068 0.965712L75.0023 8.03965L67.3243 8.69141C65.9254 8.80268 65.3532 10.5513 66.4182 11.4733L72.2523 16.5284L70.5036 24.0315C70.1857 25.3986 71.6641 26.4796 72.8722 25.7483L79.4693 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M112.402 21.7742L118.999 25.7642C120.208 26.4955 121.686 25.4145 121.368 24.0474L119.619 16.5443L125.453 11.4892C126.518 10.5672 125.946 8.81858 124.547 8.7073L116.869 8.05555L113.865 0.965712C113.324 -0.321904 111.48 -0.321904 110.94 0.965712L107.935 8.03965L100.257 8.69141C98.8586 8.80268 98.2863 10.5513 99.3513 11.4733L105.185 16.5284L103.437 24.0315C103.119 25.3986 104.597 26.4796 105.805 25.7483L112.402 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+            </svg>
+            <p class="review" data-astro-cid-j7pv25f6
+              >"Wow! I love this site. Realtime Colors is all websites at the
+              same time."</p
+            >
+          </div>
+          <div class="section-card" data-astro-cid-j7pv25f6>
+            <div class="reviewer" data-astro-cid-j7pv25f6>
+              <div class="reviewer-img r-two" data-astro-cid-j7pv25f6></div>
+              <div class="reviewer-name" data-astro-cid-j7pv25f6
+                >Creative Person<br data-astro-cid-j7pv25f6 /><span
+                  style="opacity: 0.5"
+                  data-astro-cid-j7pv25f6
+                  >Product Owner</span
+                >
+              </div>
+            </div>
+            <svg
+              width="159"
+              height="26"
+              viewBox="0 0 159 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="rating"
+              data-astro-cid-j7pv25f6
+            >
+              <path
+                d="M145.336 21.7742L151.933 25.7642C153.141 26.4955 154.62 25.4145 154.302 24.0474L152.553 16.5443L158.387 11.4892C159.452 10.5672 158.88 8.81858 157.481 8.7073L149.803 8.05555L146.798 0.965712C146.258 -0.321904 144.414 -0.321904 143.873 0.965712L140.869 8.03965L133.191 8.69141C131.792 8.80268 131.22 10.5513 132.285 11.4733L138.119 16.5284L136.37 24.0315C136.052 25.3986 137.531 26.4796 138.739 25.7483L145.336 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M13.6026 21.7742L20.1996 25.7642C21.4077 26.4955 22.8861 25.4145 22.5682 24.0474L20.8196 16.5443L26.6536 11.4892C27.7186 10.5672 27.1464 8.81858 25.7475 8.7073L18.0695 8.05555L15.065 0.965712C14.5246 -0.321904 12.6806 -0.321904 12.1401 0.965712L9.13564 8.03965L1.45764 8.69141C0.0587495 8.80268 -0.513524 10.5513 0.55154 11.4733L6.38555 16.5284L4.63694 24.0315C4.31901 25.3986 5.79738 26.4796 7.00551 25.7483L13.6026 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M46.5357 21.7742L53.1327 25.7642C54.3408 26.4955 55.8192 25.4145 55.5013 24.0474L53.7527 16.5443L59.5867 11.4892C60.6517 10.5672 60.0795 8.81858 58.6806 8.7073L51.0026 8.05555L47.9981 0.965712C47.4577 -0.321904 45.6137 -0.321904 45.0732 0.965712L42.0687 8.03965L34.3907 8.69141C32.9919 8.80268 32.4196 10.5513 33.4846 11.4733L39.3187 16.5284L37.57 24.0315C37.2521 25.3986 38.7305 26.4796 39.9386 25.7483L46.5357 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M79.4693 21.7742L86.0663 25.7642C87.2744 26.4955 88.7528 25.4145 88.4349 24.0474L86.6863 16.5443L92.5203 11.4892C93.5853 10.5672 93.0131 8.81858 91.6142 8.7073L83.9362 8.05555L80.9317 0.965712C80.3913 -0.321904 78.5473 -0.321904 78.0068 0.965712L75.0023 8.03965L67.3243 8.69141C65.9254 8.80268 65.3532 10.5513 66.4182 11.4733L72.2523 16.5284L70.5036 24.0315C70.1857 25.3986 71.6641 26.4796 72.8722 25.7483L79.4693 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M112.402 21.7742L118.999 25.7642C120.208 26.4955 121.686 25.4145 121.368 24.0474L119.619 16.5443L125.453 11.4892C126.518 10.5672 125.946 8.81858 124.547 8.7073L116.869 8.05555L113.865 0.965712C113.324 -0.321904 111.48 -0.321904 110.94 0.965712L107.935 8.03965L100.257 8.69141C98.8586 8.80268 98.2863 10.5513 99.3513 11.4733L105.185 16.5284L103.437 24.0315C103.119 25.3986 104.597 26.4796 105.805 25.7483L112.402 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+            </svg>
+            <p class="review" data-astro-cid-j7pv25f6
+              >"Amazing. I found my favorite colors in literally... 2 minutes?
+              Woah! Totally real review."</p
+            >
+          </div>
+          <div class="section-card" data-astro-cid-j7pv25f6>
+            <div class="reviewer" data-astro-cid-j7pv25f6>
+              <div class="reviewer-img r-three" data-astro-cid-j7pv25f6></div>
+              <div class="reviewer-name" data-astro-cid-j7pv25f6
+                >Real Reviewer<br data-astro-cid-j7pv25f6 /><span
+                  style="opacity: 0.5"
+                  data-astro-cid-j7pv25f6
+                  >Developer</span
+                ></div
+              >
+            </div>
+            <svg
+              width="159"
+              height="26"
+              viewBox="0 0 159 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="rating"
+              data-astro-cid-j7pv25f6
+            >
+              <path
+                d="M145.336 21.7742L151.933 25.7642C153.141 26.4955 154.62 25.4145 154.302 24.0474L152.553 16.5443L158.387 11.4892C159.452 10.5672 158.88 8.81858 157.481 8.7073L149.803 8.05555L146.798 0.965712C146.258 -0.321904 144.414 -0.321904 143.873 0.965712L140.869 8.03965L133.191 8.69141C131.792 8.80268 131.22 10.5513 132.285 11.4733L138.119 16.5284L136.37 24.0315C136.052 25.3986 137.531 26.4796 138.739 25.7483L145.336 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M13.6026 21.7742L20.1996 25.7642C21.4077 26.4955 22.8861 25.4145 22.5682 24.0474L20.8196 16.5443L26.6536 11.4892C27.7186 10.5672 27.1464 8.81858 25.7475 8.7073L18.0695 8.05555L15.065 0.965712C14.5246 -0.321904 12.6806 -0.321904 12.1401 0.965712L9.13564 8.03965L1.45764 8.69141C0.0587495 8.80268 -0.513524 10.5513 0.55154 11.4733L6.38555 16.5284L4.63694 24.0315C4.31901 25.3986 5.79738 26.4796 7.00551 25.7483L13.6026 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M46.5357 21.7742L53.1327 25.7642C54.3408 26.4955 55.8192 25.4145 55.5013 24.0474L53.7527 16.5443L59.5867 11.4892C60.6517 10.5672 60.0795 8.81858 58.6806 8.7073L51.0026 8.05555L47.9981 0.965712C47.4577 -0.321904 45.6137 -0.321904 45.0732 0.965712L42.0687 8.03965L34.3907 8.69141C32.9919 8.80268 32.4196 10.5513 33.4846 11.4733L39.3187 16.5284L37.57 24.0315C37.2521 25.3986 38.7305 26.4796 39.9386 25.7483L46.5357 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M79.4693 21.7742L86.0663 25.7642C87.2744 26.4955 88.7528 25.4145 88.4349 24.0474L86.6863 16.5443L92.5203 11.4892C93.5853 10.5672 93.0131 8.81858 91.6142 8.7073L83.9362 8.05555L80.9317 0.965712C80.3913 -0.321904 78.5473 -0.321904 78.0068 0.965712L75.0023 8.03965L67.3243 8.69141C65.9254 8.80268 65.3532 10.5513 66.4182 11.4733L72.2523 16.5284L70.5036 24.0315C70.1857 25.3986 71.6641 26.4796 72.8722 25.7483L79.4693 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+              <path
+                d="M112.402 21.7742L118.999 25.7642C120.208 26.4955 121.686 25.4145 121.368 24.0474L119.619 16.5443L125.453 11.4892C126.518 10.5672 125.946 8.81858 124.547 8.7073L116.869 8.05555L113.865 0.965712C113.324 -0.321904 111.48 -0.321904 110.94 0.965712L107.935 8.03965L100.257 8.69141C98.8586 8.80268 98.2863 10.5513 99.3513 11.4733L105.185 16.5284L103.437 24.0315C103.119 25.3986 104.597 26.4796 105.805 25.7483L112.402 21.7742Z"
+                fill="var(--accent)"
+                data-astro-cid-j7pv25f6
+              ></path>
+            </svg>
+            <p class="review" data-astro-cid-j7pv25f6
+              >"Astonished. This product is so cool. You should try it and
+              upgrade to Enterprise plan. No kidding."</p
+            >
+          </div>
+        </div>
+      </div>
+      <div class="faq-section" id="faq" data-astro-cid-j7pv25f6>
+        <div class="part-heading left" data-astro-cid-j7pv25f6>
+          <h2 data-astro-cid-j7pv25f6>FAQ</h2>
+          <h5 data-astro-cid-j7pv25f6
+            >Answers to some questions you might have.</h5
+          >
+        </div>
+        <div class="faq-list" data-astro-cid-j7pv25f6>
+          <div class="faq-cont" data-astro-cid-j7pv25f6>
+            <h5 class="faq" data-astro-cid-j7pv25f6>
+              How many colors should I choose?
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                class="faq-icon"
+                data-astro-cid-j7pv25f6
+              >
+                <path
+                  d="M11.5 0L11.5 23"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+                <path
+                  d="M23 11.5L-2.38419e-07 11.5"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+              </svg>
+            </h5>
+            <div class="faq-a" data-astro-cid-j7pv25f6>
+              <p data-astro-cid-j7pv25f6>
+                Normally, 3 colors are absolutely fine (meaning background,
+                text, and one accent color).<br
+                  data-astro-cid-j7pv25f6
+                />However, if you want, you can have more. Usually, we don’t add
+                more than 6 colors across a platform. It would just make things
+                too... complicated. Plus, it makes it hard to keep the colors
+                consistent throughout the design.
+              </p>
+            </div>
+          </div>
+          <div class="faq-cont" data-astro-cid-j7pv25f6>
+            <h5 class="faq" data-astro-cid-j7pv25f6>
+              How does the contrast checker work?
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                class="faq-icon"
+                data-astro-cid-j7pv25f6
+              >
+                <path
+                  d="M11.5 0L11.5 23"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+                <path
+                  d="M23 11.5L-2.38419e-07 11.5"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+              </svg>
+            </h5>
+            <div class="faq-a" data-astro-cid-j7pv25f6>
+              <p data-astro-cid-j7pv25f6>
+                The contrast checker shows the contrast ratio between the
+                selected color and its background/foreground.<br
+                  data-astro-cid-j7pv25f6
+                /><br data-astro-cid-j7pv25f6 />The contrast checker has 3
+                lights:</p
+              >
+              <ul
+                style="line-height: 2; font-size: var(--p)"
+                data-astro-cid-j7pv25f6
+              >
+                <li data-astro-cid-j7pv25f6
+                  ><b data-astro-cid-j7pv25f6>x / Red:</b> The contrast ratio
+                  does not pass either AAA or AA. Therefore, both large and
+                  normal texts are hardly readable.</li
+                >
+                <li data-astro-cid-j7pv25f6
+                  ><b data-astro-cid-j7pv25f6>- / Yellow:</b> The contrast ratio
+                  might pass AA but won't pass AAA. Large texts might be
+                  readable but normal texts are probably not readable.</li
+                >
+                <li data-astro-cid-j7pv25f6
+                  ><b data-astro-cid-j7pv25f6>✓ / Green:</b> The contrast ratio
+                  passes both AA and AAA. Both large and normal texts are
+                  readable.</li
+                >
+              </ul>
+              <p data-astro-cid-j7pv25f6
+                >Learn more about the
+                <a
+                  href="/docs/contrast-checker"
+                  target="_blank"
+                  class="link"
+                  data-astro-cid-j7pv25f6
+                  >contrast checker</a
+                >.
+              </p>
+            </div>
+          </div>
+          <div class="faq-cont" data-astro-cid-j7pv25f6>
+            <h5 class="faq" data-astro-cid-j7pv25f6>
+              What does the hero image represent?
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                class="faq-icon"
+                data-astro-cid-j7pv25f6
+              >
+                <path
+                  d="M11.5 0L11.5 23"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+                <path
+                  d="M23 11.5L-2.38419e-07 11.5"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+              </svg>
+            </h5>
+            <div class="faq-a" data-astro-cid-j7pv25f6>
+              <p data-astro-cid-j7pv25f6>
+                The hero image is inspired by Piet Mondrian's
+                <b data-astro-cid-j7pv25f6
+                  >Composition with Large Red Plane, Yellow, Black, Grey and
+                  Blue</b
+                >. This composition keeps the ratio of the main colors (red,
+                blue, and yellow) very close to the 60-30-10 rule of UI design.
+                This is mainly why I've chosen this composition to visualize the
+                distribution of the colors on the page.
+              </p>
+            </div>
+          </div>
+          <div class="faq-cont" data-astro-cid-j7pv25f6>
+            <h5 class="faq" data-astro-cid-j7pv25f6>
+              How can I set up the fonts?
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                class="faq-icon"
+                data-astro-cid-j7pv25f6
+              >
+                <path
+                  d="M11.5 0L11.5 23"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+                <path
+                  d="M23 11.5L-2.38419e-07 11.5"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+              </svg>
+            </h5>
+            <div class="faq-a" data-astro-cid-j7pv25f6>
+              <p data-astro-cid-j7pv25f6>
+                You can enter the name of a font from Google Fonts or the fonts
+                installed on your device. Read more about
+                <a
+                  href="/docs/font-setup"
+                  target="_blank"
+                  class="link"
+                  data-astro-cid-j7pv25f6
+                  >Font Setup</a
+                >.
+              </p>
+            </div>
+          </div>
+          <div class="faq-cont" data-astro-cid-j7pv25f6>
+            <h5 class="faq" data-astro-cid-j7pv25f6>
+              How can I learn more about this tool?
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                class="faq-icon"
+                data-astro-cid-j7pv25f6
+              >
+                <path
+                  d="M11.5 0L11.5 23"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+                <path
+                  d="M23 11.5L-2.38419e-07 11.5"
+                  stroke="var(--accent)"
+                  stroke-width="6"
+                  data-astro-cid-j7pv25f6
+                ></path>
+              </svg>
+            </h5>
+            <div class="faq-a" data-astro-cid-j7pv25f6>
+              <p data-astro-cid-j7pv25f6>
+                You can find more information about Realtime Colors on the
+                <a
+                  href="/docs"
+                  target="_blank"
+                  class="link"
+                  data-astro-cid-j7pv25f6
+                  >Docs</a
+                >. You can also
+                <a
+                  href="/contact"
+                  target="_blank"
+                  class="link"
+                  data-astro-cid-j7pv25f6
+                  >contact me</a
+                >
+                for any questions you might have.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section column" id="featured-posts" data-astro-cid-j7pv25f6>
+        <div class="part-heading center" data-astro-cid-j7pv25f6>
+          <h2 data-astro-cid-j7pv25f6>Featured Articles</h2>
+          <h5 data-astro-cid-j7pv25f6
+            >Just some interesting guides and posts.</h5
+          >
+        </div>
+        <div class="section-cards featured-col" data-astro-cid-j7pv25f6>
+          <div class="doc-item main-page" data-astro-cid-j7pv25f6
+            ><a
+              href="/docs/examples"
+              class="doc-link"
+              style="font-size: var(--p); padding: 2em 1em"
+              data-astro-cid-j7pv25f6
+              >Examples of Colors from Popular Sites</a
+            >
+          </div>
+          <div class="doc-item main-page" data-astro-cid-j7pv25f6
+            ><a
+              href="/docs/selecting-colors"
+              class="doc-link"
+              style="font-size: var(--p); padding: 2em 1em"
+              data-astro-cid-j7pv25f6
+              >How to Select Colors</a
+            >
+          </div>
+          <div class="doc-item main-page" data-astro-cid-j7pv25f6
+            ><a
+              href="/docs/releases"
+              class="doc-link"
+              style="font-size: var(--p); padding: 2em 1em"
+              data-astro-cid-j7pv25f6
+              >Learn More about the Releases</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="last-cta" id="end" data-astro-cid-j7pv25f6>
+        <h2 data-astro-cid-j7pv25f6
+          >Your
+          <span class="color-effect" data-astro-cid-j7pv25f6>Journey</span>
+          Shouldn't End Here.</h2
+        >
+        <h5 data-astro-cid-j7pv25f6
+          >Follow me on social media to stay tuned on more projects.</h5
+        >
+        <a
+          href="https://twitter.com/juxtopposed"
+          target="_blank"
+          class="primary-button primary-text-contrast exclude"
+          data-astro-cid-j7pv25f6
+          >Stay Tuned</a
+        >
+      </div>
+      <div class="footer" id="footer" data-astro-cid-sz7xmlte>
+        <div class="logo" data-astro-cid-sz7xmlte>
+          <img
+            src="/favicon.png"
+            alt="logoface"
+            class="logoface"
+            data-astro-cid-sz7xmlte
+          />
+          <a href="/" data-astro-cid-sz7xmlte>
+            <p class="sitename reversed" data-astro-cid-sz7xmlte
+              >Realtime Colors</p
+            >
+          </a>
+        </div>
+        <div class="footer-cols" data-astro-cid-sz7xmlte>
+          <div class="footer-col" data-astro-cid-sz7xmlte>
+            <p style="margin: 0" data-astro-cid-sz7xmlte
+              >Visualize your color choices.</p
+            >
+            <a
+              class="exclude"
+              href="https://www.producthunt.com/posts/real-time-colors?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-real-time-colors"
+              target="_blank"
+              data-astro-cid-sz7xmlte
+              ><img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=390080&theme=dark"
+                alt="Real-time Colors - Real-time UI Color Palette Tool | Product Hunt"
+                style="width: 250px; height: 54px"
+                width="250"
+                height="54"
+                data-astro-cid-sz7xmlte
+            /></a>
+            <script
+              type="text/javascript"
+              src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
+            ></script
+            ><script class="exclude" type="text/javascript">
+              kofiwidget2.init("Support Me on Ko-fi", "#1a1a1a", "Z8Z2L1JGX");
+              kofiwidget2.draw();
+            </script>
+          </div>
+          <div class="footer-col" data-astro-cid-sz7xmlte>
+            <div class="reversed menu-item-header" data-astro-cid-sz7xmlte
+              >EXPLORE</div
+            >
+            <a
+              href="/docs/about-realtime-colors"
+              class="menu-item reversed"
+              data-astro-cid-sz7xmlte
+              >Docs</a
+            >
+            <a
+              href="https://www.figma.com/community/plugin/1234060894101724457/Realtime-Colors"
+              target="_blank"
+              class="menu-item exclude"
+              data-astro-cid-sz7xmlte
+              >Figma Plugin
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                data-astro-cid-sz7xmlte
+              >
+                <rect
+                  x="0.318182"
+                  y="0.318182"
+                  width="13.3636"
+                  height="13.3636"
+                  rx="2.10647"
+                  stroke="var(--text)"
+                  stroke-width="0.636364"
+                  data-astro-cid-sz7xmlte
+                ></rect>
+                <path
+                  d="M4.33594 9.7564L9.75615 4.33618M9.75615 4.33618L5.41998 4.33618M9.75615 4.33618V8.94337"
+                  stroke="var(--text)"
+                  stroke-width="0.813033"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  data-astro-cid-sz7xmlte
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=Juxtopposed.realtime-themes"
+              target="_blank"
+              class="menu-item exclude"
+              data-astro-cid-sz7xmlte
+              >VS Code Theme Editor
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                data-astro-cid-sz7xmlte
+              >
+                <rect
+                  x="0.318182"
+                  y="0.318182"
+                  width="13.3636"
+                  height="13.3636"
+                  rx="2.10647"
+                  stroke="var(--text)"
+                  stroke-width="0.636364"
+                  data-astro-cid-sz7xmlte
+                ></rect>
+                <path
+                  d="M4.33594 9.7564L9.75615 4.33618M9.75615 4.33618L5.41998 4.33618M9.75615 4.33618V8.94337"
+                  stroke="var(--text)"
+                  stroke-width="0.813033"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  data-astro-cid-sz7xmlte
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="/dashboard"
+              class="menu-item reversed"
+              data-astro-cid-sz7xmlte
+              >Dashboard template</a
+            >
+            <a
+              href="/blog-post"
+              class="menu-item reversed"
+              data-astro-cid-sz7xmlte
+              >Blog post template</a
+            >
+            <a href="/game" class="menu-item reversed" data-astro-cid-sz7xmlte
+              >Color Game</a
+            >
+          </div>
+          <div class="footer-col" data-astro-cid-sz7xmlte>
+            <div class="reversed menu-item-header" data-astro-cid-sz7xmlte
+              >LET'S CONNECT</div
+            >
+            <a
+              href="/contact"
+              target="_blank"
+              class="menu-item reversed"
+              data-astro-cid-sz7xmlte
+              >Contact me</a
+            >
+            <a
+              href="https://tally.so/r/mVPpWa"
+              target="_blank"
+              class="menu-item exclude"
+              data-astro-cid-sz7xmlte
+              >Become a Sponsor
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                data-astro-cid-sz7xmlte
+              >
+                <rect
+                  x="0.318182"
+                  y="0.318182"
+                  width="13.3636"
+                  height="13.3636"
+                  rx="2.10647"
+                  stroke="var(--text)"
+                  stroke-width="0.636364"
+                  data-astro-cid-sz7xmlte
+                ></rect>
+                <path
+                  d="M4.33594 9.7564L9.75615 4.33618M9.75615 4.33618L5.41998 4.33618M9.75615 4.33618V8.94337"
+                  stroke="var(--text)"
+                  stroke-width="0.813033"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  data-astro-cid-sz7xmlte
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@juxtopposed"
+              target="_blank"
+              class="menu-item reversed exclude"
+              data-astro-cid-sz7xmlte
+              >YouTube</a
+            >
+            <a
+              href="https://github.com/juxtopposed"
+              target="_blank"
+              class="menu-item reversed exclude"
+              data-astro-cid-sz7xmlte
+              >GitHub</a
+            >
+            <a
+              href="https://codepen.io/Juxtopposed"
+              target="_blank"
+              class="menu-item reversed exclude"
+              data-astro-cid-sz7xmlte
+              >CodePen</a
+            >
+          </div>
+        </div>
+        <div
+          style="
+            width: 100%;
+            height: 1px;
+            background-color: var(--text);
+            opacity: 10%;
+            margin-top: 1em;
+          "
+          data-astro-cid-sz7xmlte
+        ></div>
+        <div data-astro-cid-sz7xmlte>
+          <p data-astro-cid-sz7xmlte
+            >Made with ❤ by
+            <a
+              href="https://twitter.com/juxtopposed"
+              target="_blank"
+              class="link reversed exclude"
+              data-astro-cid-sz7xmlte
+            >
+              @Juxtopposed</a
+            ></p
+          >
+          <p data-astro-cid-sz7xmlte
+            >No cookies 🍪 Just colors 🎨 and fonts 🔡</p
+          >
+          <small data-astro-cid-sz7xmlte
+            >Copyright © 2023 All Rights Reserved.
+            <a
+              href="https://github.com/juxtopposed/realtimecolors/blob/main/LICENSE.md"
+              target="_blank"
+              class="link reversed exclude"
+              data-astro-cid-sz7xmlte
+              >CC BY-NC-ND</a
+            >
+            License.</small
+          >
+        </div>
+      </div>
+    </main>
+    <!-- <Sponsor /> -->
+    <div class="toolbar" id="toolbar" data-astro-cid-2qgkmv3k>
+      <!-- Colors -->
+      <div
+        class="option colors-rollout showing"
+        id="colors-rollout"
+        data-astro-cid-2qgkmv3k
+      >
+        Colors
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          viewBox="0 0 13 13"
+          fill="none"
+        >
+          <path d="M0 6.5H13" stroke="var(--static2)" stroke-width="1.2"></path>
+          <path
+            d="M6.5 0L6.5 13"
+            stroke="var(--static2)"
+            stroke-width="1.2"
+          ></path>
+        </svg>
+        <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+        <span class="tooltip" data-astro-cid-2qgkmv3k>Color Setup</span>
+      </div>
+      <div class="color-tools-span" data-astro-cid-2qgkmv3k>
+        <div
+          class="option colors-option text"
+          id="text-container"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <input
+            type="text"
+            id="text"
+            name="text"
+            class="colorpicker"
+            value="#050315"
+            data-astro-cid-2qgkmv3k
+          />
+          <!-- <input type="text" id="text" name="text" class="colorpicker" value="#0f0f0f" /> -->
+          <label
+            class="color-label open-option-settings"
+            for="text"
+            data-astro-cid-2qgkmv3k
+            >Text</label
+          >
+          <div class="option-settings color-input" data-astro-cid-npw57zo2>
+            <div class="sat-lightness-picker" data-astro-cid-npw57zo2>
+              <div class="sl-handle" data-astro-cid-npw57zo2></div>
+              <div class="white-overlay" data-astro-cid-npw57zo2></div>
+              <div class="black-overlay" data-astro-cid-npw57zo2></div>
+              <div class="color-underlay" data-astro-cid-npw57zo2></div>
+            </div>
+            <div class="hue-picker" data-astro-cid-npw57zo2>
+              <input
+                class="hue-rotation"
+                min="0"
+                max="360"
+                value="180"
+                type="range"
+                data-astro-cid-npw57zo2
+              />
+            </div>
+            <div class="color-output" data-astro-cid-npw57zo2>
+              <label class="color-code-label" data-astro-cid-npw57zo2>
+                <svg
+                  width="7"
+                  height="11"
+                  viewBox="0 0 7 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.53857 7.23071L3.76934 9.99994L1.00011 7.23071"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M1 3.76929L3.76923 1.00006L6.53846 3.76929"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <small data-options="HEX,RGB,HSL" data-astro-cid-npw57zo2
+                  >HEX</small
+                >
+              </label>
+              <input
+                type="text"
+                class="hex-input text-hex-input color-code-input selected-color-code"
+                maxlength="7"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="rgb-input text-rgb-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="hsl-input text-hsl-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <div class="copy-icon" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-nupsd6dd
+                >
+                  <rect
+                    x="0.581151"
+                    y="0.581151"
+                    width="24.4083"
+                    height="24.4083"
+                    rx="3.84742"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    style="opacity: 0.2"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <rect
+                    x="9.87119"
+                    y="9.05613"
+                    width="9.32564"
+                    height="11.0381"
+                    rx="1.41885"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <path
+                    d="M15.7695 7.54181V7.17542C15.7695 6.34699 15.0979 5.67542 14.2695 5.67542H8.01318C7.18476 5.67542 6.51318 6.34699 6.51318 7.17542V15.3738C6.51318 16.2022 7.18476 16.8738 8.01318 16.8738H8.36445"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></path>
+                </svg>
+              </div>
+              <div class="eyedropper" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-ucldxnor
+                >
+                  <g clip-path="url(#clip0_549_1686)" data-astro-cid-ucldxnor>
+                    <rect
+                      x="0.581151"
+                      y="0.581151"
+                      width="24.4083"
+                      height="24.4083"
+                      rx="3.84742"
+                      stroke="var(--static2)"
+                      stroke-width="0.7"
+                      style="opacity: 0.2"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <rect
+                      x="17.3555"
+                      y="6.38252"
+                      width="2.8196"
+                      height="15.7478"
+                      rx="1.4098"
+                      transform="rotate(45 17.3555 6.38252)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <path
+                      d="M18.3523 9.37316L15.7673 11.9582L13.7736 9.96442L16.3586 7.3794C16.9092 6.82884 17.8018 6.82884 18.3523 7.3794C18.9029 7.92996 18.9029 8.8226 18.3523 9.37316Z"
+                      fill="var(--static2)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M12.5132 9.17542L16.5132 13.1754"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M6.62842 17.6754L7.86346 18.9105L7.30594 19.468C6.99803 19.7759 6.4988 19.7759 6.19089 19.468L6.07089 19.348C5.76298 19.0401 5.76298 18.5409 6.07089 18.2329L6.62842 17.6754Z"
+                      fill="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                  </g>
+                  <defs data-astro-cid-ucldxnor>
+                    <clipPath id="clip0_549_1686" data-astro-cid-ucldxnor>
+                      <rect
+                        width="25.5707"
+                        height="25.5707"
+                        fill="white"
+                        data-astro-cid-ucldxnor
+                      ></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="selected-color" data-astro-cid-npw57zo2></div>
+            </div>
+          </div>
+          <div class="lock-button" id="text-lock" data-astro-cid-2qgkmv3k>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-closed"
+              data-astro-cid-koicrxbr
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-koicrxbr
+              ></rect>
+              <path
+                d="M11.0518 4.3V6.052H5.1478V4.3C5.1478 2.66966 6.46946 1.348 8.0998 1.348C9.73015 1.348 11.0518 2.66966 11.0518 4.3Z"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-koicrxbr
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-koicrxbr
+              ></circle>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-open show"
+              data-astro-cid-a6q3hlee
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-a6q3hlee
+              ></rect>
+              <path
+                d="M7.5 1H8.0998V1C9.92234 1 11.3998 2.47746 11.3998 4.3V6.4H4.7998"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-a6q3hlee
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-a6q3hlee
+              ></circle>
+            </svg>
+          </div>
+          <div class="contrast-light text-contrast" data-astro-cid-2qgkmv3k>
+            <span class="svg-cont" data-astro-cid-2qgkmv3k></span
+            ><span class="contrast-tooltip" data-astro-cid-2qgkmv3k
+              >Contrast</span
+            >
+          </div>
+        </div>
+        <div
+          class="option colors-option bg"
+          id="bg-cont"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <input
+            type="text"
+            id="bg"
+            name="bg"
+            class="colorpicker"
+            value="#fbfbfe"
+            data-astro-cid-2qgkmv3k
+          />
+          <!-- <input type="text" id="bg" name="bg" class="colorpicker" value="#ffffff" /> -->
+          <label
+            class="color-label open-option-settings"
+            for="bg"
+            data-astro-cid-2qgkmv3k
+            >Background</label
+          >
+          <div class="option-settings color-input" data-astro-cid-npw57zo2>
+            <div class="sat-lightness-picker" data-astro-cid-npw57zo2>
+              <div class="sl-handle" data-astro-cid-npw57zo2></div>
+              <div class="white-overlay" data-astro-cid-npw57zo2></div>
+              <div class="black-overlay" data-astro-cid-npw57zo2></div>
+              <div class="color-underlay" data-astro-cid-npw57zo2></div>
+            </div>
+            <div class="hue-picker" data-astro-cid-npw57zo2>
+              <input
+                class="hue-rotation"
+                min="0"
+                max="360"
+                value="180"
+                type="range"
+                data-astro-cid-npw57zo2
+              />
+            </div>
+            <div class="color-output" data-astro-cid-npw57zo2>
+              <label class="color-code-label" data-astro-cid-npw57zo2>
+                <svg
+                  width="7"
+                  height="11"
+                  viewBox="0 0 7 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.53857 7.23071L3.76934 9.99994L1.00011 7.23071"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M1 3.76929L3.76923 1.00006L6.53846 3.76929"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <small data-options="HEX,RGB,HSL" data-astro-cid-npw57zo2
+                  >HEX</small
+                >
+              </label>
+              <input
+                type="text"
+                class="hex-input bg-hex-input color-code-input selected-color-code"
+                maxlength="7"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="rgb-input bg-rgb-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="hsl-input bg-hsl-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <div class="copy-icon" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-nupsd6dd
+                >
+                  <rect
+                    x="0.581151"
+                    y="0.581151"
+                    width="24.4083"
+                    height="24.4083"
+                    rx="3.84742"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    style="opacity: 0.2"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <rect
+                    x="9.87119"
+                    y="9.05613"
+                    width="9.32564"
+                    height="11.0381"
+                    rx="1.41885"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <path
+                    d="M15.7695 7.54181V7.17542C15.7695 6.34699 15.0979 5.67542 14.2695 5.67542H8.01318C7.18476 5.67542 6.51318 6.34699 6.51318 7.17542V15.3738C6.51318 16.2022 7.18476 16.8738 8.01318 16.8738H8.36445"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></path>
+                </svg>
+              </div>
+              <div class="eyedropper" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-ucldxnor
+                >
+                  <g clip-path="url(#clip0_549_1686)" data-astro-cid-ucldxnor>
+                    <rect
+                      x="0.581151"
+                      y="0.581151"
+                      width="24.4083"
+                      height="24.4083"
+                      rx="3.84742"
+                      stroke="var(--static2)"
+                      stroke-width="0.7"
+                      style="opacity: 0.2"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <rect
+                      x="17.3555"
+                      y="6.38252"
+                      width="2.8196"
+                      height="15.7478"
+                      rx="1.4098"
+                      transform="rotate(45 17.3555 6.38252)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <path
+                      d="M18.3523 9.37316L15.7673 11.9582L13.7736 9.96442L16.3586 7.3794C16.9092 6.82884 17.8018 6.82884 18.3523 7.3794C18.9029 7.92996 18.9029 8.8226 18.3523 9.37316Z"
+                      fill="var(--static2)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M12.5132 9.17542L16.5132 13.1754"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M6.62842 17.6754L7.86346 18.9105L7.30594 19.468C6.99803 19.7759 6.4988 19.7759 6.19089 19.468L6.07089 19.348C5.76298 19.0401 5.76298 18.5409 6.07089 18.2329L6.62842 17.6754Z"
+                      fill="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                  </g>
+                  <defs data-astro-cid-ucldxnor>
+                    <clipPath id="clip0_549_1686" data-astro-cid-ucldxnor>
+                      <rect
+                        width="25.5707"
+                        height="25.5707"
+                        fill="white"
+                        data-astro-cid-ucldxnor
+                      ></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="selected-color" data-astro-cid-npw57zo2></div>
+            </div>
+          </div>
+          <div class="lock-button" id="bg-lock" data-astro-cid-2qgkmv3k>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-closed"
+              data-astro-cid-koicrxbr
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-koicrxbr
+              ></rect>
+              <path
+                d="M11.0518 4.3V6.052H5.1478V4.3C5.1478 2.66966 6.46946 1.348 8.0998 1.348C9.73015 1.348 11.0518 2.66966 11.0518 4.3Z"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-koicrxbr
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-koicrxbr
+              ></circle>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-open show"
+              data-astro-cid-a6q3hlee
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-a6q3hlee
+              ></rect>
+              <path
+                d="M7.5 1H8.0998V1C9.92234 1 11.3998 2.47746 11.3998 4.3V6.4H4.7998"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-a6q3hlee
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-a6q3hlee
+              ></circle>
+            </svg>
+          </div>
+          <div class="contrast-light bg-contrast" data-astro-cid-2qgkmv3k>
+            <span class="svg-cont" data-astro-cid-2qgkmv3k></span
+            ><span class="contrast-tooltip" data-astro-cid-2qgkmv3k
+              >Contrast</span
+            >
+          </div>
+        </div>
+        <div
+          class="option colors-option primary"
+          id="primary-cont"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <input
+            type="text"
+            id="primary"
+            name="primary"
+            class="colorpicker"
+            value="#2f27ce"
+            data-astro-cid-2qgkmv3k
+          />
+          <!-- <input type="text" id="primary" name="primary" class="colorpicker" value="#155831" /> -->
+          <label
+            class="color-label open-option-settings"
+            for="primary"
+            data-astro-cid-2qgkmv3k
+            >Primary</label
+          >
+          <div class="option-settings color-input" data-astro-cid-npw57zo2>
+            <div class="sat-lightness-picker" data-astro-cid-npw57zo2>
+              <div class="sl-handle" data-astro-cid-npw57zo2></div>
+              <div class="white-overlay" data-astro-cid-npw57zo2></div>
+              <div class="black-overlay" data-astro-cid-npw57zo2></div>
+              <div class="color-underlay" data-astro-cid-npw57zo2></div>
+            </div>
+            <div class="hue-picker" data-astro-cid-npw57zo2>
+              <input
+                class="hue-rotation"
+                min="0"
+                max="360"
+                value="180"
+                type="range"
+                data-astro-cid-npw57zo2
+              />
+            </div>
+            <div class="color-output" data-astro-cid-npw57zo2>
+              <label class="color-code-label" data-astro-cid-npw57zo2>
+                <svg
+                  width="7"
+                  height="11"
+                  viewBox="0 0 7 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.53857 7.23071L3.76934 9.99994L1.00011 7.23071"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M1 3.76929L3.76923 1.00006L6.53846 3.76929"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <small data-options="HEX,RGB,HSL" data-astro-cid-npw57zo2
+                  >HEX</small
+                >
+              </label>
+              <input
+                type="text"
+                class="hex-input primary-hex-input color-code-input selected-color-code"
+                maxlength="7"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="rgb-input primary-rgb-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="hsl-input primary-hsl-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <div class="copy-icon" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-nupsd6dd
+                >
+                  <rect
+                    x="0.581151"
+                    y="0.581151"
+                    width="24.4083"
+                    height="24.4083"
+                    rx="3.84742"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    style="opacity: 0.2"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <rect
+                    x="9.87119"
+                    y="9.05613"
+                    width="9.32564"
+                    height="11.0381"
+                    rx="1.41885"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <path
+                    d="M15.7695 7.54181V7.17542C15.7695 6.34699 15.0979 5.67542 14.2695 5.67542H8.01318C7.18476 5.67542 6.51318 6.34699 6.51318 7.17542V15.3738C6.51318 16.2022 7.18476 16.8738 8.01318 16.8738H8.36445"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></path>
+                </svg>
+              </div>
+              <div class="eyedropper" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-ucldxnor
+                >
+                  <g clip-path="url(#clip0_549_1686)" data-astro-cid-ucldxnor>
+                    <rect
+                      x="0.581151"
+                      y="0.581151"
+                      width="24.4083"
+                      height="24.4083"
+                      rx="3.84742"
+                      stroke="var(--static2)"
+                      stroke-width="0.7"
+                      style="opacity: 0.2"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <rect
+                      x="17.3555"
+                      y="6.38252"
+                      width="2.8196"
+                      height="15.7478"
+                      rx="1.4098"
+                      transform="rotate(45 17.3555 6.38252)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <path
+                      d="M18.3523 9.37316L15.7673 11.9582L13.7736 9.96442L16.3586 7.3794C16.9092 6.82884 17.8018 6.82884 18.3523 7.3794C18.9029 7.92996 18.9029 8.8226 18.3523 9.37316Z"
+                      fill="var(--static2)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M12.5132 9.17542L16.5132 13.1754"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M6.62842 17.6754L7.86346 18.9105L7.30594 19.468C6.99803 19.7759 6.4988 19.7759 6.19089 19.468L6.07089 19.348C5.76298 19.0401 5.76298 18.5409 6.07089 18.2329L6.62842 17.6754Z"
+                      fill="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                  </g>
+                  <defs data-astro-cid-ucldxnor>
+                    <clipPath id="clip0_549_1686" data-astro-cid-ucldxnor>
+                      <rect
+                        width="25.5707"
+                        height="25.5707"
+                        fill="white"
+                        data-astro-cid-ucldxnor
+                      ></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="selected-color" data-astro-cid-npw57zo2></div>
+            </div>
+          </div>
+          <div class="lock-button" id="primary-lock" data-astro-cid-2qgkmv3k>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-closed"
+              data-astro-cid-koicrxbr
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-koicrxbr
+              ></rect>
+              <path
+                d="M11.0518 4.3V6.052H5.1478V4.3C5.1478 2.66966 6.46946 1.348 8.0998 1.348C9.73015 1.348 11.0518 2.66966 11.0518 4.3Z"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-koicrxbr
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-koicrxbr
+              ></circle>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-open show"
+              data-astro-cid-a6q3hlee
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-a6q3hlee
+              ></rect>
+              <path
+                d="M7.5 1H8.0998V1C9.92234 1 11.3998 2.47746 11.3998 4.3V6.4H4.7998"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-a6q3hlee
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-a6q3hlee
+              ></circle>
+            </svg>
+          </div>
+          <div class="contrast-light primary-contrast" data-astro-cid-2qgkmv3k>
+            <span class="svg-cont" data-astro-cid-2qgkmv3k></span
+            ><span class="contrast-tooltip" data-astro-cid-2qgkmv3k
+              >Contrast</span
+            >
+          </div>
+        </div>
+        <div
+          class="option colors-option secondary"
+          id="secondary-cont"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <input
+            type="text"
+            id="secondary"
+            name="secondary"
+            class="colorpicker"
+            value="#dedcff"
+            data-astro-cid-2qgkmv3k
+          />
+          <!-- <input type="text" id="secondary" name="secondary" class="colorpicker" value="#d7e4dc"/> -->
+          <label
+            class="color-label open-option-settings"
+            for="secondary"
+            data-astro-cid-2qgkmv3k
+            >Secondary</label
+          >
+          <div class="option-settings color-input" data-astro-cid-npw57zo2>
+            <div class="sat-lightness-picker" data-astro-cid-npw57zo2>
+              <div class="sl-handle" data-astro-cid-npw57zo2></div>
+              <div class="white-overlay" data-astro-cid-npw57zo2></div>
+              <div class="black-overlay" data-astro-cid-npw57zo2></div>
+              <div class="color-underlay" data-astro-cid-npw57zo2></div>
+            </div>
+            <div class="hue-picker" data-astro-cid-npw57zo2>
+              <input
+                class="hue-rotation"
+                min="0"
+                max="360"
+                value="180"
+                type="range"
+                data-astro-cid-npw57zo2
+              />
+            </div>
+            <div class="color-output" data-astro-cid-npw57zo2>
+              <label class="color-code-label" data-astro-cid-npw57zo2>
+                <svg
+                  width="7"
+                  height="11"
+                  viewBox="0 0 7 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.53857 7.23071L3.76934 9.99994L1.00011 7.23071"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M1 3.76929L3.76923 1.00006L6.53846 3.76929"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <small data-options="HEX,RGB,HSL" data-astro-cid-npw57zo2
+                  >HEX</small
+                >
+              </label>
+              <input
+                type="text"
+                class="hex-input secondary-hex-input color-code-input selected-color-code"
+                maxlength="7"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="rgb-input secondary-rgb-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="hsl-input secondary-hsl-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <div class="copy-icon" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-nupsd6dd
+                >
+                  <rect
+                    x="0.581151"
+                    y="0.581151"
+                    width="24.4083"
+                    height="24.4083"
+                    rx="3.84742"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    style="opacity: 0.2"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <rect
+                    x="9.87119"
+                    y="9.05613"
+                    width="9.32564"
+                    height="11.0381"
+                    rx="1.41885"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <path
+                    d="M15.7695 7.54181V7.17542C15.7695 6.34699 15.0979 5.67542 14.2695 5.67542H8.01318C7.18476 5.67542 6.51318 6.34699 6.51318 7.17542V15.3738C6.51318 16.2022 7.18476 16.8738 8.01318 16.8738H8.36445"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></path>
+                </svg>
+              </div>
+              <div class="eyedropper" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-ucldxnor
+                >
+                  <g clip-path="url(#clip0_549_1686)" data-astro-cid-ucldxnor>
+                    <rect
+                      x="0.581151"
+                      y="0.581151"
+                      width="24.4083"
+                      height="24.4083"
+                      rx="3.84742"
+                      stroke="var(--static2)"
+                      stroke-width="0.7"
+                      style="opacity: 0.2"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <rect
+                      x="17.3555"
+                      y="6.38252"
+                      width="2.8196"
+                      height="15.7478"
+                      rx="1.4098"
+                      transform="rotate(45 17.3555 6.38252)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <path
+                      d="M18.3523 9.37316L15.7673 11.9582L13.7736 9.96442L16.3586 7.3794C16.9092 6.82884 17.8018 6.82884 18.3523 7.3794C18.9029 7.92996 18.9029 8.8226 18.3523 9.37316Z"
+                      fill="var(--static2)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M12.5132 9.17542L16.5132 13.1754"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M6.62842 17.6754L7.86346 18.9105L7.30594 19.468C6.99803 19.7759 6.4988 19.7759 6.19089 19.468L6.07089 19.348C5.76298 19.0401 5.76298 18.5409 6.07089 18.2329L6.62842 17.6754Z"
+                      fill="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                  </g>
+                  <defs data-astro-cid-ucldxnor>
+                    <clipPath id="clip0_549_1686" data-astro-cid-ucldxnor>
+                      <rect
+                        width="25.5707"
+                        height="25.5707"
+                        fill="white"
+                        data-astro-cid-ucldxnor
+                      ></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="selected-color" data-astro-cid-npw57zo2></div>
+            </div>
+          </div>
+          <div class="lock-button" id="secondary-lock" data-astro-cid-2qgkmv3k>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-closed"
+              data-astro-cid-koicrxbr
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-koicrxbr
+              ></rect>
+              <path
+                d="M11.0518 4.3V6.052H5.1478V4.3C5.1478 2.66966 6.46946 1.348 8.0998 1.348C9.73015 1.348 11.0518 2.66966 11.0518 4.3Z"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-koicrxbr
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-koicrxbr
+              ></circle>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-open show"
+              data-astro-cid-a6q3hlee
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-a6q3hlee
+              ></rect>
+              <path
+                d="M7.5 1H8.0998V1C9.92234 1 11.3998 2.47746 11.3998 4.3V6.4H4.7998"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-a6q3hlee
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-a6q3hlee
+              ></circle>
+            </svg>
+          </div>
+          <div
+            class="contrast-light secondary-contrast"
+            data-astro-cid-2qgkmv3k
+          >
+            <span class="svg-cont" data-astro-cid-2qgkmv3k></span
+            ><span class="contrast-tooltip" data-astro-cid-2qgkmv3k
+              >Contrast</span
+            >
+          </div>
+        </div>
+        <div
+          class="option colors-option accent"
+          id="accent-cont"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <input
+            type="text"
+            id="accent"
+            name="accent"
+            class="colorpicker"
+            value="#433bff"
+            data-astro-cid-2qgkmv3k
+          />
+          <!-- <input type="text" id="accent" name="accent" class="colorpicker" value="#c20002"/> -->
+          <label
+            class="color-label open-option-settings"
+            for="accent"
+            data-astro-cid-2qgkmv3k
+            >Accent</label
+          >
+          <div class="option-settings color-input" data-astro-cid-npw57zo2>
+            <div class="sat-lightness-picker" data-astro-cid-npw57zo2>
+              <div class="sl-handle" data-astro-cid-npw57zo2></div>
+              <div class="white-overlay" data-astro-cid-npw57zo2></div>
+              <div class="black-overlay" data-astro-cid-npw57zo2></div>
+              <div class="color-underlay" data-astro-cid-npw57zo2></div>
+            </div>
+            <div class="hue-picker" data-astro-cid-npw57zo2>
+              <input
+                class="hue-rotation"
+                min="0"
+                max="360"
+                value="180"
+                type="range"
+                data-astro-cid-npw57zo2
+              />
+            </div>
+            <div class="color-output" data-astro-cid-npw57zo2>
+              <label class="color-code-label" data-astro-cid-npw57zo2>
+                <svg
+                  width="7"
+                  height="11"
+                  viewBox="0 0 7 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.53857 7.23071L3.76934 9.99994L1.00011 7.23071"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M1 3.76929L3.76923 1.00006L6.53846 3.76929"
+                    stroke="var(--static2)"
+                    stroke-width="0.692308"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <small data-options="HEX,RGB,HSL" data-astro-cid-npw57zo2
+                  >HEX</small
+                >
+              </label>
+              <input
+                type="text"
+                class="hex-input accent-hex-input color-code-input selected-color-code"
+                maxlength="7"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="rgb-input accent-rgb-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <input
+                type="text"
+                class="hsl-input accent-hsl-input color-code-input"
+                maxlength="20"
+                data-astro-cid-npw57zo2
+              />
+              <div class="copy-icon" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-nupsd6dd
+                >
+                  <rect
+                    x="0.581151"
+                    y="0.581151"
+                    width="24.4083"
+                    height="24.4083"
+                    rx="3.84742"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    style="opacity: 0.2"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <rect
+                    x="9.87119"
+                    y="9.05613"
+                    width="9.32564"
+                    height="11.0381"
+                    rx="1.41885"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></rect>
+                  <path
+                    d="M15.7695 7.54181V7.17542C15.7695 6.34699 15.0979 5.67542 14.2695 5.67542H8.01318C7.18476 5.67542 6.51318 6.34699 6.51318 7.17542V15.3738C6.51318 16.2022 7.18476 16.8738 8.01318 16.8738H8.36445"
+                    stroke="var(--static2)"
+                    stroke-width="0.7"
+                    data-astro-cid-nupsd6dd
+                  ></path>
+                </svg>
+              </div>
+              <div class="eyedropper" data-astro-cid-npw57zo2>
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-astro-cid-ucldxnor
+                >
+                  <g clip-path="url(#clip0_549_1686)" data-astro-cid-ucldxnor>
+                    <rect
+                      x="0.581151"
+                      y="0.581151"
+                      width="24.4083"
+                      height="24.4083"
+                      rx="3.84742"
+                      stroke="var(--static2)"
+                      stroke-width="0.7"
+                      style="opacity: 0.2"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <rect
+                      x="17.3555"
+                      y="6.38252"
+                      width="2.8196"
+                      height="15.7478"
+                      rx="1.4098"
+                      transform="rotate(45 17.3555 6.38252)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></rect>
+                    <path
+                      d="M18.3523 9.37316L15.7673 11.9582L13.7736 9.96442L16.3586 7.3794C16.9092 6.82884 17.8018 6.82884 18.3523 7.3794C18.9029 7.92996 18.9029 8.8226 18.3523 9.37316Z"
+                      fill="var(--static2)"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M12.5132 9.17542L16.5132 13.1754"
+                      stroke="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                    <path
+                      d="M6.62842 17.6754L7.86346 18.9105L7.30594 19.468C6.99803 19.7759 6.4988 19.7759 6.19089 19.468L6.07089 19.348C5.76298 19.0401 5.76298 18.5409 6.07089 18.2329L6.62842 17.6754Z"
+                      fill="var(--static2)"
+                      data-astro-cid-ucldxnor
+                    ></path>
+                  </g>
+                  <defs data-astro-cid-ucldxnor>
+                    <clipPath id="clip0_549_1686" data-astro-cid-ucldxnor>
+                      <rect
+                        width="25.5707"
+                        height="25.5707"
+                        fill="white"
+                        data-astro-cid-ucldxnor
+                      ></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="selected-color" data-astro-cid-npw57zo2></div>
+            </div>
+          </div>
+          <div class="lock-button" id="accent-lock" data-astro-cid-2qgkmv3k>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-closed"
+              data-astro-cid-koicrxbr
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-koicrxbr
+              ></rect>
+              <path
+                d="M11.0518 4.3V6.052H5.1478V4.3C5.1478 2.66966 6.46946 1.348 8.0998 1.348C9.73015 1.348 11.0518 2.66966 11.0518 4.3Z"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-koicrxbr
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-koicrxbr
+              ></circle>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-open show"
+              data-astro-cid-a6q3hlee
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-a6q3hlee
+              ></rect>
+              <path
+                d="M7.5 1H8.0998V1C9.92234 1 11.3998 2.47746 11.3998 4.3V6.4H4.7998"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-a6q3hlee
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-a6q3hlee
+              ></circle>
+            </svg>
+          </div>
+          <div class="contrast-light accent-contrast" data-astro-cid-2qgkmv3k>
+            <span class="svg-cont" data-astro-cid-2qgkmv3k></span
+            ><span class="contrast-tooltip" data-astro-cid-2qgkmv3k
+              >Contrast</span
+            >
+          </div>
+        </div>
+        <div
+          class="option colors-option utility-option theme"
+          id="theme"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <div class="darkorlight-cont" data-astro-cid-2qgkmv3k>
+            <div class="darkorlight-wrapper" data-astro-cid-2qgkmv3k>
+              <svg
+                width="29"
+                height="29"
+                viewBox="0 0 29 29"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_415_3003)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M18.6431 8.13281C18.1998 7.99524 17.946 8.59577 18.2742 8.92401V8.92401C21.4878 12.1376 21.4878 17.3479 18.2742 20.5615C16.024 22.8117 12.7948 23.4863 9.95756 22.5852C9.67267 22.4947 9.42319 22.8301 9.63455 23.0415V23.0415C13.1374 26.5443 18.8167 26.5443 22.3195 23.0415C25.8224 19.5386 25.8224 13.8593 22.3195 10.3565C21.2545 9.29143 19.9882 8.5502 18.6431 8.13281Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    opacity="0.5"
+                    d="M8.38219 3.2998C8.62112 2.40071 9.8971 2.40071 10.136 3.29981L10.5752 4.95242C10.6439 5.21072 10.8229 5.42562 11.0645 5.53979L12.9668 6.43848C13.6598 6.7659 13.6598 7.75189 12.9668 8.0793L11.0645 8.978C10.8229 9.09216 10.6439 9.30706 10.5752 9.56536L10.136 11.218C9.8971 12.1171 8.62112 12.1171 8.38219 11.218L7.943 9.56536C7.87436 9.30706 7.69533 9.09216 7.45368 8.978L5.55146 8.0793C4.85844 7.75189 4.85844 6.7659 5.55146 6.43848L7.45368 5.53979C7.69533 5.42562 7.87436 5.21072 7.943 4.95242L8.38219 3.2998Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    opacity="0.3"
+                    d="M4.41646 16.2487C4.63581 15.4866 5.71573 15.4866 5.93507 16.2487V16.2487C5.99767 16.4662 6.15054 16.6464 6.35492 16.7436L6.62931 16.8742C7.31937 17.2025 7.31937 18.1846 6.62931 18.5129L6.35492 18.6434C6.15054 18.7407 5.99767 18.9209 5.93507 19.1384V19.1384C5.71573 19.9005 4.63581 19.9005 4.41646 19.1384V19.1384C4.35386 18.9209 4.20099 18.7407 3.99661 18.6434L3.72222 18.5129C3.03216 18.1846 3.03216 17.2025 3.72222 16.8742L3.99661 16.7436C4.20099 16.6464 4.35386 16.4662 4.41646 16.2487V16.2487Z"
+                    fill="white"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_415_3003">
+                    <rect width="29" height="29" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg
+                width="29"
+                height="29"
+                viewBox="0 0 29 29"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.65647 6.61473C7.17328 6.09921 7.1736 5.26212 6.65717 4.74621L6.15486 4.24442C5.63882 3.7289 4.80235 3.73006 4.28774 4.24702V4.24702C3.77544 4.76166 3.77544 5.59359 4.28774 6.10823L4.78865 6.61143C5.30337 7.1285 6.13993 7.12998 6.65647 6.61473V6.61473ZM3.95455 14.5C3.95455 13.7687 3.36168 13.1758 2.63034 13.1758H1.3242C0.592865 13.1758 0 13.7687 0 14.5V14.5C0 15.2313 0.592865 15.8242 1.3242 15.8242H2.63034C3.36168 15.8242 3.95455 15.2313 3.95455 14.5V14.5ZM15.8182 1.31818C15.8182 0.590169 15.228 0 14.5 0V0C13.772 0 13.1818 0.59017 13.1818 1.31818V2.58821C13.1818 3.31622 13.772 3.90639 14.5 3.90639V3.90639C15.228 3.90639 15.8182 3.31622 15.8182 2.58821V1.31818ZM24.7136 6.10693C25.2251 5.59301 25.2251 4.76224 24.7136 4.24832V4.24832C24.1987 3.73107 23.3613 3.73107 22.8465 4.24832L22.3455 4.75151C21.834 5.26544 21.8339 6.0962 22.3455 6.61013V6.61013C22.8604 7.12738 23.6977 7.12738 24.2126 6.61013L24.7136 6.10693ZM22.3258 22.3965C21.8174 22.9072 21.8163 23.7323 22.3232 24.2445L22.8359 24.7623C23.3489 25.2806 24.1859 25.2817 24.7004 24.7649V24.7649C25.2115 24.2514 25.2104 23.421 24.6978 22.9089L24.1822 22.3939C23.6692 21.8813 22.8375 21.8825 22.3258 22.3965V22.3965ZM26.3697 13.1758C25.6383 13.1758 25.0455 13.7687 25.0455 14.5V14.5C25.0455 15.2313 25.6383 15.8242 26.3697 15.8242H27.6758C28.4071 15.8242 29 15.2313 29 14.5V14.5C29 13.7687 28.4071 13.1758 27.6758 13.1758H26.3697ZM14.5 6.55479C10.1368 6.55479 6.59091 10.1169 6.59091 14.5C6.59091 18.8831 10.1368 22.4452 14.5 22.4452C18.8632 22.4452 22.4091 18.8831 22.4091 14.5C22.4091 10.1169 18.8632 6.55479 14.5 6.55479ZM13.1818 27.6818C13.1818 28.4098 13.772 29 14.5 29V29C15.228 29 15.8182 28.4098 15.8182 27.6818V26.4118C15.8182 25.6838 15.228 25.0936 14.5 25.0936V25.0936C13.772 25.0936 13.1818 25.6838 13.1818 26.4118V27.6818ZM4.28127 22.8931C3.77213 23.4074 3.77329 24.2362 4.28386 24.7491V24.7491C4.79976 25.2673 5.63906 25.2662 6.15352 24.7465L6.65964 24.2352C7.16878 23.7209 7.16762 22.8921 6.65705 22.3792V22.3792C6.14115 21.861 5.30185 21.8621 4.78739 22.3818L4.28127 22.8931Z"
+                  fill="black"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Dark/Light<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(Alt + T)</span
+            ></span
+          >
+        </div>
+        <div
+          class="option colors-option utility-option randomize"
+          id="randomize"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="31"
+            viewBox="0 0 33 31"
+            fill="none"
+          >
+            <rect
+              x="4.06797"
+              y="2.90574"
+              width="24.4083"
+              height="24.4083"
+              rx="3.84742"
+              stroke="var(--static2)"
+              stroke-width="1.1623"
+            ></rect>
+            <circle
+              cx="10.0138"
+              cy="8.85138"
+              r="1.87757"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="22.5306"
+              cy="8.85138"
+              r="1.87757"
+              transform="rotate(90 22.5306 8.85138)"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="16.2718"
+              cy="15.11"
+              r="1.87757"
+              transform="rotate(90 16.2718 15.11)"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="22.5304"
+              cy="21.3685"
+              r="1.87757"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="10.014"
+              cy="21.3685"
+              r="1.87757"
+              transform="rotate(90 10.014 21.3685)"
+              fill="var(--static2)"
+            ></circle>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <div
+            class="open-option-settings randomize-option"
+            data-astro-cid-2qgkmv3k
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="7"
+              viewBox="0 0 12 7"
+              fill="none"
+              class="option-icon"
+            >
+              <path
+                d="M1 6L6 1L11 6"
+                stroke="var(--static2)"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Randomize Colors<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(Spacebar)</span
+            ></span
+          >
+          <div
+            class="option-settings randomize-settings"
+            data-astro-cid-2qgkmv3k
+          >
+            <p
+              class="option-heading"
+              style="padding: 0 0 10px 0"
+              data-astro-cid-2qgkmv3k
+              >Select a color scheme</p
+            >
+            <div
+              class="scheme-option all selected-scheme"
+              data-scheme="all"
+              data-astro-cid-2qgkmv3k
+              >All</div
+            >
+            <div
+              class="scheme-option"
+              data-scheme="monochromatic"
+              data-astro-cid-2qgkmv3k
+              >Monochromatic</div
+            >
+            <div
+              class="scheme-option"
+              data-scheme="analogous"
+              data-astro-cid-2qgkmv3k
+              >Analogous</div
+            >
+            <div
+              class="scheme-option"
+              data-scheme="complementary"
+              data-astro-cid-2qgkmv3k
+              >Complementary</div
+            >
+            <div
+              class="scheme-option"
+              data-scheme="split-complementary"
+              data-astro-cid-2qgkmv3k
+              >Split Complementary</div
+            >
+            <div
+              class="scheme-option"
+              data-scheme="triadic"
+              data-astro-cid-2qgkmv3k
+              >Triadic</div
+            >
+            <div
+              class="scheme-option"
+              data-scheme="tetradic"
+              data-astro-cid-2qgkmv3k
+              >Tetradic</div
+            >
+          </div>
+        </div>
+        <div
+          class="option colors-option utility-option undo"
+          id="undo"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            width="18"
+            height="15"
+            viewBox="0 0 18 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.265 10.9368C16.0693 6.4747 11.4329 3.84005 6.90913 5.05219C4.4627 5.7077 2.55025 7.35401 1.49881 9.4335"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+            <path
+              d="M6.89052 9.97853L1.52381 9.52598L1.11855 3.54119"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Undo<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(← Left arrow)</span
+            ></span
+          >
+        </div>
+        <div
+          class="option colors-option utility-option redo"
+          id="redo"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            width="18"
+            height="15"
+            viewBox="0 0 18 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.876628 11.2114C2.07226 6.74924 6.65879 4.10121 11.1209 5.29683C13.534 5.94342 15.4166 7.58172 16.4476 9.65573"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+            <path
+              d="M11.1222 10.2189L16.4222 9.74848L16.8427 3.76777"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Redo<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(Right arrow →)</span
+            ></span
+          >
+        </div>
+        <div
+          class="option colors-option utility-option export"
+          id="export"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="32"
+            viewBox="0 0 33 32"
+            fill="none"
+          >
+            <path
+              d="M17.3248 17.8251V10.2169C17.3248 9.98865 17.2335 9.78186 17.0831 9.63415C16.9328 9.48376 16.726 9.39246 16.5004 9.39246C16.2721 9.39246 16.0653 9.48376 15.9176 9.63415C15.7672 9.78455 15.6759 9.98865 15.6759 10.2169V17.8251L12.7433 15.2657C12.5741 15.118 12.3593 15.0509 12.1498 15.0616C11.9376 15.0751 11.7335 15.1664 11.5805 15.3356C11.4301 15.5048 11.3629 15.7196 11.3737 15.9291C11.3871 16.1386 11.4784 16.3427 11.6476 16.493L15.9552 20.2528C16.1137 20.3925 16.3124 20.4596 16.5084 20.4596C16.7045 20.4596 16.9005 20.3844 17.0509 20.2448L21.3558 16.485C21.5197 16.3346 21.611 16.1332 21.6244 15.9264C21.6378 15.7169 21.568 15.5048 21.4176 15.3356L21.4122 15.3302C21.2619 15.1637 21.0578 15.0751 20.851 15.0616H20.8483C20.6388 15.0509 20.424 15.118 20.2548 15.2684L17.3248 17.8251Z"
+              fill="var(--static2)"
+            ></path>
+            <rect
+              x="4.109"
+              y="2.93511"
+              width="24.6552"
+              height="24.6552"
+              rx="3.88633"
+              stroke="var(--static2)"
+              stroke-width="1.17406"
+            ></rect>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Export<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(CTRL + E)</span
+            ></span
+          >
+        </div>
+        <div
+          class="option colors-option utility-option share-link"
+          id="share-link"
+          data-astro-cid-2qgkmv3k
+        >
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip tooltip-share" data-astro-cid-2qgkmv3k
+            >Share Link<br data-astro-cid-2qgkmv3k />
+            <span class="controls-tooltip" data-astro-cid-2qgkmv3k
+              >(CTRL + S)</span
+            >
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="31"
+            viewBox="0 0 33 31"
+            fill="none"
+          >
+            <rect
+              x="4.06797"
+              y="2.90574"
+              width="24.4083"
+              height="24.4083"
+              rx="3.84742"
+              stroke="var(--static2)"
+              stroke-width="1.1623"
+            ></rect>
+            <path
+              d="M12 18.5968H11.6229C10.3391 18.5968 9.29834 17.5561 9.29834 16.2722V9.29842C9.29834 8.01458 10.3391 6.97382 11.6229 6.97382H16.2722C17.556 6.97382 18.5968 8.01458 18.5968 9.29842V16.2722C18.5968 17.5561 17.556 18.5968 16.2722 18.5968H16"
+              stroke="var(--static2)"
+              stroke-width="1.1623"
+            ></path>
+            <path
+              d="M20.5 11.623H20.9216C22.2054 11.623 23.2462 12.6638 23.2462 13.9477V20.9215C23.2462 22.2053 22.2054 23.2461 20.9216 23.2461H16.2724C14.9885 23.2461 13.9478 22.2053 13.9478 20.9215V19.7592V13.9477C13.9478 12.6638 14.9885 11.623 16.2724 11.623H16.5"
+              stroke="var(--static2)"
+              stroke-width="1.1623"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <div
+        style="
+          height: 50px;
+          width: 2px;
+          background-color: var(--static2);
+          opacity: 20%;
+          align-self: center;
+        "
+        data-astro-cid-2qgkmv3k
+      ></div>
+      <!-- Fonts -->
+      <div
+        class="option fonts-rollout"
+        id="fonts-rollout"
+        data-astro-cid-2qgkmv3k
+      >
+        Fonts
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          viewBox="0 0 13 13"
+          fill="none"
+        >
+          <path d="M0 6.5H13" stroke="var(--static2)" stroke-width="1.2"></path>
+          <path
+            d="M6.5 0L6.5 13"
+            stroke="var(--static2)"
+            stroke-width="1.2"
+          ></path>
+        </svg>
+        <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+        <span class="tooltip" data-astro-cid-2qgkmv3k>Font Setup</span>
+      </div>
+      <div class="font-tools-span hide" data-astro-cid-2qgkmv3k>
+        <div
+          class="option fonts-option heading-fonts-buttn rollout-fonts open-option-settings"
+          id="heading-fonts-buttn"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <div
+            class="heading-fonts-label"
+            id="headings-fonts-label"
+            data-astro-cid-2qgkmv3k
+            >Headings</div
+          >
+          <div class="fonts-box option-settings" data-astro-cid-2qgkmv3k>
+            <div class="fonts-row" data-astro-cid-2qgkmv3k>
+              <p
+                class="font-input-label option-heading"
+                data-astro-cid-2qgkmv3k
+              >
+                Enter font name (local or
+                <a
+                  href="https://fonts.google.com/"
+                  class="link utility-link"
+                  target="_blank"
+                  style="font-size: inherit"
+                  data-astro-cid-2qgkmv3k
+                  >Google
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  >
+                    <rect
+                      x="0.318182"
+                      y="0.318182"
+                      width="13.3636"
+                      height="13.3636"
+                      rx="2.10647"
+                      stroke="var(--text)"
+                      stroke-width="0.636364"
+                    ></rect>
+                    <path
+                      d="M4.33594 9.7564L9.75615 4.33618M9.75615 4.33618L5.41998 4.33618M9.75615 4.33618V8.94337"
+                      stroke="var(--text)"
+                      stroke-width="0.813033"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg> </a
+                >)
+              </p>
+              <div class="font-input-cont" tabindex="0" data-astro-cid-2qgkmv3k>
+                <input
+                  type="text"
+                  id="heading-fonts"
+                  class="font-type-input text-input"
+                  value="Poppins"
+                  placeholder="e.g. Roboto"
+                  maxlength="50"
+                  data-astro-cid-2qgkmv3k
+                />
+                <div
+                  class="autocomplete-dropdown"
+                  data-astro-cid-2qgkmv3k
+                ></div>
+              </div>
+              <small
+                id="heading-error-message"
+                class="error-message-fonts"
+                data-astro-cid-2qgkmv3k
+              ></small>
+              <div
+                style="
+                  height: 2px;
+                  background-color: var(--static);
+                  width: 100%;
+                "
+                data-astro-cid-2qgkmv3k
+              ></div>
+              <div
+                class="utility-button reset-font-heading"
+                data-astro-cid-2qgkmv3k
+              >
+                <span id="heading-label-span" data-astro-cid-2qgkmv3k
+                  >Reset</span
+                >
+              </div>
+              <small data-astro-cid-2qgkmv3k
+                ><a
+                  href="/docs/font-setup"
+                  class="link small utility-link"
+                  target="_blank"
+                  data-astro-cid-2qgkmv3k
+                  >Learn more or Troubleshoot</a
+                ></small
+              >
+            </div>
+          </div>
+          <div
+            class="lock-button-font"
+            id="heading-font-lock"
+            data-astro-cid-2qgkmv3k
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-closed"
+              data-astro-cid-koicrxbr
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-koicrxbr
+              ></rect>
+              <path
+                d="M11.0518 4.3V6.052H5.1478V4.3C5.1478 2.66966 6.46946 1.348 8.0998 1.348C9.73015 1.348 11.0518 2.66966 11.0518 4.3Z"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-koicrxbr
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-koicrxbr
+              ></circle>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-open show"
+              data-astro-cid-a6q3hlee
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-a6q3hlee
+              ></rect>
+              <path
+                d="M7.5 1H8.0998V1C9.92234 1 11.3998 2.47746 11.3998 4.3V6.4H4.7998"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-a6q3hlee
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-a6q3hlee
+              ></circle>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="option fonts-option text-fonts-buttn rollout-fonts open-option-settings"
+          id="text-fonts-buttn"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <div
+            class="text-fonts-label"
+            id="texts-fonts-label"
+            data-astro-cid-2qgkmv3k
+            >Body</div
+          >
+          <div class="fonts-box option-settings" data-astro-cid-2qgkmv3k>
+            <div class="fonts-row" data-astro-cid-2qgkmv3k>
+              <p
+                class="font-input-label option-heading"
+                data-astro-cid-2qgkmv3k
+              >
+                Enter font name (local or
+                <a
+                  href="https://fonts.google.com/"
+                  class="link utility-link"
+                  target="_blank"
+                  style="font-size: inherit"
+                  data-astro-cid-2qgkmv3k
+                  >Google
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  >
+                    <rect
+                      x="0.318182"
+                      y="0.318182"
+                      width="13.3636"
+                      height="13.3636"
+                      rx="2.10647"
+                      stroke="var(--text)"
+                      stroke-width="0.636364"
+                    ></rect>
+                    <path
+                      d="M4.33594 9.7564L9.75615 4.33618M9.75615 4.33618L5.41998 4.33618M9.75615 4.33618V8.94337"
+                      stroke="var(--text)"
+                      stroke-width="0.813033"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg> </a
+                >)
+              </p>
+              <div class="font-input-cont" tabindex="0" data-astro-cid-2qgkmv3k>
+                <input
+                  type="text"
+                  id="body-fonts"
+                  class="font-type-input text-input"
+                  value="Poppins"
+                  placeholder="e.g. Roboto"
+                  maxlength="50"
+                  data-astro-cid-2qgkmv3k
+                />
+                <div
+                  class="autocomplete-dropdown"
+                  data-astro-cid-2qgkmv3k
+                ></div>
+              </div>
+              <small
+                id="text-error-message"
+                class="error-message-fonts small"
+                data-astro-cid-2qgkmv3k
+              ></small>
+              <div
+                style="
+                  height: 2px;
+                  background-color: var(--static);
+                  width: 100%;
+                "
+                data-astro-cid-2qgkmv3k
+              ></div>
+              <div
+                class="utility-button reset-font-text"
+                data-astro-cid-2qgkmv3k
+              >
+                <span id="text-label-span" data-astro-cid-2qgkmv3k>Reset</span>
+              </div>
+              <small data-astro-cid-2qgkmv3k
+                ><a
+                  href="/docs/font-setup"
+                  class="link small utility-link"
+                  target="_blank"
+                  data-astro-cid-2qgkmv3k
+                  >Learn more or Troubleshoot</a
+                ></small
+              >
+            </div>
+          </div>
+          <div
+            class="lock-button-font"
+            id="text-font-lock"
+            data-astro-cid-2qgkmv3k
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-closed"
+              data-astro-cid-koicrxbr
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-koicrxbr
+              ></rect>
+              <path
+                d="M11.0518 4.3V6.052H5.1478V4.3C5.1478 2.66966 6.46946 1.348 8.0998 1.348C9.73015 1.348 11.0518 2.66966 11.0518 4.3Z"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-koicrxbr
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-koicrxbr
+              ></circle>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="lock-open show"
+              data-astro-cid-a6q3hlee
+            >
+              <rect
+                x="3.34869"
+                y="6.14874"
+                width="9.50262"
+                height="9.50262"
+                rx="2.30845"
+                stroke="currentColor"
+                stroke-width="0.697381"
+                data-astro-cid-a6q3hlee
+              ></rect>
+              <path
+                d="M7.5 1H8.0998V1C9.92234 1 11.3998 2.47746 11.3998 4.3V6.4H4.7998"
+                stroke="currentColor"
+                stroke-width="0.696"
+                data-astro-cid-a6q3hlee
+              ></path>
+              <circle
+                cx="8.09971"
+                cy="10.9"
+                r="0.9"
+                fill="currentColor"
+                data-astro-cid-a6q3hlee
+              ></circle>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="option fonts-option open-option-settings"
+          id="typescale"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <div
+            class="text-fonts-label"
+            id="texts-fonts-label"
+            data-astro-cid-2qgkmv3k
+          >
+            Type Scale
+          </div>
+          <div class="option-settings font-settings" data-astro-cid-2qgkmv3k>
+            <p
+              class="option-heading"
+              style="padding: 0 0 10px 0"
+              data-astro-cid-2qgkmv3k
+            >
+              Select a type scale
+            </p>
+            <div
+              class="type-scale"
+              data-type-scale="1.067"
+              data-astro-cid-2qgkmv3k
+            >
+              1.067 – Minor Second
+            </div>
+            <div
+              class="type-scale"
+              data-type-scale="1.125"
+              data-astro-cid-2qgkmv3k
+            >
+              1.125 – Major Second
+            </div>
+            <div
+              class="type-scale"
+              data-type-scale="1.200"
+              data-astro-cid-2qgkmv3k
+            >
+              1.200 – Minor Third
+            </div>
+            <div
+              class="type-scale"
+              data-type-scale="1.250"
+              data-astro-cid-2qgkmv3k
+            >
+              1.250 – Major Third
+            </div>
+            <div
+              class="type-scale selected-scale"
+              data-type-scale="1.333"
+              data-astro-cid-2qgkmv3k
+            >
+              1.333 – Perfect Fourth
+            </div>
+            <div
+              class="type-scale"
+              data-type-scale="1.414"
+              data-astro-cid-2qgkmv3k
+            >
+              1.414 – Augmented Fourth
+            </div>
+            <div
+              class="type-scale"
+              data-type-scale="1.500"
+              data-astro-cid-2qgkmv3k
+            >
+              1.500 – Perfect Fifth
+            </div>
+            <div
+              class="type-scale"
+              data-type-scale="1.618"
+              data-astro-cid-2qgkmv3k
+            >
+              1.618 – Golden Ratio
+            </div>
+          </div>
+        </div>
+        <div
+          class="option fonts-option"
+          id="randomize-fonts-button"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="31"
+            viewBox="0 0 33 31"
+            fill="none"
+          >
+            <rect
+              x="4.06797"
+              y="2.90574"
+              width="24.4083"
+              height="24.4083"
+              rx="3.84742"
+              stroke="var(--static2)"
+              stroke-width="1.1623"
+            ></rect>
+            <circle
+              cx="10.0138"
+              cy="8.85138"
+              r="1.87757"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="22.5306"
+              cy="8.85138"
+              r="1.87757"
+              transform="rotate(90 22.5306 8.85138)"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="16.2718"
+              cy="15.11"
+              r="1.87757"
+              transform="rotate(90 16.2718 15.11)"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="22.5304"
+              cy="21.3685"
+              r="1.87757"
+              fill="var(--static2)"
+            ></circle>
+            <circle
+              cx="10.014"
+              cy="21.3685"
+              r="1.87757"
+              transform="rotate(90 10.014 21.3685)"
+              fill="var(--static2)"
+            ></circle>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <div
+            class="open-option-settings randomize-option"
+            data-astro-cid-2qgkmv3k
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="7"
+              viewBox="0 0 12 7"
+              fill="none"
+              class="option-icon"
+            >
+              <path
+                d="M1 6L6 1L11 6"
+                stroke="var(--static2)"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Randomize Fonts<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(Spacebar)</span
+            ></span
+          >
+          <div class="option-settings font-settings" data-astro-cid-2qgkmv3k>
+            <p
+              class="option-heading"
+              style="padding: 0 0 10px 0"
+              data-astro-cid-2qgkmv3k
+              >Select a font category</p
+            >
+            <div
+              class="font-category all selected-font-category"
+              data-category="all"
+              data-astro-cid-2qgkmv3k
+              >All</div
+            >
+            <div
+              class="font-category"
+              data-category="serif"
+              data-astro-cid-2qgkmv3k
+              >Serif</div
+            >
+            <div
+              class="font-category"
+              data-category="sans-serif"
+              data-astro-cid-2qgkmv3k
+              >Sans Serif</div
+            >
+            <div
+              class="font-category"
+              data-category="handwriting"
+              data-astro-cid-2qgkmv3k
+              >Handwriting</div
+            >
+            <div
+              class="font-category"
+              data-category="monospace"
+              data-astro-cid-2qgkmv3k
+              >Monospace</div
+            >
+            <div
+              class="font-category"
+              data-category="display"
+              data-astro-cid-2qgkmv3k
+              >Display</div
+            >
+          </div>
+        </div>
+        <div
+          class="option fonts-option utility-option undo"
+          id="font-undo"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            width="18"
+            height="15"
+            viewBox="0 0 18 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.265 10.9368C16.0693 6.4747 11.4329 3.84005 6.90913 5.05219C4.4627 5.7077 2.55025 7.35401 1.49881 9.4335"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+            <path
+              d="M6.89052 9.97853L1.52381 9.52598L1.11855 3.54119"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Undo<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(← Left arrow)</span
+            ></span
+          >
+        </div>
+        <div
+          class="option fonts-option utility-option redo"
+          id="font-redo"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            width="18"
+            height="15"
+            viewBox="0 0 18 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.876628 11.2114C2.07226 6.74924 6.65879 4.10121 11.1209 5.29683C13.534 5.94342 15.4166 7.58172 16.4476 9.65573"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+            <path
+              d="M11.1222 10.2189L16.4222 9.74848L16.8427 3.76777"
+              stroke="var(--static2)"
+              stroke-width="1.28532"
+            ></path>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Redo<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(Right arrow →)</span
+            ></span
+          >
+        </div>
+        <div
+          class="option fonts-option utility-option export"
+          id="export-font"
+          tabindex="0"
+          data-astro-cid-2qgkmv3k
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="32"
+            viewBox="0 0 33 32"
+            fill="none"
+          >
+            <path
+              d="M17.3248 17.8251V10.2169C17.3248 9.98865 17.2335 9.78186 17.0831 9.63415C16.9328 9.48376 16.726 9.39246 16.5004 9.39246C16.2721 9.39246 16.0653 9.48376 15.9176 9.63415C15.7672 9.78455 15.6759 9.98865 15.6759 10.2169V17.8251L12.7433 15.2657C12.5741 15.118 12.3593 15.0509 12.1498 15.0616C11.9376 15.0751 11.7335 15.1664 11.5805 15.3356C11.4301 15.5048 11.3629 15.7196 11.3737 15.9291C11.3871 16.1386 11.4784 16.3427 11.6476 16.493L15.9552 20.2528C16.1137 20.3925 16.3124 20.4596 16.5084 20.4596C16.7045 20.4596 16.9005 20.3844 17.0509 20.2448L21.3558 16.485C21.5197 16.3346 21.611 16.1332 21.6244 15.9264C21.6378 15.7169 21.568 15.5048 21.4176 15.3356L21.4122 15.3302C21.2619 15.1637 21.0578 15.0751 20.851 15.0616H20.8483C20.6388 15.0509 20.424 15.118 20.2548 15.2684L17.3248 17.8251Z"
+              fill="var(--static2)"
+            ></path>
+            <rect
+              x="4.109"
+              y="2.93511"
+              width="24.6552"
+              height="24.6552"
+              rx="3.88633"
+              stroke="var(--static2)"
+              stroke-width="1.17406"
+            ></rect>
+          </svg>
+          <span class="option-hover" data-astro-cid-2qgkmv3k></span>
+          <span class="tooltip" data-astro-cid-2qgkmv3k
+            >Export<br data-astro-cid-2qgkmv3k /><span
+              class="controls-tooltip"
+              data-astro-cid-2qgkmv3k
+              >(CTRL + E)</span
+            ></span
+          >
+        </div>
+      </div>
+      <!-- Elements -->
+    </div>
+    <div class="export-font-options utility">
+      <div id="font-overlay"></div>
+      <div
+        id="popup-font"
+        class="utility popup"
+        style="flex-direction: column; justify-content: flex-start"
+      >
+        <ul class="tabFontList">
+          <li class="font-tab font-active" data-font-tab="font-tab1">CSS</li>
+          <li class="font-tab" data-font-tab="font-tab2">Tailwind CSS</li>
+          <div class="font-line font-active"></div>
+        </ul>
+        <div class="tabContentFont font-active" id="font-tab1">
+          <div class="code-block">
+            <pre id="css-font"></pre>
+            <button class="copy-button" id="copy-css-font">Copy</button>
+          </div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContentFont" id="font-tab2">
+          <div class="code-block">
+            <pre id="tailwind-font"></pre>
+            <button class="copy-button" id="copy-tailwind-font">Copy</button>
+          </div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="export-options utility">
+      <div id="overlay"></div>
+      <div
+        id="popup"
+        class="utility popup"
+        style="flex-direction: column; justify-content: flex-start"
+      >
+        <ul class="tabList">
+          <li class="tab active" data-tab="tab1">CSS</li>
+          <li class="tab" data-tab="tab2">Tailwind CSS</li>
+          <li class="tab" data-tab="tab3">SCSS</li>
+          <li class="tab" data-tab="tab4">Custom Code</li>
+          <li class="tab" data-tab="tab5">Shades</li>
+          <li class="tab" data-tab="tab6">Gradients</li>
+          <li class="tab" data-tab="tab7">QR</li>
+          <li class="tab" data-tab="tab8">Download</li>
+          <div class="line active"></div>
+        </ul>
+        <div class="tabContent active" id="tab1">
+          <div class="export-settings">
+            <div class="code-type-cont">
+              <div class="css-hex hex code-type selected-type css">HEX</div>
+              <div class="css-rgb rgb code-type css">RGB</div>
+              <div class="css-hsl hsl code-type css">HSL</div>
+              <div class="css-oklab oklab code-type css">OKLAB</div>
+              <div class="css-oklch oklch code-type css">OKLCH</div>
+            </div>
+            <div class="code-type-cont">
+              <label class="toggle-label media-label">
+                @media
+                <input type="checkbox" class="media-checker toggle-input" />
+                <div class="toggle-wrapper">
+                  <span class="toggle-button"></span>
+                </div>
+              </label>
+              <label class="toggle-label">
+                Themes
+                <input type="checkbox" class="theme-checker-css toggle-input" />
+                <div class="toggle-wrapper">
+                  <span class="toggle-button"></span>
+                </div>
+              </label>
+              <label class="toggle-label">
+                Shades
+                <input type="checkbox" class="shade-checker-css toggle-input" />
+                <div class="toggle-wrapper">
+                  <span class="toggle-button"></span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="code-block">
+            <pre id="css-code"></pre>
+            <button class="copy-button" id="copy-css">Copy</button>
+          </div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContent" id="tab2">
+          <div class="export-settings">
+            <div class="code-type-cont">
+              <div class="tcss-hex hex code-type selected-type tcss">HEX</div>
+              <div class="tcss-rgb rgb code-type tcss">RGB</div>
+              <div class="tcss-hsl hsl code-type tcss">HSL</div>
+              <div class="tcss-oklab oklab code-type tcss">OKLAB</div>
+              <div class="tcss-oklch oklch code-type tcss">OKLCH</div>
+            </div>
+            <div class="code-type-cont">
+              <label class="toggle-label">
+                Themes
+                <input
+                  type="checkbox"
+                  class="theme-checker-tcss toggle-input"
+                />
+                <div class="toggle-wrapper">
+                  <span class="toggle-button"></span>
+                </div>
+              </label>
+              <label class="toggle-label">
+                Shades
+                <input
+                  type="checkbox"
+                  class="shade-checker-tcss toggle-input"
+                />
+                <div class="toggle-wrapper">
+                  <span class="toggle-button"></span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="code-block-cont">
+            <div class="code-block">
+              <small class="code-file-name">tailwind.config.js</small>
+              <pre id="tailwind-code"></pre>
+              <button class="copy-button" id="copy-tailwind">Copy</button>
+            </div>
+            <div class="code-block tcss-css-code-block">
+              <small class="code-file-name">main.css</small>
+              <pre id="tailwind-css-code"></pre>
+              <button class="copy-button" id="copy-tailwind-css">Copy</button>
+            </div>
+          </div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContent" id="tab3">
+          <div class="export-settings">
+            <div class="code-type-cont">
+              <div class="scss-hex hex code-type selected-type scss">HEX</div>
+              <div class="scss-rgb rgb code-type scss">RGB</div>
+              <div class="scss-hsl hsl code-type scss">HSL</div>
+              <div class="scss-oklab oklab code-type scss">OKLAB</div>
+              <div class="scss-oklch oklch code-type scss">OKLCH</div>
+            </div>
+            <label class="toggle-label">
+              Themes
+              <input type="checkbox" class="theme-checker-scss toggle-input" />
+              <div class="toggle-wrapper">
+                <span class="toggle-button"></span>
+              </div>
+            </label>
+          </div>
+          <div class="code-block">
+            <pre id="scss-code"></pre>
+            <button class="copy-button" id="copy-scss">Copy</button>
+          </div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContent" id="tab4">
+          <div
+            >Enter custom code with variables.
+            <a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn how</a
+            >.</div
+          >
+          <div class="preset-cont">
+            <small>Presets:</small>
+            <small class="preset" data-preset-id="daisy-ui">DaisyUI</small>
+            <small class="preset" data-preset-id="daisy-ui-themes"
+              >DaisyUI + Themes</small
+            >
+            <small class="preset" data-preset-id="shadcn">shadcn</small>
+            <small class="preset" data-preset-id="next-ui">NextUI</small>
+            <small class="preset" data-preset-id="flutter">Flutter</small>
+            <small class="preset" data-preset-id="less">LESS</small>
+            <small class="preset" data-preset-id="bootstrap">Bootstrap</small>
+            <small class="preset" data-preset-id="material-ui"
+              >Material UI</small
+            >
+            <small class="preset" data-preset-id="material-ui-shades"
+              >Material UI Shades</small
+            >
+            <small class="preset" data-preset-id="chakra-ui">Chakra UI</small>
+            <small class="preset" data-preset-id="skeleton-ui"
+              >Skeleton UI</small
+            >
+            <small class="preset" data-preset-id="vuetify">Vuetify</small>
+          </div>
+          <div class="custom-code-block-cont">
+            <textarea
+              spellcheck="false"
+              id="custom-code"
+              class="text-input"
+              placeholder="E.g. myPrimaryColor: ${primary.hex}"
+            >
+$&lbrace;text.hex&rbrace;</textarea
+            >
+            <div class="code-block">
+              <pre id="custom-output" class="syntaxbox"></pre>
+              <button class="copy-button" id="copy-custom-code">Copy</button>
+            </div>
+          </div>
+          <small>
+            <a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContent" id="tab5">
+          <div class="code-type-cont">
+            <div class="shades-hex code-type selected-type shade-code-type"
+              >HEX</div
+            >
+            <div class="shades-rgb code-type shade-code-type">RGB</div>
+            <div class="shades-hsl code-type shade-code-type">HSL</div>
+            <div class="shades-oklab code-type shade-code-type">OKLAB</div>
+            <div class="shades-oklch code-type shade-code-type">OKLCH</div>
+          </div>
+          <div class="shade-cont">
+            <div class="text-shades"></div> <div class="bg-shades"></div>
+            <div class="primary-shades"></div>
+            <div class="secondary-shades"></div>
+            <div class="accent-shades"></div>
+          </div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContent" id="tab6">
+          <div class="export-settings">
+            <div class="code-type-cont">
+              <div class="grad-hex hex code-type selected-type grad">HEX</div>
+              <div class="grad-rgb rgb code-type grad">RGB</div>
+              <div class="grad-hsl hsl code-type grad">HSL</div>
+              <div class="grad-oklab oklab code-type grad">OKLAB</div>
+              <div class="grad-oklch oklch code-type grad">OKLCH</div>
+            </div>
+          </div>
+          <div class="code-block">
+            <pre id="grad-code"></pre>
+            <button class="copy-button" id="copy-grad">Copy</button>
+          </div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContent" id="tab7">
+          <div style="padding-top: 10px"
+            >Scan the QR code on your phone or tablet to view the same colors
+            quickly.</div
+          >
+          <div id="qrcode"></div>
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+        <div class="tabContent" id="tab8">
+          <label for="file-name-input" class="export-label"
+            >Enter file name</label
+          >
+          <input
+            type="text"
+            name="file-name"
+            id="file-name-input"
+            class="file-name-input text-input"
+            placeholder="e.g., my_colors"
+          />
+          <div class="error-message" id="error-message"></div>
+          <div class="utility-button" style="width: 100%" id="download"
+            >Download</div
+          >
+          <small
+            ><a href="/docs/exporting" target="_blank" class="link utility-link"
+              >Learn about exporting</a
+            >
+            -
+            <a href="/contact" target="_blank" class="link utility-link"
+              >Request an export option</a
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+    <!-- <script>
+			(function(){
+			  if(typeof _bsa !== 'undefined' && _bsa) {
+				_bsa.init('stickybox', 'CWYIT2QI', 'placement:wwwrealtimecolorscom');
+			  }
+			})();
+		</script> -->
+  </body></html
+>
