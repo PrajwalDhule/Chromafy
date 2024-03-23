@@ -2,24 +2,50 @@ import React, { useState, useEffect } from "react";
 
 const ExportPopup = (props) => {
   const [codes, setCodes] = useState({});
+  const [codeClasses, setCodeClasses] = useState("");
+  const [format, setFormat] = useState("hex");
+  const [shadesChecked, setShadesChecked] = useState(false);
 
   useEffect(() => {
     // console.log(props.palette);
     setVariables(props.palette);
   }, [props.palette]);
 
-  function copyCode(codeElement) {
-    const codeText = codeElement.textContent;
+  useEffect(() => {
+    try {
+      let codeClasses = "";
+      const colorTypes = [
+        "text",
+        "background",
+        "primary",
+        "secondary",
+        "accent",
+      ];
+      const prefixes = ["fg", "bg"];
 
-    navigator.clipboard
-      .writeText(codeText)
-      .then(() => {
-        alert("Code copied!");
-      })
-      .catch((err) => {
-        console.error("Failed to copy code: ", err);
-      });
-  }
+      for (let i = 0; i < prefixes.length; i++) {
+        const cssProperty = prefixes[i] == "fg" ? "color" : "background-color";
+        for (let j = 0; j < colorTypes.length; j++) {
+          for (let k = 0; k <= 95; k = k + 5) {
+            let query = `.${prefixes[i]}-chroma-${colorTypes[j]}`,
+              variableName = `--chroma-${colorTypes[j]}`;
+            if (k > 0) {
+              query += `-${k}`;
+              variableName += `-${k}`;
+            }
+            codeClasses += `${query}{\n\t${cssProperty}: var(${variableName});\n}\n`;
+          }
+        }
+      }
+
+      setCodeClasses(codeClasses);
+    } catch (error) {
+      console.error(
+        "Error occurred while applying CSS styles to classes: ",
+        error
+      );
+    }
+  }, []);
 
   function setVariables(palette) {
     let cssCodes = {
@@ -141,73 +167,191 @@ const ExportPopup = (props) => {
     return { rgb: rgbString, hex: hexString };
   }
 
+  const handleToggleShades = () => {
+    setShadesChecked(!shadesChecked);
+  };
+
+  function trimCode(text) {
+    if (text) {
+      const lines = text.split("\n");
+      return (
+        lines.slice(0, 6).join("\n") +
+        "\n\n. . . .\n\n" +
+        lines.slice(-7).join("\n")
+      );
+    }
+  }
+
+  function copyCssCode(textContent) {
+    navigator.clipboard
+      .writeText(textContent)
+      .then(() => {
+        alert("Code copied!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy code: ", err);
+      });
+  }
+
+  function downloadCssFile(cssContent, fileName = "chroma_css_code.css") {
+    const blob = new Blob([cssContent], { type: "text/css" });
+    const blobUrl = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.setAttribute("download", fileName);
+    link.setAttribute("href", blobUrl);
+    link.click();
+
+    URL.revokeObjectURL(blobUrl);
+  }
+
   // Example usage:
   // const hslString = "hsla(120, 100%, 50%, 0.5)";
   // const result = hslToRgb(hslString);
   // console.log(result);
 
-  const code =
-    "--chroma-text: hsl(166, 68%, 6%);\n--chroma-background-50: hsl(171, 68%, 96%, 0.9);\n--chroma-primary: hsl(168, 67%, 55%);\n--chroma-secondary: hsl(341, 67%, 71%);\n--chroma-accent: hsl(38,67%, 60%);";
+  // const code =
+  //   "--chroma-text: hsl(166, 68%, 6%);\n--chroma-background-50: hsl(171, 68%, 96%, 0.9);\n--chroma-primary: hsl(168, 67%, 55%);\n--chroma-secondary: hsl(341, 67%, 71%);\n--chroma-accent: hsl(38,67%, 60%);";
 
-  const code2 =
-    ".fg-chroma-text {\n\tcolor: var(--chroma-text) !important;\n}\n. . . . . .\n.bg-chroma-accent-95 {\n\tcolor: var(--chroma-accent-95) !important;\n}";
+  // const code2 =
+  //   ".fg-chroma-text {\n\tcolor: var(--chroma-text) !important;\n}\n. . . . . .\n.bg-chroma-accent-95 {\n\tcolor: var(--chroma-accent-95) !important;\n}";
 
   return (
-    <div className="export-popup">
+    <div id="export-popup" className="export-popup">
       {/* <ul className="languages-container container">
         <li className="selected option">CSS</li>
         <li className="option">SCSS</li>
         <li className="option">Tailwind CSS</li>
       </ul> */}
+      <button
+        id="close-btn"
+        onClick={() => {
+          document
+            .getElementById("export-popup")
+            .classList.remove("export-popup-open");
+          document
+            .getElementById("chromafy-wrapper")
+            .classList.remove("chromafy-overlay-open");
+        }}
+      >
+        &#x2716;
+      </button>
       <div className="color-settings">
         <div className="color-types-container container">
-          <h4 className="title">Import CSS code</h4>
-          <div className="color-type selected option">HEX</div>
-          <div className="color-type option">RGB</div>
-          <div className="color-type option">HSL</div>
+          <h4 className="title">Export CSS code</h4>
+          <div
+            className={`color-type ${format == "hex" ? "selected" : ""} option`}
+            onClick={() => setFormat("hex")}
+          >
+            HEX
+          </div>
+          <div
+            className={`color-type ${format == "rgb" ? "selected" : ""} option`}
+            onClick={() => setFormat("rgb")}
+          >
+            RGB
+          </div>
+          <div
+            className={`color-type ${format == "hsl" ? "selected" : ""} option`}
+            onClick={() => setFormat("hsl")}
+          >
+            HSL
+          </div>
         </div>
         <div className="color-filters-container container">
           {/* <div className="">Themes</div> */}
-          <div className="">Checkbox here</div>
-          <div className="">Shades</div>
+          <label htmlFor="shades">Shades</label>
+          <input
+            type="checkbox"
+            name="shades"
+            id="shades"
+            checked={shadesChecked}
+            onChange={handleToggleShades}
+          />
+
+          {/* <div className="">Shades</div> */}
         </div>
       </div>
       <div className="code-container-wrapper">
         <div>
+          <div className="code-block" id="code-variables">
+            {/* <pre>{code}</pre> */}
+            <pre>
+              {codes &&
+                codes[format] &&
+                `${
+                  codes[format].original +
+                  (shadesChecked ? codes[format].shades : "")
+                }`}
+            </pre>
+          </div>
           <div className="btn-wrapper">
             <button
               onClick={() => {
                 const codeElement = document.getElementById("code-variables");
-                copyCode(codeElement);
+                const textContent = codeElement.textContent;
+                copyCssCode(textContent);
               }}
             >
               Copy
             </button>
-            <button>Download</button>
-          </div>
-          <div className="code-block" id="code-variables">
-            {/* <pre>{code}</pre> */}
-            <pre>
-              {codes && codes.hex && `${codes.hex.original + codes.hex.shades}`}
-            </pre>
-          </div>
-        </div>
-        <div>
-          <div className="btn-wrapper">
-            <button
-              onClick={() => {
-                const codeElement = document.getElementById("code-classes");
-                copyCode(codeElement);
-              }}
-            >
-              Copy
-            </button>
-            <button>Download</button>
-          </div>
-          <div className="code-block" id="code-classes">
-            <pre>{code2}</pre>
+            <div className="download-btn-wrapper">
+              <button
+                onClick={() => {
+                  const codeElement = document.getElementById("code-variables");
+                  const textContent = codeElement.textContent;
+                  const optionalFileName =
+                    document.querySelector(
+                      'input[type="text"]#css-code-file-name'
+                    )?.value || "chromafy_css_code.css";
+                  downloadCssFile(textContent, optionalFileName);
+                }}
+              >
+                Download
+              </button>
+              <input
+                type="text"
+                placeholder="optional_custom_name.css"
+                id="css-code-file-name"
+              />
+            </div>
           </div>
         </div>
+        {codeClasses && (
+          <div>
+            <div className="code-block" id="code-classes">
+              {/* <pre>{code2}</pre> */}
+              <pre>{trimCode(codeClasses)}</pre>
+            </div>
+            <div className="btn-wrapper">
+              <button
+                onClick={() => {
+                  copyCssCode(codeClasses);
+                }}
+              >
+                Copy
+              </button>
+              <div className="download-btn-wrapper">
+                <button
+                  onClick={() => {
+                    const optionalFileName =
+                      document.querySelector(
+                        'input[type="text"]#code-classes-file-name'
+                      )?.value || "chromafy_code_classes.css";
+                    downloadCssFile(codeClasses, optionalFileName);
+                  }}
+                >
+                  Download
+                </button>
+                <input
+                  type="text"
+                  placeholder="optional_custom_name.css"
+                  id="code-classes-file-name"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

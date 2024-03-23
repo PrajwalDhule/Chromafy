@@ -81,58 +81,57 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    try {
-      const colorTypes = [
-        "text",
-        "background",
-        "primary",
-        "secondary",
-        "accent",
-      ];
-      const prefixes = ["fg", "bg"];
+  // useEffect(() => {
+  //   try {
+  //     const colorTypes = [
+  //       "text",
+  //       "background",
+  //       "primary",
+  //       "secondary",
+  //       "accent",
+  //     ];
+  //     const prefixes = ["fg", "bg"];
 
-      for (let i = 0; i < prefixes.length; i++) {
-        const cssProperty = prefixes[i] == "fg" ? "color" : "background-color";
-        for (let j = 0; j < colorTypes.length; j++) {
-          for (let k = 0; k <= 95; k = k + 5) {
-            let query = `.${prefixes[i]}-chroma-${colorTypes[j]}`,
-              variableName = `--chroma-${colorTypes[j]}`;
-            if (k > 0) {
-              query += `-${k}`;
-              variableName += `-${k}`;
-            }
-            const elements = document.querySelectorAll(query);
-            elements.forEach((element) => {
-              let inlineStyle = element.getAttribute("style") || "";
-              inlineStyle = inlineStyle.replace(
-                // /; color:\s*unset;\s*color:\s*var\(--chroma-primary\);?/g,
-                new RegExp(
-                  "; " +
-                    cssProperty +
-                    ":\\s*unset;\\s*" +
-                    cssProperty +
-                    ":\\s*var\\(" +
-                    variableName +
-                    "\\);?",
-                  "g"
-                ),
-                ""
-              );
-              inlineStyle += `; ${cssProperty}: unset; ${cssProperty}: var(${variableName})`;
-              element.setAttribute("style", inlineStyle);
-            });
-          }
-        }
-      }
-    } catch (error) {
-      console.error(
-        "Error occurred while applying CSS variables declaration:",
-        error
-      );
-    }
-  }, []);
-  // bg-chroma-primary-
+  //     for (let i = 0; i < prefixes.length; i++) {
+  //       const cssProperty = prefixes[i] == "fg" ? "color" : "background-color";
+  //       for (let j = 0; j < colorTypes.length; j++) {
+  //         for (let k = 0; k <= 95; k = k + 5) {
+  //           let query = `.${prefixes[i]}-chroma-${colorTypes[j]}`,
+  //             variableName = `--chroma-${colorTypes[j]}`;
+  //           if (k > 0) {
+  //             query += `-${k}`;
+  //             variableName += `-${k}`;
+  //           }
+  //           const elements = document.querySelectorAll(query);
+  //           elements.forEach((element) => {
+  //             let inlineStyle = element.getAttribute("style") || "";
+  //             inlineStyle = inlineStyle.replace(
+  //               // /; color:\s*unset;\s*color:\s*var\(--chroma-primary\);?/g,
+  //               new RegExp(
+  //                 "; " +
+  //                   cssProperty +
+  //                   ":\\s*unset;\\s*" +
+  //                   cssProperty +
+  //                   ":\\s*var\\(" +
+  //                   variableName +
+  //                   "\\);?",
+  //                 "g"
+  //               ),
+  //               ""
+  //             );
+  //             inlineStyle += `; ${cssProperty}: unset; ${cssProperty}: var(${variableName})`;
+  //             element.setAttribute("style", inlineStyle);
+  //           });
+  //         }
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error(
+  //       "Error occurred while applying CSS variables declaration:",
+  //       error
+  //     );
+  //   }
+  // }, []);
 
   // useEffect(() => {
   //   try {
