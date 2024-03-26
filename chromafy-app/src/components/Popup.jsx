@@ -5,9 +5,8 @@ import ColorPicker from "./ColorPicker";
 
 const Popup = () => {
   const [colorSchemeId, setColorSchemeId] = useState(-1);
-  const [paletteIndex, setPaletteIndex] = useState(-1);
-  // const [palette, setPalette] = useState([]);
-  const [palettes, setPalettes] = useState([]);
+  const [paletteIndex, _setPaletteIndex] = useState(-1);
+  const [palettes, _setPalettes] = useState([]);
   const [labelColors, setLabelColors] = useState([
     "hsl(360, 30%, 98%)",
     "hsl(360, 30%, 2%)",
@@ -20,7 +19,22 @@ const Popup = () => {
       ? JSON.parse(localStorage.getItem("chromafyThemeState"))
       : "light"
   );
-  const [isFirstRun, setIsFirstRun] = useState(true);
+  const [colorPickerType, setColorPickerType] = useState("none");
+
+  const palettesRef = useRef(palettes);
+  const paletteIndexRef = useRef(paletteIndex);
+
+  const colorTypes = ["text", "background", "primary", "secondary", "accent"];
+
+  const setPalettes = (palettesValue) => {
+    palettesRef.current = palettesValue;
+    _setPalettes(palettesValue);
+  };
+  const setPaletteIndex = (paletteIndexValue) => {
+    paletteIndexRef.current = paletteIndexValue;
+    _setPaletteIndex(paletteIndexValue);
+  };
+
   const hasPageBeenRendered = useRef({ effect1: false });
 
   // localStorage.removeItem("chromafyColorState");
@@ -50,6 +64,16 @@ const Popup = () => {
         setLabels(colorState[colorState.length - 1]);
       }
     }
+
+    const colorBoxes = document.querySelectorAll(".color-box");
+    colorBoxes.forEach((box) => {
+      if (!box.classList.contains("click-event-attached")) {
+        box.addEventListener("click", function () {
+          toggleColorBoxClass(this);
+        });
+        box.classList.add("click-event-attached");
+      }
+    });
   }, []);
 
   useEffect(() => {
@@ -101,9 +125,8 @@ const Popup = () => {
         colorState = colorState.slice(len - 100, len);
       }
       localStorage.setItem("chromafyColorState", JSON.stringify(colorState));
-      setPaletteIndex((prevState) =>
-        Math.min(prevState + 1, colorState.length - 1)
-      );
+      const newPaletteIndex = Math.min(paletteIndex + 1, colorState.length - 1);
+      setPaletteIndex(newPaletteIndex);
       setPalettes([...colorState]);
       setVariables([...palette]);
       setLabels([...palette]);
@@ -112,7 +135,7 @@ const Popup = () => {
 
   function setLabels(palette) {
     const newLabelColors = palette.map((color) => {
-      if (color.l < 50) return "hsl(360, 30%, 98%)";
+      if (color.l < 55) return "hsl(360, 30%, 98%)";
       else return "hsl(360, 30%, 2%)";
     });
     setLabelColors([...newLabelColors]);
@@ -202,8 +225,6 @@ const Popup = () => {
   }
 
   function setVariables(palette) {
-    const colorTypes = ["text", "background", "primary", "secondary", "accent"];
-
     for (let i = 0; i < colorTypes.length; i++) {
       document.documentElement.style.setProperty(
         `--chroma-${colorTypes[i]}`,
@@ -269,6 +290,17 @@ const Popup = () => {
     // set the values in the html
   }
 
+  function toggleColorBoxClass(element) {
+    const elements = document.querySelectorAll(".color-box");
+
+    elements.forEach((el) => {
+      if (el !== element) {
+        el.classList.remove("color-box-active");
+      }
+    });
+    element.classList.toggle("color-box-active");
+  }
+
   function removeReactApp() {
     // Find and remove the injected HTML content
     const reactApp = document.getElementById("main-chromafy-app");
@@ -278,8 +310,6 @@ const Popup = () => {
     }
   }
 
-  function handleUndo() {}
-
   return (
     <>
       <div
@@ -288,38 +318,43 @@ const Popup = () => {
         style={{ zIndex: 9999 }}
       >
         <div id="popup">
+          {palettes &&
+            palettes[paletteIndex] &&
+            colorTypes &&
+            colorTypes.map((colorType, index) => {
+              return (
+                <div
+                  className={`color-box action-button bg-chroma-${colorType} ${
+                    colorPickerType == `${colorType}` ? "color-box-active" : ""
+                  }`}
+                >
+                  {colorPickerType == `${colorType}` && (
+                    <ColorPicker
+                      palettes={palettes}
+                      palettesRef={palettesRef}
+                      colorIndex={index}
+                      paletteIndex={paletteIndex}
+                      paletteIndexRef={paletteIndexRef}
+                      setPalettes={setPalettes}
+                      setLabelColors={setLabelColors}
+                      setPaletteIndex={setPaletteIndex}
+                    />
+                  )}
+                  <p
+                    style={{ color: labelColors[index] }}
+                    onClick={() =>
+                      setColorPickerType((prevState) =>
+                        prevState == `${colorType}` ? "none" : `${colorType}`
+                      )
+                    }
+                  >
+                    {colorType.charAt(0).toUpperCase() + colorType.slice(1)}
+                  </p>
+                </div>
+              );
+            })}
           <div
-            className="color-box bg-chroma-text"
-            // style={{ backgroundColor: "var(--chroma-text)" }}
-          >
-            <p style={{ color: labelColors[0] }}>Text</p>
-          </div>
-
-          <div
-            className="color-box  bg-chroma-background"
-            // style={{ backgroundColor: "var(--chroma-background)" }}
-          >
-            <p style={{ color: labelColors[1] }}>Background</p>
-          </div>
-          <div
-            className="color-box bg-chroma-primary"
-            // style={{ backgroundColor: "var(--chroma-primary)" }}
-          >
-            <p style={{ color: labelColors[2] }}>Primary</p>
-          </div>
-          <div
-            className="color-box  bg-chroma-secondary"
-            // style={{ backgroundColor: "var(--chroma-secondary)" }}
-          >
-            <p style={{ color: labelColors[3] }}>Secondary</p>
-          </div>
-          <div
-            className="color-box bg-chroma-accent"
-            // style={{ backgroundColor: "var(--chroma-accent)" }}
-          >
-            <p style={{ color: labelColors[4] }}>Accent</p>
-          </div>
-          <div
+            className="action-button"
             style={{
               backgroundColor: `${
                 theme == "dark" ? "rgb(20, 20, 20)" : "white"
@@ -447,6 +482,7 @@ const Popup = () => {
             </button>
           </div>
           <div
+            className="action-button"
             style={{
               backgroundColor: `${
                 theme == "dark" ? "rgb(20, 20, 20)" : "white"
@@ -559,7 +595,7 @@ const Popup = () => {
             </button>
           </div>
           <div
-            className="scheme-settings"
+            className="scheme-settings action-button"
             style={{
               backgroundColor: `${
                 theme == "dark" ? "rgb(20, 20, 20)" : "white"
@@ -593,7 +629,7 @@ const Popup = () => {
               </ul>
             </div>
             <button
-              className="primary-button"
+              className="primary-button action-button"
               id="schemeButton"
               onClick={() =>
                 document
@@ -670,7 +706,7 @@ const Popup = () => {
               </svg>
             </button>
           </div>
-          <div className="">
+          <div className="action-button">
             <button
               className="primary-button"
               onClick={() => {
@@ -694,7 +730,7 @@ const Popup = () => {
               </svg>
             </button>
           </div>
-          <div className="">
+          <div className="action-button">
             <button
               className="primary-button"
               onClick={() => {
@@ -720,7 +756,7 @@ const Popup = () => {
               </svg>
             </button>
           </div>
-          <div>
+          <div className="action-button">
             <button
               className="primary-button"
               onClick={() => {
@@ -735,7 +771,7 @@ const Popup = () => {
               export
             </button>
           </div>
-          <div>
+          <div className="action-button">
             <button className="primary-button" onClick={() => removeReactApp()}>
               close
             </button>
@@ -743,9 +779,6 @@ const Popup = () => {
         </div>
       </div>
       <ExportPopup palette={palettes && palettes[paletteIndex]} />
-      <ColorPicker
-        color={palettes && palettes[paletteIndex] && palettes[paletteIndex][2]}
-      />
       <div class="bg-chroma-background background">
         <h1 className="fg-chroma-text">
           Test <span className="fg-chroma-accent">Colors</span> on your own
