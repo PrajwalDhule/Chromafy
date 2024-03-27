@@ -26,6 +26,7 @@ body {
   position: fixed;
   margin: 0;
   padding: 0;
+  z-index: 9999 !important;
 }
 .chromafy-wrapper #popup {
   display: flex;
@@ -163,7 +164,7 @@ body {
 
 .export-popup {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -55%);
@@ -171,6 +172,7 @@ body {
   width: 60rem;
   background-color: rgb(255, 255, 255);
   border-radius: 0.75rem;
+  pointer-events: all;
 }
 .export-popup ul {
   list-style: none;

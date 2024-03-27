@@ -1,5 +1,6 @@
 const extensions = "https://developer.chrome.com/docs/extensions";
 const webstore = "https://developer.chrome.com/docs/webstore";
+let contentScriptInjected = false;
 
 // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 //   if (message.action === "applyCSS") {
@@ -53,14 +54,16 @@ const webstore = "https://developer.chrome.com/docs/webstore";
 // });
 
 chrome.action.onClicked.addListener((tab) => {
-  // chrome.scripting.executeScript({
-  //   target: { tabId: tab.id },
-  //   files: ["contentScript.js"],
-  //   // function: () => {
-  //   //   console.log("hello 2");
-  //   //   // Your content script logic here
-  //   // },
-  // });
+  if (!contentScriptInjected) {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ["contentScript.js"],
+      // function: () => {
+      //   console.log("hello 2");
+      //   // Your content script logic here
+      // },
+    });
+  }
 
   // Now, wait for the execution of executeScript() to finish
   chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {

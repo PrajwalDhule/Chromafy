@@ -20,6 +20,7 @@ const Popup = () => {
       : "light"
   );
   const [colorPickerType, setColorPickerType] = useState("none");
+  const [hasPageBeenRendered, setHasPageBeenRendered] = useState(false);
 
   const palettesRef = useRef(palettes);
   const paletteIndexRef = useRef(paletteIndex);
@@ -29,13 +30,13 @@ const Popup = () => {
   const setPalettes = (palettesValue) => {
     palettesRef.current = palettesValue;
     _setPalettes(palettesValue);
+    console.log(palettesValue);
   };
   const setPaletteIndex = (paletteIndexValue) => {
     paletteIndexRef.current = paletteIndexValue;
     _setPaletteIndex(paletteIndexValue);
+    console.log(paletteIndexValue);
   };
-
-  const hasPageBeenRendered = useRef({ effect1: false });
 
   // localStorage.removeItem("chromafyColorState");
   // localStorage.removeItem("chromafyThemeState");
@@ -47,23 +48,22 @@ const Popup = () => {
     if (!colorState || colorState.length == 0) {
       const colorState = new Array();
       localStorage.setItem("chromafyColorState", JSON.stringify(colorState));
+      generatePalette(-1, theme);
+    } else {
+      setPaletteIndex(colorState.length - 1);
+      setPalettes([...colorState]);
+      setVariables(colorState[colorState.length - 1]);
+      setLabels(colorState[colorState.length - 1]);
+      console.log([...colorState], colorState.length - 1, colorState);
     }
 
-    if (
-      !window
-        .getComputedStyle(document.documentElement)
-        .getPropertyValue("--chroma-primary")
-    ) {
-      let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
-      if (!colorState || colorState.length == 0) {
-        generatePalette(-1, theme);
-      } else {
-        setPalettes([...colorState]);
-        setPaletteIndex(colorState.length - 1);
-        setVariables(colorState[colorState.length - 1]);
-        setLabels(colorState[colorState.length - 1]);
-      }
-    }
+    // if (
+    //   !window
+    //     .getComputedStyle(document.documentElement)
+    //     .getPropertyValue("--chroma-primary")
+    // ) {
+
+    // }
 
     const colorBoxes = document.querySelectorAll(".color-box");
     colorBoxes.forEach((box) => {
@@ -77,8 +77,8 @@ const Popup = () => {
   }, []);
 
   useEffect(() => {
-    console.log(theme);
-    if (hasPageBeenRendered.current["effect1"]) {
+    console.log(theme, hasPageBeenRendered);
+    if (hasPageBeenRendered) {
       let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
       if (colorState && colorState.length != 0) {
         localStorage.setItem("chromafyThemeState", JSON.stringify(theme));
@@ -91,15 +91,15 @@ const Popup = () => {
         // setCurrentPalette([...colorPalette]);
       }
     } else {
-      hasPageBeenRendered.current["effect1"] = true;
+      setHasPageBeenRendered(true);
     }
   }, [theme]);
 
   useEffect(() => {
     if (paletteIndex >= 0 && palettes && palettes.length > 0) {
-      // console.log(paletteIndex, " ", palettes);
-      setLabels([...palettes[paletteIndex]]);
-      setVariables([...palettes[paletteIndex]]);
+      console.log(paletteIndex, " ", palettes, " ", palettes[paletteIndex]);
+      // setLabels([...palettes[paletteIndex]]);
+      // setVariables([...palettes[paletteIndex]]);
     }
   }, [paletteIndex]);
 
@@ -117,7 +117,7 @@ const Popup = () => {
     if (palette && palette.length > 0) {
       let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
       if (paletteIndex < colorState.length - 1) {
-        colorState = colorState.slice(0, paletteIndex);
+        colorState = colorState.slice(0, paletteIndex + 1);
       }
       colorState.push([...palette]);
       const len = colorState.length;
@@ -319,6 +319,7 @@ const Popup = () => {
       >
         <div id="popup">
           {palettes &&
+            paletteIndex >= 0 &&
             palettes[paletteIndex] &&
             colorTypes &&
             colorTypes.map((colorType, index) => {
@@ -777,8 +778,11 @@ const Popup = () => {
             </button>
           </div>
         </div>
+        <ExportPopup
+          palette={palettes && paletteIndex >= 0 && palettes[paletteIndex]}
+        />
       </div>
-      <ExportPopup palette={palettes && palettes[paletteIndex]} />
+
       <div class="bg-chroma-background background">
         <h1 className="fg-chroma-text">
           Test <span className="fg-chroma-accent">Colors</span> on your own

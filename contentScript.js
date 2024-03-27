@@ -1,3 +1,5 @@
+console.log("from content script");
+
 function injectReactApp() {
   // (async () => {
   //   const src = chrome.runtime.getURL(
@@ -5,13 +7,13 @@ function injectReactApp() {
   //   );
   //   await import(src);
   // })();
-  console.log(chrome.runtime.getURL("chromafy-app/dist/index.html"));
+  // console.log(chrome.runtime.getURL("chromafy-app/dist/index.html"));
   if (document.getElementById("my-extension-script")) {
     return;
   }
 
   const src = chrome.runtime.getURL(
-    "chromafy-app/dist/assets/contentScript-VUZLFdoy.js"
+    "chromafy-app/dist/assets/contentScript-B4j3DhmZ.js"
   );
   const script = document.createElement("script");
   script.type = "module";
