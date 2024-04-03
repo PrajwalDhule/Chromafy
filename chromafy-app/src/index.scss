@@ -33,7 +33,15 @@ body {
   padding: 0;
 }
 
+// button {
+//   // color: blue;
+//   all: initial;
+//   font-size: 0.8rem;
+//   font-family: "Montserrat", "Instrument Sans", sans-serif;
+// }
+
 .chromafy-wrapper {
+  all: initial;
   height: 100vh;
   width: 100vw;
   pointer-events: none;
@@ -200,6 +208,8 @@ body {
 }
 
 .export-popup {
+  // all: inherit;
+  // all: initial;
   display: none;
   position: fixed;
   top: 50%;
@@ -344,6 +354,7 @@ body {
 
 .chromafy-overlay-open {
   background-color: rgba(0, 0, 0, 0.4);
+  inset: 0;
 }
 
 .color-picker {
@@ -439,5 +450,10 @@ body {
         box-shadow: 0px 0px 16px black;
       }
     }
+  }
+  .current-color {
+    height: 2rem;
+    aspect-ratio: 2;
+    border-radius: 0.32em;
   }
 }

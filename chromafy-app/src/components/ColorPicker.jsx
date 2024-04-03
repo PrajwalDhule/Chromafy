@@ -14,6 +14,7 @@ const ColorPicker = ({
   const [saturation, _setSaturation] = useState(50);
   const [lightness, _setLightness] = useState(50);
   const [callPointerHandler, setCallPointerHandler] = useState(false);
+  const [convertedColors, setConvertedColors] = useState({});
 
   const saturationRef = useRef(saturation);
   const lightnessRef = useRef(lightness);
@@ -56,6 +57,11 @@ const ColorPicker = ({
 
     pointer.style.left = x + "px";
     pointer.style.top = squareRect.height - 20 - y + "px";
+
+    const { rgb, hex } = hslToRgb(getColor(palettes[paletteIndex][colorIndex]));
+
+    setConvertedColors({ rgb, hex });
+
     // }
   }, [palettes, paletteIndex, colorIndex]);
 
@@ -188,6 +194,8 @@ const ColorPicker = ({
 
     saturation *= 100;
     lightness *= 100;
+    saturation = Math.round(saturation);
+    lightness = Math.round(lightness);
 
     return { saturation, lightness };
   }
@@ -306,8 +314,8 @@ const ColorPicker = ({
         paletteIndexRef.current + 1,
         colorState.length - 1
       );
-      setPaletteIndex(newPaletteIndex);
       setPalettes([...colorState]);
+      setPaletteIndex(newPaletteIndex);
       setVariables([...palette]);
       setLabels([...palette]);
     }
@@ -319,6 +327,59 @@ const ColorPicker = ({
       else return "hsl(360, 30%, 2%)";
     });
     setLabelColors([...newLabelColors]);
+  }
+
+  function hslToRgb(hslString) {
+    // Parse the HSL(A) string
+    const match = hslString.match(
+      /hsla?\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,?\s*([\d.]+)?\)/
+    );
+    if (!match) return null;
+
+    const h = parseInt(match[1]) / 360;
+    const s = parseInt(match[2]) / 100;
+    const l = parseInt(match[3]) / 100;
+    const a = match[4] ? parseFloat(match[4]) : 1;
+
+    // Convert HSL(A) to RGB(A)
+    let r, g, b;
+    if (s === 0) {
+      r = g = b = l; // achromatic
+    } else {
+      const hue2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 1 / 2) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+      };
+
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1 / 3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1 / 3);
+    }
+
+    const rgbString = `rgba(${Math.round(r * 255)}, ${Math.round(
+      g * 255
+    )}, ${Math.round(b * 255)}, ${a})`;
+
+    const toHex = (c) => {
+      const hex = Math.round(c * 255).toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    };
+
+    const hexString =
+      `#${toHex(r)}${toHex(g)}${toHex(b)}` +
+      (a < 1
+        ? Math.round(a * 255)
+            .toString(16)
+            .padStart(2, "0")
+        : "");
+
+    return { rgb: rgbString, hex: hexString };
   }
 
   return (
@@ -352,7 +413,30 @@ const ColorPicker = ({
           value={hue}
         />
       </div>
-      <div className="">{hue}</div>
+      {palettesRef && paletteIndexRef && colorIndexRef && (
+        <>
+          <div className="">
+            {getColor(
+              palettesRef.current[paletteIndexRef.current][
+                colorIndexRef.current
+              ]
+            )}
+          </div>
+          {/* <div className="">
+            {convertedColors && convertedColors.hex}
+          </div>
+          <div className="">
+            {convertedColors && convertedColors.rgb}
+          </div> */}
+        </>
+      )}
+      <button>Copy</button>
+      <div
+        className="current-color"
+        style={{
+          backgroundColor: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
+        }}
+      ></div>
     </div>
   );
 };

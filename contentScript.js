@@ -13,7 +13,7 @@ function injectReactApp() {
   }
 
   const src = chrome.runtime.getURL(
-    "chromafy-app/dist/assets/contentScript-B4j3DhmZ.js"
+    "chromafy-app/dist/assets/contentScript-CpLybNPG.js"
   );
   const script = document.createElement("script");
   script.type = "module";

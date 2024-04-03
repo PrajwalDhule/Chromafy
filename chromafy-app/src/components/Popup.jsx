@@ -98,8 +98,8 @@ const Popup = () => {
   useEffect(() => {
     if (paletteIndex >= 0 && palettes && palettes.length > 0) {
       console.log(paletteIndex, " ", palettes, " ", palettes[paletteIndex]);
-      // setLabels([...palettes[paletteIndex]]);
-      // setVariables([...palettes[paletteIndex]]);
+      setLabels([...palettes[paletteIndex]]);
+      setVariables([...palettes[paletteIndex]]);
     }
   }, [paletteIndex]);
 
