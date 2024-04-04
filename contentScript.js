@@ -12,8 +12,24 @@ function injectReactApp() {
     return;
   }
 
+  const existingStyle = document.querySelector(
+    'head style[data-chromafy-font-import-injected="true"]'
+  );
+  if (!existingStyle) {
+    // Create a new style element
+    const styleElement = document.createElement("style");
+    styleElement.setAttribute("data-chromafy-font-import-injected", "true");
+
+    // Set the @import statement for Google Fonts
+    styleElement.textContent =
+      '@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");';
+
+    // Append the style element to the head
+    document.head.appendChild(styleElement);
+  }
+
   const src = chrome.runtime.getURL(
-    "chromafy-app/dist/assets/contentScript-CpLybNPG.js"
+    "chromafy-app/dist/assets/contentScript-BbTPslVN.js"
   );
   const script = document.createElement("script");
   script.type = "module";

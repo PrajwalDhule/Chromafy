@@ -28,8 +28,9 @@
 .background div button {
   border: none;
   border-radius: 0.5rem;
-  padding: 0 1em;
+  padding: 1em;
   cursor: pointer;
+  margin: 2em 0;
 }
 
 .logo {

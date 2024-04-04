@@ -25,11 +25,17 @@ x 2024-03-12 - hover animations to reveal title (text, primary, etc)
 x 2024-03-21 - undo redo pallette generation (store a colorState (useState), also be careful that changing palette variable after redo or undoing can push those colors into the colorState acc to the current logic which we don't want)
 x 2024-03-23 - convert the colors to various formats (rgb, hsl, etc) and export
 
+- all property css - don't let background css affect chromafy ui
+- dark mode ui logic to all remaining buttons
+- complete color picker ui
+- bug while clicking extension button
+- change all classes to less generic names, preferably chromafy related (eg: change "container" to something else)
+- round values in hsl especially while exporting
 - change the linear gradient on the range slider for color picker since it is the exact copy of realtimecolors
 - seperate functions into event handlers and helper funcs and abstract them into seperate files
 - apply proper names to functions ("handle" as prefix)
 - add error handling (refer chatgpt chats)
-- color picker
+
 - PROMPT BASED GENERATION
 - refer to realtimecolors "how does it work" section for a guide on which classes to give to which components (helpful for documentation)
 - documentation 

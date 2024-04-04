@@ -1,12 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-* {
-  box-sizing: border-box;
-  font-family: "Montserrat", "Instrument Sans", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  font-family: "Montserrat", sans-serif !important;
 }
 
-body {
-  overflow-x: hidden;
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/*
+  5. Improve media defaults
+*/
+/*
+  6. Remove built-in form typography styles
+*/
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
 
 #chromafy-root {
@@ -191,6 +234,7 @@ body {
   font-weight: 400;
   padding: 0.25em 1em 0.25em 0;
   border-right: 0.5px solid gray;
+  margin: 1em 0;
 }
 .export-popup .code-container-wrapper {
   display: flex;
@@ -212,6 +256,8 @@ body {
   margin-top: 1.5em;
 }
 .export-popup .code-container-wrapper > div .btn-wrapper button {
+  all: unset;
+  font-size: 0.8rem;
   width: -moz-fit-content;
   width: fit-content;
   color: rgb(26, 26, 26);
@@ -229,6 +275,8 @@ body {
   border-radius: 0.5em 0 0 0.5em;
 }
 .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input {
+  all: unset;
+  font-size: 0.8rem;
   width: 16em;
   padding: 0.36em 0.75em;
   border: none;
@@ -239,20 +287,22 @@ body {
   outline: none;
 }
 .export-popup .code-container-wrapper > div .code-block {
-  padding: 0.25em 1em;
+  padding: 0.75em 1em;
   height: 40vh;
   overflow-y: auto;
-  width: 100%;
+  width: 90%;
   text-align: left;
   background-color: hsl(0, 0%, 95%);
   border-radius: 0.5em;
   border: 0.5px solid hsla(0, 0%, 50%, 0.25);
 }
 .export-popup .code-container-wrapper > div .code-block pre {
+  all: unset;
   white-space: pre-wrap;
   line-height: 1.75;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
+  margin: 0.5em 0;
 }
 .export-popup .color-settings {
   display: flex;
