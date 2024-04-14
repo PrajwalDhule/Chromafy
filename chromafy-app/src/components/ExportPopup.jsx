@@ -237,7 +237,7 @@ const ExportPopup = (props) => {
         &#x2716;
       </button>
       <div className="color-settings">
-        <div className="color-types-container container">
+        <div className="color-types-container chromafy-export-container">
           <h4 className="title">Export CSS code</h4>
           <div
             className={`color-type ${format == "hex" ? "selected" : ""} option`}
@@ -258,7 +258,7 @@ const ExportPopup = (props) => {
             HSL
           </div>
         </div>
-        <div className="color-filters-container container">
+        <div className="color-filters-container chromafy-export-container">
           {/* <div className="">Themes</div> */}
           <label htmlFor="shades">Shades</label>
           <input

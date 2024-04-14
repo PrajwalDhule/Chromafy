@@ -1,55 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*,
-*::before,
-*::after {
-  font-family: "Montserrat", sans-serif !important;
+.chromafy-wrapper input[type=text]::after, .chromafy-wrapper input[type=text]::before,
+.chromafy-wrapper input[type=checkbox]::after,
+.chromafy-wrapper input[type=checkbox]::before,
+.chromafy-wrapper input[type=range]::after,
+.chromafy-wrapper input[type=range]::before {
+  all: unset !important;
 }
-
-/*
-  2. Remove default margin
-*/
-* {
-  margin: 0;
+.chromafy-wrapper div,
+.chromafy-wrapper ul,
+.chromafy-wrapper li,
+.chromafy-wrapper button,
+.chromafy-wrapper p,
+.chromafy-wrapper input,
+.chromafy-wrapper pre,
+.chromafy-wrapper h4,
+.chromafy-wrapper label,
+.chromafy-wrapper svg {
+  all: unset;
 }
-
-/*
-  Typographic tweaks!
-  3. Add accessible line-height
-  4. Improve text rendering
-*/
-body {
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+.chromafy-wrapper div::after, .chromafy-wrapper div::before,
+.chromafy-wrapper ul::after,
+.chromafy-wrapper ul::before,
+.chromafy-wrapper li::after,
+.chromafy-wrapper li::before,
+.chromafy-wrapper button::after,
+.chromafy-wrapper button::before,
+.chromafy-wrapper p::after,
+.chromafy-wrapper p::before,
+.chromafy-wrapper input::after,
+.chromafy-wrapper input::before,
+.chromafy-wrapper pre::after,
+.chromafy-wrapper pre::before,
+.chromafy-wrapper h4::after,
+.chromafy-wrapper h4::before,
+.chromafy-wrapper label::after,
+.chromafy-wrapper label::before,
+.chromafy-wrapper svg::after,
+.chromafy-wrapper svg::before {
+  all: unset;
 }
-
-/*
-  5. Improve media defaults
-*/
-/*
-  6. Remove built-in form typography styles
-*/
-/*
-  7. Avoid text overflows
-*/
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
+.chromafy-wrapper .color-picker div {
+  display: block;
 }
-
-/*
-  8. Create a root stacking context
-*/
-#root,
-#__next {
-  isolation: isolate;
+.chromafy-wrapper div {
+  display: block;
+}
+.chromafy-wrapper button {
+  font-size: 0.8rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.chromafy-wrapper p {
+  display: block;
+}
+.chromafy-wrapper input {
+  -moz-appearance: auto;
+  -webkit-appearance: auto;
+  appearance: auto;
+  text-align: left;
+}
+.chromafy-wrapper svg {
+  fill: transparent;
 }
 
 #chromafy-root {
@@ -62,8 +73,50 @@ h6 {
   padding: 0;
 }
 
+#main-chromafy-app *,
+#main-chromafy-app *::before,
+#main-chromafy-app *::after,
+.chromafy-wrapper *,
+.chromafy-wrapper *::before,
+.chromafy-wrapper *::after {
+  font-family: "Montserrat", sans-serif !important;
+}
+#main-chromafy-app *,
+.chromafy-wrapper * {
+  margin: 0;
+}
+#main-chromafy-app p,
+#main-chromafy-app h1,
+#main-chromafy-app h2,
+#main-chromafy-app h3,
+#main-chromafy-app h4,
+#main-chromafy-app h5,
+#main-chromafy-app h6,
+.chromafy-wrapper p,
+.chromafy-wrapper h1,
+.chromafy-wrapper h2,
+.chromafy-wrapper h3,
+.chromafy-wrapper h4,
+.chromafy-wrapper h5,
+.chromafy-wrapper h6 {
+  overflow-wrap: break-word;
+}
+#main-chromafy-app #root,
+#main-chromafy-app #__next,
+.chromafy-wrapper #root,
+.chromafy-wrapper #__next {
+  isolation: isolate;
+}
+
+.chromafy-wrapper[data-theme=dark] div.action-button:not(.color-box) {
+  background-color: #141414;
+}
+
+.chromafy-wrapper[data-theme=light] div.action-button:not(.color-box) {
+  background-color: #fafafa;
+}
+
 .chromafy-wrapper {
-  all: initial;
   height: 100vh;
   width: 100vw;
   pointer-events: none;
@@ -124,10 +177,7 @@ h6 {
   opacity: 1;
 }
 .chromafy-wrapper #popup div + div {
-  margin-left: 0.28em;
-}
-.chromafy-wrapper #popup div.action-button:not(.color-box) {
-  background-color: white;
+  margin-left: 0.28em !important;
 }
 .chromafy-wrapper #popup .scheme-settings {
   position: relative;
@@ -199,14 +249,7 @@ h6 {
 .chromafy-wrapper #popup > *:hover {
   border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
 }
-
-.prajwal-text {
-  color: blue !important;
-  font-weight: 700;
-  font-size: 2rem;
-}
-
-.export-popup {
+.chromafy-wrapper .export-popup {
   display: none;
   position: fixed;
   top: 50%;
@@ -218,45 +261,47 @@ h6 {
   border-radius: 0.75rem;
   pointer-events: all;
 }
-.export-popup ul {
+.chromafy-wrapper .export-popup * {
+  color: black;
+}
+.chromafy-wrapper .export-popup ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.export-popup .container {
+.chromafy-wrapper .export-popup .chromafy-export-container {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 1em 0;
+  margin: 1em 0 !important;
   padding: 0 1.25em;
 }
-.export-popup .container h4 {
+.chromafy-wrapper .export-popup .chromafy-export-container h4 {
   font-weight: 400;
   padding: 0.25em 1em 0.25em 0;
   border-right: 0.5px solid gray;
   margin: 1em 0;
 }
-.export-popup .code-container-wrapper {
+.chromafy-wrapper .export-popup .code-container-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 1em 1.25em;
+  margin: 1em 1.25em !important;
   gap: 1em;
 }
-.export-popup .code-container-wrapper > div {
+.chromafy-wrapper .export-popup .code-container-wrapper > div {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.export-popup .code-container-wrapper > div .btn-wrapper {
+.chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper {
   display: flex;
   gap: 1em;
-  margin-top: 1.5em;
+  margin-top: 1.5em !important;
 }
-.export-popup .code-container-wrapper > div .btn-wrapper button {
-  all: unset;
+.chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper button {
   font-size: 0.8rem;
   width: -moz-fit-content;
   width: fit-content;
@@ -268,14 +313,13 @@ h6 {
   border: 0.5px solid hsla(0, 0%, 50%, 0.35);
   cursor: pointer;
 }
-.export-popup .code-container-wrapper > div .btn-wrapper button:hover {
+.chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper button:hover {
   background-color: rgb(240, 240, 240);
 }
-.export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper button {
+.chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper button {
   border-radius: 0.5em 0 0 0.5em;
 }
-.export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input {
-  all: unset;
+.chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input {
   font-size: 0.8rem;
   width: 16em;
   padding: 0.36em 0.75em;
@@ -283,10 +327,10 @@ h6 {
   border-radius: 0 0.5em 0.5em 0;
   border: 0.5px solid hsla(0, 0%, 50%, 0.35);
 }
-.export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input:focus {
+.chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input:focus {
   outline: none;
 }
-.export-popup .code-container-wrapper > div .code-block {
+.chromafy-wrapper .export-popup .code-container-wrapper > div .code-block {
   padding: 0.75em 1em;
   height: 40vh;
   overflow-y: auto;
@@ -296,40 +340,42 @@ h6 {
   border-radius: 0.5em;
   border: 0.5px solid hsla(0, 0%, 50%, 0.25);
 }
-.export-popup .code-container-wrapper > div .code-block pre {
-  all: unset;
+.chromafy-wrapper .export-popup .code-container-wrapper > div .code-block pre {
   white-space: pre-wrap;
   line-height: 1.75;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
-  margin: 0.5em 0;
+  margin: 0.5em 0 !important;
 }
-.export-popup .color-settings {
+.chromafy-wrapper .export-popup .color-settings {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
 }
-.export-popup .color-settings .color-filters-container {
+.chromafy-wrapper .export-popup .color-settings .color-filters-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.75em;
 }
-.export-popup .color-settings .color-filters-container input[type=checkbox]#shades {
+.chromafy-wrapper .export-popup .color-settings .color-filters-container input[type=checkbox]#shades {
+  -moz-appearance: auto;
+  -webkit-appearance: auto;
+  appearance: auto;
   scale: 1.1;
-  margin: 0.75px 0 0 0;
+  margin: 0.75px 0 0 0 !important;
 }
-.export-popup .option {
+.chromafy-wrapper .export-popup .option {
   border-radius: 0.5em;
   padding: 0.36em 1em;
   cursor: pointer;
 }
-.export-popup .selected {
+.chromafy-wrapper .export-popup .selected {
   color: rgb(255, 255, 255);
   background-color: rgb(25, 25, 25);
 }
-.export-popup #close-btn {
+.chromafy-wrapper .export-popup #close-btn {
   position: absolute;
   right: 0;
   top: 0;
@@ -342,17 +388,10 @@ h6 {
   border-radius: 0.5em;
   cursor: pointer;
 }
-
-.export-popup-open {
+.chromafy-wrapper .export-popup-open {
   display: block;
 }
-
-.chromafy-overlay-open {
-  background-color: rgba(0, 0, 0, 0.4);
-  inset: 0;
-}
-
-.color-picker {
+.chromafy-wrapper div.color-picker {
   position: absolute;
   top: 0;
   left: 0;
@@ -363,32 +402,32 @@ h6 {
   padding: 1em;
   border-radius: 1em;
 }
-.color-picker .saturation-lightness-picker {
+.chromafy-wrapper div.color-picker div.saturation-lightness-picker {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
   border-radius: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 1em !important;
 }
-.color-picker .saturation-lightness-picker .layer {
+.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer {
   position: absolute;
   inset: 0;
   height: 100%;
   width: 100%;
   border-radius: 0.5em;
 }
-.color-picker .saturation-lightness-picker .layer-white {
+.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer-white {
   z-index: 1;
   background: linear-gradient(to right, #fff, transparent);
 }
-.color-picker .saturation-lightness-picker .layer-black {
+.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer-black {
   z-index: 2;
   background: linear-gradient(to top, #000, transparent);
 }
-.color-picker .saturation-lightness-picker .layer-hue {
+.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer-hue {
   z-index: 0;
 }
-.color-picker .saturation-lightness-picker #color-picker-pointer {
+.chromafy-wrapper div.color-picker div.saturation-lightness-picker div#color-picker-pointer {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -399,16 +438,16 @@ h6 {
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
-.color-picker .hue-slider {
+.chromafy-wrapper div.color-picker div.hue-slider {
   position: relative;
 }
-.color-picker .hue-slider .hue-display {
+.chromafy-wrapper div.color-picker div.hue-slider div.hue-display {
   background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
   width: 100%;
   height: 0.75rem;
   border-radius: 1rem;
 }
-.color-picker .hue-slider input[type=range] {
+.chromafy-wrapper div.color-picker div.hue-slider input[type=range] {
   position: absolute;
   inset: 0;
   -webkit-appearance: none;
@@ -417,23 +456,34 @@ h6 {
   width: 100%;
   background-color: transparent;
 }
-.color-picker .hue-slider input[type=range]::-webkit-slider-thumb {
+.chromafy-wrapper div.color-picker div.hue-slider input[type=range]::-webkit-slider-thumb {
   outline: 0.36rem solid white;
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
-.color-picker .hue-slider input[type=range]::-moz-range-thumb {
+.chromafy-wrapper div.color-picker div.hue-slider input[type=range]::-moz-range-thumb {
   outline: 0.36rem solid white;
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
-.color-picker .hue-slider input[type=range]::-ms-thumb {
+.chromafy-wrapper div.color-picker div.hue-slider input[type=range]::-ms-thumb {
   outline: 0.36rem solid white;
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
-.color-picker .current-color {
+.chromafy-wrapper div.color-picker div.current-color {
   height: 2rem;
   aspect-ratio: 2;
   border-radius: 0.32em;
+}
+
+.chromafy-overlay-open {
+  background-color: rgba(0, 0, 0, 0.4);
+  inset: 0;
+}
+
+.prajwal-text {
+  color: blue !important;
+  font-weight: 700;
+  font-size: 2rem;
 }/*# sourceMappingURL=index.css.map */

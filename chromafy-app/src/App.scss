@@ -1,74 +1,111 @@
-#chromafy-root {
-  max-width: 1280px;
-  margin: 0 auto;
-  // padding: 2rem;
-  text-align: center;
-}
+// *,
+// *::before,
+// *::after {
+//   // box-sizing: border-box;
+//   font-family: "Montserrat", sans-serif !important;
+// }
+// * {
+//   margin: 0;
+// }
+// img,
+// picture,
+// video,
+// canvas,
+// svg {
+//   // display: block;
+//   // max-width: 100%;
+// }
+// input,
+// button,
+// textarea,
+// select {
+//   // font: inherit;
+// }
+// p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   overflow-wrap: break-word;
+// }
+// #root,
+// #__next {
+//   isolation: isolate;
+// }
 
-.background {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  color: white;
-  border-radius: 2rem;
-  // margin: 2rem;
-  padding-left: 7.5vw;
-  h1 {
-    width: 50vw;
-    padding-left: 0;
-    margin-left: 0;
-    text-align: left;
-    font-size: 3rem;
-  }
-  div {
-    button + button {
-      margin-left: 2em;
-    }
-    button {
-      border: none;
-      border-radius: 0.5rem;
-      padding: 1em;
-      cursor: pointer;
-      margin: 2em 0;
-    }
-  }
-}
+// #chromafy-root {
+//   max-width: 1280px;
+//   margin: 0 auto;
+//   // padding: 2rem;
+//   text-align: center;
+// }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+// .background {
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: flex-start;
+//   color: white;
+//   // border-radius: 2rem;
+//   // margin: 2rem;
+//   padding-left: 7.5vw;
+//   h1 {
+//     width: 50vw;
+//     padding-left: 0;
+//     margin-left: 0;
+//     text-align: left;
+//     font-size: 3rem;
+//   }
+//   div {
+//     button + button {
+//       margin-left: 2em;
+//     }
+//     button {
+//       border: none;
+//       border-radius: 0.5rem;
+//       padding: 1em;
+//       cursor: pointer;
+//       margin: 2em 0;
+//     }
+//   }
+// }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+// .logo {
+//   height: 6em;
+//   padding: 1.5em;
+//   will-change: filter;
+//   transition: filter 300ms;
+// }
+// .logo:hover {
+//   filter: drop-shadow(0 0 2em #646cffaa);
+// }
+// .logo.react:hover {
+//   filter: drop-shadow(0 0 2em #61dafbaa);
+// }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+// @keyframes logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
 
-.card {
-  padding: 2em;
-}
+// @media (prefers-reduced-motion: no-preference) {
+//   a:nth-of-type(2) .logo {
+//     animation: logo-spin infinite 20s linear;
+//   }
+// }
 
-.read-the-docs {
-  color: #888;
-}
+// .card {
+//   padding: 2em;
+// }
+
+// .read-the-docs {
+//   color: #888;
+// }

@@ -29,7 +29,7 @@ function injectReactApp() {
   }
 
   const src = chrome.runtime.getURL(
-    "chromafy-app/dist/assets/contentScript-BbTPslVN.js"
+    "chromafy-app/dist/assets/contentScript-_06f2bw-.js"
   );
   const script = document.createElement("script");
   script.type = "module";
