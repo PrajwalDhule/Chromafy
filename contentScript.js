@@ -29,7 +29,7 @@ function injectReactApp() {
   }
 
   const src = chrome.runtime.getURL(
-    "chromafy-app/dist/assets/contentScript-_06f2bw-.js"
+    "chromafy-app/dist/assets/contentScript-0pacTQ22.js"
   );
   const script = document.createElement("script");
   script.type = "module";

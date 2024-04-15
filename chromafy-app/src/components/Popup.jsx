@@ -135,7 +135,7 @@ const Popup = () => {
 
   function setLabels(palette) {
     const newLabelColors = palette.map((color) => {
-      if (color.l < 55) return "hsl(360, 30%, 98%)";
+      if (color.l < 50) return "hsl(360, 30%, 98%)";
       else return "hsl(360, 30%, 2%)";
     });
     setLabelColors([...newLabelColors]);
@@ -318,7 +318,7 @@ const Popup = () => {
         style={{ zIndex: 9999 }}
         data-theme={theme}
       >
-        <div id="popup">
+        <div id="chromafy-popup">
           {palettes &&
             paletteIndex >= 0 &&
             palettes[paletteIndex] &&
@@ -331,6 +331,7 @@ const Popup = () => {
                   }`}
                 >
                   {colorPickerType == `${colorType}` && (
+                    // {true
                     <ColorPicker
                       palettes={palettes}
                       palettesRef={palettesRef}
@@ -798,9 +799,28 @@ const Popup = () => {
             <button
               className="primary-button"
               onClick={() => removeReactApp()}
-              style={{ color: theme == "dark" ? "white" : "black" }}
+              // style={{ color: theme == "dark" ? "white" : "black" }}
             >
-              close
+              <svg
+                width="470"
+                height="470"
+                viewBox="0 0 470 470"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M100 369.408L369.408 100"
+                  stroke={theme == "dark" ? "white" : "black"}
+                  stroke-width="36"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M100 100L369.408 369.408"
+                  stroke={theme == "dark" ? "white" : "black"}
+                  stroke-width="36"
+                  stroke-linecap="round"
+                />
+              </svg>
             </button>
           </div>
         </div>

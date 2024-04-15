@@ -15,7 +15,9 @@
 .chromafy-wrapper pre,
 .chromafy-wrapper h4,
 .chromafy-wrapper label,
-.chromafy-wrapper svg {
+.chromafy-wrapper svg,
+.chromafy-wrapper span,
+.chromafy-wrapper img {
   all: unset;
 }
 .chromafy-wrapper div::after, .chromafy-wrapper div::before,
@@ -36,7 +38,11 @@
 .chromafy-wrapper label::after,
 .chromafy-wrapper label::before,
 .chromafy-wrapper svg::after,
-.chromafy-wrapper svg::before {
+.chromafy-wrapper svg::before,
+.chromafy-wrapper span::after,
+.chromafy-wrapper span::before,
+.chromafy-wrapper img::after,
+.chromafy-wrapper img::before {
   all: unset;
 }
 .chromafy-wrapper .color-picker div {
@@ -125,7 +131,7 @@
   padding: 0;
   z-index: 9999 !important;
 }
-.chromafy-wrapper #popup {
+.chromafy-wrapper #chromafy-popup {
   display: flex;
   position: fixed;
   bottom: 1vh;
@@ -139,21 +145,21 @@
   padding: 0.32em;
   border-radius: 0.5rem;
 }
-.chromafy-wrapper #popup div.action-button {
+.chromafy-wrapper #chromafy-popup div.action-button {
   height: 3rem;
   border-radius: 0.5rem;
   cursor: pointer;
   border: 1.5px solid transparent;
   box-sizing: border-box;
 }
-.chromafy-wrapper #popup div.color-box {
+.chromafy-wrapper #chromafy-popup div.color-box {
   width: 4.5rem;
   position: relative;
   display: grid;
   place-items: center;
   transition: width 250ms ease-in-out;
 }
-.chromafy-wrapper #popup div.color-box p {
+.chromafy-wrapper #chromafy-popup div.color-box p {
   opacity: 0;
   transition: opacity 150ms 100ms ease-in-out;
   margin: 0;
@@ -164,26 +170,26 @@
   display: grid;
   place-items: center;
 }
-.chromafy-wrapper #popup div.color-box:hover {
+.chromafy-wrapper #chromafy-popup div.color-box:hover {
   width: 8rem;
 }
-.chromafy-wrapper #popup div.color-box:hover p {
+.chromafy-wrapper #chromafy-popup div.color-box:hover p {
   opacity: 1;
 }
-.chromafy-wrapper #popup div.color-box-active {
+.chromafy-wrapper #chromafy-popup div.color-box-active {
   width: 8rem;
 }
-.chromafy-wrapper #popup div.color-box-active p {
+.chromafy-wrapper #chromafy-popup div.color-box-active p {
   opacity: 1;
 }
-.chromafy-wrapper #popup div + div {
-  margin-left: 0.28em !important;
+.chromafy-wrapper #chromafy-popup div + div {
+  margin-left: 0.28em;
 }
-.chromafy-wrapper #popup .scheme-settings {
+.chromafy-wrapper #chromafy-popup .scheme-settings {
   position: relative;
   z-index: 9999;
 }
-.chromafy-wrapper #popup .scheme-settings .scheme-list {
+.chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list {
   display: none;
   position: absolute;
   left: 50%;
@@ -197,11 +203,11 @@
   background-color: white;
   border-radius: 0.5em;
 }
-.chromafy-wrapper #popup .scheme-settings .scheme-list p {
+.chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list p {
   margin: 0;
   padding: 0.5em 0 1em 0.25em;
 }
-.chromafy-wrapper #popup .scheme-settings .scheme-list ul {
+.chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -209,7 +215,7 @@
   place-items: center;
   gap: 0.5em;
 }
-.chromafy-wrapper #popup .scheme-settings .scheme-list ul li {
+.chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul li {
   padding: 0.5em 0.75em;
   background-color: rgb(250, 250, 250);
   color: rgb(16, 16, 16);
@@ -218,17 +224,17 @@
   border: 1px solid rgb(224, 224, 224);
   cursor: pointer;
 }
-.chromafy-wrapper #popup .scheme-settings .scheme-list ul li:hover {
+.chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul li:hover {
   background-color: rgb(240, 240, 240);
 }
-.chromafy-wrapper #popup .scheme-settings .scheme-list ul li.scheme-option-selected {
+.chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul li.scheme-option-selected {
   background-color: rgb(20, 20, 20);
   color: rgb(250, 250, 250);
 }
-.chromafy-wrapper #popup .scheme-settings .scheme-list-open {
+.chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list-open {
   display: block;
 }
-.chromafy-wrapper #popup button.primary-button {
+.chromafy-wrapper #chromafy-popup button.primary-button {
   border: none;
   border-radius: 0.5rem;
   background-color: transparent;
@@ -236,18 +242,144 @@
   cursor: pointer;
   padding: 0 1.25em;
 }
-.chromafy-wrapper #popup button svg {
+.chromafy-wrapper #chromafy-popup button svg {
   height: 2em;
   width: 2em;
   opacity: 0.825;
   display: grid;
   place-items: center;
 }
-.chromafy-wrapper #popup button #darkThemeIcon {
+.chromafy-wrapper #chromafy-popup button #darkThemeIcon {
   display: none;
 }
-.chromafy-wrapper #popup > *:hover {
+.chromafy-wrapper #chromafy-popup > *:hover {
   border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0%, -105%);
+  z-index: 9999;
+  width: 14rem;
+  background-color: white;
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid hsla(0, 0%, 50%, 0.5);
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.5em;
+  margin-bottom: 1em !important;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5em;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-white {
+  z-index: 1;
+  background: linear-gradient(to right, #fff, transparent);
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-black {
+  z-index: 2;
+  background: linear-gradient(to top, #000, transparent);
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-hue {
+  z-index: 0;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div#color-picker-pointer {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+  outline: 0.36rem solid white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px black;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider {
+  position: relative;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider div.hue-display {
+  background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+  width: 100%;
+  height: 0.75rem;
+  border-radius: 1rem;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range] {
+  position: absolute;
+  inset: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  background-color: transparent;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range]::-webkit-slider-thumb {
+  outline: 0.36rem solid white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px black;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range]::-moz-range-thumb {
+  outline: 0.36rem solid white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px black;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range]::-ms-thumb {
+  outline: 0.36rem solid white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px black;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .color-format {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.25em 0;
+  padding: 0 0.75em;
+  font-size: 0.9rem;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .color-format div {
+  padding: 0.3em 0.5em;
+  border-radius: 0.5em;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .color-format .selected {
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 25, 25);
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .color-value {
+  margin-bottom: 1em;
+  border: 1px solid hsla(0, 0%, 50%, 0.5);
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 0.5em;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .utility {
+  display: flex;
+  justify-content: space-between;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .utility button {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 0.5em 0.75em;
+  border: 1px solid hsla(0, 0%, 50%, 0.5);
+  border-radius: 0.5em;
+  font-size: 0.9rem;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .utility button img {
+  height: 1.25em;
+  margin-right: 0.5em;
+  opacity: 0.8;
+}
+.chromafy-wrapper #chromafy-popup div.color-picker .utility div.current-color {
+  height: 2.5rem;
+  aspect-ratio: 2;
+  border-radius: 0.32em;
 }
 .chromafy-wrapper .export-popup {
   display: none;
@@ -390,91 +522,6 @@
 }
 .chromafy-wrapper .export-popup-open {
   display: block;
-}
-.chromafy-wrapper div.color-picker {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(0%, -110%);
-  z-index: 9999;
-  width: 16rem;
-  background-color: white;
-  padding: 1em;
-  border-radius: 1em;
-}
-.chromafy-wrapper div.color-picker div.saturation-lightness-picker {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 0.5em;
-  margin-bottom: 1em !important;
-}
-.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5em;
-}
-.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer-white {
-  z-index: 1;
-  background: linear-gradient(to right, #fff, transparent);
-}
-.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer-black {
-  z-index: 2;
-  background: linear-gradient(to top, #000, transparent);
-}
-.chromafy-wrapper div.color-picker div.saturation-lightness-picker div.layer-hue {
-  z-index: 0;
-}
-.chromafy-wrapper div.color-picker div.saturation-lightness-picker div#color-picker-pointer {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 4;
-  outline: 0.36rem solid white;
-  border-radius: 50%;
-  box-shadow: 0px 0px 16px black;
-}
-.chromafy-wrapper div.color-picker div.hue-slider {
-  position: relative;
-}
-.chromafy-wrapper div.color-picker div.hue-slider div.hue-display {
-  background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
-  width: 100%;
-  height: 0.75rem;
-  border-radius: 1rem;
-}
-.chromafy-wrapper div.color-picker div.hue-slider input[type=range] {
-  position: absolute;
-  inset: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 100%;
-  background-color: transparent;
-}
-.chromafy-wrapper div.color-picker div.hue-slider input[type=range]::-webkit-slider-thumb {
-  outline: 0.36rem solid white;
-  border-radius: 50%;
-  box-shadow: 0px 0px 16px black;
-}
-.chromafy-wrapper div.color-picker div.hue-slider input[type=range]::-moz-range-thumb {
-  outline: 0.36rem solid white;
-  border-radius: 50%;
-  box-shadow: 0px 0px 16px black;
-}
-.chromafy-wrapper div.color-picker div.hue-slider input[type=range]::-ms-thumb {
-  outline: 0.36rem solid white;
-  border-radius: 50%;
-  box-shadow: 0px 0px 16px black;
-}
-.chromafy-wrapper div.color-picker div.current-color {
-  height: 2rem;
-  aspect-ratio: 2;
-  border-radius: 0.32em;
 }
 
 .chromafy-overlay-open {

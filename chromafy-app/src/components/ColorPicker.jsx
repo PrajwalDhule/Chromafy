@@ -1,4 +1,5 @@
 import { React, useState, useEffect, useRef } from "react";
+import CopyLogo from "../assets/copy.svg";
 
 const ColorPicker = ({
   palettes,
@@ -15,6 +16,7 @@ const ColorPicker = ({
   const [lightness, _setLightness] = useState(50);
   const [callPointerHandler, setCallPointerHandler] = useState(false);
   const [convertedColors, setConvertedColors] = useState({});
+  const [format, setFormat] = useState("hsl");
 
   const saturationRef = useRef(saturation);
   const lightnessRef = useRef(lightness);
@@ -65,14 +67,6 @@ const ColorPicker = ({
     // }
   }, [palettes, paletteIndex, colorIndex]);
 
-  // useEffect(() => {
-  //   console.log(callPointerHandler, " outside");
-  //   if (document.documentElement.classList.contains("firstRunCompleted")) {
-  //     console.log(callPointerHandler, " inside");
-  //     handleSatLightPointerRelease(saturation, lightness);
-  //   }
-  // }, [callPointerHandler]);
-
   useEffect(() => {
     const square = document.getElementById("saturation-lightness-picker");
     square.addEventListener("mousedown", handleMouseDown);
@@ -103,9 +97,6 @@ const ColorPicker = ({
 
   const handleMouseUp = () => {
     const square = document.getElementById("saturation-lightness-picker");
-    // const saturationValue = saturation;
-
-    // console.log(paletteIndexRef.current, " outside ", palettesRef.current);
     console.log(colorIndexRef.current, " outside ");
 
     handleSatLightPointerRelease(
@@ -213,7 +204,6 @@ const ColorPicker = ({
 
     y = 100 - y;
 
-    // console.log(x + " " + y);
     return { x, y };
   }
 
@@ -382,6 +372,32 @@ const ColorPicker = ({
     return { rgb: rgbString, hex: hexString };
   }
 
+  function copyColor() {
+    let textContent = convertedColors?.hex;
+    if (format == "hsl") {
+      if (palettesRef && paletteIndexRef && colorIndexRef)
+        textContent = getColor(
+          palettesRef.current[paletteIndexRef.current][colorIndexRef.current]
+        );
+    } else if (format == "rgb") textContent = convertedColors?.rgb;
+
+    navigator.clipboard
+      .writeText(textContent)
+      .then(() => {
+        // alert("Code copied!");
+        let copyLabel = document.getElementById("copy-label");
+        if (copyLabel) {
+          copyLabel.textContent = "Copied!";
+          setTimeout(() => {
+            copyLabel.textContent = "Copy";
+          }, 2000);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to copy code: ", err);
+      });
+  }
+
   return (
     <div className="color-picker">
       <div
@@ -413,30 +429,57 @@ const ColorPicker = ({
           value={hue}
         />
       </div>
+      <div className="color-format">
+        <div
+          className={`color-type ${format == "hsl" ? "selected" : ""} option`}
+          onClick={() => setFormat("hsl")}
+        >
+          HSL
+        </div>
+        <div
+          className={`color-type ${format == "hex" ? "selected" : ""} option`}
+          onClick={() => setFormat("hex")}
+        >
+          HEX
+        </div>
+        <div
+          className={`color-type ${format == "rgb" ? "selected" : ""} option`}
+          onClick={() => setFormat("rgb")}
+        >
+          RGB
+        </div>
+      </div>
       {palettesRef && paletteIndexRef && colorIndexRef && (
-        <>
-          <div className="">
-            {getColor(
-              palettesRef.current[paletteIndexRef.current][
-                colorIndexRef.current
-              ]
-            )}
-          </div>
-          {/* <div className="">
-            {convertedColors && convertedColors.hex}
-          </div>
-          <div className="">
-            {convertedColors && convertedColors.rgb}
-          </div> */}
-        </>
+        <div className="color-value">
+          {format == "hsl" && (
+            <div>
+              {getColor(
+                palettesRef.current[paletteIndexRef.current][
+                  colorIndexRef.current
+                ]
+              )}
+            </div>
+          )}
+          {format == "hex" && (
+            <div>{convertedColors && convertedColors.hex}</div>
+          )}
+          {format == "rgb" && (
+            <div>{convertedColors && convertedColors.rgb}</div>
+          )}
+        </div>
       )}
-      <button>Copy</button>
-      <div
-        className="current-color"
-        style={{
-          backgroundColor: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
-        }}
-      ></div>
+      <div className="utility">
+        <button onClick={() => copyColor()}>
+          <img src={CopyLogo} alt="copy" />
+          <span id="copy-label">Copy</span>
+        </button>
+        <div
+          className="current-color"
+          style={{
+            backgroundColor: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
+          }}
+        ></div>
+      </div>
     </div>
   );
 };
