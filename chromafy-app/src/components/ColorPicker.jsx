@@ -141,42 +141,7 @@ const ColorPicker = ({
     }
   };
 
-  // if (square && !square.classList.contains("mousedown-event-attached")) {
-  //   square.addEventListener("mousedown", handleMouseDown);
-  //   square.classList.add("mousedown-event-attached");
-  // }
-
-  // if (!document.documentElement.classList.contains("mouseup-event-attached")) {
-  //   document.addEventListener("mouseup", handleMouseUp);
-  //   document.documentElement.classList.add("mouseup-event-attached");
-  // }
-
-  // if (
-  //   !document.documentElement.classList.contains("mousemove-event-attached")
-  // ) {
-  //   document.addEventListener("mousemove", handleMouseMove);
-  //   document.documentElement.classList.add("mousemove-event-attached");
-  // }
-
   function calculate_s_l(x, y) {
-    // let s1 = 38,
-    //   s2 = 100,
-    //   s3 = 100,
-    //   s4 = 0;
-
-    // let l1 = 100,
-    //   l2 = 50,
-    //   l3 = 0,
-    //   l4 = 0;
-
-    // let weight_x = 1 - x;
-    // let weight_y = 1 - y;
-
-    // let s = (s1 * weight_x + s2 * x) * weight_y + (s3 * x + s4 * weight_x) * y;
-    // let l = (l1 * weight_x + l2 * x) * weight_y + (l3 * x + l4 * weight_x) * y;
-
-    // console.log(s + " " + l);
-
     const hsv_value = 1 - y / 100;
     const hsv_saturation = x / 100;
     let lightness = (hsv_value / 2) * (2 - hsv_saturation);
@@ -229,7 +194,6 @@ const ColorPicker = ({
     palettesValue,
     colorIndexValue
   ) => {
-    // console.log(palettesValue, "", paletteIndexValue);
     console.log(colorIndexValue);
     const square = document.getElementById("saturation-lightness-picker");
     if (square?.classList.contains("isDragging")) {

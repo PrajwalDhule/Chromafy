@@ -2,6 +2,10 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import ExportPopup from "./ExportPopup";
 import ColorPicker from "./ColorPicker";
+import themeBtnDark from "../assets/themeBtnDark.svg";
+import themeBtnLight from "../assets/themeBtnLight.svg";
+import randomizeBtnLight from "../assets/randomizeBtnLight.svg";
+import randomizeBtnDark from "../assets/randomizeBtnDark.svg";
 
 const Popup = () => {
   const [colorSchemeId, setColorSchemeId] = useState(-1);
@@ -42,94 +46,165 @@ const Popup = () => {
   // localStorage.removeItem("chromafyThemeState");
 
   useEffect(() => {
-    localStorage.setItem("chromafyThemeState", JSON.stringify(theme));
+    try {
+      localStorage.setItem("chromafyThemeState", JSON.stringify(theme));
 
-    let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
-    if (!colorState || colorState.length == 0) {
-      const colorState = new Array();
-      localStorage.setItem("chromafyColorState", JSON.stringify(colorState));
-      generatePalette(-1, theme);
-    } else {
-      setPaletteIndex(colorState.length - 1);
-      setPalettes([...colorState]);
-      setVariables(colorState[colorState.length - 1]);
-      setLabels(colorState[colorState.length - 1]);
-      console.log([...colorState], colorState.length - 1, colorState);
-    }
-
-    // if (
-    //   !window
-    //     .getComputedStyle(document.documentElement)
-    //     .getPropertyValue("--chroma-primary")
-    // ) {
-
-    // }
-
-    const colorBoxes = document.querySelectorAll(".color-box");
-    colorBoxes.forEach((box) => {
-      if (!box.classList.contains("click-event-attached")) {
-        box.addEventListener("click", function () {
-          toggleColorBoxClass(this);
-        });
-        box.classList.add("click-event-attached");
+      let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
+      if (!colorState || colorState.length == 0) {
+        const colorState = new Array();
+        localStorage.setItem("chromafyColorState", JSON.stringify(colorState));
+        generatePalette(-1, theme);
+      } else {
+        setPaletteIndex(colorState.length - 1);
+        setPalettes([...colorState]);
+        setVariables(colorState[colorState.length - 1]);
+        setLabels(colorState[colorState.length - 1]);
+        console.log([...colorState], colorState.length - 1, colorState);
       }
-    });
+
+      const colorBoxes = document.querySelectorAll(".color-box");
+      colorBoxes.forEach((box) => {
+        if (!box.classList.contains("click-event-attached")) {
+          box.addEventListener("click", function () {
+            toggleColorBoxClass(this);
+          });
+          box.classList.add("click-event-attached");
+        }
+      });
+    } catch (e) {
+      console.log("Error occurred in localStorage handling:", e);
+    }
   }, []);
 
   useEffect(() => {
-    console.log(theme, hasPageBeenRendered);
-    if (hasPageBeenRendered) {
-      let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
-      if (colorState && colorState.length != 0) {
-        localStorage.setItem("chromafyThemeState", JSON.stringify(theme));
-        let colorPalette = [...colorState[colorState.length - 1]];
-        for (let i = 0; i < colorPalette.length; i++) {
-          colorPalette[i].l = 100 - colorPalette[i].l;
+    addSelectSchemeEvent();
+
+    if (
+      !document.documentElement.classList.contains(
+        "export-popup-event-attached"
+      )
+    ) {
+      document.addEventListener("click", handleExportPopupClick);
+      document.documentElement.classList.add("export-popup-event-attached");
+    }
+
+    if (
+      !document.documentElement.classList.contains("scheme-list-event-attached")
+    ) {
+      document.addEventListener("click", handleSchemeListClick);
+      document.documentElement.classList.add("scheme-list-event-attached");
+    }
+
+    if (
+      !document.documentElement.classList.contains(
+        "color-picker-event-attached"
+      )
+    ) {
+      document.addEventListener("click", handleColorPickerClick);
+      document.documentElement.classList.add("color-picker-event-attached");
+    }
+
+    return () => {
+      document.removeEventListener("click", handleExportPopupClick);
+      document.documentElement.classList.remove("export-popup-event-attached");
+
+      document.removeEventListener("click", handleSchemeListClick);
+      document.documentElement.classList.remove("scheme-list-event-attached");
+
+      document.removeEventListener("click", handleColorPickerClick);
+      document.documentElement.classList.remove("color-picker-event-attached");
+    };
+  }, []);
+
+  useEffect(() => {
+    try {
+      if (hasPageBeenRendered) {
+        let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
+        if (colorState && colorState.length != 0) {
+          localStorage.setItem("chromafyThemeState", JSON.stringify(theme));
+          let colorPalette = [...colorState[colorState.length - 1]];
+          for (let i = 0; i < colorPalette.length; i++) {
+            colorPalette[i].l = 100 - colorPalette[i].l;
+          }
+          addPalette([...colorPalette]);
         }
-        addPalette([...colorPalette]);
-        // setPalette([...colorPalette]);
-        // setCurrentPalette([...colorPalette]);
+      } else {
+        setHasPageBeenRendered(true);
       }
-    } else {
-      setHasPageBeenRendered(true);
+    } catch (e) {
+      console.log("Error occurred in localStorage handling:", e);
     }
   }, [theme]);
 
   useEffect(() => {
     if (paletteIndex >= 0 && palettes && palettes.length > 0) {
-      console.log(paletteIndex, " ", palettes, " ", palettes[paletteIndex]);
       setLabels([...palettes[paletteIndex]]);
       setVariables([...palettes[paletteIndex]]);
     }
   }, [paletteIndex]);
 
-  useEffect(() => {
-    // addRandomizeEvent();
-    // addToggleSchemeOptionEvent();
-    addSelectSchemeEvent();
-    // addToggleThemeEvent();
+  function handleExportPopupClick(event) {
+    const exportPopup = document.getElementById("export-popup");
+    const exportPopupBtn = document.getElementById("export-button");
+    const chromafyWrapper = document.getElementById("chromafy-wrapper");
+    const target = event.target;
 
-    // return () => {
-    // };
-  }, []);
+    if (!exportPopupBtn.contains(target) && !exportPopup.contains(target)) {
+      exportPopup.classList.remove("export-popup-open");
+      chromafyWrapper.classList.remove("chromafy-overlay-open");
+    }
+  }
+
+  function handleSchemeListClick(event) {
+    const schemeList = document.getElementById("scheme-list");
+    const schemeButton = document.getElementById("schemeButton");
+    const target = event.target;
+
+    if (!schemeList.contains(target) && !schemeButton.contains(target)) {
+      schemeList.classList.remove("scheme-list-open");
+    }
+  }
+
+  function handleColorPickerClick(event) {
+    const colorBoxes = document.querySelectorAll(".color-box");
+    const target = event.target;
+
+    let isColorBoxClick = false;
+    colorBoxes.forEach((colorBox) => {
+      if (colorBox.contains(target)) {
+        isColorBoxClick = true;
+      }
+    });
+
+    if (!isColorBoxClick) {
+      setColorPickerType("none");
+    }
+  }
 
   function addPalette(palette) {
-    if (palette && palette.length > 0) {
-      let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
-      if (paletteIndex < colorState.length - 1) {
-        colorState = colorState.slice(0, paletteIndex + 1);
+    try {
+      if (palette && palette.length > 0) {
+        let colorState = JSON.parse(localStorage.getItem("chromafyColorState"));
+        if (paletteIndex < colorState.length - 1) {
+          colorState = colorState.slice(0, paletteIndex + 1);
+        }
+        colorState.push([...palette]);
+        const len = colorState.length;
+        if (len > 100) {
+          colorState = colorState.slice(len - 100, len);
+        }
+        localStorage.setItem("chromafyColorState", JSON.stringify(colorState));
+        const newPaletteIndex = Math.min(
+          paletteIndex + 1,
+          colorState.length - 1
+        );
+        setPaletteIndex(newPaletteIndex);
+        setPalettes([...colorState]);
+        setVariables([...palette]);
+        setLabels([...palette]);
       }
-      colorState.push([...palette]);
-      const len = colorState.length;
-      if (len > 100) {
-        colorState = colorState.slice(len - 100, len);
-      }
-      localStorage.setItem("chromafyColorState", JSON.stringify(colorState));
-      const newPaletteIndex = Math.min(paletteIndex + 1, colorState.length - 1);
-      setPaletteIndex(newPaletteIndex);
-      setPalettes([...colorState]);
-      setVariables([...palette]);
-      setLabels([...palette]);
+    } catch (e) {
+      console.log("Error occurred in localStorage handling:", e);
     }
   }
 
@@ -220,8 +295,6 @@ const Popup = () => {
     };
 
     addPalette([textColor, bgColor, primaryColor, secondaryColor, accentColor]);
-    // setPalette([textColor, bgColor, primaryColor, secondaryColor, accentColor]);
-    // setCurrentPalette([textColor, bgColor, primaryColor, secondaryColor, accentColor]);
   }
 
   function setVariables(palette) {
@@ -286,8 +359,6 @@ const Popup = () => {
         console.log("theme button clicked");
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
       });
-
-    // set the values in the html
   }
 
   function toggleColorBoxClass(element) {
@@ -302,7 +373,6 @@ const Popup = () => {
   }
 
   function removeReactApp() {
-    // Find and remove the injected HTML content
     const reactApp = document.getElementById("main-chromafy-app");
     if (reactApp) {
       const confirmation = confirm("Close chromafy extension?");
@@ -366,228 +436,36 @@ const Popup = () => {
                 );
               }}
             >
-              <svg
-                style={{ display: theme === "dark" ? "none" : "grid" }}
-                viewBox="0 0 460 460"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <img
                 id="lightThemeIcon"
-              >
-                <circle cx="230" cy="230" r="74" fill="black" />
-                <rect
-                  x="218"
-                  y="3"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-                <rect
-                  x="457"
-                  y="209"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  transform="rotate(90 457 209)"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-                <rect
-                  x="382.439"
-                  y="61.7574"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  transform="rotate(45 382.439 61.7574)"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-                <rect
-                  x="3"
-                  y="242"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  transform="rotate(-90 3 242)"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-                <rect
-                  x="60.7574"
-                  y="78.728"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  transform="rotate(-45 60.7574 78.728)"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-                <rect
-                  x="242"
-                  y="457"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  transform="rotate(180 242 457)"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-                <rect
-                  x="77.7279"
-                  y="398.409"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  transform="rotate(-135 77.7279 398.409)"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-                <rect
-                  x="399.409"
-                  y="381.438"
-                  width="24"
-                  height="106"
-                  rx="12"
-                  transform="rotate(135 399.409 381.438)"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="6"
-                />
-              </svg>
-              <svg
-                style={{ display: theme === "light" ? "none" : "grid" }}
-                viewBox="0 0 399 450"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                src={themeBtnLight}
+                alt="theme button light"
+                style={{ display: theme === "dark" ? "none" : "grid" }}
+              />
+              <img
                 id="darkThemeIcon"
-              >
-                <path
-                  d="M178.954 1.05649C173.5 0.582192 167.5 3.06882 164 9.48514C161 14.9849 160 24.1395 165.954 27.0565C240.454 63.5565 277.454 197.057 201.454 288.057C125.454 379.057 20.954 342.557 18.454 342.557C15.954 342.557 12.954 341.057 5.95399 347.557C0.353992 352.757 0.620659 360.39 1.45399 363.557C51.954 437.057 177.517 462.435 240.454 441.557C310 418.485 328.5 389.985 353.454 363.557C395.48 319.047 427.454 180.557 353.454 88.5565C279.454 -3.44347 190.454 2.05658 178.954 1.05649Z"
-                  fill="#FAFAFA"
-                  stroke="#FAFAFA"
-                />
-              </svg>
+                src={themeBtnDark}
+                alt="theme button dark"
+                style={{ display: theme === "light" ? "none" : "grid" }}
+              />
             </button>
           </div>
-          <div
-            className="action-button"
-            // style={{
-            //   backgroundColor: `${
-            //     theme == "dark" ? "rgb(20, 20, 20)" : "white"
-            //   }`,
-            // }}
-          >
+          <div className="action-button">
             <button
               className="primary-button"
               id="randomizeButton"
               onClick={() => generatePalette(colorSchemeId, theme)}
             >
-              <svg
-                style={{ display: theme === "dark" ? "none" : "grid" }}
-                viewBox="0 0 448 448"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="10"
-                  y="10"
-                  width="428"
-                  height="428"
-                  rx="50"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <circle
-                  cx="330"
-                  cy="319"
-                  r="23"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <circle
-                  cx="128"
-                  cy="319"
-                  r="23"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <circle
-                  cx="128"
-                  cy="127"
-                  r="23"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <circle
-                  cx="320"
-                  cy="127"
-                  r="23"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <circle
-                  cx="224"
-                  cy="224"
-                  r="23"
-                  fill="black"
-                  stroke="black"
-                  stroke-width="20"
-                />
-              </svg>
-              <svg
+              <img
+                src={randomizeBtnLight}
+                alt="randomize button light"
+                style={{ display: theme === "dark" ? "none" : "block" }}
+              />
+              <img
+                src={randomizeBtnDark}
+                alt="randomize button dark"
                 style={{ display: theme === "light" ? "none" : "block" }}
-                viewBox="0 0 448 448"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M388 10H60C32.3858 10 10 32.3858 10 60V388C10 415.614 32.3858 438 60 438H388C415.614 438 438 415.614 438 388V60C438 32.3858 415.614 10 388 10Z"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path
-                  d="M330 342C342.703 342 353 331.703 353 319C353 306.297 342.703 296 330 296C317.297 296 307 306.297 307 319C307 331.703 317.297 342 330 342Z"
-                  fill="#FAFAFA"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path
-                  d="M128 342C140.703 342 151 331.703 151 319C151 306.297 140.703 296 128 296C115.297 296 105 306.297 105 319C105 331.703 115.297 342 128 342Z"
-                  fill="#FAFAFA"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path
-                  d="M128 150C140.703 150 151 139.703 151 127C151 114.297 140.703 104 128 104C115.297 104 105 114.297 105 127C105 139.703 115.297 150 128 150Z"
-                  fill="#FAFAFA"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path
-                  d="M320 150C332.703 150 343 139.703 343 127C343 114.297 332.703 104 320 104C307.297 104 297 114.297 297 127C297 139.703 307.297 150 320 150Z"
-                  fill="#FAFAFA"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path
-                  d="M224 247C236.703 247 247 236.703 247 224C247 211.297 236.703 201 224 201C211.297 201 201 211.297 201 224C201 236.703 211.297 247 224 247Z"
-                  fill="#FAFAFA"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-              </svg>
+              />
             </button>
           </div>
           <div className="scheme-settings action-button">
@@ -782,6 +660,7 @@ const Popup = () => {
           <div className="action-button">
             <button
               className="primary-button"
+              id="export-button"
               onClick={() => {
                 document
                   .getElementById("export-popup")
@@ -789,6 +668,8 @@ const Popup = () => {
                 document
                   .getElementById("chromafy-wrapper")
                   .classList.toggle("chromafy-overlay-open");
+
+                console.log("clicked");
               }}
               style={{ color: theme == "dark" ? "white" : "black" }}
             >

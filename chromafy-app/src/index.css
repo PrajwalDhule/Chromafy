@@ -242,6 +242,7 @@
   cursor: pointer;
   padding: 0 1.25em;
 }
+.chromafy-wrapper #chromafy-popup button img,
 .chromafy-wrapper #chromafy-popup button svg {
   height: 2em;
   width: 2em;

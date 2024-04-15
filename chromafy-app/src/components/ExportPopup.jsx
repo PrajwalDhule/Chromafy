@@ -205,17 +205,6 @@ const ExportPopup = (props) => {
     URL.revokeObjectURL(blobUrl);
   }
 
-  // Example usage:
-  // const hslString = "hsla(120, 100%, 50%, 0.5)";
-  // const result = hslToRgb(hslString);
-  // console.log(result);
-
-  // const code =
-  //   "--chroma-text: hsl(166, 68%, 6%);\n--chroma-background-50: hsl(171, 68%, 96%, 0.9);\n--chroma-primary: hsl(168, 67%, 55%);\n--chroma-secondary: hsl(341, 67%, 71%);\n--chroma-accent: hsl(38,67%, 60%);";
-
-  // const code2 =
-  //   ".fg-chroma-text {\n\tcolor: var(--chroma-text) !important;\n}\n. . . . . .\n.bg-chroma-accent-95 {\n\tcolor: var(--chroma-accent-95) !important;\n}";
-
   return (
     <div id="export-popup" className="export-popup">
       {/* <ul className="languages-container container">
