@@ -7,7 +7,6 @@ const ExportPopup = (props) => {
   const [shadesChecked, setShadesChecked] = useState(false);
 
   useEffect(() => {
-    // console.log(props.palette);
     setVariables(props.palette);
   }, [props.palette]);
 
@@ -115,7 +114,6 @@ const ExportPopup = (props) => {
   }
 
   function hslToRgb(hslString) {
-    // Parse the HSL(A) string
     const match = hslString.match(
       /hsla?\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,?\s*([\d.]+)?\)/
     );
@@ -126,7 +124,6 @@ const ExportPopup = (props) => {
     const l = parseInt(match[3]) / 100;
     const a = match[4] ? parseFloat(match[4]) : 1;
 
-    // Convert HSL(A) to RGB(A)
     let r, g, b;
     if (s === 0) {
       r = g = b = l; // achromatic
@@ -207,11 +204,6 @@ const ExportPopup = (props) => {
 
   return (
     <div id="export-popup" className="export-popup">
-      {/* <ul className="languages-container container">
-        <li className="selected option">CSS</li>
-        <li className="option">SCSS</li>
-        <li className="option">Tailwind CSS</li>
-      </ul> */}
       <button
         id="close-btn"
         onClick={() => {
@@ -257,14 +249,11 @@ const ExportPopup = (props) => {
             checked={shadesChecked}
             onChange={handleToggleShades}
           />
-
-          {/* <div className="">Shades</div> */}
         </div>
       </div>
       <div className="code-container-wrapper">
         <div>
           <div className="code-block" id="code-variables">
-            {/* <pre>{code}</pre> */}
             <pre>
               {codes &&
                 codes[format] &&
@@ -309,7 +298,6 @@ const ExportPopup = (props) => {
         {codeClasses && (
           <div>
             <div className="code-block" id="code-classes">
-              {/* <pre>{code2}</pre> */}
               <pre>{trimCode(codeClasses)}</pre>
             </div>
             <div className="btn-wrapper">

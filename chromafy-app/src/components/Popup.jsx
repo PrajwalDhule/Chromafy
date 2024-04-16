@@ -6,6 +6,14 @@ import themeBtnDark from "../assets/themeBtnDark.svg";
 import themeBtnLight from "../assets/themeBtnLight.svg";
 import randomizeBtnLight from "../assets/randomizeBtnLight.svg";
 import randomizeBtnDark from "../assets/randomizeBtnDark.svg";
+import schemeBtnLight from "../assets/schemeBtnLight.svg";
+import schemeBtnDark from "../assets/schemeBtnDark.svg";
+import undoBtnLight from "../assets/undoBtnLight.svg";
+import undoBtnDark from "../assets/undoBtnDark.svg";
+import redoBtnLight from "../assets/redoBtnLight.svg";
+import redoBtnDark from "../assets/redoBtnDark.svg";
+import closeBtnLight from "../assets/closeBtnLight.svg";
+import closeBtnDark from "../assets/closeBtnDark.svg";
 
 const Popup = () => {
   const [colorSchemeId, setColorSchemeId] = useState(-1);
@@ -34,16 +42,11 @@ const Popup = () => {
   const setPalettes = (palettesValue) => {
     palettesRef.current = palettesValue;
     _setPalettes(palettesValue);
-    console.log(palettesValue);
   };
   const setPaletteIndex = (paletteIndexValue) => {
     paletteIndexRef.current = paletteIndexValue;
     _setPaletteIndex(paletteIndexValue);
-    console.log(paletteIndexValue);
   };
-
-  // localStorage.removeItem("chromafyColorState");
-  // localStorage.removeItem("chromafyThemeState");
 
   useEffect(() => {
     try {
@@ -59,7 +62,6 @@ const Popup = () => {
         setPalettes([...colorState]);
         setVariables(colorState[colorState.length - 1]);
         setLabels(colorState[colorState.length - 1]);
-        console.log([...colorState], colorState.length - 1, colorState);
       }
 
       const colorBoxes = document.querySelectorAll(".color-box");
@@ -145,11 +147,11 @@ const Popup = () => {
 
   function handleExportPopupClick(event) {
     const exportPopup = document.getElementById("export-popup");
-    const exportPopupBtn = document.getElementById("export-button");
+    const chromafyUi = document.getElementById("chromafy-popup");
     const chromafyWrapper = document.getElementById("chromafy-wrapper");
     const target = event.target;
 
-    if (!exportPopupBtn.contains(target) && !exportPopup.contains(target)) {
+    if (!chromafyUi.contains(target) && !exportPopup.contains(target)) {
       exportPopup.classList.remove("export-popup-open");
       chromafyWrapper.classList.remove("chromafy-overlay-open");
     }
@@ -356,7 +358,6 @@ const Popup = () => {
     document
       .getElementById("themeButton")
       .addEventListener("click", function () {
-        console.log("theme button clicked");
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
       });
   }
@@ -401,7 +402,6 @@ const Popup = () => {
                   }`}
                 >
                   {colorPickerType == `${colorType}` && (
-                    // {true
                     <ColorPicker
                       palettes={palettes}
                       palettesRef={palettesRef}
@@ -504,73 +504,16 @@ const Popup = () => {
                   .classList.toggle("scheme-list-open")
               }
             >
-              <svg
+              <img
+                src={schemeBtnLight}
+                alt="scheme btn icon light"
                 style={{ display: theme === "dark" ? "none" : "grid" }}
-                viewBox="0 0 453 438"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M144.5 10H18C13.5817 10 10 13.5284 10 17.9467V355C10 381.5 25 428 82.5 428C132.5 428 152.333 379.5 152.5 355V18C152.5 13.5818 148.918 10 144.5 10Z"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <path
-                  d="M376.362 160.064L286.955 70.6569C283.831 67.5327 278.73 67.5672 275.61 70.6953C207 139.474 221.065 128.663 206.465 143.263V338.763L376.319 171.419C379.483 168.302 379.502 163.204 376.362 160.064Z"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <path
-                  d="M442.495 416.44V290C442.495 285.582 438.863 281.999 434.445 282.005C337.297 282.125 354.887 284.425 334.239 284.425L196 422.664L434.435 424.44C438.876 424.473 442.495 420.882 442.495 416.44Z"
-                  stroke="black"
-                  stroke-width="20"
-                />
-                <rect x="58.5" y="50" width="46" height="46" fill="black" />
-                <rect
-                  x="285.527"
-                  y="133"
-                  width="46"
-                  height="46"
-                  transform="rotate(45 285.527 133)"
-                  fill="black"
-                />
-                <rect x="351" y="330" width="46" height="46" fill="black" />
-                <rect x="58.5" y="166" width="46" height="46" fill="black" />
-                <circle cx="81.5" cy="353" r="23" fill="black" />
-              </svg>
-              <svg
+              />
+              <img
+                src={schemeBtnDark}
+                alt="scheme btn icon dark"
                 style={{ display: theme === "light" ? "none" : "grid" }}
-                viewBox="0 0 453 438"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M144.5 10H18C13.5817 10 10 13.5284 10 17.9467V355C10 381.5 25 428 82.5 428C132.5 428 152.333 379.5 152.5 355V18C152.5 13.5818 148.918 10 144.5 10Z"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path
-                  d="M376.362 160.064L286.955 70.6568C283.831 67.5326 278.73 67.5671 275.61 70.6952C207 139.474 221.065 128.663 206.465 143.263V338.763L376.319 171.419C379.483 168.302 379.502 163.204 376.362 160.064Z"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path
-                  d="M442.495 416.44V290C442.495 285.582 438.863 281.999 434.445 282.005C337.297 282.125 354.887 284.425 334.239 284.425L196 422.664L434.435 424.44C438.876 424.473 442.495 420.882 442.495 416.44Z"
-                  stroke="#FAFAFA"
-                  stroke-width="20"
-                />
-                <path d="M105 50H59V96H105V50Z" fill="#FAFAFA" />
-                <path
-                  d="M319.054 165.527L286.527 133L254 165.527L286.527 198.054L319.054 165.527Z"
-                  fill="#FAFAFA"
-                />
-                <path d="M397 330H351V376H397V330Z" fill="#FAFAFA" />
-                <path d="M105 166H59V212H105V166Z" fill="#FAFAFA" />
-                <path
-                  d="M82 376C94.7025 376 105 365.703 105 353C105 340.297 94.7025 330 82 330C69.2975 330 59 340.297 59 353C59 365.703 69.2975 376 82 376Z"
-                  fill="#FAFAFA"
-                />
-              </svg>
+              />
             </button>
           </div>
           <div className="action-button">
@@ -580,38 +523,22 @@ const Popup = () => {
                 setPaletteIndex(Math.max(0, paletteIndex - 1));
               }}
             >
-              <svg
-                width="376"
-                height="165"
-                viewBox="0 0 376 165"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <img
+                src={undoBtnLight}
+                alt="undo btn icon light"
                 style={{
                   opacity: paletteIndex == 0 ? 0.5 : 1,
                   display: theme === "dark" ? "none" : "grid",
                 }}
-              >
-                <path
-                  d="M375.305 149.031C377.359 155.332 373.916 162.105 367.615 164.159C361.314 166.213 354.541 162.77 352.487 156.469L375.305 149.031ZM230 19L233.124 7.41391L230 19ZM25.1291 131.648C18.5387 132.348 12.6287 127.573 11.9287 120.982L0.521276 13.5866C-0.17874 6.99628 4.59631 1.08628 11.1867 0.386263C17.777 -0.313753 23.687 4.4613 24.387 11.0516L34.527 106.515L129.99 96.3747C136.58 95.6747 142.49 100.45 143.19 107.04C143.89 113.63 139.115 119.54 132.525 120.24L25.1291 131.648ZM363.896 152.75C352.487 156.469 352.488 156.473 352.489 156.476C352.49 156.477 352.491 156.48 352.491 156.481C352.492 156.483 352.492 156.484 352.492 156.483C352.491 156.482 352.489 156.474 352.484 156.46C352.475 156.431 352.457 156.378 352.43 156.3C352.377 156.144 352.29 155.89 352.168 155.544C351.923 154.852 351.538 153.793 351.005 152.411C349.94 149.646 348.29 145.599 345.999 140.629C341.41 130.673 334.296 117.111 324.247 102.774C304.075 73.9976 272.694 42.9422 226.876 30.5861L233.124 7.41391C286.306 21.7558 321.873 57.5752 343.899 88.9987C354.949 104.762 362.747 119.632 367.795 130.582C370.322 136.066 372.171 140.591 373.401 143.785C374.017 145.382 374.478 146.649 374.793 147.538C374.95 147.983 375.071 148.333 375.156 148.584C375.199 148.709 375.232 148.81 375.257 148.884C375.27 148.922 375.28 148.953 375.288 148.977C375.292 148.989 375.295 149 375.298 149.009C375.3 149.013 375.301 149.019 375.302 149.021C375.304 149.026 375.305 149.031 363.896 152.75ZM226.876 30.5861C189.457 20.4951 157.959 24.469 127.709 40.4359C96.875 56.7116 66.702 85.7863 33.1956 127.257L14.5275 112.173C48.6596 69.9288 81.3058 37.7915 116.506 19.2112C152.291 0.322058 190.043 -4.20403 233.124 7.41391L226.876 30.5861Z"
-                  fill="black"
-                />
-              </svg>
-              <svg
-                width="376"
-                height="165"
-                viewBox="0 0 376 165"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              />
+              <img
+                src={undoBtnDark}
+                alt="undo btn icon dark"
                 style={{
                   opacity: paletteIndex == 0 ? 0.5 : 1,
                   display: theme === "light" ? "none" : "grid",
                 }}
-              >
-                <path
-                  d="M375.305 149.031C377.359 155.332 373.916 162.105 367.615 164.159C361.314 166.213 354.541 162.77 352.487 156.469L375.305 149.031ZM230 19L233.124 7.41391L230 19ZM25.1291 131.648C18.5387 132.348 12.6287 127.573 11.9287 120.982L0.521276 13.5866C-0.17874 6.99628 4.59631 1.08628 11.1867 0.386263C17.777 -0.313753 23.687 4.4613 24.387 11.0516L34.527 106.515L129.99 96.3747C136.58 95.6747 142.49 100.45 143.19 107.04C143.89 113.63 139.115 119.54 132.525 120.24L25.1291 131.648ZM363.896 152.75C352.487 156.469 352.488 156.473 352.489 156.476C352.49 156.477 352.491 156.48 352.491 156.481C352.492 156.483 352.492 156.484 352.492 156.483C352.491 156.482 352.489 156.474 352.484 156.46C352.475 156.431 352.457 156.378 352.43 156.3C352.377 156.144 352.29 155.89 352.168 155.544C351.923 154.852 351.538 153.793 351.005 152.411C349.94 149.646 348.29 145.599 345.999 140.629C341.41 130.673 334.296 117.111 324.247 102.774C304.075 73.9976 272.694 42.9422 226.876 30.5861L233.124 7.41391C286.306 21.7558 321.873 57.5752 343.899 88.9987C354.949 104.762 362.747 119.632 367.795 130.582C370.322 136.066 372.171 140.591 373.401 143.785C374.017 145.382 374.478 146.649 374.793 147.538C374.95 147.983 375.071 148.333 375.156 148.584C375.199 148.709 375.232 148.81 375.257 148.884C375.27 148.922 375.28 148.953 375.288 148.977C375.292 148.989 375.295 149 375.298 149.009C375.3 149.013 375.301 149.019 375.302 149.021C375.304 149.026 375.305 149.031 363.896 152.75ZM226.876 30.5861C189.457 20.4951 157.959 24.469 127.709 40.4359C96.875 56.7116 66.702 85.7863 33.1956 127.257L14.5275 112.173C48.6596 69.9288 81.3058 37.7915 116.506 19.2112C152.291 0.322058 190.043 -4.20403 233.124 7.41391L226.876 30.5861Z"
-                  fill="#FAFAFA"
-                />
-              </svg>
+              />
             </button>
           </div>
           <div className="action-button">
@@ -623,38 +550,22 @@ const Popup = () => {
                 );
               }}
             >
-              <svg
-                width="381"
-                height="176"
-                viewBox="0 0 381 176"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <img
+                src={redoBtnLight}
+                alt="redo btn icon light"
                 style={{
                   opacity: paletteIndex == palettes.length - 1 ? 0.5 : 1,
                   display: theme === "dark" ? "none" : "grid",
                 }}
-              >
-                <path
-                  d="M0.5055 160.554C-1.3978 166.902 2.20554 173.591 8.55378 175.495C14.902 177.398 21.5912 173.794 23.4945 167.446L0.5055 160.554ZM146.001 18.4665L142.624 6.95124L142.624 6.95124L146.001 18.4665ZM350.55 139.927C357.107 140.893 363.206 136.361 364.172 129.804L379.917 22.9583C380.884 16.4017 376.352 10.3032 369.795 9.33701C363.239 8.37078 357.14 12.9027 356.174 19.4593L342.178 114.434L247.203 100.437C240.647 99.4711 234.548 104.003 233.582 110.56C232.616 117.116 237.148 123.215 243.704 124.181L350.55 139.927ZM12 164C23.4945 167.446 23.4934 167.45 23.4925 167.453C23.4924 167.453 23.4916 167.456 23.4913 167.457C23.4907 167.459 23.4907 167.459 23.4912 167.457C23.4922 167.454 23.4954 167.443 23.5006 167.426C23.5111 167.392 23.5301 167.33 23.5577 167.242C23.6129 167.065 23.7024 166.782 23.8273 166.399C24.0769 165.631 24.4673 164.464 25.0053 162.945C26.0819 159.906 27.7463 155.47 30.053 150.029C34.6745 139.129 41.8298 124.299 51.932 108.629C72.2542 77.1079 103.715 43.3702 149.377 29.9817L142.624 6.95124C89.2096 22.6128 53.6697 61.642 31.7607 95.6248C20.7474 112.707 12.9796 128.814 7.95675 140.662C5.44129 146.595 3.6033 151.486 2.38293 154.931C1.7725 156.654 1.31583 158.018 1.00554 158.971C0.850371 159.448 0.731739 159.822 0.648723 160.088C0.607213 160.221 0.5746 160.327 0.550769 160.405C0.538854 160.444 0.529133 160.476 0.521593 160.5C0.517823 160.513 0.514599 160.524 0.511917 160.532C0.510577 160.537 0.50897 160.542 0.508302 160.544C0.506833 160.549 0.5055 160.554 12 164ZM149.377 29.9817C186.578 19.074 217.848 23.3446 248.004 40.6514C278.848 58.3526 309.084 90.0183 342.668 135.212L361.932 120.897C327.825 75.0008 295.193 40.0615 259.95 19.8358C224.021 -0.78436 185.986 -5.76267 142.624 6.95124L149.377 29.9817Z"
-                  fill="black"
-                />
-              </svg>
-              <svg
-                width="381"
-                height="176"
-                viewBox="0 0 381 176"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              />
+              <img
+                src={redoBtnDark}
+                alt="redo btn icon dark"
                 style={{
                   opacity: paletteIndex == palettes.length - 1 ? 0.5 : 1,
                   display: theme === "light" ? "none" : "grid",
                 }}
-              >
-                <path
-                  d="M0.5055 160.554C-1.3978 166.902 2.20554 173.591 8.55378 175.495C14.902 177.398 21.5912 173.794 23.4945 167.446L0.5055 160.554ZM146.001 18.4665L142.624 6.95124L142.624 6.95124L146.001 18.4665ZM350.55 139.927C357.107 140.893 363.206 136.361 364.172 129.804L379.917 22.9583C380.884 16.4017 376.352 10.3032 369.795 9.33701C363.239 8.37078 357.14 12.9027 356.174 19.4593L342.178 114.434L247.203 100.437C240.647 99.4711 234.548 104.003 233.582 110.56C232.616 117.116 237.148 123.215 243.704 124.181L350.55 139.927ZM12 164C23.4945 167.446 23.4934 167.45 23.4925 167.453C23.4924 167.453 23.4916 167.456 23.4913 167.457C23.4907 167.459 23.4907 167.459 23.4912 167.457C23.4922 167.454 23.4954 167.443 23.5006 167.426C23.5111 167.392 23.5301 167.33 23.5577 167.242C23.6129 167.065 23.7024 166.782 23.8273 166.399C24.0769 165.631 24.4673 164.464 25.0053 162.945C26.0819 159.906 27.7463 155.47 30.053 150.029C34.6745 139.129 41.8298 124.299 51.932 108.629C72.2542 77.1079 103.715 43.3702 149.377 29.9817L142.624 6.95124C89.2096 22.6128 53.6697 61.642 31.7607 95.6248C20.7474 112.707 12.9796 128.814 7.95675 140.662C5.44129 146.595 3.6033 151.486 2.38293 154.931C1.7725 156.654 1.31583 158.018 1.00554 158.971C0.850371 159.448 0.731739 159.822 0.648723 160.088C0.607213 160.221 0.5746 160.327 0.550769 160.405C0.538854 160.444 0.529133 160.476 0.521593 160.5C0.517823 160.513 0.514599 160.524 0.511917 160.532C0.510577 160.537 0.50897 160.542 0.508302 160.544C0.506833 160.549 0.5055 160.554 12 164ZM149.377 29.9817C186.578 19.074 217.848 23.3446 248.004 40.6514C278.848 58.3526 309.084 90.0183 342.668 135.212L361.932 120.897C327.825 75.0008 295.193 40.0615 259.95 19.8358C224.021 -0.78436 185.986 -5.76267 142.624 6.95124L149.377 29.9817Z"
-                  fill="#FAFAFA"
-                />
-              </svg>
+              />
             </button>
           </div>
           <div className="action-button">
@@ -668,8 +579,6 @@ const Popup = () => {
                 document
                   .getElementById("chromafy-wrapper")
                   .classList.toggle("chromafy-overlay-open");
-
-                console.log("clicked");
               }}
               style={{ color: theme == "dark" ? "white" : "black" }}
             >
@@ -677,52 +586,23 @@ const Popup = () => {
             </button>
           </div>
           <div className="action-button">
-            <button
-              className="primary-button"
-              onClick={() => removeReactApp()}
-              // style={{ color: theme == "dark" ? "white" : "black" }}
-            >
-              <svg
-                width="470"
-                height="470"
-                viewBox="0 0 470 470"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M100 369.408L369.408 100"
-                  stroke={theme == "dark" ? "white" : "black"}
-                  stroke-width="36"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M100 100L369.408 369.408"
-                  stroke={theme == "dark" ? "white" : "black"}
-                  stroke-width="36"
-                  stroke-linecap="round"
-                />
-              </svg>
+            <button className="primary-button" onClick={() => removeReactApp()}>
+              <img
+                src={closeBtnLight}
+                alt="close btn icon light"
+                style={{ display: theme === "dark" ? "none" : "grid" }}
+              />
+              <img
+                src={closeBtnDark}
+                alt="close btn icon dark"
+                style={{ display: theme === "light" ? "none" : "grid" }}
+              />
             </button>
           </div>
         </div>
         <ExportPopup
           palette={palettes && paletteIndex >= 0 && palettes[paletteIndex]}
         />
-      </div>
-
-      <div class="bg-chroma-background background">
-        <h1 className="fg-chroma-text">
-          Test <span className="fg-chroma-accent">Colors</span> on your own
-          Website with Chromafy
-        </h1>
-        <div className="">
-          <button className="bg-chroma-secondary-30">
-            <p className="fg-chroma-text">View Documentation</p>
-          </button>
-          <button className="bg-chroma-primary">
-            <p className="fg-chroma-background">Download Extension</p>
-          </button>
-        </div>
       </div>
     </>
   );

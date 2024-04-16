@@ -35,14 +35,6 @@ const ColorPicker = ({
   const pointer = document.getElementById("color-picker-pointer");
 
   useEffect(() => {
-    // if (
-    //   palettes &&
-    //   paletteIndex &&
-    //   colorIndex >= 0 &&
-    //   palettes.length > 0 &&
-    //   paletteIndex >= 0
-    // ) {
-    // console.log(palettes[paletteIndex][colorIndex], " ", colorIndex);
     const square = document.getElementById("saturation-lightness-picker");
     const pointer = document.getElementById("color-picker-pointer");
     setHue(palettes[paletteIndex][colorIndex].h);
@@ -63,8 +55,6 @@ const ColorPicker = ({
     const { rgb, hex } = hslToRgb(getColor(palettes[paletteIndex][colorIndex]));
 
     setConvertedColors({ rgb, hex });
-
-    // }
   }, [palettes, paletteIndex, colorIndex]);
 
   useEffect(() => {
@@ -97,7 +87,6 @@ const ColorPicker = ({
 
   const handleMouseUp = () => {
     const square = document.getElementById("saturation-lightness-picker");
-    console.log(colorIndexRef.current, " outside ");
 
     handleSatLightPointerRelease(
       saturationRef.current,
@@ -111,7 +100,6 @@ const ColorPicker = ({
   };
 
   const handleMouseMove = (e) => {
-    // console.log(isDragging, "\n", square, "\n", pointer);
     const square = document.getElementById("saturation-lightness-picker");
     const pointer = document.getElementById("color-picker-pointer");
     if (square && square.classList.contains("isDragging") && pointer) {
@@ -183,7 +171,6 @@ const ColorPicker = ({
       )
     );
 
-    console.log(palette);
     addPalette([...palette]);
   };
 
@@ -194,7 +181,6 @@ const ColorPicker = ({
     palettesValue,
     colorIndexValue
   ) => {
-    console.log(colorIndexValue);
     const square = document.getElementById("saturation-lightness-picker");
     if (square?.classList.contains("isDragging")) {
       let color = {
@@ -284,7 +270,6 @@ const ColorPicker = ({
   }
 
   function hslToRgb(hslString) {
-    // Parse the HSL(A) string
     const match = hslString.match(
       /hsla?\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,?\s*([\d.]+)?\)/
     );
@@ -295,7 +280,6 @@ const ColorPicker = ({
     const l = parseInt(match[3]) / 100;
     const a = match[4] ? parseFloat(match[4]) : 1;
 
-    // Convert HSL(A) to RGB(A)
     let r, g, b;
     if (s === 0) {
       r = g = b = l; // achromatic
@@ -348,7 +332,6 @@ const ColorPicker = ({
     navigator.clipboard
       .writeText(textContent)
       .then(() => {
-        // alert("Code copied!");
         let copyLabel = document.getElementById("copy-label");
         if (copyLabel) {
           copyLabel.textContent = "Copied!";

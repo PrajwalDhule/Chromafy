@@ -1,0 +1,20 @@
+              <svg
+                width="470"
+                height="470"
+                viewBox="0 0 470 470"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M100 369.408L369.408 100"
+                  stroke="black"
+                  stroke-width="36"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M100 100L369.408 369.408"
+                  stroke="black"
+                  stroke-width="36"
+                  stroke-linecap="round"
+                />
+              </svg>
