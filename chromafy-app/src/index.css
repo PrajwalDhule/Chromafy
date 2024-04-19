@@ -204,6 +204,7 @@
   border-radius: 0.5em;
 }
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list p {
+  color: black;
   margin: 0;
   padding: 0.5em 0 1em 0.25em;
 }
@@ -343,6 +344,7 @@
   margin: 1.25em 0;
   padding: 0 0.75em;
   font-size: 0.9rem;
+  color: black;
 }
 .chromafy-wrapper #chromafy-popup div.color-picker .color-format div {
   padding: 0.3em 0.5em;
@@ -354,10 +356,11 @@
 }
 .chromafy-wrapper #chromafy-popup div.color-picker .color-value {
   margin-bottom: 1em;
-  border: 1px solid hsla(0, 0%, 50%, 0.5);
   text-align: center;
   padding: 0.5em 0;
   border-radius: 0.5em;
+  color: black;
+  border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
 .chromafy-wrapper #chromafy-popup div.color-picker .utility {
   display: flex;
@@ -368,9 +371,10 @@
   align-items: center;
   justify-content: left;
   padding: 0.5em 0.75em;
-  border: 1px solid hsla(0, 0%, 50%, 0.5);
   border-radius: 0.5em;
   font-size: 0.9rem;
+  color: black;
+  border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
 .chromafy-wrapper #chromafy-popup div.color-picker .utility button img {
   height: 1.25em;
@@ -381,6 +385,7 @@
   height: 2.5rem;
   aspect-ratio: 2;
   border-radius: 0.32em;
+  border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
 .chromafy-wrapper .export-popup {
   display: none;

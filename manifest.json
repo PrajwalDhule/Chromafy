@@ -2,12 +2,12 @@
   "manifest_version": 3,
   "name": "Chromafy",
   "description": "Apply generated color palettes straight to your website!",
-  "version": "1.0",
+  "version": "1.1",
   "icons": {
-    "16": "images/icon-16.png",
-    "32": "images/icon-32.png",
-    "48": "images/icon-48.png",
-    "128": "images/icon-128.png"
+    "16": "images/chromafy_logo_16.png",
+    "32": "images/chromafy_logo_32.png",
+    "48": "images/chromafy_logo_48.png",
+    "128": "images/chromafy_logo_128.png"
   },
   "background": {
     "service_worker": "background.js"
@@ -28,7 +28,7 @@
     {
       "matches": ["<all_urls>"],
       "js": ["contentScript.js"],
-      "css": ["chromafy-app/src/index.css", "chromafy-app/src/inject.css"]
+      "css": ["chromafy-app/src/index.css"]
     }
   ],
   "web_accessible_resources": [

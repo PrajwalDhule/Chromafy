@@ -151,9 +151,9 @@ const Popup = () => {
     const chromafyWrapper = document.getElementById("chromafy-wrapper");
     const target = event.target;
 
-    if (!chromafyUi.contains(target) && !exportPopup.contains(target)) {
-      exportPopup.classList.remove("export-popup-open");
-      chromafyWrapper.classList.remove("chromafy-overlay-open");
+    if (!chromafyUi?.contains(target) && !exportPopup?.contains(target)) {
+      exportPopup?.classList.remove("export-popup-open");
+      chromafyWrapper?.classList.remove("chromafy-overlay-open");
     }
   }
 
@@ -162,8 +162,8 @@ const Popup = () => {
     const schemeButton = document.getElementById("schemeButton");
     const target = event.target;
 
-    if (!schemeList.contains(target) && !schemeButton.contains(target)) {
-      schemeList.classList.remove("scheme-list-open");
+    if (!schemeList?.contains(target) && !schemeButton?.contains(target)) {
+      schemeList?.classList.remove("scheme-list-open");
     }
   }
 
@@ -172,8 +172,8 @@ const Popup = () => {
     const target = event.target;
 
     let isColorBoxClick = false;
-    colorBoxes.forEach((colorBox) => {
-      if (colorBox.contains(target)) {
+    colorBoxes?.forEach((colorBox) => {
+      if (colorBox?.contains(target)) {
         isColorBoxClick = true;
       }
     });
@@ -377,7 +377,21 @@ const Popup = () => {
     const reactApp = document.getElementById("main-chromafy-app");
     if (reactApp) {
       const confirmation = confirm("Close chromafy extension?");
-      if (confirmation) reactApp.remove();
+      if (confirmation) {
+        const cssIds = [
+          "chromafy-font-import-css-style",
+          ,
+          "chromafy-inject-css-style",
+        ];
+        reactApp.remove();
+        cssIds.forEach((id) => {
+          const existingStyle = document.querySelector(`head style#${id}`);
+          if (existingStyle) {
+            document.head.removeChild(existingStyle);
+          }
+          console.log("existingStyle: ", existingStyle);
+        });
+      }
     }
   }
 

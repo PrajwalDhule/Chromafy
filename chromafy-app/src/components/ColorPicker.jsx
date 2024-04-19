@@ -35,26 +35,36 @@ const ColorPicker = ({
   const pointer = document.getElementById("color-picker-pointer");
 
   useEffect(() => {
-    const square = document.getElementById("saturation-lightness-picker");
-    const pointer = document.getElementById("color-picker-pointer");
-    setHue(palettes[paletteIndex][colorIndex].h);
-    setSaturation(palettes[paletteIndex][colorIndex].s);
-    setLightness(palettes[paletteIndex][colorIndex].l);
+    if (
+      palettes &&
+      paletteIndex &&
+      colorIndex >= 0 &&
+      palettes.length > 0 &&
+      paletteIndex >= 0
+    ) {
+      const square = document.getElementById("saturation-lightness-picker");
+      const pointer = document.getElementById("color-picker-pointer");
+      setHue(palettes[paletteIndex][colorIndex].h);
+      setSaturation(palettes[paletteIndex][colorIndex].s);
+      setLightness(palettes[paletteIndex][colorIndex].l);
 
-    const squareRect = square.getBoundingClientRect();
-    let { x, y } = get_xy_from_sl(
-      palettes[paletteIndex][colorIndex].s,
-      palettes[paletteIndex][colorIndex].l
-    );
-    x *= (squareRect.width - 20) / 100;
-    y *= (squareRect.height - 20) / 100;
+      const squareRect = square.getBoundingClientRect();
+      let { x, y } = get_xy_from_sl(
+        palettes[paletteIndex][colorIndex].s,
+        palettes[paletteIndex][colorIndex].l
+      );
+      x *= (squareRect.width - 20) / 100;
+      y *= (squareRect.height - 20) / 100;
 
-    pointer.style.left = x + "px";
-    pointer.style.top = squareRect.height - 20 - y + "px";
+      pointer.style.left = x + "px";
+      pointer.style.top = squareRect.height - 20 - y + "px";
 
-    const { rgb, hex } = hslToRgb(getColor(palettes[paletteIndex][colorIndex]));
+      const { rgb, hex } = hslToRgb(
+        getColor(palettes[paletteIndex][colorIndex])
+      );
 
-    setConvertedColors({ rgb, hex });
+      setConvertedColors({ rgb, hex });
+    }
   }, [palettes, paletteIndex, colorIndex]);
 
   useEffect(() => {
@@ -121,8 +131,8 @@ const ColorPicker = ({
         (y / (squareRect.height - 20)) * 100
       );
 
-      setSaturation(saturation);
-      setLightness(lightness);
+      setSaturation(saturation ? saturation : 75);
+      setLightness(lightness ? lightness : 50);
 
       const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
       pointer.style.backgroundColor = color;
