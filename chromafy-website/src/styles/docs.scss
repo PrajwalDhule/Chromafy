@@ -112,13 +112,21 @@
         white-space: pre-wrap;
       }
     }
-    .classes {
+    .classes,
+    .variables {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2em;
       margin-top: 3em;
       ul {
         margin-bottom: 2em;
+        line-height: 2;
+        li {
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
@@ -138,6 +146,9 @@
       section {
         p {
           line-height: 2;
+          i {
+            font-weight: 600;
+          }
         }
         img {
           //   height: 75vh;
@@ -162,16 +173,15 @@
   .list-body {
     main {
       // width: 75vw;
-      .classes {
+      .classes,
+      .variables {
         grid-template-columns: repeat(3, 1fr);
         gap: 1em;
         // gap: 0;
-        // ul {
-        //   width: fit-content;
-        //   li {
-        //     width: fit-content;
-        //   }
-        // }
+        ul {
+          font-size: 0.9rem;
+          letter-spacing: 0.75px;
+        }
       }
     }
   }

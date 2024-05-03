@@ -12,18 +12,19 @@ const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
 ---
 
 <Layout title="Chromafy Docs">
+    <div id="dialog">Copied!</div>
   <Navbar currentPage="Docs" />
   <div class="docs-body list-body">
     <Sidebar/>
     <main>
         <section>
             <h2>List of all possible Class Names and CSS variables</h2>
-            <h3>Class names</h3>
+            <h3>Class Names</h3>
             <div class="classes">
                 {suffixes.map((suffix)=>
                     <>
                         {prefixes.map((prefix) => <ul>
-                            <li>{`${prefix}-chroma-${suffix}`}</li>
+                            <li></li>
                             {steps.map((step) => (
                                 <li>{`${prefix}-chroma-${suffix}-${step}`}</li>
                             ))}
@@ -31,7 +32,50 @@ const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
                     </>
                 )}
             </div>
+            <h3>CSS Variables</h3>
+            <div class="variables">
+                {suffixes.map((suffix)=>
+                    <>
+                        <ul>
+                            <li></li>
+                            {steps.map((step) => (
+                                <li>{`--chroma-${suffix}-${step}`}</li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+            </div>
         </section>
     </main>
     </div>
 </Layout>
+
+
+<script>
+    function copyText(textContent : string){
+    console.log(textContent)
+    navigator.clipboard
+      .writeText(textContent)
+      .then(() => {
+        const dialog = document.getElementById('dialog');
+        if (dialog) {
+         dialog.style.display = 'block';
+
+         setTimeout(() => {
+            dialog.style.display = 'none';
+        }, 2000);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to copy code: ", err);
+      });
+}
+
+
+const listElements = document.querySelectorAll(".list-body .classes ul li, .list-body .variables ul li");
+
+listElements?.forEach(listElement => {
+  listElement.addEventListener("click", () => copyText(listElement.textContent));
+});
+
+</script>

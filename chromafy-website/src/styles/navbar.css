@@ -6,7 +6,7 @@ nav {
   width: 100vw;
   font-size: 0.9rem;
   padding: 0.25em 1em;
-  z-index: 9999;
+  z-index: 9998;
   border-bottom: 1px solid var(--chroma-text-10, rgba(82, 80, 80, 0.1));
   background-color: hsla(0, 0%, 100%, 0.75);
   -webkit-backdrop-filter: blur(10px);

@@ -100,14 +100,25 @@
   line-height: 2;
   white-space: pre-wrap;
 }
-.docs-body main .classes {
+.docs-body main .classes,
+.docs-body main .variables {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   margin-top: 3em;
 }
-.docs-body main .classes ul {
+.docs-body main .classes ul,
+.docs-body main .variables ul {
   margin-bottom: 2em;
+  line-height: 2;
+}
+.docs-body main .classes ul li,
+.docs-body main .variables ul li {
+  cursor: pointer;
+}
+.docs-body main .classes ul li:hover,
+.docs-body main .variables ul li:hover {
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 800px) {
@@ -122,6 +133,9 @@
   }
   .docs-body main section p {
     line-height: 2;
+  }
+  .docs-body main section p i {
+    font-weight: 600;
   }
   .docs-body main section img {
     width: 100%;
@@ -139,8 +153,14 @@
   .docs-body main section img.export-gif {
     display: block;
   }
-  .list-body main .classes {
+  .list-body main .classes,
+  .list-body main .variables {
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
+  }
+  .list-body main .classes ul,
+  .list-body main .variables ul {
+    font-size: 0.9rem;
+    letter-spacing: 0.75px;
   }
 }/*# sourceMappingURL=docs.css.map */
