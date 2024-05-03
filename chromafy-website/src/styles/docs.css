@@ -1,0 +1,146 @@
+.docs-body {
+  display: flex;
+}
+.docs-body .sidebar {
+  display: none;
+  position: fixed;
+  width: 17.5vw;
+  margin-inline: 5vw;
+  margin-top: 15vh;
+  height: 80vh;
+  opacity: 0.9;
+}
+.docs-body .sidebar > div {
+  border: 1px solid hsla(0, 0%, 50%, 0.4);
+  border-radius: 0.5em;
+  padding: 1em 0.75em;
+}
+.docs-body .sidebar > div ul li {
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.docs-body .sidebar > div ul li:hover {
+  background-color: hsla(0, 0%, 0%, 0.05);
+}
+.docs-body .sidebar > div ul li.selected {
+  background-color: hsla(0, 0%, 50%, 0.15);
+  font-weight: 500;
+}
+.docs-body .sidebar > div ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0.75em;
+}
+.docs-body .update-date {
+  margin: auto 0 0 0;
+  line-height: 1.5;
+}
+.docs-body .update-date span {
+  font-size: 0.9rem;
+}
+.docs-body main {
+  margin-left: 0;
+  width: 90vw;
+  margin-left: 5vw;
+  padding-bottom: 10vh;
+}
+.docs-body main section {
+  margin-top: 15vh;
+}
+.docs-body main section h2 {
+  font-size: 2.5rem;
+}
+.docs-body main section h3 {
+  font-size: 2rem;
+  margin-top: 2em;
+}
+.docs-body main section p {
+  font-size: 1.1rem;
+  margin: 2em 0;
+  line-height: 1.75;
+}
+.docs-body main section p a {
+  display: inline;
+  text-decoration: underline;
+}
+.docs-body main section p span {
+  font-weight: 500;
+}
+.docs-body main section p span:nth-child(1) {
+  font-weight: 600;
+}
+.docs-body main section img {
+  width: 90vw;
+  height: auto;
+  margin-top: 2em;
+}
+.docs-body main section img.example-desktop {
+  display: none;
+}
+.docs-body main section img.example-mobile {
+  display: block;
+}
+.docs-body main section img.control-buttons-img {
+  width: 90vw;
+}
+.docs-body main section img.export-gif {
+  display: none;
+}
+.docs-body main section pre,
+.docs-body main section code {
+  padding: 0.25em 0.5em;
+  background-color: hsla(0, 0%, 50%, 0.1);
+  border-radius: 0.5em;
+  font-family: "IBM Plex Mono", monospace;
+}
+.docs-body main section pre {
+  padding: 1em 1.5em;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+.docs-body main .classes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin-top: 3em;
+}
+.docs-body main .classes ul {
+  margin-bottom: 2em;
+}
+
+@media screen and (min-width: 800px) {
+  .docs-body .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .docs-body main {
+    margin-left: 27.5vw;
+    width: 55vw;
+  }
+  .docs-body main section p {
+    line-height: 2;
+  }
+  .docs-body main section img {
+    width: 100%;
+    height: auto;
+  }
+  .docs-body main section img.example-mobile {
+    display: none;
+  }
+  .docs-body main section img.example-desktop {
+    display: block;
+  }
+  .docs-body main section img.control-buttons-img {
+    width: 35vw;
+  }
+  .docs-body main section img.export-gif {
+    display: block;
+  }
+  .list-body main .classes {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+}/*# sourceMappingURL=docs.css.map */

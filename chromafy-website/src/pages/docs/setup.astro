@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { Image } from 'astro:assets';
+import "../../styles/docs.css"
+import classNameExample from "../../../public/classNameEg.svg"
+import classNameExampleMobile from "../../../public/classNameEgMobile.svg"
+import cssVariableExample from "../../../public/css_variable_example.svg"
+import cssVariableExampleMobile from "../../../public/css_variable_example_mobile.svg"
+---
+
+<Layout title="Chromafy Docs">
+  <Navbar currentPage="Docs" />
+  <div class="docs-body">
+  <Sidebar/>
+    <main>
+      <section id="docs-section-1">
+        <h2>Setting Up Class Names & CSS Variables</h2>
+        <p
+          >This page explains the setup required to get started with Chromafy.
+          Chromafy offers two powerful methods for applying color palettes to
+          your website: class names and CSS variables.</p
+        >
+        <h3>Using Class Names</h3>
+
+        <p
+          >These structured class names allow Chromafy to apply the palette
+          colors to approriate elements using CSS properties.</p
+        >
+
+        <Image
+          src={classNameExampleMobile}
+          alt="class name example mobile"
+          class="example-mobile"
+        />
+        <Image
+          src={classNameExample}
+          alt="class name example desktop"
+          class="example-desktop"
+        />
+
+        <p
+          >The class name can be divided into the following parts, in order,
+          separated by a hyphen <code>-</code> :
+        </p>
+
+        <p>
+          <span>Prefix (fg/bg):</span> This keyword indicates whether the class
+          targets the color property / foreground (fg) or background color
+          property (bg) of an element. <br /><span
+            >It can have one of two values: <code>fg</code> or <code>bg</code>.
+          </span></p
+        >
+
+        <p
+          ><span>Infix (chroma):</span> This keyword signifies that the class
+          applies a color from your Chromafy palette.<br />
+          <span>It has a fixed value: <code>chroma</code>.</span>
+        </p>
+        <p>
+          <span>Suffix (color type): </span>This keyword specifies the type of
+          color from your palette. <br />
+          <span>
+            It can take one of the following 5 values: <code>text</code> , <code>background</code> ,
+            <code>primary</code> , <code>secondary</code> or <code>accent</code>.
+          </span>
+        </p>
+        <p
+          ><span>Suffix 2 (opacity) (optional): </span>
+          This keyword allows you to define the opacity level of the color. It
+          is a number ranging from 5 to 95 in increments of 5, representing
+          percentages (e.g., 50 for 50% opacity).
+          <br /><span
+            >It is <i>OPTIONAL</i> and can take one of 19 numerical values: a multiple of
+            5, minimum <code>5</code> and maximum <code>95</code></span
+          >
+        </p>
+        <p
+          ><span>Example Class Names:</span>
+          <br />
+          <code style="margin-top: 3em;">class = "fg-chroma-primary" </code>
+          <br />
+          Applies the primary color from your palette to the foreground text (<a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"
+            target="_blank"
+            >CSS color property</a
+          >) of an element.
+          <br />
+          <br />
+          <code>class = "bg-chroma-secondary-25" </code>
+          <br />
+          Applies the background color from your palette with 25% opacity to the
+          background (<a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color"
+            target="_blank"
+            >CSS background-color property</a
+          >) of an element.</p
+        >
+      
+
+      
+      </section>
+      <section id="docs-section-2"><h3>Using CSS variables</h3>
+
+      <p
+        >These structured CSS variables allow you to use your palette colors as Chromafy's CSS variables, giving rise to more flexibility.</p
+      >
+
+      <Image
+        src={cssVariableExampleMobile}
+        alt="class name example mobile"
+        class="example-mobile"
+      />
+      <Image
+        src={cssVariableExample}
+        alt="class name example desktop"
+        class="example-desktop"
+      />
+
+      <p
+        >The CSS variable name can be divided into the following parts, in order,
+        separated by a hyphen (-) :
+      </p>
+
+
+      <p
+        ><span>Prefix (chroma):</span> This keyword signifies that the class
+        applies a color from your Chromafy palette.<br />
+       <span>It has a fixed value: <code>chroma</code>.</span>
+      </p>
+      <p>
+        <span>Suffix (color type): </span>This keyword specifies the type of
+        color from your palette. <br />
+         <span>
+            It can take one of the following 5 values: <code>text</code> , <code>background</code> ,
+            <code>primary</code> , <code>secondary</code> or <code>accent</code>.
+          </span>
+      </p>
+      <p
+        ><span>Suffix 2 (opacity) (optional): </span>
+        This keyword allows you to define the opacity level of the color. It is
+        a number ranging from 5 to 95 in increments of 5, representing
+        percentages (e.g., 50 for 50% opacity).
+        <br />
+        <span
+            >It is <i>OPTIONAL</i> and can take one of 19 numerical values: a multiple of
+            5, minimum <code>5</code> and maximum <code>95</code></span>
+      </p>
+      <p><span>Examples using CSS variables:</span>
+        <br />
+        <!-- To declare a variable in CSS, append two hyphens "--" as the prefix to your variable name: -->
+        Using a Chromafy CSS variable is same as using any other CSS variable, append two hyphens <code>--</code> as the prefix to your variable name, and use the <code>var()</code> function and pass the variable name:
+      </p>
+
+       <pre>{"<css-selector>{\n  background-color: var(--chroma-primary-75, #fff);\n}"}</pre>
+
+       <p> You might've noticed that there is a default value, <code>#fff</code> in this case, which is recommended to keep your UI uniform when the variables are not defined at any point of time, this can happen when the Chromafy extension is OFF. <br/> 
+        You need not worry about defining these variables as Chromafy will take care of that while the extension is ON and when you export the CSS code.
+      </p>
+
+      <p>You can refer to this <a href="/docs/class-variable-list">list</a> to look at all the possible class names and css variables</p>
+
+        <!-- <pre>{"<selector>{\n  --chroma-primary-75: hsl(20, 13%, 70%);\n}"}
+        </pre> -->
+         </section>
+      <section id="docs-section-3">
+       <h3>Applying Your Color Palette</h3>
+      </section>
+    </main>
+    
+  </div>
+</Layout>

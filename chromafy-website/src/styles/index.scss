@@ -1,0 +1,201 @@
+main {
+  width: 90vw;
+  margin: auto;
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(29, 29, 29);
+  button {
+    padding: 0.75em 1.25em;
+    border-radius: 0.5em;
+    border: 1px solid hsla(0, 0%, 53%, 0.25);
+    font-size: 1rem;
+    width: fit-content;
+    background-color: #ededed;
+    cursor: pointer;
+    transition: filter 150ms ease-in;
+    &:hover {
+      // background-color: #ededed;
+      filter: brightness(0.95);
+    }
+  }
+  .hero {
+    height: 95vh;
+    // height: 100vh;
+    padding-top: 22.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      letter-spacing: 0.25px;
+    }
+    p.sub-heading {
+      font-size: 1.25rem;
+      margin: 1.5em 0;
+      text-align: center;
+      width: 80vw;
+      line-height: 1.5;
+    }
+    .cta-container {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 15vh;
+      button {
+        position: relative;
+        img,
+        svg {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1.75em;
+          width: auto;
+          transform: translate(-55%, 150%);
+          opacity: 0.75;
+        }
+      }
+      button + button {
+        border: none;
+        color: white;
+        background-color: blue;
+        &:hover {
+          // background-color: rgb(1, 1, 208);
+          filter: brightness(0.85);
+        }
+      }
+    }
+  }
+  .tip {
+    border: 1px solid hsla(0, 0%, 53%, 0.25);
+    border-radius: 0.75em;
+    padding: 1.25em 1.75em;
+    background-color: hsla(240, 54%, 74%, 0.2);
+    margin-bottom: 30vh;
+    * {
+      color: hsla(0, 0%, 0%, 0.8);
+    }
+    h6 {
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      gap: 0.25em;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      div {
+        height: 0.75em;
+        width: 0.75em;
+        border-radius: 50%;
+        background-color: #5484ff;
+      }
+    }
+    p {
+      width: 75vw;
+    }
+  }
+  section {
+    // min-height: 100vh;
+    margin-bottom: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // place-items: center;
+    h2 {
+      // text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5em;
+      // display: none;
+    }
+    p.description {
+      // text-align: center;
+      text-align: justify;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      // padding-left: 1em;
+      // border-left: 2px solid hsla(0, 0%, 53%, 1);
+      margin-bottom: 2em;
+      i {
+        // font-size: 1.2rem;
+        font-weight: 500;
+        margin: 0 0.125em;
+      }
+    }
+    .example {
+      margin-top: 25vh;
+      .example-card {
+        width: 25vw;
+        padding: 1em;
+        border: 1px solid hsla(0, 0%, 53%, 0.25);
+        border-radius: 0.5em;
+        .label {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          svg {
+            height: 2em;
+            width: 2em;
+          }
+        }
+      }
+    }
+    button {
+      align-self: flex-start;
+      margin-top: 1em;
+      // color: white;
+      background-color: rgb(217, 217, 254);
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    width: 75vw;
+    max-width: calc(100% - 2rem);
+    // line-height: 1.6;
+    .hero {
+      h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: 1;
+      }
+      p.sub-heading {
+        width: 50vw;
+      }
+      .cta-container {
+        flex-direction: row;
+        gap: 2em;
+      }
+    }
+    .tip {
+      p {
+        width: 35ch;
+      }
+    }
+    section {
+      margin-bottom: 35vh;
+      h2 {
+        align-self: flex-start;
+      }
+      p.description {
+        width: 50vw;
+      }
+      .example {
+        .example-card {
+          .label {
+            svg {
+            }
+          }
+        }
+      }
+    }
+  }
+}

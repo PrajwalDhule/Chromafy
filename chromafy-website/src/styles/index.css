@@ -1,0 +1,177 @@
+main {
+  width: 90vw;
+  margin: auto;
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(29, 29, 29);
+}
+main button {
+  padding: 0.75em 1.25em;
+  border-radius: 0.5em;
+  border: 1px solid hsla(0, 0%, 53%, 0.25);
+  font-size: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #ededed;
+  cursor: pointer;
+  transition: filter 150ms ease-in;
+}
+main button:hover {
+  filter: brightness(0.95);
+}
+main .hero {
+  height: 95vh;
+  padding-top: 22.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.25px;
+}
+main .hero p.sub-heading {
+  font-size: 1.25rem;
+  margin: 1.5em 0;
+  text-align: center;
+  width: 80vw;
+  line-height: 1.5;
+}
+main .hero .cta-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 15vh;
+}
+main .hero .cta-container button {
+  position: relative;
+}
+main .hero .cta-container button img,
+main .hero .cta-container button svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.75em;
+  width: auto;
+  transform: translate(-55%, 150%);
+  opacity: 0.75;
+}
+main .hero .cta-container button + button {
+  border: none;
+  color: white;
+  background-color: blue;
+}
+main .hero .cta-container button + button:hover {
+  filter: brightness(0.85);
+}
+main .tip {
+  border: 1px solid hsla(0, 0%, 53%, 0.25);
+  border-radius: 0.75em;
+  padding: 1.25em 1.75em;
+  background-color: hsla(240, 54%, 74%, 0.2);
+  margin-bottom: 30vh;
+}
+main .tip * {
+  color: hsla(0, 0%, 0%, 0.8);
+}
+main .tip h6 {
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.25em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+main .tip h6 div {
+  height: 0.75em;
+  width: 0.75em;
+  border-radius: 50%;
+  background-color: #5484ff;
+}
+main .tip p {
+  width: 75vw;
+}
+main section {
+  margin-bottom: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5em;
+}
+main section p.description {
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 2em;
+}
+main section p.description i {
+  font-weight: 500;
+  margin: 0 0.125em;
+}
+main section .example {
+  margin-top: 25vh;
+}
+main section .example .example-card {
+  width: 25vw;
+  padding: 1em;
+  border: 1px solid hsla(0, 0%, 53%, 0.25);
+  border-radius: 0.5em;
+}
+main section .example .example-card .label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main section .example .example-card .label svg {
+  height: 2em;
+  width: 2em;
+}
+main section button {
+  align-self: flex-start;
+  margin-top: 1em;
+  background-color: rgb(217, 217, 254);
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    width: 75vw;
+    max-width: calc(100% - 2rem);
+  }
+  main .hero h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  main .hero p.sub-heading {
+    width: 50vw;
+  }
+  main .hero .cta-container {
+    flex-direction: row;
+    gap: 2em;
+  }
+  main .tip p {
+    width: 35ch;
+  }
+  main section {
+    margin-bottom: 35vh;
+  }
+  main section h2 {
+    align-self: flex-start;
+  }
+  main section p.description {
+    width: 50vw;
+  }
+}/*# sourceMappingURL=index.css.map */

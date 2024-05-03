@@ -202,6 +202,7 @@
   cursor: auto;
   background-color: white;
   border-radius: 0.5em;
+  border: 1px solid hsla(0, 0%, 50%, 0.25);
 }
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list p {
   color: black;
@@ -251,11 +252,38 @@
   display: grid;
   place-items: center;
 }
+.chromafy-wrapper #chromafy-popup button img.info-icon {
+  height: 2.25em;
+  width: 2.25em;
+}
 .chromafy-wrapper #chromafy-popup button #darkThemeIcon {
   display: none;
 }
 .chromafy-wrapper #chromafy-popup > *:hover {
   border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
+}
+.chromafy-wrapper #chromafy-popup div.close-btn {
+  position: absolute;
+  right: 0;
+  transform: translate(125%, 0);
+  z-index: 9999;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0.2em;
+}
+.chromafy-wrapper #chromafy-popup div.close-btn img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.chromafy-wrapper #chromafy-popup .info {
+  top: 0;
+}
+.chromafy-wrapper #chromafy-popup .close {
+  bottom: 0;
 }
 .chromafy-wrapper #chromafy-popup div.color-picker {
   position: absolute;
@@ -533,10 +561,4 @@
 .chromafy-overlay-open {
   background-color: rgba(0, 0, 0, 0.4);
   inset: 0;
-}
-
-.prajwal-text {
-  color: blue !important;
-  font-weight: 700;
-  font-size: 2rem;
 }/*# sourceMappingURL=index.css.map */

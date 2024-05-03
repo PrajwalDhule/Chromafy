@@ -32,7 +32,7 @@ const ExportPopup = (props) => {
               query += `-${k}`;
               variableName += `-${k}`;
             }
-            codeClasses += `${query}{\n\t${cssProperty}: var(${variableName});\n}\n`;
+            codeClasses += `${query}{\n\t${cssProperty}: var(${variableName}) !important;\n}\n`;
           }
         }
       }

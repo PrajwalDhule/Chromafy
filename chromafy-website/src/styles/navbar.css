@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  font-size: 0.9rem;
+  padding: 0.25em 1em;
+  z-index: 9999;
+  border-bottom: 1px solid var(--chroma-text-10, rgba(82, 80, 80, 0.1));
+  background-color: hsla(0, 0%, 100%, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+nav .logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1rem;
+  font-weight: 500;
+}
+nav .logo img {
+  height: 2em;
+  width: auto;
+}
+nav a {
+  padding: 1em 0.5em 1em 0;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5em;
+}
+nav ul li {
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  cursor: pointer;
+}
+nav ul li + li {
+  margin-left: 1.5em;
+}
+nav ul li.selected a {
+  color: var(--chroma-primary, hsl(240, 100%, 59%));
+  font-weight: 600;
+}
+
+@media screen and (min-width: 800px) {
+  nav {
+    padding: 0.25em 2em;
+  }
+  nav .logo {
+    font-size: 1.25rem;
+  }
+  nav a {
+    padding: 0.5em 1.25em;
+  }
+}/*# sourceMappingURL=navbar.css.map */

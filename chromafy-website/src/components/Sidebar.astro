@@ -1,0 +1,25 @@
+
+---
+const navigationItems = [
+  { href: '/docs/setup', text: 'Quick Setup' },
+  { href: '/docs/features', text: 'Features' },
+  { href: '/docs/class-variable-list', text: 'List of all classes and variables' },
+  { href: '/docs/debug', text: 'Debugging' },
+  { href: '/docs/releases', text: 'Releases' },
+  { href: '/docs/contributions', text: 'Contributions' },
+];
+---
+
+
+    <div class="sidebar">
+      <div>
+      <ul>
+          {[ navigationItems.map((item, index) => ( 
+            <li class={Astro.url.pathname.endsWith(item.href) ? 'selected' : ''}>
+                <a href={item.href}>{item.text}</a>
+            </li>
+            ))]}
+      </ul>
+      </div>
+      <p class="update-date"> <span>Last updated on </span> <br/>2nd May 2024</p>
+    </div>

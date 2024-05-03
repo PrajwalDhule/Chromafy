@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Navbar from '../components/Navbar.astro';
+import "../styles/index.css"
+import recommendedLight from "../assets/recommendedLight.svg"
+import { Image } from 'astro:assets';
+import RecommendedIcon from "../components/RecommendedIcon.astro"
+import StarsIcon from "../components/StarsIcon.astro"
+---
+
+<Layout title="Welcome to Astro.">
+  <!-- <div class="grain-overlay"></div> -->
+  <Navbar currentPage="Home" />
+  <main>
+    <div class="hero"
+      ><h1 class="fg-chroma-text">
+        <span> Experiment with Website </span>
+        <!-- <span>
+				Colors on any Website 
+			</span> -->
+        <span> Colors Effortlessly </span>
+        <!-- with <span class="text-gradient">Chromafy -->
+        <!-- </span> -->
+      </h1>
+      <p class="sub-heading fg-chroma-text">
+        Generate and Apply Vibrant Color Palettes straight to your Website, with
+        just a Few class names!
+      </p>
+      <div class="cta-container">
+        <button class="fg-chroma-text bg-chroma-secondary-20"
+          >Browse Docs
+          <!-- <Image src={recommendedLight} alt="recommended (light) icon" /> -->
+          <RecommendedIcon fillVar="--chroma-text" strokeVar="--chroma-text" />
+        </button>
+        <button class="fg-chroma-background bg-chroma-primary"
+          >Download Extension</button
+        >
+      </div></div
+    >
+
+    <div class="tip bg-chroma-secondary-20">
+      <h6 class="fg-chroma-text-80"><div class="bg-chroma-accent"></div>Tip</h6>
+      <p class="fg-chroma-text-80"
+        >Launch the Chromafy extension on this website to see it in action
+        without any setup</p
+      >
+    </div>
+
+    <section class="">
+      <h2>What is Chromafy?</h2>
+      <p class="description"
+        >Chromafy is a Chrome extension that lets you generate and apply color
+        palettes to <i>any</i> website with just a few clicks.</p
+      >
+      <p class="description"
+        >It let's you choose from various color schemes, create custom palettes,
+        export them and apply them to specific elements by adding class names or
+        using css variables. This easy-to-use tool helps you experiment with
+        colors and instantly see the results on live websites.</p
+      >
+      <div class="example">
+        <div class="example-card">
+          <div class="fg-chroma-text-75 label"
+            >Card Component <StarsIcon
+          /></div>
+          <h4 class="fg-chroma-text"> Card Title Here </h4>
+          <p
+            >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
+            doloribus adipisci quia atque voluptates est?</p
+          >
+          <button>Button Text</button>
+        </div>
+      </div>
+    </section>
+    <section class="">
+      <h2>Why Chromafy?</h2>
+      <p class="description"
+        >Chromafy lets you apply diverse, curated color palettes directly to
+        your website, streamlining the process of color experimentation without
+        the need to manually select and reapply colors repeatedly.</p
+      >
+      <p class="description"
+        >Its flexibility allows you to customize any website, providing a more
+        realistic and reliable visual representation compared to using just
+        color palettes, static mockups or templates.</p
+      >
+    </section>
+    <section class="">
+      <h2>How Does it Work?</h2>
+      <p class="description"
+        ><b>Five-Color Palette:</b> Each Chromafy palette contains five colors:
+        text, background, primary, secondary, and accent. You can apply these
+        colors to any element using specific class names or CSS variables.</p
+      >
+      <p class="description"
+        ><b>Randomize and Apply:</b> On clicking the randomize button, Chromafy
+        generates a new color palette that is automatically applied to the
+        appropriate elements on the webpage, This feature makes it easy to
+        experiment with different color schemes without manually setting
+        colors.</p
+      >
+      <p class="description"
+        ><b>Export for Implementation:</b> Once you're satisfied with the
+        palette, you can export these colors for use in your codebase, for a
+        seamless transition from design to implementation.
+        <!-- <br /> -->
+      </p>
+      <p class="description"
+        ><b>Detailed Documentation:</b>
+        To best use Chromafy to fit your needs, refer to Chromafy docs to go
+        more in depth and understand where and how to use appropriate class
+        names or css variables.
+      </p>
+      <button class="fg-chroma-background bg-chroma-primary"
+        >Go to Chromafy Docs</button
+      >
+      <!-- <button class="fg-chroma-background bg-chroma-primary"
+          >Download Extension</button
+        > -->
+    </section>
+  </main>
+</Layout>
+
+<!-- <style>
+
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	/* .instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	} */
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style> -->

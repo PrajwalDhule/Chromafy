@@ -14,6 +14,8 @@ import redoBtnLight from "../assets/redoBtnLight.svg";
 import redoBtnDark from "../assets/redoBtnDark.svg";
 import closeBtnLight from "../assets/closeBtnLight.svg";
 import closeBtnDark from "../assets/closeBtnDark.svg";
+import infoBtnLight from "../assets/infoBtnLight.svg";
+import infoBtnDark from "../assets/infoBtnDark.svg";
 
 const Popup = () => {
   const [colorSchemeId, setColorSchemeId] = useState(-1);
@@ -378,19 +380,14 @@ const Popup = () => {
     if (reactApp) {
       const confirmation = confirm("Close chromafy extension?");
       if (confirmation) {
-        const cssIds = [
-          "chromafy-font-import-css-style",
-          ,
-          "chromafy-inject-css-style",
-        ];
+        // const cssIds = ["chromafy-self-css-style", "chromafy-inject-css-style"];
         reactApp.remove();
-        cssIds.forEach((id) => {
-          const existingStyle = document.querySelector(`head style#${id}`);
-          if (existingStyle) {
-            document.head.removeChild(existingStyle);
-          }
-          console.log("existingStyle: ", existingStyle);
-        });
+        // cssIds.forEach((id) => {
+        //   const existingStyle = document.querySelector(`head link#${id}`);
+        //   if (existingStyle) {
+        //     document.head.removeChild(existingStyle);
+        //   }
+        // });
       }
     }
   }
@@ -411,9 +408,10 @@ const Popup = () => {
             colorTypes.map((colorType, index) => {
               return (
                 <div
-                  className={`color-box action-button bg-chroma-${colorType} ${
+                  className={`color-box action-button ${
                     colorPickerType == `${colorType}` ? "color-box-active" : ""
                   }`}
+                  style={{ backgroundColor: `var(--chroma-${colorType})` }}
                 >
                   {colorPickerType == `${colorType}` && (
                     <ColorPicker
@@ -600,7 +598,33 @@ const Popup = () => {
             </button>
           </div>
           <div className="action-button">
-            <button className="primary-button" onClick={() => removeReactApp()}>
+            <button
+              className="primary-button"
+              onClick={() => {
+                // document
+                //   .getElementById("info-popup")
+                //   .classList.toggle("info-popup-open");
+                // document
+                //   .getElementById("chromafy-wrapper")
+                //   .classList.toggle("chromafy-overlay-open");
+              }}
+            >
+              <img
+                src={infoBtnLight}
+                alt="close btn icon light"
+                style={{ display: theme === "dark" ? "none" : "grid" }}
+                className="info-icon"
+              />
+              <img
+                src={infoBtnDark}
+                alt="close btn icon dark"
+                style={{ display: theme === "light" ? "none" : "grid" }}
+                className="info-icon"
+              />
+            </button>
+          </div>
+          <div className="close-btn action-button">
+            <button onClick={() => removeReactApp()}>
               <img
                 src={closeBtnLight}
                 alt="close btn icon light"
@@ -613,6 +637,20 @@ const Popup = () => {
               />
             </button>
           </div>
+          {/* <div className="close action-button">
+            <button onClick={() => removeReactApp()}>
+              <img
+                src={closeBtnLight}
+                alt="close btn icon light"
+                style={{ display: theme === "dark" ? "none" : "grid" }}
+              />
+              <img
+                src={closeBtnDark}
+                alt="close btn icon dark"
+                style={{ display: theme === "light" ? "none" : "grid" }}
+              />
+            </button>
+          </div> */}
         </div>
         <ExportPopup
           palette={palettes && paletteIndex >= 0 && palettes[paletteIndex]}

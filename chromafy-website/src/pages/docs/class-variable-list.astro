@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { Image } from 'astro:assets';
+import "../../styles/docs.css"
+
+const suffixes : string[] = ["text", "background", "primary", "secondary", "accent"]
+const prefixes : string[] = ["fg", "bg"]
+const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
+
+---
+
+<Layout title="Chromafy Docs">
+  <Navbar currentPage="Docs" />
+  <div class="docs-body list-body">
+    <Sidebar/>
+    <main>
+        <section>
+            <h2>List of all possible Class Names and CSS variables</h2>
+            <h3>Class names</h3>
+            <div class="classes">
+                {suffixes.map((suffix)=>
+                    <>
+                        {prefixes.map((prefix) => <ul>
+                            <li>{`${prefix}-chroma-${suffix}`}</li>
+                            {steps.map((step) => (
+                                <li>{`${prefix}-chroma-${suffix}-${step}`}</li>
+                            ))}
+                        </ul>)}
+                    </>
+                )}
+            </div>
+        </section>
+    </main>
+    </div>
+</Layout>
