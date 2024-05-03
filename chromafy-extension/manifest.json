@@ -35,6 +35,8 @@
       "resources": [
         "chromafy-app/dist/assets/*.js",
         "chromafy-app/dist/assets/*.css",
+        "chromafy-app/dist/assets/*.svg",
+        "chromafy-app/dist/assets/*.png",
         "chromafy-app/src/*.css"
       ],
       "matches": ["<all_urls>"]

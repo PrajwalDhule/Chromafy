@@ -120,6 +120,7 @@
   }
 }
 
+#main-chromafy-app,
 .chromafy-wrapper {
   height: 100vh;
   width: 100vw;
@@ -430,7 +431,8 @@
     }
   }
 
-  .export-popup {
+  .export-popup,
+  .info-popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -444,6 +446,9 @@
     * {
       color: black;
     }
+  }
+
+  .export-popup {
     ul {
       list-style: none;
       margin: 0;
@@ -571,7 +576,98 @@
       cursor: pointer;
     }
   }
-  .export-popup-open {
+  .info-popup {
+    position: absolute;
+    height: 75vh;
+    overflow: hidden;
+    .info-tab {
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: 100%;
+      padding: 1em 5vw;
+      border-bottom: 1px solid hsla(0, 0%, 32%, 0.5);
+      background-color: hsla(0, 0%, 100%, 0.9);
+      backdrop-filter: blur(10px);
+      .logo {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 0.5em;
+        img {
+          height: 3em;
+        }
+      }
+      a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        &:hover {
+          // color: hsl(240, 100%, 18%);
+          // font-weight: 500;
+          text-underline-offset: 3px;
+        }
+      }
+      p {
+        margin: 0 0 0 auto;
+      }
+    }
+    div.info-content {
+      height: 100%;
+      overflow: auto;
+      margin-top: 2px;
+      padding-left: 5vw;
+      section {
+        margin-top: 17.5vh;
+        width: 55vw;
+        h2 {
+          font-size: 2.5rem;
+        }
+        h3 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.1rem;
+          margin: 2em 0;
+          line-height: 2;
+          i {
+            font-weight: 600;
+          }
+
+          a {
+            display: inline;
+            text-decoration: underline;
+          }
+          span {
+            font-weight: 500;
+          }
+          span:nth-child(1) {
+            font-weight: 600;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+        pre,
+        code {
+          padding: 0.25em 0.5em;
+          background-color: hsla(0, 0%, 50%, 0.1);
+          border-radius: 0.5em;
+          font-family: "IBM Plex Mono", monospace;
+        }
+        pre {
+          padding: 1em 1.5em;
+          line-height: 2;
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+  .popup-open {
     display: block;
   }
 }

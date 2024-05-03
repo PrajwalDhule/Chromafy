@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import ExportPopup from "./ExportPopup";
 import ColorPicker from "./ColorPicker";
+import InfoPopup from "./InfoPopup";
 import themeBtnDark from "../assets/themeBtnDark.svg";
 import themeBtnLight from "../assets/themeBtnLight.svg";
 import randomizeBtnLight from "../assets/randomizeBtnLight.svg";
@@ -149,13 +150,37 @@ const Popup = () => {
 
   function handleExportPopupClick(event) {
     const exportPopup = document.getElementById("export-popup");
+    const infoPopup = document.getElementById("info-popup");
     const chromafyUi = document.getElementById("chromafy-popup");
     const chromafyWrapper = document.getElementById("chromafy-wrapper");
     const target = event.target;
 
-    if (!chromafyUi?.contains(target) && !exportPopup?.contains(target)) {
-      exportPopup?.classList.remove("export-popup-open");
+    if (
+      !chromafyUi?.contains(target) &&
+      !exportPopup?.contains(target) &&
+      !infoPopup?.contains(target)
+    ) {
+      exportPopup?.classList.remove("popup-open");
+      infoPopup?.classList.remove("popup-open");
       chromafyWrapper?.classList.remove("chromafy-overlay-open");
+    }
+
+    console.log("hello export");
+  }
+
+  function handleToggleOverlay() {
+    let chromafyWrapper = document.getElementById("chromafy-wrapper");
+    if (
+      document
+        .getElementById("export-popup")
+        ?.classList.contains("popup-open") ||
+      document.getElementById("info-popup")?.classList.contains("popup-open")
+    ) {
+      if (!chromafyWrapper.classList.contains("chromafy-overlay-open")) {
+        chromafyWrapper.classList.add("chromafy-overlay-open");
+      }
+    } else {
+      chromafyWrapper.classList.remove("chromafy-overlay-open");
     }
   }
 
@@ -587,10 +612,8 @@ const Popup = () => {
               onClick={() => {
                 document
                   .getElementById("export-popup")
-                  .classList.toggle("export-popup-open");
-                document
-                  .getElementById("chromafy-wrapper")
-                  .classList.toggle("chromafy-overlay-open");
+                  .classList.toggle("popup-open");
+                handleToggleOverlay();
               }}
               style={{ color: theme == "dark" ? "white" : "black" }}
             >
@@ -601,12 +624,10 @@ const Popup = () => {
             <button
               className="primary-button"
               onClick={() => {
-                // document
-                //   .getElementById("info-popup")
-                //   .classList.toggle("info-popup-open");
-                // document
-                //   .getElementById("chromafy-wrapper")
-                //   .classList.toggle("chromafy-overlay-open");
+                document
+                  .getElementById("info-popup")
+                  .classList.toggle("popup-open");
+                handleToggleOverlay();
               }}
             >
               <img
@@ -655,6 +676,7 @@ const Popup = () => {
         <ExportPopup
           palette={palettes && paletteIndex >= 0 && palettes[paletteIndex]}
         />
+        <InfoPopup />
       </div>
     </>
   );

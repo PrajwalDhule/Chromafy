@@ -17,7 +17,7 @@ function injectReactApp(cssStyles) {
   });
 
   const src = chrome.runtime.getURL(
-    "chromafy-app/dist/assets/contentScript-CzBpnXvo.js"
+    "chromafy-app/dist/assets/contentScript-D6UE1kH7.js"
   );
   const script = document.createElement("script");
   script.type = "module";

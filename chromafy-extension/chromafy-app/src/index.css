@@ -122,6 +122,7 @@
   background-color: #fafafa;
 }
 
+#main-chromafy-app,
 .chromafy-wrapper {
   height: 100vh;
   width: 100vw;
@@ -131,6 +132,7 @@
   padding: 0;
   z-index: 9999 !important;
 }
+#main-chromafy-app #chromafy-popup,
 .chromafy-wrapper #chromafy-popup {
   display: flex;
   position: fixed;
@@ -145,6 +147,7 @@
   padding: 0.32em;
   border-radius: 0.5rem;
 }
+#main-chromafy-app #chromafy-popup div.action-button,
 .chromafy-wrapper #chromafy-popup div.action-button {
   height: 3rem;
   border-radius: 0.5rem;
@@ -152,6 +155,7 @@
   border: 1.5px solid transparent;
   box-sizing: border-box;
 }
+#main-chromafy-app #chromafy-popup div.color-box,
 .chromafy-wrapper #chromafy-popup div.color-box {
   width: 4.5rem;
   position: relative;
@@ -159,6 +163,7 @@
   place-items: center;
   transition: width 250ms ease-in-out;
 }
+#main-chromafy-app #chromafy-popup div.color-box p,
 .chromafy-wrapper #chromafy-popup div.color-box p {
   opacity: 0;
   transition: opacity 150ms 100ms ease-in-out;
@@ -170,25 +175,32 @@
   display: grid;
   place-items: center;
 }
+#main-chromafy-app #chromafy-popup div.color-box:hover,
 .chromafy-wrapper #chromafy-popup div.color-box:hover {
   width: 8rem;
 }
+#main-chromafy-app #chromafy-popup div.color-box:hover p,
 .chromafy-wrapper #chromafy-popup div.color-box:hover p {
   opacity: 1;
 }
+#main-chromafy-app #chromafy-popup div.color-box-active,
 .chromafy-wrapper #chromafy-popup div.color-box-active {
   width: 8rem;
 }
+#main-chromafy-app #chromafy-popup div.color-box-active p,
 .chromafy-wrapper #chromafy-popup div.color-box-active p {
   opacity: 1;
 }
+#main-chromafy-app #chromafy-popup div + div,
 .chromafy-wrapper #chromafy-popup div + div {
   margin-left: 0.28em;
 }
+#main-chromafy-app #chromafy-popup .scheme-settings,
 .chromafy-wrapper #chromafy-popup .scheme-settings {
   position: relative;
   z-index: 9999;
 }
+#main-chromafy-app #chromafy-popup .scheme-settings .scheme-list,
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list {
   display: none;
   position: absolute;
@@ -204,11 +216,13 @@
   border-radius: 0.5em;
   border: 1px solid hsla(0, 0%, 50%, 0.25);
 }
+#main-chromafy-app #chromafy-popup .scheme-settings .scheme-list p,
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list p {
   color: black;
   margin: 0;
   padding: 0.5em 0 1em 0.25em;
 }
+#main-chromafy-app #chromafy-popup .scheme-settings .scheme-list ul,
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul {
   list-style: none;
   padding: 0;
@@ -217,6 +231,7 @@
   place-items: center;
   gap: 0.5em;
 }
+#main-chromafy-app #chromafy-popup .scheme-settings .scheme-list ul li,
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul li {
   padding: 0.5em 0.75em;
   background-color: rgb(250, 250, 250);
@@ -226,16 +241,20 @@
   border: 1px solid rgb(224, 224, 224);
   cursor: pointer;
 }
+#main-chromafy-app #chromafy-popup .scheme-settings .scheme-list ul li:hover,
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul li:hover {
   background-color: rgb(240, 240, 240);
 }
+#main-chromafy-app #chromafy-popup .scheme-settings .scheme-list ul li.scheme-option-selected,
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list ul li.scheme-option-selected {
   background-color: rgb(20, 20, 20);
   color: rgb(250, 250, 250);
 }
+#main-chromafy-app #chromafy-popup .scheme-settings .scheme-list-open,
 .chromafy-wrapper #chromafy-popup .scheme-settings .scheme-list-open {
   display: block;
 }
+#main-chromafy-app #chromafy-popup button.primary-button,
 .chromafy-wrapper #chromafy-popup button.primary-button {
   border: none;
   border-radius: 0.5rem;
@@ -244,6 +263,8 @@
   cursor: pointer;
   padding: 0 1.25em;
 }
+#main-chromafy-app #chromafy-popup button img,
+#main-chromafy-app #chromafy-popup button svg,
 .chromafy-wrapper #chromafy-popup button img,
 .chromafy-wrapper #chromafy-popup button svg {
   height: 2em;
@@ -252,16 +273,20 @@
   display: grid;
   place-items: center;
 }
+#main-chromafy-app #chromafy-popup button img.info-icon,
 .chromafy-wrapper #chromafy-popup button img.info-icon {
   height: 2.25em;
   width: 2.25em;
 }
+#main-chromafy-app #chromafy-popup button #darkThemeIcon,
 .chromafy-wrapper #chromafy-popup button #darkThemeIcon {
   display: none;
 }
+#main-chromafy-app #chromafy-popup > *:hover,
 .chromafy-wrapper #chromafy-popup > *:hover {
   border: 1.5px solid rgba(99, 99, 99, 0.5) !important;
 }
+#main-chromafy-app #chromafy-popup div.close-btn,
 .chromafy-wrapper #chromafy-popup div.close-btn {
   position: absolute;
   right: 0;
@@ -275,16 +300,20 @@
   place-items: center;
   padding: 0.2em;
 }
+#main-chromafy-app #chromafy-popup div.close-btn img,
 .chromafy-wrapper #chromafy-popup div.close-btn img {
   height: 1.5rem;
   width: 1.5rem;
 }
+#main-chromafy-app #chromafy-popup .info,
 .chromafy-wrapper #chromafy-popup .info {
   top: 0;
 }
+#main-chromafy-app #chromafy-popup .close,
 .chromafy-wrapper #chromafy-popup .close {
   bottom: 0;
 }
+#main-chromafy-app #chromafy-popup div.color-picker,
 .chromafy-wrapper #chromafy-popup div.color-picker {
   position: absolute;
   top: 0;
@@ -297,6 +326,7 @@
   border-radius: 1em;
   border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.saturation-lightness-picker,
 .chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker {
   position: relative;
   width: 100%;
@@ -304,6 +334,7 @@
   border-radius: 0.5em;
   margin-bottom: 1em !important;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer,
 .chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer {
   position: absolute;
   inset: 0;
@@ -311,17 +342,21 @@
   width: 100%;
   border-radius: 0.5em;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-white,
 .chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-white {
   z-index: 1;
   background: linear-gradient(to right, #fff, transparent);
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-black,
 .chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-black {
   z-index: 2;
   background: linear-gradient(to top, #000, transparent);
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-hue,
 .chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div.layer-hue {
   z-index: 0;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.saturation-lightness-picker div#color-picker-pointer,
 .chromafy-wrapper #chromafy-popup div.color-picker div.saturation-lightness-picker div#color-picker-pointer {
   position: absolute;
   width: 20px;
@@ -333,15 +368,18 @@
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.hue-slider,
 .chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider {
   position: relative;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.hue-slider div.hue-display,
 .chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider div.hue-display {
   background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
   width: 100%;
   height: 0.75rem;
   border-radius: 1rem;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.hue-slider input[type=range],
 .chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range] {
   position: absolute;
   inset: 0;
@@ -351,21 +389,25 @@
   width: 100%;
   background-color: transparent;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.hue-slider input[type=range]::-webkit-slider-thumb,
 .chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range]::-webkit-slider-thumb {
   outline: 0.36rem solid white;
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.hue-slider input[type=range]::-moz-range-thumb,
 .chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range]::-moz-range-thumb {
   outline: 0.36rem solid white;
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
+#main-chromafy-app #chromafy-popup div.color-picker div.hue-slider input[type=range]::-ms-thumb,
 .chromafy-wrapper #chromafy-popup div.color-picker div.hue-slider input[type=range]::-ms-thumb {
   outline: 0.36rem solid white;
   border-radius: 50%;
   box-shadow: 0px 0px 16px black;
 }
+#main-chromafy-app #chromafy-popup div.color-picker .color-format,
 .chromafy-wrapper #chromafy-popup div.color-picker .color-format {
   display: flex;
   justify-content: space-between;
@@ -374,14 +416,17 @@
   font-size: 0.9rem;
   color: black;
 }
+#main-chromafy-app #chromafy-popup div.color-picker .color-format div,
 .chromafy-wrapper #chromafy-popup div.color-picker .color-format div {
   padding: 0.3em 0.5em;
   border-radius: 0.5em;
 }
+#main-chromafy-app #chromafy-popup div.color-picker .color-format .selected,
 .chromafy-wrapper #chromafy-popup div.color-picker .color-format .selected {
   color: rgb(255, 255, 255);
   background-color: rgb(25, 25, 25);
 }
+#main-chromafy-app #chromafy-popup div.color-picker .color-value,
 .chromafy-wrapper #chromafy-popup div.color-picker .color-value {
   margin-bottom: 1em;
   text-align: center;
@@ -390,10 +435,12 @@
   color: black;
   border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
+#main-chromafy-app #chromafy-popup div.color-picker .utility,
 .chromafy-wrapper #chromafy-popup div.color-picker .utility {
   display: flex;
   justify-content: space-between;
 }
+#main-chromafy-app #chromafy-popup div.color-picker .utility button,
 .chromafy-wrapper #chromafy-popup div.color-picker .utility button {
   display: flex;
   align-items: center;
@@ -404,18 +451,23 @@
   color: black;
   border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
+#main-chromafy-app #chromafy-popup div.color-picker .utility button img,
 .chromafy-wrapper #chromafy-popup div.color-picker .utility button img {
   height: 1.25em;
   margin-right: 0.5em;
   opacity: 0.8;
 }
+#main-chromafy-app #chromafy-popup div.color-picker .utility div.current-color,
 .chromafy-wrapper #chromafy-popup div.color-picker .utility div.current-color {
   height: 2.5rem;
   aspect-ratio: 2;
   border-radius: 0.32em;
   border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
-.chromafy-wrapper .export-popup {
+#main-chromafy-app .export-popup,
+#main-chromafy-app .info-popup,
+.chromafy-wrapper .export-popup,
+.chromafy-wrapper .info-popup {
   display: none;
   position: fixed;
   top: 50%;
@@ -427,14 +479,19 @@
   border-radius: 0.75rem;
   pointer-events: all;
 }
-.chromafy-wrapper .export-popup * {
+#main-chromafy-app .export-popup *,
+#main-chromafy-app .info-popup *,
+.chromafy-wrapper .export-popup *,
+.chromafy-wrapper .info-popup * {
   color: black;
 }
+#main-chromafy-app .export-popup ul,
 .chromafy-wrapper .export-popup ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+#main-chromafy-app .export-popup .chromafy-export-container,
 .chromafy-wrapper .export-popup .chromafy-export-container {
   display: flex;
   align-items: center;
@@ -442,12 +499,14 @@
   margin: 1em 0 !important;
   padding: 0 1.25em;
 }
+#main-chromafy-app .export-popup .chromafy-export-container h4,
 .chromafy-wrapper .export-popup .chromafy-export-container h4 {
   font-weight: 400;
   padding: 0.25em 1em 0.25em 0;
   border-right: 0.5px solid gray;
   margin: 1em 0;
 }
+#main-chromafy-app .export-popup .code-container-wrapper,
 .chromafy-wrapper .export-popup .code-container-wrapper {
   display: flex;
   justify-content: space-between;
@@ -455,6 +514,7 @@
   margin: 1em 1.25em !important;
   gap: 1em;
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div,
 .chromafy-wrapper .export-popup .code-container-wrapper > div {
   width: 50%;
   display: flex;
@@ -462,11 +522,13 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .btn-wrapper,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper {
   display: flex;
   gap: 1em;
   margin-top: 1.5em !important;
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .btn-wrapper button,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper button {
   font-size: 0.8rem;
   width: -moz-fit-content;
@@ -479,12 +541,15 @@
   border: 0.5px solid hsla(0, 0%, 50%, 0.35);
   cursor: pointer;
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .btn-wrapper button:hover,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper button:hover {
   background-color: rgb(240, 240, 240);
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper button,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper button {
   border-radius: 0.5em 0 0 0.5em;
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input {
   font-size: 0.8rem;
   width: 16em;
@@ -493,9 +558,11 @@
   border-radius: 0 0.5em 0.5em 0;
   border: 0.5px solid hsla(0, 0%, 50%, 0.35);
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input:focus,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .btn-wrapper .download-btn-wrapper input:focus {
   outline: none;
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .code-block,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .code-block {
   padding: 0.75em 1em;
   height: 40vh;
@@ -506,6 +573,7 @@
   border-radius: 0.5em;
   border: 0.5px solid hsla(0, 0%, 50%, 0.25);
 }
+#main-chromafy-app .export-popup .code-container-wrapper > div .code-block pre,
 .chromafy-wrapper .export-popup .code-container-wrapper > div .code-block pre {
   white-space: pre-wrap;
   line-height: 1.75;
@@ -513,18 +581,21 @@
   font-size: 0.9rem;
   margin: 0.5em 0 !important;
 }
+#main-chromafy-app .export-popup .color-settings,
 .chromafy-wrapper .export-popup .color-settings {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
 }
+#main-chromafy-app .export-popup .color-settings .color-filters-container,
 .chromafy-wrapper .export-popup .color-settings .color-filters-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.75em;
 }
+#main-chromafy-app .export-popup .color-settings .color-filters-container input[type=checkbox]#shades,
 .chromafy-wrapper .export-popup .color-settings .color-filters-container input[type=checkbox]#shades {
   -moz-appearance: auto;
   -webkit-appearance: auto;
@@ -532,15 +603,18 @@
   scale: 1.1;
   margin: 0.75px 0 0 0 !important;
 }
+#main-chromafy-app .export-popup .option,
 .chromafy-wrapper .export-popup .option {
   border-radius: 0.5em;
   padding: 0.36em 1em;
   cursor: pointer;
 }
+#main-chromafy-app .export-popup .selected,
 .chromafy-wrapper .export-popup .selected {
   color: rgb(255, 255, 255);
   background-color: rgb(25, 25, 25);
 }
+#main-chromafy-app .export-popup #close-btn,
 .chromafy-wrapper .export-popup #close-btn {
   position: absolute;
   right: 0;
@@ -554,7 +628,117 @@
   border-radius: 0.5em;
   cursor: pointer;
 }
-.chromafy-wrapper .export-popup-open {
+#main-chromafy-app .info-popup,
+.chromafy-wrapper .info-popup {
+  position: absolute;
+  height: 75vh;
+  overflow: hidden;
+}
+#main-chromafy-app .info-popup .info-tab,
+.chromafy-wrapper .info-popup .info-tab {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding: 1em 5vw;
+  border-bottom: 1px solid hsla(0, 0%, 32%, 0.5);
+  background-color: hsla(0, 0%, 100%, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+#main-chromafy-app .info-popup .info-tab .logo,
+.chromafy-wrapper .info-popup .info-tab .logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5em;
+}
+#main-chromafy-app .info-popup .info-tab .logo img,
+.chromafy-wrapper .info-popup .info-tab .logo img {
+  height: 3em;
+}
+#main-chromafy-app .info-popup .info-tab a,
+.chromafy-wrapper .info-popup .info-tab a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#main-chromafy-app .info-popup .info-tab a:hover,
+.chromafy-wrapper .info-popup .info-tab a:hover {
+  text-underline-offset: 3px;
+}
+#main-chromafy-app .info-popup .info-tab p,
+.chromafy-wrapper .info-popup .info-tab p {
+  margin: 0 0 0 auto;
+}
+#main-chromafy-app .info-popup div.info-content,
+.chromafy-wrapper .info-popup div.info-content {
+  height: 100%;
+  overflow: auto;
+  margin-top: 2px;
+  padding-left: 5vw;
+}
+#main-chromafy-app .info-popup div.info-content section,
+.chromafy-wrapper .info-popup div.info-content section {
+  margin-top: 17.5vh;
+  width: 55vw;
+}
+#main-chromafy-app .info-popup div.info-content section h2,
+.chromafy-wrapper .info-popup div.info-content section h2 {
+  font-size: 2.5rem;
+}
+#main-chromafy-app .info-popup div.info-content section h3,
+.chromafy-wrapper .info-popup div.info-content section h3 {
+  font-size: 2rem;
+}
+#main-chromafy-app .info-popup div.info-content section p,
+.chromafy-wrapper .info-popup div.info-content section p {
+  font-size: 1.1rem;
+  margin: 2em 0;
+  line-height: 2;
+}
+#main-chromafy-app .info-popup div.info-content section p i,
+.chromafy-wrapper .info-popup div.info-content section p i {
+  font-weight: 600;
+}
+#main-chromafy-app .info-popup div.info-content section p a,
+.chromafy-wrapper .info-popup div.info-content section p a {
+  display: inline;
+  text-decoration: underline;
+}
+#main-chromafy-app .info-popup div.info-content section p span,
+.chromafy-wrapper .info-popup div.info-content section p span {
+  font-weight: 500;
+}
+#main-chromafy-app .info-popup div.info-content section p span:nth-child(1),
+.chromafy-wrapper .info-popup div.info-content section p span:nth-child(1) {
+  font-weight: 600;
+}
+#main-chromafy-app .info-popup div.info-content section img,
+.chromafy-wrapper .info-popup div.info-content section img {
+  width: 100%;
+  height: auto;
+}
+#main-chromafy-app .info-popup div.info-content section pre,
+#main-chromafy-app .info-popup div.info-content section code,
+.chromafy-wrapper .info-popup div.info-content section pre,
+.chromafy-wrapper .info-popup div.info-content section code {
+  padding: 0.25em 0.5em;
+  background-color: hsla(0, 0%, 50%, 0.1);
+  border-radius: 0.5em;
+  font-family: "IBM Plex Mono", monospace;
+}
+#main-chromafy-app .info-popup div.info-content section pre,
+.chromafy-wrapper .info-popup div.info-content section pre {
+  padding: 1em 1.5em;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+#main-chromafy-app .popup-open,
+.chromafy-wrapper .popup-open {
   display: block;
 }
 
