@@ -5,18 +5,22 @@ import ColorPicker from "./ColorPicker";
 import InfoPopup from "./InfoPopup";
 import themeBtnDark from "../assets/themeBtnDark.svg";
 import themeBtnLight from "../assets/themeBtnLight.svg";
-import randomizeBtnLight from "../assets/randomizeBtnLight.svg";
-import randomizeBtnDark from "../assets/randomizeBtnDark.svg";
 import schemeBtnLight from "../assets/schemeBtnLight.svg";
 import schemeBtnDark from "../assets/schemeBtnDark.svg";
 import undoBtnLight from "../assets/undoBtnLight.svg";
 import undoBtnDark from "../assets/undoBtnDark.svg";
 import redoBtnLight from "../assets/redoBtnLight.svg";
 import redoBtnDark from "../assets/redoBtnDark.svg";
-import closeBtnLight from "../assets/closeBtnLight.svg";
-import closeBtnDark from "../assets/closeBtnDark.svg";
+import generateBtnLight from "../assets/generateBtnLight.svg";
+import generateBtnDark from "../assets/generateBtnDark.svg";
+import exportBtnLight from "../assets/exportBtnLight.svg";
+import exportBtnDark from "../assets/exportBtnDark.svg";
 import infoBtnLight from "../assets/infoBtnLight.svg";
 import infoBtnDark from "../assets/infoBtnDark.svg";
+import closeBtnLight from "../assets/closeBtnLight.svg";
+import closeBtnDark from "../assets/closeBtnDark.svg";
+import classNameExample from "../assets/class_name_example.svg";
+import cssVariableExample from "../assets/css_variable_example.svg";
 
 const Popup = () => {
   const [colorSchemeId, setColorSchemeId] = useState(-1);
@@ -164,8 +168,6 @@ const Popup = () => {
       infoPopup?.classList.remove("popup-open");
       chromafyWrapper?.classList.remove("chromafy-overlay-open");
     }
-
-    console.log("hello export");
   }
 
   function handleToggleOverlay() {
@@ -487,24 +489,6 @@ const Popup = () => {
               />
             </button>
           </div>
-          <div className="action-button">
-            <button
-              className="primary-button"
-              id="randomizeButton"
-              onClick={() => generatePalette(colorSchemeId, theme)}
-            >
-              <img
-                src={randomizeBtnLight}
-                alt="randomize button light"
-                style={{ display: theme === "dark" ? "none" : "block" }}
-              />
-              <img
-                src={randomizeBtnDark}
-                alt="randomize button dark"
-                style={{ display: theme === "light" ? "none" : "block" }}
-              />
-            </button>
-          </div>
           <div className="scheme-settings action-button">
             <div id="scheme-list" className="scheme-list">
               <p>Choose a color scheme</p>
@@ -608,6 +592,26 @@ const Popup = () => {
           <div className="action-button">
             <button
               className="primary-button"
+              id="generateButton"
+              onClick={() => generatePalette(colorSchemeId, theme)}
+              style={{ color: theme == "dark" ? "#FAFAFA" : "black" }}
+            >
+              <img
+                src={generateBtnLight}
+                alt="generate button light"
+                style={{ display: theme === "dark" ? "none" : "block" }}
+              />
+              <img
+                src={generateBtnDark}
+                alt="generate button dark"
+                style={{ display: theme === "light" ? "none" : "block" }}
+              />
+              generate
+            </button>
+          </div>
+          <div className="action-button">
+            <button
+              className="primary-button"
               id="export-button"
               onClick={() => {
                 document
@@ -615,8 +619,22 @@ const Popup = () => {
                   .classList.toggle("popup-open");
                 handleToggleOverlay();
               }}
-              style={{ color: theme == "dark" ? "white" : "black" }}
+              style={{ color: theme == "dark" ? "#FAFAFA" : "black" }}
             >
+              <img
+                src={exportBtnLight}
+                alt="export btn icon light"
+                style={{
+                  display: theme === "dark" ? "none" : "grid",
+                }}
+              />
+              <img
+                src={exportBtnDark}
+                alt="export btn icon dark"
+                style={{
+                  display: theme === "light" ? "none" : "grid",
+                }}
+              />
               export
             </button>
           </div>
@@ -676,7 +694,10 @@ const Popup = () => {
         <ExportPopup
           palette={palettes && paletteIndex >= 0 && palettes[paletteIndex]}
         />
-        <InfoPopup />
+        <InfoPopup
+          classNameExample={classNameExample}
+          cssVariableExample={cssVariableExample}
+        />
       </div>
     </>
   );

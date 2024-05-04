@@ -1,7 +1,7 @@
 import React from "react";
-import chromafyLogo from "../assets/chromafy_logo_128.png";
-import classNameExample from "../assets/classNameEg.svg";
-import cssVariableExample from "../assets/css_variable_example.svg";
+import chromafyLogo from "../assets/chromafy-logo.svg";
+import ClassNameExampleSVG from "./ClassNameExampleSVG";
+import CssVariableExampleSVG from "./CssVariableExampleSVG";
 
 const InfoPopup = () => {
   return (
@@ -23,8 +23,8 @@ const InfoPopup = () => {
           <p>
             Generate and Apply Vibrant Color Palettes straight to your Website,
             with just a Few tweaks! Chromafy offers two powerful methods for
-            applying color palettes to your website: Class Names and CSS
-            variables.
+            applying color palettes to your website: <br />
+            <u>Class Names</u> and <u>CSS variables.</u>
           </p>
           <h3>Using Class Names</h3>
 
@@ -33,11 +33,7 @@ const InfoPopup = () => {
             colors to approriate elements using CSS properties.
           </p>
 
-          <img
-            src={classNameExample}
-            alt="class name example desktop"
-            class="example-desktop"
-          />
+          <ClassNameExampleSVG />
         </section>
         <section id="docs-section-2">
           <h3>Using CSS variables</h3>
@@ -46,12 +42,7 @@ const InfoPopup = () => {
             These structured CSS variables allow you to use your palette colors
             as Chromafy's CSS variables, giving rise to more flexibility.
           </p>
-
-          <img
-            src={cssVariableExample}
-            alt="class name example desktop"
-            class="example-desktop"
-          />
+          <CssVariableExampleSVG />
         </section>
         <section>
           <h3>Applying Your Color Palette</h3>
@@ -101,6 +92,24 @@ const InfoPopup = () => {
           </p>
           .
         </section>
+        <footer>
+          <p>
+            <span>&#x2605;</span> By{" "}
+            <a href="https://linktr.ee/prajwaldhule" target="_blank">
+              Prajwal Dhule
+            </a>
+          </p>
+          <p>
+            Copyright &copy; 2024 All Rights Reserved under{" "}
+            <a
+              href="https://github.com/PrajwalDhule/Chromafy/blob/master/License.md"
+              target="_blank"
+            >
+              CC BY-NC-ND
+            </a>{" "}
+            license
+          </p>
+        </footer>
       </div>
     </div>
   );
