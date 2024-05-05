@@ -1,0 +1,36 @@
+---
+import { navigationItems } from "../helper.astro";
+import "../styles/footer.css"
+
+type propTypes = {
+  currentSectionIndex: number;
+}
+
+let { currentSectionIndex = 0} = Astro.props as propTypes;
+---
+
+<footer class="docs-footer">
+    <div class="navigate-btns">
+        <span>{currentSectionIndex < navigationItems.length && currentSectionIndex > 0 && <a href={navigationItems[currentSectionIndex-1].href}>{`< ${navigationItems[currentSectionIndex-1].text}`}</a>}</span>
+        <span>{currentSectionIndex < navigationItems.length - 1 && <a href={navigationItems[currentSectionIndex+1].href}>{`${navigationItems[currentSectionIndex+1].text} >`}</a>}</span>
+    </div>
+    <div class="other-links">
+        <div>
+            <p>&#x2605; By
+            <a href="https://linktr.ee/prajwaldhule" target="_blank">
+              Prajwal Dhule
+            </a></p>
+            <p>Have something to say? Feel free to <a href="/contact"> Contact</a></p>
+          </div>
+          <p class="copyright-text">
+            <>Copyright &copy; 2024 All Rights Reserved under{" "}</>
+            <a
+              href="https://github.com/PrajwalDhule/Chromafy/blob/master/License.md"
+              target="_blank"
+            >
+              CC BY-NC-ND
+            </a>{" "}
+            <span>license</span>
+          </p>
+    </div>
+</footer>

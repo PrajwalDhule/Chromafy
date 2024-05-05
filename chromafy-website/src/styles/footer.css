@@ -1,0 +1,84 @@
+footer.docs-footer a,
+footer.main-footer a {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-underline-offset 50ms;
+}
+footer.docs-footer a:hover,
+footer.main-footer a:hover {
+  text-underline-offset: 5px;
+}
+footer.docs-footer .navigate-btns,
+footer.main-footer .navigate-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6em 0 3em 0;
+}
+footer.docs-footer .navigate-btns a,
+footer.main-footer .navigate-btns a {
+  opacity: 0.8;
+  font-size: 1rem;
+  font-weight: 500;
+}
+footer.docs-footer .navigate-btns a:hover,
+footer.main-footer .navigate-btns a:hover {
+  opacity: 1;
+}
+footer.docs-footer .other-links,
+footer.main-footer .other-links {
+  border-top: 1px solid hsla(0, 0%, 50%, 0.5);
+  padding: 2em 0 0 0;
+}
+footer.docs-footer .other-links div,
+footer.main-footer .other-links div {
+  display: block;
+  gap: 0.5em;
+}
+footer.docs-footer .other-links p,
+footer.main-footer .other-links p {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1em 0;
+  font-size: 0.95rem;
+}
+footer.docs-footer .other-links .copyright-text,
+footer.main-footer .other-links .copyright-text {
+  display: block;
+  opacity: 0.75;
+  font-size: 0.9rem;
+  margin-top: 4em;
+}
+footer.docs-footer .other-links .copyright-text a,
+footer.main-footer .other-links .copyright-text a {
+  display: inline;
+}
+
+footer.main-footer {
+  width: 90vw;
+}
+
+@media screen and (min-width: 800px) {
+  footer.docs-footer .navigate-btns a,
+  footer.main-footer .navigate-btns a {
+    font-size: 1.2rem;
+  }
+  footer.docs-footer .other-links div,
+  footer.main-footer .other-links div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer.docs-footer .other-links .copyright-text,
+  footer.main-footer .other-links .copyright-text {
+    display: flex;
+    margin-top: 2em;
+  }
+  footer.main-footer {
+    width: 75vw;
+  }
+}/*# sourceMappingURL=footer.css.map */

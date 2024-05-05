@@ -19,6 +19,12 @@ main {
       // background-color: #ededed;
       filter: brightness(0.95);
     }
+    &:has(a) {
+      padding: 0;
+      a {
+        padding: 0.75em 1.25em;
+      }
+    }
   }
   .hero {
     height: 95vh;
@@ -65,11 +71,13 @@ main {
       }
       button + button {
         border: none;
-        color: white;
         background-color: blue;
         &:hover {
           // background-color: rgb(1, 1, 208);
           filter: brightness(0.85);
+        }
+        a {
+          color: white;
         }
       }
     }

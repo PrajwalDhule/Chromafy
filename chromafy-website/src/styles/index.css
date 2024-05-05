@@ -21,6 +21,12 @@ main button {
 main button:hover {
   filter: brightness(0.95);
 }
+main button:has(a) {
+  padding: 0;
+}
+main button:has(a) a {
+  padding: 0.75em 1.25em;
+}
 main .hero {
   height: 95vh;
   padding-top: 22.5vh;
@@ -67,11 +73,13 @@ main .hero .cta-container button svg {
 }
 main .hero .cta-container button + button {
   border: none;
-  color: white;
   background-color: blue;
 }
 main .hero .cta-container button + button:hover {
   filter: brightness(0.85);
+}
+main .hero .cta-container button + button a {
+  color: white;
 }
 main .tip {
   border: 1px solid hsla(0, 0%, 53%, 0.25);

@@ -1,0 +1,54 @@
+.contact-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-body main {
+  margin: 17.5vh 0;
+  width: 90vw;
+}
+.contact-body main h2 {
+  font-size: 2.75rem;
+  opacity: 0.9;
+}
+.contact-body main h4 {
+  margin-top: 1em;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.contact-body main .links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  margin-top: 4em;
+}
+.contact-body main .links div h6 {
+  margin-top: 1em;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+}
+.contact-body main .links div p,
+.contact-body main .links div a {
+  width: -moz-fit-content;
+  width: fit-content;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-underline-offset 50ms;
+  cursor: pointer;
+}
+.contact-body main .links div p:hover,
+.contact-body main .links div a:hover {
+  text-underline-offset: 5px;
+}
+
+@media screen and (min-width: 800px) {
+  .contact-body main {
+    width: 55vw;
+  }
+  .contact-body main .links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}/*# sourceMappingURL=contact.css.map */

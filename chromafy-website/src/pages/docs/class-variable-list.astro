@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Sidebar from '../../components/Sidebar.astro';
+import DocsFooter from '../../components/DocsFooter.astro';
 import { Image } from 'astro:assets';
 import "../../styles/docs.css"
 
@@ -15,7 +16,7 @@ const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
   <div id="dialog">Copied!</div>
   <Navbar currentPage="Docs" />
   <div class="docs-body list-body">
-    <Sidebar/>
+    <Sidebar currentSectionIndex = {2} updateDate="5th May 2024"/>
     <main>
         <section>
             <h2>List of all possible Class Names and CSS variables</h2>
@@ -46,6 +47,7 @@ const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
                 )}
             </div>
         </section>
+    <DocsFooter currentSectionIndex={2}/>
     </main>
     </div>
 </Layout>
@@ -75,7 +77,7 @@ const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
 const listElements = document.querySelectorAll(".list-body .classes ul li, .list-body .variables ul li");
 
 listElements?.forEach(listElement => {
-  listElement.addEventListener("click", () => copyText(listElement.textContent));
+  listElement.addEventListener("click", () => listElement?.textContent && copyText(listElement.textContent));
 });
 
 </script>

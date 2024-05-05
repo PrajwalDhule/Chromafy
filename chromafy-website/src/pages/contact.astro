@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import MainFooter from '../components/MainFooter.astro';
+import "../styles/contact.css"
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Chromafy">
+    <div id="dialog">Copied!</div>
+  <!-- <div class="grain-overlay"></div> -->
+  <Navbar currentPage="Contact" />
+  <div class="contact-body">
+    <main>
+        <h2>Hello there!</h2>
+        <h4>Thank You for your Interest in Chromafy. If you have anything to say, contact however you like from below, I'd be happy to connect!</h4>
+        <div class="links">
+            <div class="">
+                <h6>Email</h6>
+                <p id="emailText">chromafy.contact@gmail.com</p>
+            </div>
+            <div class="">
+                <h6>Github</h6>
+                <a href="https://github.com/PrajwalDhule" target="_blank">github.com/PrajwalDhule</a>
+            </div>
+            <div class="">
+                <h6>LinkedIn</h6>
+                <a href="https://www.linkedin.com/in/prajwal-dhule/" target="_blank">linkedin.com/in/prajwal-dhule/</a>
+            </div>
+            <div class="">
+                <h6>Twitter</h6>
+                <a href="https://twitter.com/prajwaldhule36" target="_blank">twitter.com/prajwaldhule36</a>
+            </div>
+        </div>
+    </main>
+    <MainFooter/>
+  </div>
+</Layout>
+
+<script>
+    function copyEmail(textContent : string){
+    console.log(textContent)
+    navigator.clipboard
+      .writeText(textContent)
+      .then(() => {
+        const dialog = document.getElementById('dialog');
+        if (dialog) {
+         dialog.style.display = 'block';
+
+         setTimeout(() => {
+            dialog.style.display = 'none';
+        }, 2000);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to copy code: ", err);
+      });
+}
+
+
+const emailTextElement = document.getElementById("emailText");
+
+
+  emailTextElement?.addEventListener("click", () => emailTextElement?.textContent && copyEmail(emailTextElement.textContent));
+
+
+</script>

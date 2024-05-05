@@ -57,7 +57,7 @@
     margin-left: 0;
     width: 90vw;
     margin-left: 5vw;
-    padding-bottom: 10vh;
+    padding-bottom: 2vh;
     section {
       margin-top: 15vh;
       h2 {
@@ -126,6 +126,17 @@
           }
         }
       }
+    }
+  }
+  .date {
+    font-weight: 500;
+    margin: 1em 0;
+    letter-spacing: 1px;
+  }
+  ul.release-points {
+    list-style: disc inside;
+    li {
+      margin-bottom: 0.5em;
     }
   }
 }

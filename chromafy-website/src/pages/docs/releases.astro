@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import DocsFooter from '../../components/DocsFooter.astro';
+import "../../styles/docs.css"
+---
+
+<Layout title="Chromafy Docs">
+  <Navbar currentPage="Docs" />
+  <div class="docs-body releases-body">
+    <Sidebar currentSectionIndex = {4} updateDate="5th May 2024"/>
+    <main>
+        <section>
+            <h3>Version 1.1 </h3>
+            <p class="date">05/05/2024</p>
+            <ul class="release-points">
+                <li>Added an Info Card allowing you to Learn about the Extension without leaving it</li>
+                <li>Updated Control Button Icons and UI for a much clearer look</li>
+            </ul>
+        </section>
+        <DocsFooter currentSectionIndex={4}/>
+    </main>
+  </div>
+</Layout>
