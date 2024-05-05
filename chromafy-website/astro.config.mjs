@@ -6,4 +6,5 @@ export default defineConfig({
     enabled: false,
   },
   redirects: { "/docs/": "/docs/setup" },
+  trailingSlash: "always",
 });

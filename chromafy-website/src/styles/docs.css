@@ -85,9 +85,6 @@
 .docs-body main section img.control-buttons-img {
   width: 90vw;
 }
-.docs-body main section img.export-gif {
-  display: none;
-}
 .docs-body main section pre,
 .docs-body main section code {
   padding: 0.25em 0.5em;
@@ -103,7 +100,7 @@
 .docs-body main .classes,
 .docs-body main .variables {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2em;
   margin-top: 3em;
 }
@@ -111,6 +108,7 @@
 .docs-body main .variables ul {
   margin-bottom: 2em;
   line-height: 2;
+  font-size: 1.4rem;
 }
 .docs-body main .classes ul li,
 .docs-body main .variables ul li {
@@ -148,7 +146,7 @@
     display: block;
   }
   .docs-body main section img.control-buttons-img {
-    width: 35vw;
+    width: 50vw;
   }
   .docs-body main section img.export-gif {
     display: block;

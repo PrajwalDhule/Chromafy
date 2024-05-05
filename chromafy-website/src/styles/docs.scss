@@ -96,9 +96,6 @@
       img.control-buttons-img {
         width: 90vw;
       }
-      img.export-gif {
-        display: none;
-      }
       pre,
       code {
         padding: 0.25em 0.5em;
@@ -115,12 +112,13 @@
     .classes,
     .variables {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 2em;
       margin-top: 3em;
       ul {
         margin-bottom: 2em;
         line-height: 2;
+        font-size: 1.4rem;
         li {
           cursor: pointer;
           &:hover {
@@ -162,7 +160,7 @@
           }
         }
         img.control-buttons-img {
-          width: 35vw;
+          width: 50vw;
         }
         img.export-gif {
           display: block;

@@ -4,8 +4,8 @@ import Navbar from '../../components/Navbar.astro';
 import Sidebar from '../../components/Sidebar.astro';
 import { Image } from 'astro:assets';
 import "../../styles/docs.css"
-import colorBoxes from "../../../public/color_boxes_gif_2.gif"
-import controlButtons from "../../../public/control_buttons.png"
+import colorBoxes from "../../../public/color_boxes_gif_3.gif"
+import controlButtons from "../../../public/controlButtons.png"
 import exportGif from "../../../public/export_gif_3.gif"
 ---
 
@@ -27,10 +27,9 @@ import exportGif from "../../../public/export_gif_3.gif"
         <h3>Control Buttons</h3> 
         <Image src={controlButtons} alt='control buttons' class="control-buttons-img"/>
         <p><span>The Theme button</span> allows you to choose a theme for your color palette, the theme can be either light or dark.</p> 
-        <p><span>The Generate button</span> Helps you generate new color palettes at random. It can take into account the current color scheme if one is chosen.</p> 
         <p><span>The Color Scheme list</span> allows you to choose from a few different color schemes for your color palette, you can leave it as "all" to generate from any scheme randomly.</p> 
         <p><span>The Undo and Redo</span> buttons allow you to go back to previous or next color palettes respectively</p> 
-
+        <p><span>The Generate button</span> Helps you generate new color palettes at random. It can take into account the current color scheme if one is chosen.</p> 
         <h3>Exporting css code for effortless implementation</h3> 
         <p>The export feature can be used to export css code required to put any color palette into your website persistently even when the extension is OFF. </p>
 
