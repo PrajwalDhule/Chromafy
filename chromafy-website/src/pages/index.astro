@@ -53,17 +53,66 @@ import StarsIcon from "../components/StarsIcon.astro"
         colors and instantly see the results on live websites.</p
       >
       <div class="example">
-        <div class="example-card">
-          <div class="fg-chroma-text-75 label"
-            >Card Component <StarsIcon
-          /></div>
-          <h4 class="fg-chroma-text"> Card Title Here </h4>
+        <div class="example-card tooltip bg-chroma-primary-5">
+          <div class="tooltiptext tooltiptext-top">
+            {`* { color: var(--chroma-text) }`}
+            <br/>.bg-chroma-primary-5
+            <div class="triangle-wrapper triangle-down-wrapper">
+              <div class="triangle-border"></div>
+              <div class="triangle-body"></div>
+            </div>    
+
+          </div>
+          <div class="label">
+            Card Component 
+            <div class="tooltip">
+              <StarsIcon/>
+              <div class="tooltiptext tooltiptext-bottom">
+                fill: var(--chroma-accent)
+                <div class="triangle-wrapper triangle-up-wrapper">
+                  <div class="triangle-border"></div>
+                  <div class="triangle-body"></div>
+                </div>    
+              </div>
+            </div>
+          </div>
+          <h4>Quick <br/>& Flexible</h4>
           <p
-            >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-            doloribus adipisci quia atque voluptates est?</p
+            >Generate and Apply Vibrant Color Palettes straight to your Website, with just a Few tweaks!</p
           >
-          <button>Button Text</button>
+          <button class="tooltip fg-chroma-background bg-chroma-primary">
+            <div class="tooltiptext tooltiptext-top">
+              .fg-chroma-background<br/>.bg-chroma-primary
+              <div class="triangle-wrapper triangle-down-wrapper">
+                <div class="triangle-border"></div>
+                <div class="triangle-body"></div>
+              </div>  
+            </div>
+            Button Text 
+            <div class="tooltip plus-icon">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_172_56)">
+              <path d="M15 28.3333V1.66663" stroke="white" stroke-width="3" stroke-linecap="round"/>
+              <path d="M28.3327 15H1.66602" stroke="white" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_172_56">
+              <rect width="30" height="30" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+
+            <div class="tooltiptext tooltiptext-bottom">
+              stroke: var(--chroma-background)
+              <div class="triangle-wrapper triangle-up-wrapper">
+                <div class="triangle-border"></div>
+                <div class="triangle-body"></div>
+              </div>    
+            </div>
+          </div>
+        </button>
         </div>
+        <ul class="hover-msg"><li>Hover over the card for a quick demo</li></ul>
       </div>
     </section>
     <section class="">
@@ -116,3 +165,35 @@ import StarsIcon from "../components/StarsIcon.astro"
   </main>
 
 </Layout>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Select all elements with the class "tooltip"
+  const tooltipElements = document.querySelectorAll<HTMLElement>(".tooltip");
+
+  tooltipElements.forEach((tooltip) => {
+    tooltip.addEventListener("mouseenter", () => {
+      // Hide all "tooltiptext" elements
+      const allTooltipTexts = document.querySelectorAll<HTMLElement>(".tooltiptext");
+      allTooltipTexts.forEach((tooltipText) => {
+        tooltipText.style.visibility = "hidden";
+      });
+
+      // Show the "tooltiptext" element within the hovered "tooltip"
+      const childTooltipText = tooltip.querySelector<HTMLElement>(".tooltiptext");
+      if (childTooltipText) {
+        childTooltipText.style.visibility = "visible";
+      }
+    });
+
+    tooltip.addEventListener("mouseleave", () => {
+      // Optionally, you can set the default visibility on mouse leave
+      const childTooltipText = tooltip.querySelector<HTMLElement>(".tooltiptext");
+      if (childTooltipText) {
+        childTooltipText.style.visibility = "hidden";
+      }
+    });
+  });
+});
+
+</script> -->

@@ -86,6 +86,7 @@ main .tip {
   border-radius: 0.75em;
   padding: 1.25em 1.75em;
   background-color: hsla(240, 54%, 74%, 0.2);
+  margin-top: 10vh;
   margin-bottom: 30vh;
 }
 main .tip * {
@@ -129,28 +130,61 @@ main section p.description i {
   font-weight: 500;
   margin: 0 0.125em;
 }
+main section button {
+  align-self: flex-start;
+  margin-top: 1em;
+  color: white;
+  background-color: hsl(240, 100%, 77%);
+}
 main section .example {
+  display: none;
+  width: 75vw;
   margin-top: 25vh;
 }
-main section .example .example-card {
-  width: 25vw;
-  padding: 1em;
-  border: 1px solid hsla(0, 0%, 53%, 0.25);
-  border-radius: 0.5em;
+main section .example .hover-msg {
+  margin-top: 15vh;
+  list-style: disc inside;
 }
-main section .example .example-card .label {
+main section .example .label {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-main section .example .example-card .label svg {
+main section .example .label svg {
   height: 2em;
   width: 2em;
 }
-main section button {
-  align-self: flex-start;
-  margin-top: 1em;
-  background-color: rgb(217, 217, 254);
+main section .example .tooltiptext {
+  display: none;
+}
+main section .example .example-card {
+  padding: 1.5em;
+  background-color: hsla(240, 100%, 77%, 0.05);
+  border: 1px solid hsla(0, 0%, 53%, 0.25);
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+main section .example .example-card * {
+  color: var(--chroma-text, black);
+}
+main section .example .example-card h4 {
+  font-size: 2rem;
+  margin: 1em 0 0.5em 0;
+}
+main section .example .example-card button {
+  display: flex;
+  gap: 2em;
+  margin-top: 2.5em;
+  color: white;
+}
+main section .example .example-card button:hover {
+  filter: brightness(1);
+}
+main section .example .example-card button svg {
+  height: 1em;
+}
+main section .example .example-card button svg path {
+  stroke: var(--chroma-background, #fff);
 }
 
 @media screen and (min-width: 800px) {
@@ -170,6 +204,9 @@ main section button {
     flex-direction: row;
     gap: 2em;
   }
+  main .tip {
+    margin-top: 0;
+  }
   main .tip p {
     width: 35ch;
   }
@@ -181,5 +218,90 @@ main section button {
   }
   main section p.description {
     width: 50vw;
+  }
+  main section .example {
+    display: block;
+    width: 25vw;
+  }
+  main section .example .tooltip {
+    position: relative;
+  }
+  main section .example .tooltip .tooltiptext {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    left: -0.5em;
+    width: 20em;
+    padding: 1em;
+    text-align: left;
+    line-height: 1.5;
+    border-radius: 6px;
+    background-color: var(--chroma-background, #fff);
+    color: var(--chroma-text, #000);
+    border: 1px solid hsl(0, 0%, 50%);
+    transition: opacity 300ms;
+  }
+  main section .example .tooltip .tooltiptext .triangle-wrapper {
+    position: absolute;
+  }
+  main section .example .tooltip .tooltiptext .triangle-wrapper .triangle-border {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0px;
+    transform: translateY(-100%);
+  }
+  main section .example .tooltip .tooltiptext .triangle-wrapper .triangle-body {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0.2px;
+    left: 1px;
+    transform: translateY(-100%);
+  }
+  main section .example .tooltip .tooltiptext .triangle-up-wrapper {
+    top: 0;
+    transform: translateY(-100%);
+  }
+  main section .example .tooltip .tooltiptext .triangle-up-wrapper .triangle-border {
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
+    border-bottom: 13px solid hsl(0, 0%, 50%);
+  }
+  main section .example .tooltip .tooltiptext .triangle-up-wrapper .triangle-body {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--chroma-background, #fff);
+    top: 0px;
+    left: 1.5px;
+  }
+  main section .example .tooltip .tooltiptext .triangle-down-wrapper {
+    bottom: -13px;
+  }
+  main section .example .tooltip .tooltiptext .triangle-down-wrapper .triangle-border {
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
+    border-top: 13px solid hsl(0, 0%, 50%);
+  }
+  main section .example .tooltip .tooltiptext .triangle-down-wrapper .triangle-body {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid var(--chroma-background, #fff);
+    top: -3px;
+    left: 1.5px;
+  }
+  main section .example .tooltip .tooltiptext-top {
+    top: 0%;
+    transform: translateY(-125%);
+  }
+  main section .example .tooltip .tooltiptext-bottom {
+    bottom: 0%;
+    transform: translateY(125%);
+  }
+  main section .example .tooltip:hover .tooltiptext {
+    opacity: 1;
+    visibility: visible;
   }
 }/*# sourceMappingURL=index.css.map */

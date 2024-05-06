@@ -87,6 +87,7 @@ main {
     border-radius: 0.75em;
     padding: 1.25em 1.75em;
     background-color: hsla(240, 54%, 74%, 0.2);
+    margin-top: 10vh;
     margin-bottom: 30vh;
     * {
       color: hsla(0, 0%, 0%, 0.8);
@@ -137,29 +138,62 @@ main {
         margin: 0 0.125em;
       }
     }
-    .example {
-      margin-top: 25vh;
-      .example-card {
-        width: 25vw;
-        padding: 1em;
-        border: 1px solid hsla(0, 0%, 53%, 0.25);
-        border-radius: 0.5em;
-        .label {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          svg {
-            height: 2em;
-            width: 2em;
-          }
-        }
-      }
-    }
     button {
       align-self: flex-start;
       margin-top: 1em;
-      // color: white;
-      background-color: rgb(217, 217, 254);
+      color: white;
+      background-color: hsl(240, 100%, 77%);
+    }
+    .example {
+      display: none;
+      width: 75vw;
+      margin-top: 25vh;
+      // padding: 1em;
+      .hover-msg {
+        margin-top: 15vh;
+        list-style: disc inside;
+      }
+      .label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        svg {
+          height: 2em;
+          width: 2em;
+        }
+      }
+      .tooltiptext {
+        display: none;
+      }
+      .example-card {
+        padding: 1.5em;
+        background-color: hsla(240, 100%, 77%, 0.05);
+        border: 1px solid hsla(0, 0%, 53%, 0.25);
+        border-radius: 0.5em;
+        cursor: pointer;
+        * {
+          color: var(--chroma-text, black);
+        }
+        h4 {
+          font-size: 2rem;
+          margin: 1em 0 0.5em 0;
+        }
+        button {
+          display: flex;
+          gap: 2em;
+          margin-top: 2.5em;
+          color: white;
+          &:hover {
+            filter: brightness(1);
+          }
+          svg {
+            height: 1em;
+            path {
+              stroke: var(--chroma-background, #fff);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -184,6 +218,7 @@ main {
       }
     }
     .tip {
+      margin-top: 0;
       p {
         width: 35ch;
       }
@@ -197,10 +232,93 @@ main {
         width: 50vw;
       }
       .example {
-        .example-card {
-          .label {
-            svg {
+        display: block;
+        width: 25vw;
+        .tooltip {
+          position: relative;
+          .tooltiptext {
+            display: block;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1;
+            left: -0.5em;
+            width: 20em;
+            padding: 1em;
+            text-align: left;
+            line-height: 1.5;
+            border-radius: 6px;
+            background-color: var(--chroma-background, #fff);
+            // background-color: hsl(240, 92%, 80%);
+            color: var(--chroma-text, #000);
+            border: 1px solid hsla(0, 0%, 50%, 1);
+            transition: opacity 300ms;
+            .triangle-wrapper {
+              position: absolute;
+              .triangle-border {
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 0px;
+                transform: translateY(-100%);
+              }
+
+              .triangle-body {
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 0.2px;
+                left: 1px;
+                transform: translateY(-100%);
+              }
             }
+            .triangle-up-wrapper {
+              top: 0;
+              transform: translateY(-100%);
+              .triangle-border {
+                border-left: 7.5px solid transparent;
+                border-right: 7.5px solid transparent;
+                border-bottom: 13px solid hsla(0, 0%, 50%, 1);
+              }
+
+              .triangle-body {
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 10px solid var(--chroma-background, #fff);
+                top: 0px;
+                left: 1.5px;
+              }
+            }
+            .triangle-down-wrapper {
+              bottom: -13px;
+              // transform: translateY(-100%);
+              .triangle-border {
+                border-left: 7.5px solid transparent;
+                border-right: 7.5px solid transparent;
+                border-top: 13px solid hsla(0, 0%, 50%, 1);
+              }
+
+              .triangle-body {
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 10px solid var(--chroma-background, #fff);
+                top: -3px;
+                left: 1.5px;
+              }
+            }
+          }
+          .tooltiptext-top {
+            top: 0%;
+            transform: translateY(-125%);
+          }
+          .tooltiptext-bottom {
+            bottom: 0%;
+            transform: translateY(125%);
+          }
+
+          &:hover .tooltiptext {
+            opacity: 1;
+            visibility: visible;
           }
         }
       }
