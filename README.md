@@ -4,9 +4,8 @@ A Chrome extension that lets you generate and apply color palettes to any websit
 
 ## Demo
 
-<video controls>
-        <source src="https://github.com/PrajwalDhule/Chromafy/assets/89639472/accf8e82-1e40-4f8c-9eee-573e832a1302" type="video/mp4">
-</video>
+[**Demo Video**](https://github.com/PrajwalDhule/Chromafy/assets/89639472/accf8e82-1e40-4f8c-9eee-573e832a1302)
+
 
 ## Tech Stack
 
