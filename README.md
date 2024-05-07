@@ -2,9 +2,20 @@
 
 A Chrome extension that lets you generate and apply color palettes to any website with just a few clicks with high level of customization.
 
-## UI Design
+## Demo
 
-![Demo Video](https://github.com/PrajwalDhule/Chromafy/assets/89639472/accf8e82-1e40-4f8c-9eee-573e832a1302)
+<-- ![Demo Video](https://github.com/PrajwalDhule/Chromafy/assets/89639472/accf8e82-1e40-4f8c-9eee-573e832a1302) -->
+      <video controls>
+        <source src="https://github.com/PrajwalDhule/Chromafy/assets/89639472/accf8e82-1e40-4f8c-9eee-573e832a1302" type="video/mp4">
+      </video>
+
+## Tech Stack
+
+<div align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width=40 height=40 alt="reactjs logo"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" width=40 height=40 alt="chrome logo" />
+<img src="https://github.com/PrajwalDhule/Chromafy/assets/89639472/51099b09-50e0-4ffa-93ba-916758f48c46" width=40 height=40 alt="astro logo"/>
+</div>
 
 
 ## Installation
@@ -92,6 +103,39 @@ npm install
 ```sh
 npm run dev
 ```
+
+
+## Contributing Guidelines
+
+Thank you for considering to contribute to this project 😄
+
+### What do I need to know to contribute?
+
+Anybody who is familiar with the project's tech stack of  **ReactJS**/**Astro**/**Chrome Extensions** can contribute.
+If you are interested to contribute and want to learn more about the technologies that are used in this project, checkout the links below.
+
+- [ReactJs Official Docs](https://react.dev/reference/react)
+- [Astro Official Docs](https://docs.astro.build/en/getting-started/)
+- [Chrome Extension Docs](https://developer.chrome.com/docs/extensions/get-started)
+
+### How to make a Contribution?
+
+Never made an open source contribution before? And wondering how to contribute to this project?
+No worries! Here's a quick guide,
+
+1. Choose any feature/bug you wanna contribute to.
+2. Fork the repository into your own account.
+3. Clone the repo you have forked in your local machine using `git clone https://github.com/<Your-name>/Chromafy.git`
+4. Create a new branch for your fix by using the command `git checkout -b YourName-branch-name `
+5. Make the changes you wanna do and stage them using the command `git add files-you-have-changed ` or use `git add .`
+6. Use the `git commit -m "Short description of the changes"` to describe the changes you have done with a message.
+7. Push the changes to your remote repository using `git push origin your-branch-name`
+8. Submit a PR(pull request) to the upstream repository (PrajwalDhule/Chromafy) with a title and a small description.
+9. Wait for the pull request to be reviewed, make appropriate changes if recommended, and submit it.
+11. And your pull request is merged! Congrats 🎊
+
+Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
+
 
 ### Where can I go for help, or just contact?
 
