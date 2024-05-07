@@ -39,10 +39,7 @@ ul {
   background-position: 0 0;
   background-size: auto;
   display: block;
-  /* display: none; */
   position: fixed;
-  /* top: -80%;
-  bottom: -80%; */
   inset: 0;
   left: 0%;
   right: 0%;

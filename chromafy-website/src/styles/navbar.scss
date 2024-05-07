@@ -10,7 +10,6 @@ nav {
   padding: 0.25em 1em;
   z-index: 9998;
   border-bottom: 1px solid var(--chroma-text-10, rgba(82, 80, 80, 0.1));
-  // background-colorgba(255, 255, 255, 0.75)75);
   background-color: hsla(0, 0%, 100%, 0.75);
   backdrop-filter: blur(10px);
   .logo {
@@ -29,35 +28,40 @@ nav {
     padding: 1em 0.5em 1em 0;
   }
   ul {
-    // display: none;
     display: flex;
     justify-content: center;
     list-style: none;
     width: fit-content;
     padding: 0.5em 0.75em;
-    // background-color: hsla(217, 8%, 81%, 0.9);
-    // border: 1px solid hsla(217, 8%, 81%, 0.9);
     border-radius: 0.5em;
 
     li {
-      border-radius: 0.5em;
-      // background-color: white;
-      // border: 1px solid hsla(217, 8%, 81%, 0.9);
       display: flex;
       justify-content: left;
       align-items: center;
+      border-radius: 0.5em;
       cursor: pointer;
       & + li {
         margin-left: 1.5em;
       }
 
       &.selected {
-        // background-color: var(--chroma-primary, hsl(240, 100%, 59%));
         a {
-          // color: var(--chroma-background, white);
           color: var(--chroma-primary, hsl(240, 100%, 59%));
           font-weight: 600;
         }
+      }
+      &.home-link {
+        display: none;
+      }
+    }
+
+    svg.github-icon {
+      opacity: 0.9;
+      height: 2em;
+      width: 2em;
+      &:hover {
+        opacity: 1;
       }
     }
   }
@@ -73,8 +77,12 @@ nav {
     a {
       padding: 0.5em 1.25em;
     }
-    // ul {
-    //   display: flex;
-    // }
+    ul {
+      li {
+        &.home-link {
+          display: flex;
+        }
+      }
+    }
   }
 }

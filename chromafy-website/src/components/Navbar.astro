@@ -1,25 +1,20 @@
 ---
-import "../styles/navbar.css"
-// interface Props {
-// 	title: string;
-// 	body: string;
-// 	href: string;
-// }
-import ChromafyLogo from "../../public/chromafy_logo_128.png"
 import {Image} from 'astro:assets'
+import GithubIcon from './GithubIcon.astro';
+import "../styles/navbar.css"
+import ChromafyLogo from "../../public/chromafy_logo_128.png"
 
 const { currentPage = 'Home'} = Astro.props;
 ---
 
 <nav  class="bg-chroma-background-75">
-  <!-- <div class="grain-overlay"></div> -->
-  <!-- <a><img/></a> -->
   <a href="/" class="logo"><Image src={ChromafyLogo} alt="Chromafy Logo"/>Chromafy</a>
+  
   <ul>
-    <li class={currentPage == 'Home' ? "selected" : ""}><a href="/">Home</a></li>
+    <li class={`home-link ${currentPage == 'Home' ? "selected" : ""}`}><a href="/">Home</a></li>
     <li class={currentPage == 'Docs' ? "selected" : ""}><a href="/docs/setup">Docs</a></li>
-    <!-- <li class={currentPage == 'About' ? "selected" : ""}><a href="/">About</a></li> -->
     <li class={currentPage == 'Contact' ? "selected" : ""}><a href="/contact">Contact</a></li>
+    <li><a href="https://github.com/PrajwalDhule/Chromafy" target="_blank"><GithubIcon fillVar="--chroma-text"/></a></li>
   </ul>
 </nav>
 

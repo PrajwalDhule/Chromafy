@@ -9,7 +9,6 @@ import StarsIcon from "../components/StarsIcon.astro"
 ---
 
 <Layout title="Chromafy">
-  <!-- <div class="grain-overlay"></div> -->
   <Navbar currentPage="Home" />
   <main>
     <div class="hero"
@@ -150,7 +149,7 @@ import StarsIcon from "../components/StarsIcon.astro"
         ><b>Export for Implementation:</b> Once you're satisfied with the
         palette, you can export these colors for use in your codebase, for a
         seamless transition from design to implementation.
-        <!-- <br /> -->
+        
       </p>
       <p class="description"
         ><b>Detailed Documentation:</b>
@@ -161,43 +160,9 @@ import StarsIcon from "../components/StarsIcon.astro"
       <button class="fg-chroma-background bg-chroma-primary"
         >Go to Chromafy Docs</button
       >
-      <!-- <button class="fg-chroma-background bg-chroma-primary"
-          >Download Extension</button
-        > -->
     </section>
     <MainFooter/>
   </main>
 
 </Layout>
 
-<!-- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  // Select all elements with the class "tooltip"
-  const tooltipElements = document.querySelectorAll<HTMLElement>(".tooltip");
-
-  tooltipElements.forEach((tooltip) => {
-    tooltip.addEventListener("mouseenter", () => {
-      // Hide all "tooltiptext" elements
-      const allTooltipTexts = document.querySelectorAll<HTMLElement>(".tooltiptext");
-      allTooltipTexts.forEach((tooltipText) => {
-        tooltipText.style.visibility = "hidden";
-      });
-
-      // Show the "tooltiptext" element within the hovered "tooltip"
-      const childTooltipText = tooltip.querySelector<HTMLElement>(".tooltiptext");
-      if (childTooltipText) {
-        childTooltipText.style.visibility = "visible";
-      }
-    });
-
-    tooltip.addEventListener("mouseleave", () => {
-      // Optionally, you can set the default visibility on mouse leave
-      const childTooltipText = tooltip.querySelector<HTMLElement>(".tooltiptext");
-      if (childTooltipText) {
-        childTooltipText.style.visibility = "hidden";
-      }
-    });
-  });
-});
-
-</script> -->

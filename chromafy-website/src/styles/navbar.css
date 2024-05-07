@@ -38,10 +38,10 @@ nav ul {
   border-radius: 0.5em;
 }
 nav ul li {
-  border-radius: 0.5em;
   display: flex;
   justify-content: left;
   align-items: center;
+  border-radius: 0.5em;
   cursor: pointer;
 }
 nav ul li + li {
@@ -50,6 +50,17 @@ nav ul li + li {
 nav ul li.selected a {
   color: var(--chroma-primary, hsl(240, 100%, 59%));
   font-weight: 600;
+}
+nav ul li.home-link {
+  display: none;
+}
+nav ul svg.github-icon {
+  opacity: 0.9;
+  height: 2em;
+  width: 2em;
+}
+nav ul svg.github-icon:hover {
+  opacity: 1;
 }
 
 @media screen and (min-width: 800px) {
@@ -61,5 +72,8 @@ nav ul li.selected a {
   }
   nav a {
     padding: 0.5em 1.25em;
+  }
+  nav ul li.home-link {
+    display: flex;
   }
 }/*# sourceMappingURL=navbar.css.map */
