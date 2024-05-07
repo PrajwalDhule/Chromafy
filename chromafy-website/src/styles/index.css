@@ -28,13 +28,16 @@ main button:has(a) a {
   padding: 0.75em 1.25em;
 }
 main .hero {
-  height: 95vh;
-  padding-top: 22.5vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  margin-top: 17.5vh;
+  padding-top: 5vh;
 }
 main .hero h1 {
+  margin-top: 12.5vh;
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.1;
@@ -81,23 +84,57 @@ main .hero .cta-container button + button:hover {
 main .hero .cta-container button + button a {
   color: white;
 }
+main .coming-soon-component {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 1px solid hsla(0, 0%, 53%, 0.25);
+  border-radius: 0.75em;
+  padding: 0.6em 1em;
+  background-color: hsla(240, 37%, 77%, 0.2);
+  width: 75vw;
+}
+main .coming-soon-component * {
+  color: hsla(0, 0%, 0%, 0.8);
+}
+main .coming-soon-component h6.title {
+  display: inline-flex;
+  align-items: center;
+  align-items: center;
+  gap: 0.5em;
+  opacity: 0.8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 0.25em;
+}
+main .coming-soon-component h6.title div {
+  font-size: 0.75em;
+  border-radius: 50%;
+  color: hsl(242, 100%, 32%);
+}
+main .coming-soon-component p {
+  display: inline;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
 main .tip {
   border: 1px solid hsla(0, 0%, 53%, 0.25);
   border-radius: 0.75em;
   padding: 1.25em 1.75em;
   background-color: hsla(240, 54%, 74%, 0.2);
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-bottom: 30vh;
 }
 main .tip * {
   color: hsla(0, 0%, 0%, 0.8);
 }
 main .tip h6 {
-  font-size: 1.1rem;
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.5em;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5em;
 }
@@ -105,7 +142,7 @@ main .tip h6 div {
   height: 0.75em;
   width: 0.75em;
   border-radius: 50%;
-  background-color: #5484ff;
+  background-color: hsl(97, 100%, 32%);
 }
 main .tip p {
   width: 75vw;
@@ -213,6 +250,10 @@ main section .example .example-card button svg path {
   }
   main .tip p {
     width: 35ch;
+  }
+  main .coming-soon-component {
+    margin-top: 0;
+    width: 46ch;
   }
   main section {
     margin-bottom: 35vh;

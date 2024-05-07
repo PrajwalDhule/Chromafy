@@ -26,12 +26,16 @@ main {
     }
   }
   .hero {
-    height: 95vh;
-    padding-top: 22.5vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    // height: 95vh;
+    height: 100vh;
+    margin-top: 17.5vh;
+    padding-top: 5vh;
     h1 {
+      margin-top: 12.5vh;
       font-size: 3rem;
       font-weight: 700;
       line-height: 1.1;
@@ -79,29 +83,67 @@ main {
       }
     }
   }
+  .coming-soon-component {
+    // display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: 1px solid hsla(0, 0%, 53%, 0.25);
+    border-radius: 0.75em;
+    padding: 0.6em 1em;
+    background-color: hsla(240, 37%, 77%, 0.2);
+    // margin: 10vh;
+    width: 75vw;
+    * {
+      color: hsla(0, 0%, 0%, 0.8);
+    }
+    h6.title {
+      display: inline-flex;
+      align-items: center;
+      align-items: center;
+      gap: 0.5em;
+      opacity: 0.8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-right: 0.25em;
+      div {
+        // height: 0.75em;
+        // width: 0.75em;
+        font-size: 0.75em;
+        border-radius: 50%;
+        color: hsl(242, 100%, 32%);
+      }
+    }
+    p {
+      display: inline;
+      font-size: 0.8rem;
+      line-height: 1.2;
+    }
+  }
   .tip {
     border: 1px solid hsla(0, 0%, 53%, 0.25);
     border-radius: 0.75em;
     padding: 1.25em 1.75em;
     background-color: hsla(240, 54%, 74%, 0.2);
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-bottom: 30vh;
     * {
       color: hsla(0, 0%, 0%, 0.8);
     }
     h6 {
-      font-size: 1.1rem;
       display: flex;
       justify-content: left;
       align-items: center;
-      gap: 0.25em;
+      gap: 0.5em;
+      font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 0.5em;
       div {
         height: 0.75em;
         width: 0.75em;
         border-radius: 50%;
-        background-color: #5484ff;
+        background-color: hsl(97, 100%, 32%);
       }
     }
     p {
@@ -213,6 +255,10 @@ main {
       p {
         width: 35ch;
       }
+    }
+    .coming-soon-component {
+      margin-top: 0;
+      width: 46ch;
     }
     section {
       margin-bottom: 35vh;

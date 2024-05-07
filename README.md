@@ -1,11 +1,10 @@
 # Chromafy
 
-A Chrome extension that lets you generate and apply color palettes to any website with just a few clicks with high level of customization.
+A Developer Tool in the form of a Chrome extension that lets you generate and apply color palettes to any website with just a few clicks with high level of customization.
 
 ## Demo
 
 [**Demo Video**](https://github.com/PrajwalDhule/Chromafy/assets/89639472/accf8e82-1e40-4f8c-9eee-573e832a1302)
-
 
 ## Tech Stack
 
@@ -14,7 +13,6 @@ A Chrome extension that lets you generate and apply color palettes to any websit
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" width=40 height=40 alt="chrome logo" />
 <img src="https://github.com/PrajwalDhule/Chromafy/assets/89639472/51099b09-50e0-4ffa-93ba-916758f48c46" width=40 height=40 alt="astro logo"/>
 </div>
-
 
 ## Installation
 
@@ -33,7 +31,9 @@ git clone https://github.com/<Your-name>/Chromafy.git
 ```sh
 cd chromafy-extension
 ```
+
 then
+
 ```sh
 cd chromafy-app
 ```
@@ -50,7 +50,7 @@ npm install
 npm run dev
 ```
 
-*If you've made any changes*
+_If you've made any changes_
 
 4. Build the react app
 
@@ -69,16 +69,13 @@ cd ..
 ```
 
 7. Update the previous contentScript file name with the current one in injectReactApp function inside contentScript.js
-8. 
-![contentScript file name update](https://github.com/PrajwalDhule/Chromafy/assets/89639472/f1493167-b84e-4eb3-9e4c-f22ae1f70607)
+8. ![contentScript file name update](https://github.com/PrajwalDhule/Chromafy/assets/89639472/f1493167-b84e-4eb3-9e4c-f22ae1f70607)
 
-**To upload the chrome extension and use it on your device** 
+**To upload the chrome extension and use it on your device**
 
-8. go to ``chrome://extensions/`` in your browser, click ``load unpacked`` and select the ``chromafy-extension`` folder
+8. go to `chrome://extensions/` in your browser, click `load unpacked` and select the `chromafy-extension` folder
 
 ![load chrome extension](https://github.com/PrajwalDhule/Chromafy/assets/89639472/a28b5600-60d8-46ad-b289-3a458127eccd)
-
-
 
 **Chromafy Website**
 
@@ -102,14 +99,13 @@ npm install
 npm run dev
 ```
 
-
 ## Contributing Guidelines
 
 Thank you for considering to contribute to this project 😄
 
 ### What do I need to know to contribute?
 
-Anybody who is familiar with the project's tech stack of  **ReactJS**/**Astro**/**Chrome Extensions** can contribute.
+Anybody who is familiar with the project's tech stack of **ReactJS**/**Astro**/**Chrome Extensions** can contribute.
 If you are interested to contribute and want to learn more about the technologies that are used in this project, checkout the links below.
 
 - [ReactJs Official Docs](https://react.dev/reference/react)
@@ -130,17 +126,18 @@ No worries! Here's a quick guide,
 7. Push the changes to your remote repository using `git push origin your-branch-name`
 8. Submit a PR(pull request) to the upstream repository (PrajwalDhule/Chromafy) with a title and a small description.
 9. Wait for the pull request to be reviewed, make appropriate changes if recommended, and submit it.
-11. And your pull request is merged! Congrats 🎊
+10. And your pull request is merged! Congrats 🎊
 
 Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
-
 
 ### Where can I go for help, or just contact?
 
 If you need help, you can email at:
+
 - <a href="mailto:chromafy.contact@gmail.com" target="_blank" rel="noopener noreferrer">**chromafy.contact@gmail.com**</a>
 
 Or connect with me on
+
 - <a href="https://twitter.com/prajwaldhule36" target="_blank" rel="noopener noreferrer">**Twitter**</a>
 - <a href="https://www.linkedin.com/in/prajwal-dhule" target="_blank" rel="noopener noreferrer">**Linkedin**</a>
 
