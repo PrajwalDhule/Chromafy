@@ -50,14 +50,17 @@ npm run build
 ```
 
 5. Get the name of the newly built contentScript file from the assets folder inside the build (dist) folder
+
 ![contentScript build file](https://github.com/PrajwalDhule/Chromafy/assets/89639472/64c858d2-3c84-423f-8d34-7901288e8ef4)
 
 6. Navigate back by one directory
+
 ```sh
 cd ..
 ```
 
 7. Update the previous contentScript file name with the current one in injectReactApp function inside contentScript.js
+8. 
 ![contentScript file name update](https://github.com/PrajwalDhule/Chromafy/assets/89639472/f1493167-b84e-4eb3-9e4c-f22ae1f70607)
 
 **To upload the chrome extension and use it on your device** 
@@ -93,11 +96,11 @@ npm run dev
 ### Where can I go for help, or just contact?
 
 If you need help, you can email at:
-- [**Email**](chromafy.contact@gmail.com)
+- <a href="mailto:chromafy.contact@gmail.com" target="_blank" rel="noopener noreferrer">**chromafy.contact@gmail.com**</a>
 
 Or connect with me on
-- [**Twitter**](https://twitter.com/prajwaldhule36)
-- [**Linkedin**](https://www.linkedin.com/in/prajwal-dhule)
+- <a href="https://twitter.com/prajwaldhule36" target="_blank" rel="noopener noreferrer">**Twitter**</a>
+- <a href="https://www.linkedin.com/in/prajwal-dhule" target="_blank" rel="noopener noreferrer">**Linkedin**</a>
 
 ## License
 
