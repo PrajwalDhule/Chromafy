@@ -32,7 +32,7 @@ main .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 82.5vh;
   margin-top: 17.5vh;
   padding-top: 5vh;
 }
@@ -123,7 +123,7 @@ main .tip {
   border-radius: 0.75em;
   padding: 1.25em 1.75em;
   background-color: hsla(240, 54%, 74%, 0.2);
-  margin-top: 5vh;
+  margin-top: 10vh;
   margin-bottom: 30vh;
 }
 main .tip * {
@@ -244,9 +244,6 @@ main section .example .example-card button svg path {
   main .hero .cta-container {
     flex-direction: row;
     gap: 2em;
-  }
-  main .tip {
-    margin-top: 0;
   }
   main .tip p {
     width: 35ch;
