@@ -46,7 +46,6 @@
   }
 
   button {
-    // font-size: 0.8rem;
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: capitalize;
@@ -94,20 +93,7 @@
   * {
     margin: 0;
   }
-  img,
-  picture,
-  video,
-  canvas,
-  svg {
-    // display: block;
-    // max-width: 100%;
-  }
-  input,
-  button,
-  textarea,
-  select {
-    // font: inherit;
-  }
+
   p,
   h1,
   h2,
@@ -143,17 +129,14 @@
   margin: 0;
   padding: 0;
   z-index: 9999 !important;
-  // backdrop-filter: blur(50px);
   #chromafy-popup {
     display: flex;
     position: fixed;
     bottom: 1vh;
-    // inset: 0;
     left: 50%;
     transform: translateX(-50%);
     background-color: hsla(0, 0%, 75%, 0.6);
     backdrop-filter: blur(50px);
-
     z-index: 9999 !important;
     pointer-events: all;
     padding: 0.32em;
@@ -166,7 +149,6 @@
       box-sizing: border-box;
     }
     div.color-box {
-      // aspect-ratio: 1.5;
       width: 4.5rem;
       position: relative;
       display: grid;
@@ -177,7 +159,6 @@
         opacity: 0;
         transition: opacity 150ms 100ms ease-in-out;
         margin: 0;
-        // padding: 0 0.5em;
         padding: 0;
         height: 100%;
         width: 100%;
@@ -200,7 +181,6 @@
     }
     div + div {
       margin-left: 0.28em;
-      // background-color: lch(10, 100, 120);
     }
     .scheme-settings {
       position: relative;
@@ -212,7 +192,6 @@
         bottom: 135%;
         transform: translate(-50%, 0);
         height: fit-content;
-        // z-index: 9999;
         padding: 0.5em;
         font-size: 0.9rem;
         cursor: auto;
@@ -270,9 +249,7 @@
       svg {
         height: 1.5em;
         width: 1.5em;
-        // aspect-ratio: 1;
         opacity: 0.825;
-        // padding-inline: 0.75em;
         display: grid;
         place-items: center;
       }
@@ -509,7 +486,6 @@
           gap: 1em;
           margin-top: 1.5em !important;
           button {
-            // display: block;
             font-size: 0.8rem;
             width: fit-content;
             color: rgb(26, 26, 26);

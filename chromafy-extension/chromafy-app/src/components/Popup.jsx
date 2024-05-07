@@ -407,14 +407,7 @@ const Popup = () => {
     if (reactApp) {
       const confirmation = confirm("Close chromafy extension?");
       if (confirmation) {
-        // const cssIds = ["chromafy-self-css-style", "chromafy-inject-css-style"];
         reactApp.remove();
-        // cssIds.forEach((id) => {
-        //   const existingStyle = document.querySelector(`head link#${id}`);
-        //   if (existingStyle) {
-        //     document.head.removeChild(existingStyle);
-        //   }
-        // });
       }
     }
   }

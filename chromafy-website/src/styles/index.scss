@@ -16,7 +16,6 @@ main {
     cursor: pointer;
     transition: filter 150ms ease-in;
     &:hover {
-      // background-color: #ededed;
       filter: brightness(0.95);
     }
     &:has(a) {
@@ -28,7 +27,6 @@ main {
   }
   .hero {
     height: 95vh;
-    // height: 100vh;
     padding-top: 22.5vh;
     display: flex;
     flex-direction: column;
@@ -73,7 +71,6 @@ main {
         border: none;
         background-color: blue;
         &:hover {
-          // background-color: rgb(1, 1, 208);
           filter: brightness(0.85);
         }
         a {
@@ -112,28 +109,20 @@ main {
     }
   }
   section {
-    // min-height: 100vh;
     margin-bottom: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // place-items: center;
     h2 {
-      // text-align: center;
       font-size: 2.5rem;
       margin-bottom: 1.5em;
-      // display: none;
     }
     p.description {
-      // text-align: center;
       text-align: justify;
       line-height: 1.6;
       font-size: 1.1rem;
-      // padding-left: 1em;
-      // border-left: 2px solid hsla(0, 0%, 53%, 1);
       margin-bottom: 2em;
       i {
-        // font-size: 1.2rem;
         font-weight: 500;
         margin: 0 0.125em;
       }
@@ -144,11 +133,14 @@ main {
       color: white;
       background-color: hsl(240, 100%, 77%);
     }
+    video {
+      width: 100%;
+      margin: 10vh 0 0 0;
+      border-radius: 0.75rem;
+    }
     .example {
       display: none;
       width: 75vw;
-      margin-top: 25vh;
-      // padding: 1em;
       .hover-msg {
         margin-top: 15vh;
         list-style: disc inside;
@@ -202,7 +194,6 @@ main {
   main {
     width: 75vw;
     max-width: calc(100% - 2rem);
-    // line-height: 1.6;
     .hero {
       h1 {
         font-size: 4rem;
@@ -231,6 +222,10 @@ main {
       p.description {
         width: 50vw;
       }
+      video {
+        width: 50vw;
+        margin: 20vh 0 25vh 0;
+      }
       .example {
         display: block;
         width: 25vw;
@@ -249,7 +244,6 @@ main {
             line-height: 1.5;
             border-radius: 6px;
             background-color: var(--chroma-background, #fff);
-            // background-color: hsl(240, 92%, 80%);
             color: var(--chroma-text, #000);
             border: 1px solid hsla(0, 0%, 50%, 1);
             transition: opacity 300ms;
@@ -291,7 +285,6 @@ main {
             }
             .triangle-down-wrapper {
               bottom: -13px;
-              // transform: translateY(-100%);
               .triangle-border {
                 border-left: 7.5px solid transparent;
                 border-right: 7.5px solid transparent;

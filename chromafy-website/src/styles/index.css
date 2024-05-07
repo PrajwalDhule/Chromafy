@@ -136,10 +136,14 @@ main section button {
   color: white;
   background-color: hsl(240, 100%, 77%);
 }
+main section video {
+  width: 100%;
+  margin: 10vh 0 0 0;
+  border-radius: 0.75rem;
+}
 main section .example {
   display: none;
   width: 75vw;
-  margin-top: 25vh;
 }
 main section .example .hover-msg {
   margin-top: 15vh;
@@ -218,6 +222,10 @@ main section .example .example-card button svg path {
   }
   main section p.description {
     width: 50vw;
+  }
+  main section video {
+    width: 50vw;
+    margin: 20vh 0 25vh 0;
   }
   main section .example {
     display: block;
