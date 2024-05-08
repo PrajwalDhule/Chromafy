@@ -28,6 +28,7 @@ function injectReactApp(cssStyles) {
 }
 
 function removeReactApp(cssStyles) {
+  // a simple logic to remove the ui when clicking the extension button again, commenting out due to a recent bug,
   // option 1:
   // alert("Please close using the close button given")
   //  option 2:
