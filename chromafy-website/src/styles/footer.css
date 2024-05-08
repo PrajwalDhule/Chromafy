@@ -46,6 +46,10 @@ footer.main-footer .other-links p {
   margin: 1em 0;
   font-size: 0.95rem;
 }
+footer.docs-footer .other-links .product-hunt-embed,
+footer.main-footer .other-links .product-hunt-embed {
+  margin: 2.5em 0 1em 0;
+}
 footer.docs-footer .other-links .copyright-text,
 footer.main-footer .other-links .copyright-text {
   display: block;
@@ -72,6 +76,10 @@ footer.main-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  footer.docs-footer .other-links .product-hunt-embed,
+  footer.main-footer .other-links .product-hunt-embed {
+    margin: 1em 0;
   }
   footer.docs-footer .other-links .copyright-text,
   footer.main-footer .other-links .copyright-text {

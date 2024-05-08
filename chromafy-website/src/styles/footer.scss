@@ -38,6 +38,9 @@ footer.main-footer {
       margin: 1em 0;
       font-size: 0.95rem;
     }
+    .product-hunt-embed {
+      margin: 2.5em 0 1em 0;
+    }
     .copyright-text {
       display: block;
       opacity: 0.75;
@@ -67,6 +70,9 @@ footer.main-footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+      }
+      .product-hunt-embed {
+        margin: 1em 0;
       }
       .copyright-text {
         display: flex;
