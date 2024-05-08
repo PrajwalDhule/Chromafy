@@ -21,7 +21,7 @@ i. Fork the repo into your account
 ii. Clone the project into your local machine
 
 ```sh
-git clone https://github.com/<Your-name>/Chromafy.git
+git clone https://github.com/PrajwalDhule/Chromafy.git
 ```
 
 **Chromafy Extension**
