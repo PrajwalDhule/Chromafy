@@ -64,6 +64,11 @@
 .docs-body main section p a {
   display: inline;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-underline-offset 50ms;
+}
+.docs-body main section p a:hover {
+  text-underline-offset: 5px;
 }
 .docs-body main section p span {
   font-weight: 500;
