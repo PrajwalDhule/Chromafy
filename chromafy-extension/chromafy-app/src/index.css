@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+#main-chromafy-app {
+  all: unset;
+  display: block;
+}
+
 .chromafy-wrapper input[type=text]::after, .chromafy-wrapper input[type=text]::before,
 .chromafy-wrapper input[type=checkbox]::after,
 .chromafy-wrapper input[type=checkbox]::before,
