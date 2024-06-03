@@ -139,7 +139,8 @@ main {
       }
       background-color: hsl(240, 100%, 77%);
     }
-    video {
+    video,
+    iframe.video {
       width: 100%;
       margin: 10vh 0 0 0;
       border-radius: 0.75rem;
@@ -229,7 +230,8 @@ main {
       p.description {
         width: 50vw;
       }
-      video {
+      video,
+      iframe.video {
         width: 50vw;
         margin: 20vh 0 25vh 0;
       }

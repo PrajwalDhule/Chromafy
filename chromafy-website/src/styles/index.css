@@ -140,7 +140,8 @@ main section button {
 main section button a {
   color: white;
 }
-main section video {
+main section video,
+main section iframe.video {
   width: 100%;
   margin: 10vh 0 0 0;
   border-radius: 0.75rem;
@@ -227,7 +228,8 @@ main section .example .example-card button svg path {
   main section p.description {
     width: 50vw;
   }
-  main section video {
+  main section video,
+  main section iframe.video {
     width: 50vw;
     margin: 20vh 0 25vh 0;
   }
