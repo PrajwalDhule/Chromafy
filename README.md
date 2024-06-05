@@ -4,7 +4,7 @@ A Developer Tool in the form of a Chrome extension that lets you generate and ap
 
 ## Demo
 
-[**Demo Video**](https://github.com/PrajwalDhule/Chromafy/assets/89639472/accf8e82-1e40-4f8c-9eee-573e832a1302)
+[![**Chromafy Demo Video**](https://img.youtube.com/vi/X3rUIZoolqU/0.jpg)](https://www.youtube.com/watch?v=X3rUIZoolqU)
 
 ## Tech Stack
 
