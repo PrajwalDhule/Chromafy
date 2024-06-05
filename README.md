@@ -50,6 +50,8 @@ npm install
 npm run dev
 ```
 
+_NOTE: the CSS files are located in the chromafy-extension/extension-files/stules folder_
+
 _If you've made any changes_
 
 4. Build the react app
@@ -58,24 +60,24 @@ _If you've made any changes_
 npm run build
 ```
 
-5. Get the name of the newly built contentScript file from the assets folder inside the build (dist) folder
-
-![contentScript build file](https://github.com/PrajwalDhule/Chromafy/assets/89639472/64c858d2-3c84-423f-8d34-7901288e8ef4)
-
-6. Navigate back by one directory
+5. Navigate back by one directory, and then navigate to extension-files folder
 
 ```sh
 cd ..
+cd extension-files
 ```
 
-7. Update the previous contentScript file name with the current one in injectReactApp function inside contentScript.js
-8. ![contentScript file name update](https://github.com/PrajwalDhule/Chromafy/assets/89639472/f1493167-b84e-4eb3-9e4c-f22ae1f70607)
+6. Get the name of the newly built contentScript file from the assets folder inside the build (dist) folder (i.e. full path: chromafy-extension/extension-files/dist/assets/)
+
+![contentScript build file](https://github.com/PrajwalDhule/Chromafy/assets/89639472/475bcf5f-d181-415d-8810-060ff154ac75)
+
+7. Update the previous contentScript file name with the current one in injectReactApp function inside contentScript.js (i.e. full path: chromafy-extension/extension-files/contentScript.js)
+
+![contentScript file name update](https://github.com/PrajwalDhule/Chromafy/assets/89639472/907c17aa-4ede-44f0-9daf-4cd9432cf729)
 
 **To upload the chrome extension and use it on your device**
 
-8. go to `chrome://extensions/` in your browser, click `load unpacked` and select the `chromafy-extension` folder
-
-![load chrome extension](https://github.com/PrajwalDhule/Chromafy/assets/89639472/a28b5600-60d8-46ad-b289-3a458127eccd)
+8. go to `chrome://extensions/` in your browser, click `load unpacked` and select the `extension-files` folder (i.e full path: chromafy-extension/extension-files)
 
 **Chromafy Website**
 

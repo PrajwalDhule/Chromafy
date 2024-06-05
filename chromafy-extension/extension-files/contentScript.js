@@ -16,9 +16,7 @@ function injectReactApp(cssStyles) {
     }
   });
 
-  const src = chrome.runtime.getURL(
-    "chromafy-app/dist/assets/contentScript-CatlVoSz.js"
-  );
+  const src = chrome.runtime.getURL("/dist/assets/contentScript-SkKff4Uv.js");
   const script = document.createElement("script");
   script.type = "module";
   script.src = `${src}?t=${Date.now()}`;
@@ -52,11 +50,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // css styles to be injected for chromafy ui and for the background website
     const cssStyles = [
       {
-        url: "chromafy-app/src/index.css",
+        url: "/styles/index.css",
         id: "chromafy-self-css-style",
       },
       {
-        url: "chromafy-app/src/inject.css",
+        url: "/styles/inject.css",
         id: "chromafy-inject-css-style",
       },
     ];
