@@ -11,5 +11,6 @@ export default defineConfig({
         contentScript: "./contentScriptEntryPoint.jsx",
       },
     },
+    outDir: "../extension-files/dist",
   },
 });

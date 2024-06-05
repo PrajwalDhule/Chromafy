@@ -32,11 +32,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": [
-        "chromafy-app/dist/assets/*.js",
-        "chromafy-app/dist/assets/*.css",
-        "chromafy-app/src/*.css"
-      ],
+      "resources": ["/dist/assets/*.js", "/dist/assets/*.css", "/styles/*.css"],
       "matches": ["<all_urls>"]
     }
   ]
