@@ -102,7 +102,7 @@ const InfoPopup = () => {
           <p>
             Copyright &copy; 2024 All Rights Reserved under{" "}
             <a
-              href="https://github.com/PrajwalDhule/Chromafy/blob/master/License.md"
+              href="https://github.com/PrajwalDhule/Chromafy/blob/master/LICENSE.md"
               target="_blank"
             >
               CC BY-NC-ND
