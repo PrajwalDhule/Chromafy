@@ -16,7 +16,7 @@ function injectReactApp(cssStyles) {
     }
   });
 
-  const src = chrome.runtime.getURL("/dist/assets/contentScript-SkKff4Uv.js");
+  const src = chrome.runtime.getURL("/dist/assets/contentScript-eNNgleG1.js");
   const script = document.createElement("script");
   script.type = "module";
   script.src = `${src}?t=${Date.now()}`;

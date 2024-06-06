@@ -1,1 +1,2 @@
-chromafy-extension-zip.zip
+*.zip
+**/dist/
