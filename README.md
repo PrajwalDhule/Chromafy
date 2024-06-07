@@ -50,7 +50,7 @@ npm install
 npm run dev
 ```
 
-_NOTE: the CSS files are located in the chromafy-extension/extension-files/stules folder_
+_NOTE: the CSS files are located in the chromafy-extension/extension-files/styles folder_
 
 _If you've made any changes_
 
