@@ -134,6 +134,15 @@
 .docs-body ul.release-points li {
   margin-bottom: 0.5em;
 }
+.docs-body ul.release-points li a {
+  display: inline;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-underline-offset 50ms;
+}
+.docs-body ul.release-points li a:hover {
+  text-underline-offset: 5px;
+}
 
 @media screen and (min-width: 800px) {
   .docs-body .sidebar {

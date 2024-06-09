@@ -70,13 +70,26 @@ main {
         }
       }
       button + button {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        // gap: 1em;
+        // background-color: transparent;
         border: none;
-        background-color: blue;
-        &:hover {
-          filter: brightness(0.85);
-        }
+        border-radius: 0.5em;
         a {
           color: white;
+          &.chrome-install-link {
+            background-color: hsl(240, 100%, 65%);
+            border-radius: 0.5em 0 0 0.5em;
+          }
+          &.firefox-install-link {
+            background-color: hsl(20, 91%, 63%);
+            border-radius: 0 0.5em 0.5em 0;
+          }
+          &:hover {
+            filter: brightness(0.95);
+          }
         }
       }
     }

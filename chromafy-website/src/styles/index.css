@@ -73,14 +73,25 @@ main .hero .cta-container button svg {
   opacity: 0.75;
 }
 main .hero .cta-container button + button {
+  display: flex;
+  justify-content: left;
+  align-items: center;
   border: none;
-  background-color: blue;
-}
-main .hero .cta-container button + button:hover {
-  filter: brightness(0.85);
+  border-radius: 0.5em;
 }
 main .hero .cta-container button + button a {
   color: white;
+}
+main .hero .cta-container button + button a.chrome-install-link {
+  background-color: hsl(240, 100%, 65%);
+  border-radius: 0.5em 0 0 0.5em;
+}
+main .hero .cta-container button + button a.firefox-install-link {
+  background-color: hsl(20, 91%, 63%);
+  border-radius: 0 0.5em 0.5em 0;
+}
+main .hero .cta-container button + button a:hover {
+  filter: brightness(0.95);
 }
 main .tip {
   border: 1px solid hsla(0, 0%, 53%, 0.25);
