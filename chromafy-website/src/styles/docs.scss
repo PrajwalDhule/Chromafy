@@ -1,3 +1,13 @@
+@mixin link-underline {
+  display: inline;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-underline-offset 50ms;
+  &:hover {
+    text-underline-offset: 5px;
+  }
+}
+
 .docs-body {
   display: flex;
   .sidebar {
@@ -66,13 +76,7 @@
         margin: 2em 0;
         line-height: 1.75;
         a {
-          display: inline;
-          text-decoration: underline;
-          text-underline-offset: 3px;
-          transition: text-underline-offset 50ms;
-          &:hover {
-            text-underline-offset: 5px;
-          }
+          @include link-underline;
         }
         span {
           font-weight: 500;
@@ -136,6 +140,9 @@
     list-style: disc inside;
     li {
       margin-bottom: 0.5em;
+      a {
+        @include link-underline;
+      }
     }
   }
 }
