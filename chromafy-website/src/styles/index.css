@@ -57,6 +57,7 @@ main .hero .cta-container {
   justify-content: center;
   align-items: center;
   gap: 1em;
+  margin-top: 1em;
   margin-bottom: 15vh;
 }
 main .hero .cta-container button {

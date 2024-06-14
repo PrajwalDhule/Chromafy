@@ -43,7 +43,6 @@ import { Image } from 'astro:assets';
 
 <script>
     function copyEmail(textContent : string){
-    console.log(textContent)
     navigator.clipboard
       .writeText(textContent)
       .then(() => {
