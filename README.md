@@ -8,9 +8,9 @@ A Developer Tool in the form of a Web extension that lets you generate and apply
 
 ## Major Links
 
-Chrome Extension: ![Chrome Extension Link](https://chromewebstore.google.com/detail/chromafy/cnlpinepheadkoncomndblbajnalpljn)
-Firefox Add-on: ![Firefox Add-on link](https://addons.mozilla.org/en-US/firefox/addon/chromafy/)
-Website (docs included): ![Website link](https://chromafy.vercel.app/)
+Chrome Extension: [Chrome Extension Link](https://chromewebstore.google.com/detail/chromafy/cnlpinepheadkoncomndblbajnalpljn)
+Firefox Add-on: [Firefox Add-on link](https://addons.mozilla.org/en-US/firefox/addon/chromafy/)
+Website (docs included): [Website link](https://chromafy.vercel.app/)
 
 ## Tech Stack
 
