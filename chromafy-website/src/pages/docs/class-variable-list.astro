@@ -54,24 +54,24 @@ const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
 
 
 <script>
-    function copyText(textContent : string){
-    console.log(textContent)
-    navigator.clipboard
-      .writeText(textContent)
-      .then(() => {
-        const dialog = document.getElementById('dialog');
-        if (dialog) {
-         dialog.style.display = 'block';
 
-         setTimeout(() => {
-            dialog.style.display = 'none';
-        }, 2000);
-        }
-      })
-      .catch((err) => {
-        console.error("Failed to copy code: ", err);
-      });
-}
+    function copyText(textContent : string){
+        navigator.clipboard
+        .writeText(textContent)
+        .then(() => {
+            const dialog = document.getElementById('dialog');
+            if (dialog) {
+            dialog.style.display = 'block';
+
+            setTimeout(() => {
+                dialog.style.display = 'none';
+            }, 2000);
+            }
+        })
+        .catch((err) => {
+            console.error("Failed to copy code: ", err);
+        });
+    }
 
 
 const listElements = document.querySelectorAll(".list-body .classes ul li, .list-body .variables ul li");

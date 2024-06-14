@@ -86,11 +86,11 @@ const ExportPopup = (props) => {
             cssCodes.hex.shades += `--chroma-${colorTypes[i]}-${j}: ${hexShade};\n`;
           }
         } else {
-          console.log("error converting to rgb and hex");
+          console.error("error converting to rgb and hex");
         }
       }
     } else {
-      console.log("error getting color palette");
+      console.error("error getting color palette");
     }
 
     setCodes({ ...cssCodes });

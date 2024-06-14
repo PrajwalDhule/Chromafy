@@ -81,7 +81,7 @@ const Popup = () => {
         }
       });
     } catch (e) {
-      console.log("Error occurred in localStorage handling:", e);
+      console.error("Error occurred in localStorage handling:", e);
     }
   }, []);
 
@@ -141,7 +141,7 @@ const Popup = () => {
         setHasPageBeenRendered(true);
       }
     } catch (e) {
-      console.log("Error occurred in localStorage handling:", e);
+      console.error("Error occurred in localStorage handling:", e);
     }
   }, [theme]);
 
@@ -235,7 +235,7 @@ const Popup = () => {
         setLabels([...palette]);
       }
     } catch (e) {
-      console.log("Error occurred in localStorage handling:", e);
+      console.error("Error occurred in localStorage handling:", e);
     }
   }
 
