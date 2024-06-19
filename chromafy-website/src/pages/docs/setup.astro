@@ -9,12 +9,14 @@ import classNameExample from "../../../public/classNameEg.svg"
 import classNameExampleMobile from "../../../public/classNameEgMobile.svg"
 import cssVariableExample from "../../../public/css_variable_example.svg"
 import cssVariableExampleMobile from "../../../public/css_variable_example_mobile.svg"
+
+let currentSectionIndex = 0;
 ---
 
 <Layout title="Chromafy Docs">
   <Navbar currentPage="Docs" />
   <div class="docs-body">
-    <Sidebar currentSectionIndex = {0} updateDate="16th May 2024"/>
+    <Sidebar currentSectionIndex = {currentSectionIndex} updateDate="16th May 2024"/>
     <main>
       <section id="docs-section-1">
         <h2>Setting Up Class Names & CSS Variables</h2>
@@ -174,7 +176,7 @@ import cssVariableExampleMobile from "../../../public/css_variable_example_mobil
        <p><code><i>secondary</i></code> colors are used as supporting colors. They can be used as background colors for your website's lesser important components, like less important buttons, cards, sections. Variations with Shades/Opacities of this color often works well. It is helpful in balancing the UI without overwhelming other colors. <br/>eg: a card with class <code>bg-chroma-secondary-20</code></p>
        <p><code><i>accent</i></code> colors are used on other elements like svgs, images, hyperlinks, etc. It is an additional color that can be a part of a brand's identity. </p>
       </section>
-      <DocsFooter currentSectionIndex={0}/>
+      <DocsFooter currentSectionIndex={currentSectionIndex}/>
     </main>
   </div>
 </Layout>

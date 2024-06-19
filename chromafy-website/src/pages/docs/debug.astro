@@ -4,17 +4,19 @@ import Navbar from '../../components/Navbar.astro';
 import Sidebar from '../../components/Sidebar.astro';
 import DocsFooter from '../../components/DocsFooter.astro';
 import "../../styles/docs.css"
+
+let currentSectionIndex = 3;
 ---
 
 <Layout title="Chromafy Docs">
   <Navbar currentPage="Docs" />
   <div class="docs-body debug-body">
-    <Sidebar currentSectionIndex = {3} updateDate="5th May 2024"/>
+    <Sidebar currentSectionIndex = {currentSectionIndex} updateDate="5th May 2024"/>
     <main>
         <section>
             <p>Coming soon...</p>
         </section>
-        <DocsFooter currentSectionIndex={3}/>
+        <DocsFooter currentSectionIndex={currentSectionIndex}/>
     </main>
   </div>
 </Layout>

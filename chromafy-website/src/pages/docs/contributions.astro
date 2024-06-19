@@ -4,18 +4,20 @@ import Navbar from '../../components/Navbar.astro';
 import Sidebar from '../../components/Sidebar.astro';
 import DocsFooter from '../../components/DocsFooter.astro';
 import "../../styles/docs.css"
+
+let currentSectionIndex = 4;
 ---
 
 <Layout title="Chromafy Docs">
   <Navbar currentPage="Docs" />
   <div class="docs-body contributions-body">
-    <Sidebar currentSectionIndex = {5} updateDate="5th May 2024"/>
+    <Sidebar currentSectionIndex = {currentSectionIndex} updateDate="5th May 2024"/>
     <main>
         <section>
             <h2>Contributions</h2>
             <p>Chromafy is Open Sourced, so if you wish to contribute or just want to go through the code, you can visit the <a href="https://github.com/PrajwalDhule/Chromafy" target="_blank">Github Link</a>. You can just open a <a href="https://github.com/PrajwalDhule/Chromafy/issues" target="_blank">new issue</a> if you come across a bug or have a feature in mind.</p>
         </section>
-        <DocsFooter currentSectionIndex={5}/>
+        <DocsFooter currentSectionIndex={currentSectionIndex}/>
     </main>
   </div>
 </Layout>

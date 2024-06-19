@@ -8,12 +8,14 @@ import "../../styles/docs.css"
 import colorBoxes from "../../../public/color_boxes_gif_3.gif"
 import controlButtons from "../../../public/controlButtons.png"
 import exportGif from "../../../public/export_gif_3.gif"
+
+let currentSectionIndex = 1;
 ---
 
 <Layout title="Chromafy Docs">
   <Navbar currentPage="Docs" />
   <div class="docs-body">
-    <Sidebar currentSectionIndex = {1} updateDate="5th May 2024"/>
+    <Sidebar currentSectionIndex = {currentSectionIndex} updateDate="5th May 2024"/>
     <main>
         <section>
         <h2>Understanding Chromafy Extension's Features</h2>
@@ -37,7 +39,7 @@ import exportGif from "../../../public/export_gif_3.gif"
         <p>There are two types of codes to export: the <code>css variable declaration</code> and the application of the variables using the <code>class names</code>. You can select from different color formats and choose to include the shades while exporting as well. You can either choose to copy the code or download it.</p>
 
         <Image src={exportGif} alt='export gif' class="export-gif"/>
-<DocsFooter currentSectionIndex={1}/>
+        <DocsFooter currentSectionIndex={currentSectionIndex}/>
         </section>
     </main>
   </div>

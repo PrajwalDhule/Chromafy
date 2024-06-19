@@ -10,13 +10,14 @@ const suffixes : string[] = ["text", "background", "primary", "secondary", "acce
 const prefixes : string[] = ["fg", "bg"]
 const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
 
+let currentSectionIndex = 2;
 ---
 
 <Layout title="Chromafy Docs">
   <div id="dialog">Copied!</div>
   <Navbar currentPage="Docs" />
   <div class="docs-body list-body">
-    <Sidebar currentSectionIndex = {2} updateDate="5th May 2024"/>
+    <Sidebar currentSectionIndex = {currentSectionIndex} updateDate="5th May 2024"/>
     <main>
         <section>
             <h2>List of all possible Class Names and CSS variables</h2>
@@ -47,7 +48,7 @@ const steps  : number[] = Array.from({ length: 19 }, (_, i) => (i + 1) * 5);
                 )}
             </div>
         </section>
-    <DocsFooter currentSectionIndex={2}/>
+    <DocsFooter currentSectionIndex={currentSectionIndex}/>
     </main>
     </div>
 </Layout>
