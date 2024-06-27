@@ -51,7 +51,7 @@
   }
 
   button {
-    font-size: 0.9rem;
+    font-size: 14.4px;
     font-weight: 500;
     text-transform: capitalize;
     width: fit-content;
@@ -59,7 +59,7 @@
 
   h3 {
     font-weight: 700;
-    margin-top: 2em;
+    margin-top: 32px;
   }
 
   i {
@@ -144,17 +144,17 @@
     backdrop-filter: blur(50px);
     z-index: 9999 !important;
     pointer-events: all;
-    padding: 0.32em;
-    border-radius: 0.5rem;
+    padding: 5.5px;
+    border-radius: 8px;
     div.action-button {
-      height: 3rem;
-      border-radius: 0.5rem;
+      height: 48px;
+      border-radius: 8px;
       cursor: pointer;
       border: 1.5px solid transparent;
       box-sizing: border-box;
     }
     div.color-box {
-      width: 4.5rem;
+      width: 72px;
       position: relative;
       display: grid;
       place-items: center;
@@ -172,20 +172,20 @@
         place-items: center;
       }
       &:hover {
-        width: 8rem;
+        width: 128px;
         p {
           opacity: 1;
         }
       }
     }
     div.color-box-active {
-      width: 8rem;
+      width: 128px;
       p {
         opacity: 1;
       }
     }
     div + div {
-      margin-left: 0.28em;
+      margin-left: 4.5px;
     }
     .scheme-settings {
       position: relative;
@@ -197,12 +197,12 @@
         bottom: 135%;
         transform: translate(-50%, 0);
         height: fit-content;
+        font-size: 14.4px;
         padding: 0.5em;
-        font-size: 0.9rem;
-        cursor: auto;
         background-color: white;
         border-radius: 0.5em;
         border: 1px solid hsla(0, 0%, 50%, 0.25);
+        cursor: auto;
         p {
           color: black;
           margin: 0;
@@ -242,11 +242,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 0.5em;
+      gap: .5em;
       height: 100%;
       padding: 0 1em;
       background-color: transparent;
-      border-radius: 0.5rem;
+      border-radius: 0.5em;
       cursor: pointer;
     }
     button {
@@ -286,10 +286,10 @@
       cursor: pointer;
       display: grid;
       place-items: center;
-      padding: 0.2em;
+      padding: 3.2px;
       img {
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 24px;
+        width: 24px;
       }
     }
     .info {
@@ -305,7 +305,8 @@
       left: 0;
       transform: translate(0%, -105%);
       z-index: 9999;
-      width: 14rem;
+      font-size: 16px;
+      width: 14em;
       background-color: white;
       padding: 1em;
       border-radius: 1em;
@@ -341,7 +342,7 @@
           border-radius: 50%;
           cursor: pointer;
           z-index: 4;
-          outline: 0.36rem solid white;
+          outline: 0.36em solid white;
           border-radius: 50%;
           box-shadow: 0px 0px 16px black;
         }
@@ -360,8 +361,8 @@
             red 100%
           );
           width: 100%;
-          height: 0.75rem;
-          border-radius: 1rem;
+          height: 0.75em;
+          border-radius: 1em;
         }
         input[type="range"] {
           position: absolute;
@@ -370,17 +371,17 @@
           width: 100%;
           background-color: transparent;
           &::-webkit-slider-thumb {
-            outline: 0.36rem solid white;
+            outline: 0.36em solid white;
             border-radius: 50%;
             box-shadow: 0px 0px 16px black;
           }
           &::-moz-range-thumb {
-            outline: 0.36rem solid white;
+            outline: 0.36em solid white;
             border-radius: 50%;
             box-shadow: 0px 0px 16px black;
           }
           &::-ms-thumb {
-            outline: 0.36rem solid white;
+            outline: 0.36em solid white;
             border-radius: 50%;
             box-shadow: 0px 0px 16px black;
           }
@@ -389,9 +390,9 @@
       .color-format {
         display: flex;
         justify-content: space-between;
+        font-size: 14.4px;
         margin: 1.25em 0;
         padding: 0 0.75em;
-        font-size: 0.9rem;
         color: black;
         div {
           padding: 0.3em 0.5em;
@@ -417,9 +418,9 @@
           display: flex;
           align-items: center;
           justify-content: left;
+          font-size: 14.4px;
           padding: 0.5em 0.75em;
           border-radius: 0.5em;
-          font-size: 0.9rem;
           color: black;
           border: 1px solid hsla(0, 0%, 50%, 0.5);
           img {
@@ -429,7 +430,7 @@
           }
         }
         div.current-color {
-          height: 2.5rem;
+          height: 2.5em;
           aspect-ratio: 2;
           border-radius: 0.32em;
           border: 1px solid hsla(0, 0%, 50%, 0.5);
@@ -446,9 +447,9 @@
     left: 50%;
     transform: translate(-50%, -55%);
     z-index: 9999;
-    width: 60rem;
+    width: 960px;
     background-color: rgb(255, 255, 255);
-    border-radius: 0.75rem;
+    border-radius: 12px;
     pointer-events: all;
     * {
       color: black;
@@ -464,7 +465,7 @@
     .chromafy-export-container {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 16px;
       margin: 1em 0 !important;
       padding: 0 1.25em;
       h4 {
@@ -491,7 +492,7 @@
           gap: 1em;
           margin-top: 1.5em !important;
           button {
-            font-size: 0.8rem;
+            font-size: 12.8px;
             width: fit-content;
             color: rgb(26, 26, 26);
             background-color: rgb(245, 245, 245);
@@ -509,7 +510,7 @@
               border-radius: 0.5em 0 0 0.5em;
             }
             input {
-              font-size: 0.8rem;
+              font-size: 12.8px;
               width: 16em;
               padding: 0.36em 0.75em;
               border: none;
@@ -534,7 +535,7 @@
             white-space: pre-wrap;
             line-height: 1.75;
             letter-spacing: 0.5px;
-            font-size: 0.9rem;
+            font-size: 14.4px;
             margin: 0.5em 0 !important;
           }
         }
@@ -544,7 +545,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.9rem;
+      font-size: 14.4px;
       .color-filters-container {
         display: flex;
         align-items: center;
@@ -575,7 +576,7 @@
       transform: translate(150%, 0%);
       color: rgb(64, 64, 64);
       background-color: white;
-      font-size: 1.16rem;
+      font-size: 18.56px;
       padding: 0.25em 0.5em;
       border: none;
       border-radius: 0.5em;
@@ -630,15 +631,15 @@
       padding-left: 5vw;
       section {
         margin-top: 17.5vh;
-        width: 50rem;
+        width: 800px;
         h2 {
-          font-size: 2.5rem;
+          font-size: 40px;
         }
         h3 {
-          font-size: 2rem;
+          font-size: 32px;
         }
         p {
-          font-size: 1.1rem;
+          font-size: 17.6px;
           margin: 2em 0;
           line-height: 2;
           i {
@@ -678,13 +679,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 50rem;
+        width: 800px;
         border-top: 1px solid black;
         padding: 3.5vh 0 5vh 0;
         color: #181818;
-        font-size: 0.9rem;
+        font-size: 14.4px;
         span {
-          font-size: 1.1rem;
+          font-size: 17.6px;
         }
         p + p {
           display: flex;
