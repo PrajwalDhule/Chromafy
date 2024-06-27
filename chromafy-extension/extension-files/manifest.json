@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Chromafy",
   "description": "Apply generated color palettes straight to your website!",
-  "version": "1.2",
+  "version": "1.2.1",
   "icons": {
     "16": "images/chromafy_logo_16.png",
     "32": "images/chromafy_logo_32.png",
