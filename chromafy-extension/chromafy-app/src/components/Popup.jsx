@@ -669,20 +669,6 @@ const Popup = () => {
               />
             </button>
           </div>
-          {/* <div className="close action-button">
-            <button onClick={() => removeReactApp()}>
-              <img
-                src={closeBtnLight}
-                alt="close btn icon light"
-                style={{ display: theme === "dark" ? "none" : "grid" }}
-              />
-              <img
-                src={closeBtnDark}
-                alt="close btn icon dark"
-                style={{ display: theme === "light" ? "none" : "grid" }}
-              />
-            </button>
-          </div> */}
         </div>
         <ExportPopup
           palette={palettes && paletteIndex >= 0 && palettes[paletteIndex]}
