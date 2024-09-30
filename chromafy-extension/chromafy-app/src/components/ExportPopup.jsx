@@ -209,7 +209,7 @@ const ExportPopup = (props) => {
         onClick={() => {
           document
             .getElementById("export-popup")
-            .classList.remove("export-popup-open");
+            .classList.remove("popup-open");
           document
             .getElementById("chromafy-wrapper")
             .classList.remove("chromafy-overlay-open");
