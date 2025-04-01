@@ -9,8 +9,6 @@ chrome.action.onClicked.addListener((tab) => {
   }
 
   chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
-    console.log("hello from query");
     await chrome.tabs.sendMessage(tabs[0].id, { type: "toggleReactApp" });
-    console.log("Message sent successfully");
   });
 });

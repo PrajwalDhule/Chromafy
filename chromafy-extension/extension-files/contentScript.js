@@ -1,5 +1,3 @@
-console.log("from content script");
-
 function injectReactApp(cssStyles) {
   if (document.getElementById("my-extension-script")) {
     return;
@@ -16,7 +14,7 @@ function injectReactApp(cssStyles) {
     }
   });
 
-  const src = chrome.runtime.getURL("/dist/assets/contentScript-eNNgleG1.js");
+  const src = chrome.runtime.getURL("/dist/assets/contentScript-8Rtfhthd.js");
   const script = document.createElement("script");
   script.type = "module";
   script.src = `${src}?t=${Date.now()}`;
